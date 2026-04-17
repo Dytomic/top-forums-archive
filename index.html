@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tales of Pirates Forums Archive | Dytomic</title>
+  <meta name="description" content="Archived snapshots of three Tales of Pirates / Pirate King Online (PKO) community forums: pkodev.com, forum.ragezone.com, and go-piratia.ru. Preserved as a research archive by Dytomic." />
+  <meta name="keywords" content="Tales of Pirates forum archive, PKO forum, pkodev.com, ragezone, go-piratia, PKO private server community, MMORPG engine research" />
+  <link rel="canonical" href="https://dytomic.github.io/top-forums-archive/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dytomic.github.io/top-forums-archive/" />
+  <meta property="og:title" content="Tales of Pirates Forums Archive | Dytomic" />
+  <meta property="og:description" content="Archived snapshots of three Tales of Pirates / PKO community forums, preserved as a research archive." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,700&family=Raleway:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #1d2424;
+      --bg-dark:    #0d0d0d;
+      --gold:       #ef9d17;
+      --gold-hover: #d49f49;
+      --gold-muted: #7b581e;
+      --white:      #fdfefe;
+      --off-white:  #edeef0;
+      --muted:      rgba(237,238,240,0.55);
+      --rule:       rgba(237,238,240,0.12);
+      --max-w:      1000px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Raleway', arial, helvetica, sans-serif;
+      font-weight: 500; font-size: 16px; line-height: 1.6;
+      color: var(--off-white); background: var(--bg);
+      letter-spacing: 0.02em;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 700; letter-spacing: -0.02em;
+      color: var(--white); text-shadow: 0 0 4px var(--bg-dark);
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: filter 0.2s ease-in-out; }
+    a:hover { filter: brightness(120%); }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(0,0,0,0.3); padding: 2px 7px; border-radius: 3px;
+      color: var(--gold); font-size: 0.88em;
+    }
+
+    nav {
+      background: var(--bg); border-bottom: 1px solid var(--rule);
+      padding: 20px 32px;
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700;
+      color: var(--white); letter-spacing: 0.05em;
+    }
+    .nav-brand .accent { color: var(--gold); }
+    .nav-brand a { color: inherit; }
+    .nav-back {
+      font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px;
+      color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase;
+    }
+
+    header.hero {
+      padding: 64px 32px 48px; text-align: center;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: 'Raleway', sans-serif; font-weight: 700;
+      font-size: 12px; color: var(--gold);
+      letter-spacing: 0.28em; text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    header.hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin-bottom: 16px;
+    }
+    header.hero .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-weight: 400;
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      color: var(--off-white);
+      max-width: 720px; margin: 0 auto;
+    }
+
+    main { max-width: var(--max-w); margin: 0 auto; padding: 56px 32px; }
+
+    .notice {
+      background: rgba(239,157,23,0.08);
+      border: 1px solid var(--gold-muted);
+      border-left: 4px solid var(--gold);
+      padding: 20px 24px; border-radius: 4px;
+      margin-bottom: 40px;
+      color: var(--off-white); font-size: 14px; line-height: 1.7;
+    }
+    .notice strong { color: var(--gold); font-weight: 700; }
+
+    .forum-grid { display: grid; gap: 24px; }
+    .forum-card {
+      background: rgba(0,0,0,0.35); border: 1px solid var(--rule);
+      border-left: 4px solid var(--gold);
+      padding: 28px 32px; border-radius: 4px;
+      transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    }
+    .forum-card:hover { transform: translateY(-2px); border-color: var(--gold); }
+    .forum-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      flex-wrap: wrap; gap: 12px; margin-bottom: 10px;
+    }
+    .forum-name {
+      font-family: 'Cormorant Garamond', serif; font-weight: 700;
+      font-size: 1.75rem; color: var(--white);
+    }
+    .forum-source {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      color: var(--gold); letter-spacing: 0.05em;
+    }
+    .forum-card p {
+      color: var(--off-white); opacity: 0.9;
+      font-size: 15px; line-height: 1.7; margin-bottom: 16px;
+    }
+    .forum-stats {
+      display: flex; gap: 20px; flex-wrap: wrap; margin: 14px 0 18px;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      color: var(--off-white); opacity: 0.75;
+    }
+    .forum-stats .stat strong { color: var(--gold); font-weight: 600; }
+    .forum-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .forum-links a {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Raleway', sans-serif; font-weight: 700;
+      font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 8px 16px; border: 1px solid var(--gold);
+      border-radius: 3px; color: var(--gold);
+      transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    }
+    .forum-links a:hover { background: var(--gold); color: var(--bg); filter: none; }
+    .forum-links a.secondary {
+      border-color: var(--rule); color: var(--off-white); opacity: 0.7;
+    }
+    .forum-links a.secondary:hover { background: rgba(255,255,255,0.06); color: var(--white); opacity: 1; }
+
+    footer {
+      background: var(--bg-dark); padding: 40px 32px;
+      text-align: center; margin-top: 56px;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif; font-size: 20px;
+      font-weight: 700; color: var(--white); letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .footer-brand .accent { color: var(--gold); }
+    .footer-brand a { color: inherit; }
+    .footer-links {
+      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 14px; opacity: 0.7;
+    }
+    .footer-links a {
+      font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 13px;
+      color: var(--white); letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .footer-copy {
+      font-family: 'Raleway', sans-serif; font-size: 10px;
+      color: var(--white); opacity: 0.4;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner { flex-direction: column; gap: 12px; }
+      header.hero { padding: 48px 20px 36px; }
+      main { padding: 40px 20px; }
+      .forum-card { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand"><a href="https://dytomic.github.io/">Dy<span class="accent">to</span>mic</a> / Forums Archive</span>
+    <a class="nav-back" href="https://dytomic.github.io/">&larr; Back to Dytomic</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-eyebrow">Research Archive</div>
+  <h1>Tales of Pirates Forums Archive</h1>
+  <p class="tagline">Preserved snapshots of three community forums around the Tales of Pirates / Pirate King Online (PKO) game engine &mdash; captured for research and reference.</p>
+</header>
+
+<main>
+
+  <div class="notice">
+    <strong>About this archive:</strong> These forums hosted years of community discussion, private-server development guides, mod releases, and engine reverse-engineering notes around the Tales of Pirates (TOP), Pirate King Online (PKO), and Kings of Pirates (KOP) engine family. They were scraped and archived here to preserve the technical knowledge, as community forums periodically go offline. Each forum is stored in both original HTML (unmodified) and Markdown (for easy search and reference).
+  </div>
+
+  <div class="forum-grid">
+
+    <article class="forum-card">
+      <div class="forum-head">
+        <div class="forum-name">PKO DEV</div>
+        <div class="forum-source">pkodev.com</div>
+      </div>
+      <p>Developer-centric forum for the Tales of Pirates / Pirate King Online game engine. Central hub for source code releases, server setup guides, Lua scripting, client modding, and community collaboration around private server development.</p>
+      <div class="forum-stats">
+        <span class="stat"><strong>166</strong> threads</span>
+        <span class="stat"><strong>492</strong> messages</span>
+        <span class="stat"><strong>12</strong> sections</span>
+      </div>
+      <div class="forum-links">
+        <a href="pkodev/html/_master_index.html">Browse HTML</a>
+        <a href="pkodev/index.md" class="secondary">Markdown Index</a>
+      </div>
+    </article>
+
+    <article class="forum-card">
+      <div class="forum-head">
+        <div class="forum-name">RageZone &mdash; Tales of Pirates</div>
+        <div class="forum-source">forum.ragezone.com</div>
+      </div>
+      <p>The Tales of Pirates subforum on RageZone, a long-running MMO private-server community site. Focused on ToP client and server development, releases, tutorials, and troubleshooting.</p>
+      <div class="forum-stats">
+        <span class="stat"><strong>1,350</strong> threads</span>
+        <span class="stat"><strong>5</strong> sections</span>
+      </div>
+      <div class="forum-links">
+        <a href="ragezone/_index.html">Browse HTML</a>
+      </div>
+    </article>
+
+    <article class="forum-card">
+      <div class="forum-head">
+        <div class="forum-name">Go-Piratia</div>
+        <div class="forum-source">go-piratia.ru</div>
+      </div>
+      <p>Russian-language Tales of Pirates / Piratia community forum. Covers development, guides, private-server discussion, releases, and general community topics for the Russian-speaking ToP scene.</p>
+      <div class="forum-stats">
+        <span class="stat"><strong>167</strong> threads</span>
+        <span class="stat"><strong>24</strong> sections</span>
+        <span class="stat">Russian</span>
+      </div>
+      <div class="forum-links">
+        <a href="gopiratia/html/_master_index.html">Browse HTML</a>
+        <a href="gopiratia/md/_master_index.md" class="secondary">Markdown Index</a>
+      </div>
+    </article>
+
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-brand"><a href="https://dytomic.github.io/">Dy<span class="accent">to</span>mic</a></div>
+  <div class="footer-links">
+    <a href="https://dytomic.github.io/">Main Site</a>
+    <a href="https://github.com/Dytomic/top-forums-archive">GitHub Repo</a>
+    <a href="https://github.com/Dytomic">GitHub Org</a>
+  </div>
+  <div class="footer-copy">
+    &copy; 2021&ndash;2024 Dytomic Inc. &middot; Research Archive &middot; Content &copy; Respective Authors
+  </div>
+</footer>
+
+</body>
+</html>

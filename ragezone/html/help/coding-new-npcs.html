@@ -1,0 +1,2097 @@
+<html id="XF" lang="en-GB" dir="LTR" data-xf="2.3" data-app="public" data-template="thread_view_type_question" data-container-key="node-973" data-content-key="thread-805343" data-logged-in="false" data-cookie-prefix="xf_" data-csrf="" class="has-no-js template-thread_view_type_question"><head><link rel="amphtml" href="https://forum.ragezone.com/threads/coding-new-npcs.805343/?amp=1"><meta charset="utf-8"><title>Coding new NPCs | RaGEZONE - MMO Development Forums</title><link rel="manifest" crossorigin="use-credentials" href="https://forum.ragezone.com/webmanifest.php"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="max-image-preview:large"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#324f72"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#323232"><meta name="apple-mobile-web-app-title" content="RaGEZONE®"><link rel="apple-touch-icon" href="https://forum.ragezone.com/data/assets/logo/maskable_icon_x192.webp"><meta name="description" content="I need help on coding new NPCs , well , i do know how to code one but everytime i coded and try , its either the NPC talk chinese words or have script..."><meta property="og:description" content="I need help on coding new NPCs , well , i do know how to code one but everytime i coded and try , its either the NPC talk chinese words or have script errors . i'm currently trying to work on this .
+
+function ALL_apparal ()
+
+ Talk( 1,&quot;Hi , i'm the Apparel seller !&quot;)
+ Text( 1,&quot;Trade&quot;, BuyPage )..."><meta property="twitter:description" content="I need help on coding new NPCs , well , i do know how to code one but everytime i coded and try , its either the NPC talk chinese words or have script errors . i'm currently trying to work on this..."><meta property="og:url" content="https://forum.ragezone.com/threads/coding-new-npcs.805343/"><link rel="canonical" href="https://forum.ragezone.com/threads/coding-new-npcs.805343/"><meta property="og:site_name" content="RaGEZONE - MMO Development Forums"><meta property="og:type" content="website"><meta property="og:title" content="Coding new NPCs"><meta property="twitter:title" content="Coding new NPCs"><meta property="og:image" content="https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp"><meta property="twitter:image" content="https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp"><meta property="twitter:card" content="summary"><link rel="stylesheet" href="https://forum.ragezone.com/css.php?css=public%3Anormalize.css%2Cpublic%3Afa.css%2Cpublic%3Avariations.less%2Cpublic%3Acore.less%2Cpublic%3Aapp.less&amp;s=10&amp;l=1&amp;d=1776347396&amp;k=87ab3a911d687930196e0116e7b19437066fe4c4"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="https://forum.ragezone.com/css.php?css=public%3Aattachments.less%2Cpublic%3Abb_code.less%2Cpublic%3Amessage.less%2Cpublic%3Aozzmodz_badges.less%2Cpublic%3Aozzmodz_badges_featured_badges.less%2Cpublic%3Asiropu_ads_manager_ad.less%2Cpublic%3Aextra.less&amp;s=10&amp;l=1&amp;d=1776347396&amp;k=f5216972cc36b931c4072f0dbd8f09f1e1e67649"><script src="https://forum.ragezone.com/js/xf/preamble.min.js?_v=b090ee27"></script><script src="https://forum.ragezone.com/js/vendor/vendor-compiled.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/xf/core-compiled.js?_v=b090ee27" defer></script><script>
+	XF.samViewCountMethod = "impression";
+	XF.samServerTime = 1776388233;
+	XF.samItem = ".samItem";
+	XF.samCodeUnit = ".samCodeUnit";
+	XF.JamSpannerUnit = ".JamSpannerUnit";
+</script><script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var bkp = document.querySelectorAll('div[data-ba]');
+		if (bkp) {
+			bkp.forEach(item => {
+				var ad = item;
+				if (ad.querySelector('ins.adsbygoogle').style.display == 'none') {
+					 XF.ajax('GET', XF.canonicalizeUrl('index.php?sam-item/' + ad.dataset.ba + '/get-backup'), {}, data => {
+						 if (data.backup) {
+							 ad.html(data.backup);
+						 }
+					 }, { skipDefault: true, global: false});
+				}
+			});
+		}
+		const advHere = document.querySelectorAll('.samAdvertiseHereLink');
+		if (advHere) {
+			advHere.forEach(item => {
+				var unit = item.parentNode;
+				if (unit.classList.contains('samCustomSize')) {
+					unit.style.marginBottom = 20;
+				}
+			});
+		}
+		const ff = document.querySelectorAll('div[data-position="footer_fixed"] > div[data-cv="true"]');
+		if (ff) {
+			ff.forEach(item => {
+				XF.trigger(item, 'adView');
+			});
+		}
+	});
+</script><script>
+		XF.ready(() =>
+		{
+			XF.extendObject(true, XF.config, {
+				// 
+				userId: 0,
+				enablePush: true,
+xs_TypeEditor: 'editor',
+				pushAppServerKey: 'BPKawPyIzrRkJg495w42az2fPsCPCvAv8lBF4srGXv4MGov_8j3Xb8kKY81-FRa70iHJ7owpAbQ7IN2Gaqv89rk',
+				url: {
+					fullBase: 'https://forum.ragezone.com/',
+					basePath: '/',
+					css: '/css.php?css=__SENTINEL__&s=10&l=1&d=1776347396',
+					js: '/js/__SENTINEL__?_v=b090ee27',
+					icon: '/data/local/icons/__VARIANT__.svg?v=1776243575#__NAME__',
+					iconInline: '/styles/fa/__VARIANT__/__NAME__.svg?v=5.15.3',
+					keepAlive: '/login/keep-alive'
+				},
+				cookie: {
+					path: '/',
+					domain: '',
+					prefix: 'xf_',
+					secure: true,
+					consentMode: 'disabled',
+					consented: ["optional","_third_party"]
+				},
+				cacheKey: 'f3ed7234243583f554e27d349fe769c5',
+				csrf: '',
+				js: {"\/js\/mentalbypass\/mentalbypass.js?_v=b090ee27":true,"\/js\/xf\\action.min.js?_v=b090ee27":true,"\/js\/XenSoluce\/Hide\/check-hide.min.js?_v=b090ee27":true},
+				fullJs: false,
+				css: {"public:attachments.less":true,"public:bb_code.less":true,"public:message.less":true,"public:ozzmodz_badges.less":true,"public:ozzmodz_badges_featured_badges.less":true,"public:siropu_ads_manager_ad.less":true,"public:extra.less":true},
+				time: {
+					now: 1776388233,
+					today: 1776380400,
+					todayDow: 5,
+					tomorrow: 1776466800,
+					yesterday: 1776294000,
+					week: 1775862000,
+					month: 1774998000,
+					year: 1767225600
+				},
+				style: {
+					light: 'default',
+					dark: 'alternate',
+					defaultColorScheme: 'light'
+				},
+				borderSizeFeature: '3px',
+				fontAwesomeWeight: 'r',
+				enableRtnProtect: true,
+				
+				enableFormSubmitSticky: true,
+				imageOptimization: 'optimize',
+				imageOptimizationQuality: 0.85,
+				uploadMaxFilesize: 33554432,
+				uploadMaxWidth: 3840,
+				uploadMaxHeight: 2160,
+				allowedVideoExtensions: ["m4v","mov","mp4","mp4v","mpeg","mpg","ogv","webm"],
+				allowedAudioExtensions: ["mp3","opus","ogg","wav"],
+				shortcodeToEmoji: true,
+				visitorCounts: {
+					conversations_unread: '0',
+					alerts_unviewed: '0',
+					total_unread: '0',
+					title_count: true,
+					icon_indicator: true
+				},
+				jsMt: {"xf\/action.js":"6eed86ab","xf\/embed.js":"f79f40ed","xf\/form.js":"f79f40ed","xf\/structure.js":"6eed86ab","xf\/tooltip.js":"e13af6c4"},
+				jsState: {},
+				publicMetadataLogoUrl: 'https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp',
+				publicPushBadgeUrl: 'https://forum.ragezone.com/styles/default/xenforo/bell.png'
+			})
+
+			XF.extendObject(XF.phrases, {
+				// 
+"time.day": "{count} day",
+"time.days": "{count} days",
+"time.hour": "{count} hour",
+"time.hours": "{count} hours",
+"time.minute": "{count} minute",
+"time.minutes": "{count} minutes",
+"time.month": "{count} month",
+"time.months": "{count} months",
+"time.second": "{count} second",
+"time.seconds": "{count} seconds",
+"time.week": "time.week",
+"time.weeks": "{count} weeks",
+"time.year": "{count} year",
+"time.years": "{count} years",
+			pb_dailylogin_button_text_prev: "Previous",
+			pb_dailylogin_button_text_next: "Next",
+			pb_dailylogin_button_text_prev_year: "Previous year",
+			pb_dailylogin_button_text_year: "Year",
+			pb_dailylogin_button_text_today: "Today",
+			pb_dailylogin_button_text_month: "Month",
+			pb_dailylogin_button_text_week: "Week",
+			pb_dailylogin_button_text_day: "Day",
+			pb_dailylogin_button_text_list: "List",
+			pb_dailylogin_calendar_week_short: "W",
+			pb_dailylogin_calendar_week: "Week",
+			pb_dailylogin_calendar_close: "Close",
+			pb_dailylogin_calendar_time_hint: "Time",
+			pb_dailylogin_calendar_event_hint: "Event",
+			pb_dailylogin_calendar_all_day: "all-day",
+			pb_dailylogin_calendar_more: "more",
+			pb_dailylogin_calendar_no_events_to_display: "No events to display",
+				date_x_at_time_y:     "{date} at {time}",
+				day_x_at_time_y:      "{day} at {time}",
+				yesterday_at_x:       "Yesterday at {time}",
+				x_minutes_ago:        "{minutes} minutes ago",
+				one_minute_ago:       "1 minute ago",
+				a_moment_ago:         "A moment ago",
+				today_at_x:           "Today at {time}",
+				in_a_moment:          "In a moment",
+				in_a_minute:          "In a minute",
+				in_x_minutes:         "In {minutes} minutes",
+				later_today_at_x:     "Later today at {time}",
+				tomorrow_at_x:        "Tomorrow at {time}",
+				short_date_x_minutes: "{minutes}m",
+				short_date_x_hours:   "{hours}h",
+				short_date_x_days:    "{days}d",
+
+				day0: "Sunday",
+				day1: "Monday",
+				day2: "Tuesday",
+				day3: "Wednesday",
+				day4: "Thursday",
+				day5: "Friday",
+				day6: "Saturday",
+
+				dayShort0: "Sun",
+				dayShort1: "Mon",
+				dayShort2: "Tue",
+				dayShort3: "Wed",
+				dayShort4: "Thu",
+				dayShort5: "Fri",
+				dayShort6: "Sat",
+
+				month0: "January",
+				month1: "February",
+				month2: "March",
+				month3: "April",
+				month4: "May",
+				month5: "June",
+				month6: "July",
+				month7: "August",
+				month8: "September",
+				month9: "October",
+				month10: "November",
+				month11: "December",
+
+				active_user_changed_reload_page: "The active user has changed. Reload the page for the latest version.",
+				server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+				oops_we_ran_into_some_problems: "Oops! We ran into some problems.",
+				oops_we_ran_into_some_problems_more_details_console: "Oops! We ran into some problems. Please try again later. More error details may be in the browser console.",
+				file_too_large_to_upload: "The file is too large to be uploaded.",
+				uploaded_file_is_too_large_for_server_to_process: "The uploaded file is too large for the server to process.",
+				files_being_uploaded_are_you_sure: "Files are still being uploaded. Are you sure you want to submit this form?",
+				attach: "Attach files",
+				rich_text_box: "Rich text box",
+				close: "Close",
+				link_copied_to_clipboard: "Link copied to clipboard.",
+				text_copied_to_clipboard: "Text copied to clipboard.",
+				loading: "Loading…",
+				you_have_exceeded_maximum_number_of_selectable_items: "You have exceeded the maximum number of selectable items.",
+
+				processing: "Processing",
+				'processing...': "Processing…",
+
+				showing_x_of_y_items: "Showing {count} of {total} items",
+				showing_all_items: "Showing all items",
+				no_items_to_display: "No items to display",
+
+				number_button_up: "Increase",
+				number_button_down: "Decrease",
+
+				push_enable_notification_title: "Push notifications enabled successfully at RaGEZONE - MMO Development Forums",
+				push_enable_notification_body: "Thank you for enabling push notifications!",
+
+				pull_down_to_refresh: "Pull down to refresh",
+				release_to_refresh: "Release to refresh",
+				refreshing: "Refreshing…"
+			})
+		})
+	
+
+window.addEventListener('DOMContentLoaded',()=>{XF.Push.updateUserSubscriptionParent=XF.Push.updateUserSubscription;XF.Push.updateUserSubscription=function(b,a){"unsubscribe"===a&&XF.browser.safari&&XF.Push.setPushHistoryUserIds({});XF.Push.updateUserSubscriptionParent(b,a)}});
+</script><script src="https://forum.ragezone.com/js/mentalbypass/mentalbypass.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/xf\action.min.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/XenSoluce/Hide/check-hide.min.js?_v=b090ee27" defer></script><script>
+XF.ready(() =>
+{
+
+		XF.extendObject(true, XF.config, 
+		{
+			
+				apSsAvatarFrameStyle: 'square',
+			
+			
+			
+		});
+	
+})
+</script><link rel="icon" type="image/png" href="https://forum.ragezone.com/data/assets/logo/favicon-32x32.webp" sizes="32x32"></head><body data-template="thread_view_type_question">
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+<div class="p-pageWrapper" id="top">
+
+	
+
+	
+		
+			
+				<div class="height38"></div>
+			
+		
+	
+
+	<header class="p-header" id="header"><div class="p-header-inner">
+			<div class="p-header-content">
+
+				
+					<div class="p-header-logo p-header-logo--image">
+						<a href="https://forum.ragezone.com">
+							
+
+	
+
+	
+		
+		
+
+		
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations='{"default":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo.png","2":null},"alternate":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo-dark.png","2":null}}'><source srcset="/data/styles/10/styles/ragezone/xenforo/xenforo-logo-dark.png" media="(prefers-color-scheme: dark)"></source><img src="https://forum.ragezone.com/data/styles/10/styles/ragezone/xenforo/xenforo-logo.png" width="607" height="206" alt="RaGEZONE - MMO Development Forums"></picture></a>
+					</div>
+				
+
+				 <div class="JamSpannerUnit samAlignCenter samDisplayFlexbox samCustomSize" style="width: 468px; height: 60px;" data-xf-init="sam-unit" data-position="container_header"> <div class="samItem"> <a href="https://discord.gg/GuC8hamAyF" target="_blank" rel="sponsored"> <img src="https://forum.ragezone.com/data/mentalbypass/169cefe9a55b17.webp" alt="" width="468" height="60"></a> </div> <div class="samAdvertiseHereLink samAlignCenter" style="margin-top: 5px;"> <a href="https://forum.ragezone.com/ads-manager/packages/1/create-ad">Place your Ad here for £40.00 per Month!</a> </div> </div> 
+
+			</div>
+		</div>
+	</header><div class="p-navSticky p-navSticky--primary " data-xf-init="sticky-header">
+			
+		<nav class="p-nav"><div class="p-nav-inner">
+				<button type="button" class="button button--plain p-nav-menuTrigger" data-xf-click="off-canvas" data-menu=".js-headerOffCanvasMenu" tabindex="0" aria-label="Menu"><span class="button-text">
+					<i aria-hidden="true"></i>
+				</span></button>
+
+				
+					<div class="p-nav-smallLogo">
+						<a href="https://forum.ragezone.com">
+							
+
+	
+
+	
+		
+		
+
+		
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations='{"default":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo.png","2":null},"alternate":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo-dark.png","2":null}}'><source srcset="/data/styles/10/styles/ragezone/xenforo/xenforo-logo-dark.png" media="(prefers-color-scheme: dark)"></source><img src="https://forum.ragezone.com/data/styles/10/styles/ragezone/xenforo/xenforo-logo.png" width="607" height="206" alt="RaGEZONE - MMO Development Forums"></picture></a>
+					</div>
+				
+
+				<div class="p-nav-scroller hScroller" data-xf-init="h-scroller" data-auto-scroll=".p-navEl.is-selected">
+					<div class="hScroller-scroll">
+						<ul class="p-nav-list js-offCanvasNavSource"><li>
+								
+	<div class="p-navEl is-selected" data-has-children="true">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="forums">Forums</a>
+
+
+		<a data-xf-key="1" data-xf-click="menu" data-menu-pos-ref="&lt; .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="https://forum.ragezone.com/whats-new/posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="newPosts">New posts</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl " data-has-children="true">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/downloads/categories/server-files.3/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="xfrm">Downloads</a>
+
+
+		<a data-xf-key="2" data-xf-click="menu" data-menu-pos-ref="&lt; .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="https://forum.ragezone.com/downloads/latest-reviews" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="xfrmLatestReviews">Latest reviews</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl ">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/topsites/" class="p-navEl-link " data-xf-key="3" data-nav-id="rz_ts">Top Sites</a>
+
+
+		
+
+		
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl ">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/threads/how-to-use-the-ragezone-forum-advertising-system.1212910/" class="p-navEl-link " data-xf-key="4" data-nav-id="RZ_Advertising">Advertise On RZ</a>
+
+
+		
+
+		
+	
+	</div>
+
+							</li>
+						
+						</ul></div>
+				</div>
+
+				<div class="p-nav-opposite">
+					<div class="p-navgroup p-account p-navgroup--guest">
+						
+							
+								<a href="https://forum.ragezone.com/login/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--logIn" data-xf-click="overlay" data-follow-redirects="on">
+									<i aria-hidden="true"></i>
+									<span class="p-navgroup-linkText">Log in</span>
+								</a>
+							
+							<div class="menu menu--structural menu--medium" data-menu="menu" data-nav-id="userLogin" aria-hidden="true" data-href="https://forum.ragezone.com/login/"></div>
+							
+								<a href="https://forum.ragezone.com/login/register" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--register" data-xf-click="overlay" data-follow-redirects="on">
+									<i aria-hidden="true"></i>
+									<span class="p-navgroup-linkText">Register</span>
+								</a>
+							
+						
+					</div>
+
+					<div class="p-navgroup p-discovery p-discovery--noSearch">
+						<a href="https://forum.ragezone.com/whats-new/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--whatsnew" aria-label="What's new" title="What's new">
+							<i aria-hidden="true"></i>
+							<span class="p-navgroup-linkText">What's new</span>
+						</a>
+
+						
+					</div>
+				</div>
+			</div>
+		</nav></div>
+		
+		
+		
+		
+	
+	
+
+<div class="offCanvasMenu offCanvasMenu--nav js-headerOffCanvasMenu" data-menu="menu" aria-hidden="true" data-ocm-builder="navigation">
+		<div class="offCanvasMenu-backdrop" data-menu-close="true"></div>
+		<div class="offCanvasMenu-content">
+			<div class="offCanvasMenu-header">
+				Menu
+				<a class="offCanvasMenu-closer" data-menu-close="true" role="button" tabindex="0" aria-label="Close"></a>
+			</div>
+			
+				<div class="p-offCanvasRegisterLink">
+					<div class="offCanvasMenu-linkHolder">
+						<a href="https://forum.ragezone.com/login/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+							Log in
+						</a>
+					</div>
+					<hr class="offCanvasMenu-separator"><div class="offCanvasMenu-linkHolder">
+							<a href="https://forum.ragezone.com/login/register" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+								Register
+							</a>
+						</div>
+						<hr class="offCanvasMenu-separator"></div>
+			
+			<div class="js-offCanvasNavTarget"></div>
+			<div class="offCanvasMenu-installBanner js-installPromptContainer" style="display: none;" data-xf-init="install-prompt">
+				<div class="offCanvasMenu-installBanner-header">Install the app</div>
+				<button type="button" class="button js-installPromptButton"><span class="button-text">Install</span></button>
+				<template class="js-installTemplateIOS"><div class="js-installTemplateContent">
+						<div class="overlay-title">How to install the app on iOS</div>
+						<div class="block-body">
+							<div class="block-row">
+								<p>
+									Follow along with the video below to see how to install our site as a web app on your home screen.
+								</p>
+								<p style="text-align: center">
+									<video src="https://forum.ragezone.com/styles/default/xenforo/add_to_home.mp4" width="280" height="480" autoplay loop muted playsinline></video></p>
+								<p>
+									<small><strong>Note:</strong> This feature may not be available in some browsers.</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</template></div>
+		</div>
+	</div>
+
+	<div class="p-body">
+		<div class="p-body-inner">
+			
+
+
+			
+	
+
+		
+			
+		
+
+		
+	
+
+
+			
+	
+		<ul class="p-breadcrumbs " itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/#the-mmo-community.55" itemprop="item">
+			
+				<span itemprop="name">The MMO Community</span>
+			
+		</a>
+		<meta itemprop="position" content="1"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/mmo-server-developments.168/" itemprop="item">
+			
+				<span itemprop="name">MMO Server Developments</span>
+			
+		</a>
+		<meta itemprop="position" content="2"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/tales-of-pirates.440/" itemprop="item">
+			
+				<span itemprop="name">Tales of Pirates</span>
+			
+		</a>
+		<meta itemprop="position" content="3"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/tales-of-pirates-help.973/" itemprop="item">
+			
+				<span itemprop="name">Tales of Pirates Help</span>
+			
+		</a>
+		<meta itemprop="position" content="4"></li>
+
+				
+			
+		</ul><noscript class="js-jsWarning"><div class="blockMessage blockMessage--important blockMessage--iconic u-noJsOnly">JavaScript is disabled. For a better experience, please enable JavaScript in your browser before proceeding.</div></noscript>
+
+			
+	<div class="blockMessage blockMessage--important blockMessage--iconic js-browserWarning" style="display: none">You are using an out of date browser. It  may not display this or other websites correctly.<br>You should upgrade or use an <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">alternative browser</a>.</div>
+
+
+			
+				<div class="p-body-header">
+				
+					
+						<div class="p-title ">
+						
+							
+								<h1 class="p-title-value">Coding new NPCs
+	
+    
+    
+
+</h1>
+							
+							
+						
+						</div>
+					
+
+					
+						<div class="p-description">
+	<ul class="listInline listInline--bullet"><li>
+			<i class="fa--xf far fa-user "><svg xmlns="http://www.w3.org/2000/svg" role="img"><title>Thread starter</title><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#user"></use></svg></i>
+			<span class="u-srOnly">Thread starter</span>
+
+			<a href="https://forum.ragezone.com/members/satanzx.1333385841/" class="username  u-concealed" dir="auto" data-user-id="1333385841" data-xf-init="member-tooltip">Satanzx</a>
+		</li>
+		<li>
+			<i class="fa--xf far fa-clock "><svg xmlns="http://www.w3.org/2000/svg" role="img"><title>Start date</title><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#clock"></use></svg></i>
+			<span class="u-srOnly">Start date</span>
+
+			<a href="https://forum.ragezone.com/threads/coding-new-npcs.805343/" class="u-concealed"><time class="u-dt" dir="auto" datetime="2011-12-27T04:30:02+0000" data-timestamp="1324960202" data-date="Dec 27, 2011" data-time="4:30 AM" data-short="Dec '11" title="Dec 27, 2011 at 4:30 AM">Dec 27, 2011</time></a>
+		</li>
+		
+
+
+		
+	</ul></div>
+					
+				
+				</div>
+			
+
+			<div class="p-body-main    is-active">
+				
+				
+
+				<div class="p-body-content">
+					
+	
+
+		
+			
+		
+
+		
+	
+
+
+					<div class="p-body-pageContent">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+
+	
+
+
+	
+		<link rel="alternate" type="application/json+oembed" href="https://forum.ragezone.com/api/oembed/?url=https%3A%2F%2Fforum.ragezone.com%2Fthreads%2Fcoding-new-npcs.805343%2F" title="Coding new NPCs"><div class="block block--messages " data-xf-init="lightbox select-to-quote" data-message-selector=".js-post" data-wu-highlight-thread="0" data-lb-id="thread-805343">
+		
+			
+	
+
+
+			<div class="block-outer"><div class="block-outer-opposite">
+				<div class="buttonGroup">
+				
+					
+
+
+	<a href="https://forum.ragezone.com/threads/coding-new-npcs.805343/?highlights=1" class="button button--link"><span class="button-text">
+		Highlights Only
+	</span></a>
+
+
+						
+						
+						
+						
+						
+
+						
+					
+				
+				</div>
+			</div></div>
+
+			
+	<div class="block-outer js-threadStatusField"></div>
+
+		
+
+		<div class="block-container">
+			<div class="block-body">
+				
+					
+
+	
+	
+
+	
+
+	
+	<article class="message message--post js-post js-inlineModContainer is-first  " data-author="Satanzx" data-content="post-6729200" data-wu-highlight="0" data-wu-highlight-special="0" id="js-post-6729200"><span class="u-anchorTarget" id="post-6729200"></span>
+		
+			
+								
+
+	
+
+	<header class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed">
+				<a href="https://forum.ragezone.com/threads/coding-new-npcs.805343/post-6729200" rel="nofollow">
+					<time class="u-dt" dir="auto" datetime="2011-12-27T04:30:02+0000" data-timestamp="1324960202" data-date="Dec 27, 2011" data-time="4:30 AM" data-short="Dec '11" title="Dec 27, 2011 at 4:30 AM">Dec 27, 2011</time></a>
+			</li>
+			
+		</ul><ul class="message-attribution-opposite message-attribution-opposite--list "><li>
+				<a href="https://forum.ragezone.com/threads/coding-new-npcs.805343/post-6729200" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="https://forum.ragezone.com/posts/6729200/share" aria-label="Share" rel="nofollow">
+					<i class="fa--xf far fa-share-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#share-alt"></use></svg></i>
+				</a>
+			</li>
+			
+				<li class="u-hidden js-embedCopy">
+					
+	<a href="javascript:" data-xf-init="copy-to-clipboard" data-copy-text='&lt;div class="js-xf-embed" data-url="https://forum.ragezone.com" data-content="post-6729200"&gt;&lt;/div&gt;&lt;script defer src="https://forum.ragezone.com/js/xf/external_embed.js?_v=b090ee27"&gt;&lt;/script&gt;' data-success="Embed code HTML copied to clipboard." class="">
+		<i class="fa--xf far fa-code "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#code"></use></svg></i>
+	</a>
+
+				</li>
+			
+			
+			
+				<li>
+					<a href="https://forum.ragezone.com/threads/coding-new-npcs.805343/post-6729200" rel="nofollow">
+						#1
+					</a>
+				</li>
+			
+		</ul></header><div class="message-inner">
+				
+					<div class="message-cell message-cell--user ap-ss-postbitBackground ap-ss-postbitBackground--1333385841" style="">
+						
+
+	<section class="message-user ap-ss-postbitFilter ap-ss-postbitFilter--1333385841" style=""><div class="message-avatar ">
+			<div class="message-avatar-wrapper">
+				<a href="https://forum.ragezone.com/members/satanzx.1333385841/" class="avatar avatar--l avatar--square avatar--default avatar--default--dynamic" data-user-id="1333385841" data-xf-init="member-tooltip" style="background-color: #6633cc; color: #d1c2f0">
+			<span class="avatar-u1333385841-l" role="img" aria-label="Satanzx">S</span> 
+		</a>
+				
+				
+			</div>
+		</div>
+		<div class="message-userDetails">
+			<div class="message-userName">
+				<h4 class="message-name"><a href="https://forum.ragezone.com/members/satanzx.1333385841/" class="username " dir="auto" data-user-id="1333385841" data-xf-init="member-tooltip"><span itemprop="name">Satanzx</span></a></h4>
+			</div>
+
+	
+		<h5 class="userTitle message-userTitle" dir="auto">Newbie Spellweaver</h5>
+	
+			
+		
+
+			
+				
+
+				
+	
+		
+			
+		
+		
+			<div class="featuredBadges featuredBadges--message">
+				
+					
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/satanzx.1333385841/#badges" class="featuredBadge featuredBadge--10" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf fad fa-scroll-old  badgeIcon badgeIcon--10 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512" role="img" aria-hidden="true"><path d="M539.31 228.69L512 256l27.31 27.31a16 16 0 0 1 4.69 11.32V384h-89.37a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80.61 80c-44.11-.33-79.39-36.89-79.39-81V262.63a16 16 0 0 1 4.69-11.32L160 224l-27.31-27.31a16 16 0 0 1-4.69-11.32V65A65 65 0 0 0 63 0h385a96.1 96.1 0 0 1 95.68 88.2 16.15 16.15 0 0 1-4.63 12.8L512 128l27.31 27.31a16 16 0 0 1 4.69 11.32v50.74a16 16 0 0 1-4.69 11.32z" class="fa-secondary"></path><path d="M192 512h16c-2.59 0-5.14-.13-7.66-.37-2.75.24-5.53.37-8.34.37zM64 0A64 64 0 0 0 0 64v48a16 16 0 0 0 16 16h112V65A65 65 0 0 0 64 0zm560 384H454.63a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80 80h320a112 112 0 0 0 112-112.06A16 16 0 0 0 624 384z" class="fa-primary"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>10 Happy Years</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+					
+				
+			</div>
+		
+	
+
+			
+
+		</div>
+		
+			
+			
+				<div class="message-userExtras">
+				
+					
+						<dl class="pairs pairs--justified"><dt style="">Joined</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">Dec 12, 2011</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Messages</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">18</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Reaction score</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">0</dd>
+						</dl></div>
+			
+		
+		<span class="message-userArrow"></span>
+	</section></div>
+				
+
+				
+					<div class="message-cell message-cell--main">
+					
+						<div class="message-main js-quickEditTarget">
+
+							<div class="message-content js-messageContent">
+							
+
+								
+									
+	
+
+	
+
+	
+	
+
+								
+
+								
+									
+	
+
+	<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-6729200" data-lb-caption-desc="Satanzx · Dec 27, 2011 at 4:30 AM">
+
+		
+			
+
+	
+		
+	
+
+		
+
+		<article class="message-body  js-selectToQuote"><div>
+				
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<div class="bbWrapper"><div style="text-align: center">I need help on coding new NPCs , well , i do know how to code one but everytime i coded and try , its either the NPC talk chinese words or have script errors . i'm currently trying to work on this .​</div><br><blockquote data-attributes="" data-quote="" data-source="" class="bbCodeBlock bbCodeBlock--expandable bbCodeBlock--quote js-expandWatch">
+	
+	<div class="bbCodeBlock-content">
+		
+		<div class="bbCodeBlock-expandContent js-expandContent ">
+			function ALL_apparal ()<br><br>
+ Talk( 1,"Hi , i'm the Apparel seller !")<br>
+ Text( 1,"Trade", BuyPage )<br><br>
+	InitTrade()<br>
+	Weapon( 5230 )<br>
+	Weapon( 5231 )<br>
+	Weapon( 5232 )<br>
+	Weapon( 5233 )<br>
+	Weapon(	5234 )<br>
+	Weapon( 5235 )<br>
+	Weapon( 5236 )<br>
+	Weapon( 5237 )<br>
+	Weapon( 5238 )<br>
+	Weapon( 5239 )<br>
+	Weapon( 5240 )<br>
+	Weapon( 5245 )<br>
+	Weapon( 5246 )<br>
+	Weapon( 5247 )<br>
+	Weapon( 5248 )<br>
+	Weapon( 5249 )<br>
+	Weapon( 5250 )<br>
+	Weapon( 5251 )<br>
+	Weapon( 5252 )<br>
+	Weapon( 5253 )<br>
+	Weapon( 5254 )<br>
+	Weapon( 5255 )<br>
+	Weapon( 5256 )<br>
+	Weapon( 5257 )<br>
+	Weapon( 5258 )<br>
+	Weapon( 5259 )<br>
+	Weapon( 5260 )<br>
+	Weapon( 5261 )<br>
+	Weapon( 5262 )<br>
+	Weapon( 5263 )<br>
+	Weapon( 5264 )<br>
+	Defence( 5001 )<br>
+	Defence( 5002 )<br>
+	Defence( 5003 )<br>
+	Defence( 5004 )<br>
+	Defence( 5005 )<br>
+	Defence( 5006 )<br>
+	Defence( 5007 )<br>
+	Defence( 5008 )<br>
+	Defence( 5009 )<br>
+	Defence( 5010 )<br>
+	Defence( 5012 )<br>
+	Defence( 5011 )<br>
+	Defence( 5072 )<br>
+	Defence( 5073 )<br>
+	Defence( 5074 )<br>
+	Defence( 5099 )<br>
+	Defence( 5100 )<br>
+	Defence( 5101 )<br>
+	Defence( 5103 )<br>
+	Defence( 5104 )<br>
+	Defence( 5105 )<br>
+	Defence( 5280 )<br>
+	Defence( 5281 )<br>
+	Defence( 5282 )<br>
+	Defence( 5283 )<br>
+	Defence( 5284 )<br>
+	Defence( 5285 )<br>
+	Defence( 5286 )<br>
+	Defence( 5609 )<br>
+	Defence( 5610 )<br>
+	Defence( 5611 )<br>
+	Defence( 5612 )<br>
+	Defence( 5613 )<br>
+	Defence( 5614 )<br>
+	Defence( 5615 )<br>
+	Defence( 5618 )<br>
+	Defence( 5620 )<br>
+	Defence( 5624 )<br>
+	Defence( 5900 )<br>
+	Defence( 5901 )<br>
+	Defence( 5902 )<br>
+	Defence( 5903 )<br>
+	Defence( 5904 )<br>
+	Defence( 5905 )<br>
+	Defence( 5906 )<br>
+	Defence( 5907 )<br>
+	Defence( 5908 )<br>
+	Other( 5014 )<br>
+	Other( 5015 )<br>
+	Other( 5016 )<br>
+	Other( 5017 )<br>
+	Other( 5018 )<br>
+	Other( 5019 )<br>
+	Other( 5020 )<br>
+	Other( 5021 )<br>
+	Other( 5022 )<br>
+	Other( 5023 )<br>
+	Other( 5024 )<br>
+	Other( 5025 )<br>
+	Other( 5026 )<br>
+	Other( 5027 )<br>
+	Other( 5028 )<br>
+	Other( 5029 )<br>
+	Other( 5030 )<br>
+	Other( 5031 )<br>
+	Other( 5032 )<br>
+	Other( 5033 )<br>
+	Other( 5034 )<br>
+	Other( 5035 )<br>
+	Other( 5036 )<br>
+	Other( 5037 )<br>
+	Other( 5038 )<br>
+	Other( 5039 )<br>
+	Other( 5040 )<br>
+	Other( 5041 )<br>
+	Other( 5042 )<br>
+	Other( 5043 )<br>
+	Other( 5044 )<br>
+	Other( 5045 )<br>
+	Other( 5046 )<br>
+	Other( 5047 )<br>
+	Other( 5048 )<br>
+	Other( 5049 )<br>
+	Other( 5050 )<br>
+	Other( 5051 )<br>
+	Other( 5052 )<br>
+	Other( 5056 )<br>
+	Other( 5057 )<br>
+	Other( 5058 )<br>
+	Other( 5059 )<br>
+	Other( 5060 )<br>
+	Other( 5061 )<br>
+	Other( 5062 )<br>
+	Other( 5063 )<br>
+	Other( 5064 )<br>
+	Other( 5065 )<br>
+	Other( 5066 )<br>
+	Other( 5067 )<br>
+	Other( 5068 )<br>
+	Other( 5069 )<br>
+	Other( 5070 )<br>
+	Other( 5071 )<br>
+	Other( 5072 )<br>
+	Other( 5075 )<br>
+	Other( 5076 )<br>
+	Other( 5077 )<br>
+	Other( 5078 )<br>
+	Other( 5079 )<br>
+	Other( 5080 )<br>
+	Other( 5081 )<br>
+	Other( 5082 )<br>
+	Other( 5083 )<br>
+	Other( 5084 )<br>
+	Other( 5085 )<br>
+	Other( 5086 )<br>
+	Other( 5087 )<br>
+	Other( 5088 )<br>
+	Other( 5089 )<br>
+	Other( 5090 )<br>
+	Other( 5091 )<br>
+	Other( 5093 )<br>
+	Other( 5094 )<br>
+	Other( 5096 )<br>
+	Other( 5097 )<br>
+	Other( 5098 )<br>
+	Other( 5106 )<br>
+	Other( 5107 )<br>
+	Other( 5108 )<br>
+	Other( 5109 )<br>
+	Other( 5110 )<br>
+	Other( 5111 )<br>
+	Other( 5112 )<br>
+	Other( 5113 )<br>
+	Other( 5114 )<br>
+	Other( 5115 )<br>
+	Other( 5116 )<br>
+	Other( 5117 )<br>
+	Other( 5118 )<br>
+ 	Other( 5119 )<br>
+	Other( 5120 )<br>
+	Other( 5121 )<br>
+	Other( 5123 )<br>
+	Other( 5124 )<br>
+	Other( 5125 )<br>
+	Other( 5127 )<br>
+	Other( 5128 )<br>
+	Other( 5129 )<br>
+	Other( 5146 )<br>
+	Other( 5147 )<br>
+	Other( 5148 )<br>
+	Other( 5149 )<br>
+	Other( 5151 )<br>
+	Other( 5152 )<br>
+	Other( 5153 )<br>
+	Other( 5154 )<br>
+	Other( 5155 )<br>
+	Other( 5156 )<br>
+	Other( 5157 )<br>
+	Other( 5158 )<br>
+	Other( 5159 )<br>
+	Other( 5221 )<br>
+	Other( 5222 )<br>
+	Other( 5223 )<br>
+	Other( 5224 )<br>
+	Other( 5225 )<br>
+	Other( 5226 )<br><br>
+end
+		</div>
+		<div class="bbCodeBlock-expandLink js-expandLink"><a role="button" tabindex="0">Click to expand...</a></div>
+	</div>
+</blockquote> Is this correct ?<br><br>
+I really appreciate if someone can kindly help me on this alittle thanks . <img src="https://cdn.jsdelivr.net/joypixels/assets/8.0/png/unicode/64/1f644.png" class="smilie smilie--emoji" loading="lazy" width="64" height="64" alt=":rolleyes:" title="Roll eyes    :rolleyes:" data-smilie="11" data-shortname=":rolleyes:"><br><br>
+add me one Msn or send me a email : <a href="https://forum.ragezone.com/cdn-cgi/l/email-protection#a2d2c38fc48f93e2cacdd6cfc3cbce8cc1cdcf"><span class="__cf_email__" data-cfemail="dbabbaf6bdf6ea9bb3b4afb6bab2b7f5b8b4b6">[email protected]</span></a><br><br><div style="text-align: center"><b><u>Feel Free to comment , or give me some helps</u></b>​</div></div>
+
+	
+
+		
+			
+		
+
+		
+	
+
+				
+			</div>
+
+			<div class="js-selectToQuoteEnd"> </div>
+			
+				
+			
+		</article></div>
+
+								
+
+								
+									
+	
+
+	
+
+								
+
+								
+									
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+								
+
+							
+							</div>
+
+							
+								
+	
+
+	<footer class="message-footer"><div class="reactionsBar js-reactionsList ">
+			
+		</div>
+
+		
+
+		<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+	</footer></div>
+
+					
+					</div>
+				
+			</div>
+		
+	</article></div>
+		</div>
+
+		
+	</div>
+
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+<div class="block block--messages" data-xf-init="" data-type="post" data-href="https://forum.ragezone.com/inline-mod/" data-search-target="*">
+
+	<span class="u-anchorTarget" id="posts"></span>
+
+	
+
+	<div class="block-outer"><div class="block-outer-opposite">
+					
+	
+		
+			
+				<div class="tabs tabs--standalone tabs--standalone--small tabs--standalone--inline">
+				
+					
+						
+							<a href="https://forum.ragezone.com/threads/coding-new-npcs.805343/" class="tabs-tab is-active" rel="nofollow">
+								Sort by date
+							</a>
+						
+							<a href="https://forum.ragezone.com/threads/coding-new-npcs.805343/?order=vote_score" class="tabs-tab " rel="nofollow">
+								Sort by votes
+							</a>
+						
+					
+					
+				
+				</div>
+			
+		
+	
+
+				</div></div>
+
+	
+
+	
+
+	<div class="block-container lbContainer" data-xf-init="lightbox select-to-quote" data-message-selector=".js-post" data-wu-highlight-thread="0" data-lb-id="thread-805343" data-lb-universal="">
+
+		<div class="block-body js-replyNewMessageContainer">
+			
+				
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+					
+
+					
+						
+
+	
+	
+
+	
+
+	
+	<article class="message message--post  js-post js-inlineModContainer   " data-author="Satanzx" data-content="post-6729225" data-wu-highlight="0" data-wu-highlight-special="0" id="js-post-6729225" itemscope itemtype="https://schema.org/Answer" itemid="https://forum.ragezone.com/posts/6729225/"><meta itemprop="parentItem" itemscope itemid="https://forum.ragezone.com/threads/coding-new-npcs.805343/"><div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="Satanzx"><meta itemprop="text" content="Is my method correct ?"><meta itemprop="url" content="https://forum.ragezone.com/members/satanzx.1333385841/"></div>
+            
+                <meta itemprop="comment" content="Is my method correct ?"><meta itemprop="name" content="Post by Satanzx"><meta itemprop="text" content="Is my method correct ?"><div>
+                    <span itemprop="text" content="Is my method correct ?"></span>
+                  </div>
+            
+        
+		
+		<span class="u-anchorTarget" id="post-6729225"></span>
+		
+			
+								
+
+	
+
+	<header class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed">
+				<a href="https://forum.ragezone.com/threads/coding-new-npcs.805343/post-6729225" rel="nofollow" itemprop="url">
+					<time class="u-dt" dir="auto" datetime="2011-12-27T04:48:05+0000" data-timestamp="1324961285" data-date="Dec 27, 2011" data-time="4:48 AM" data-short="Dec '11" title="Dec 27, 2011 at 4:48 AM" itemprop="datePublished">Dec 27, 2011</time></a>
+			</li>
+			
+		</ul><ul class="message-attribution-opposite message-attribution-opposite--list "><li>
+				<a href="https://forum.ragezone.com/threads/coding-new-npcs.805343/post-6729225" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="https://forum.ragezone.com/posts/6729225/share" aria-label="Share" rel="nofollow">
+					<i class="fa--xf far fa-share-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#share-alt"></use></svg></i>
+				</a>
+			</li>
+			
+				<li class="u-hidden js-embedCopy">
+					
+	<a href="javascript:" data-xf-init="copy-to-clipboard" data-copy-text='&lt;div class="js-xf-embed" data-url="https://forum.ragezone.com" data-content="post-6729225"&gt;&lt;/div&gt;&lt;script defer src="https://forum.ragezone.com/js/xf/external_embed.js?_v=b090ee27"&gt;&lt;/script&gt;' data-success="Embed code HTML copied to clipboard." class="">
+		<i class="fa--xf far fa-code "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#code"></use></svg></i>
+	</a>
+
+				</li>
+			
+			
+			
+				<li>
+					<a href="https://forum.ragezone.com/threads/coding-new-npcs.805343/post-6729225" rel="nofollow">
+						#2
+					</a>
+				</li>
+			
+		</ul></header><div class="message-inner">
+				
+					<div class="message-cell message-cell--user ap-ss-postbitBackground ap-ss-postbitBackground--1333385841" style="">
+						
+
+	<section class="message-user ap-ss-postbitFilter ap-ss-postbitFilter--1333385841" style="" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="https://forum.ragezone.com/members/satanzx.1333385841/"><meta itemprop="url" content="https://forum.ragezone.com/posts/"><div class="message-avatar ">
+			<div class="message-avatar-wrapper">
+				<a href="https://forum.ragezone.com/members/satanzx.1333385841/" class="avatar avatar--l avatar--square avatar--default avatar--default--dynamic" data-user-id="1333385841" data-xf-init="member-tooltip" style="background-color: #6633cc; color: #d1c2f0">
+			<span class="avatar-u1333385841-l" role="img" aria-label="Satanzx">S</span> 
+		</a>
+				
+				
+			</div>
+		</div>
+		<div class="message-userDetails">
+			<div class="message-userName">
+				<h4 class="message-name"><a href="https://forum.ragezone.com/members/satanzx.1333385841/" class="username " dir="auto" data-user-id="1333385841" data-xf-init="member-tooltip"><span itemprop="name">Satanzx</span></a></h4>
+			</div>
+
+	
+		<h5 class="userTitle message-userTitle" dir="auto" itemprop="jobTitle">Newbie Spellweaver</h5>
+	
+			
+		
+
+			
+				
+
+				
+	
+		
+			
+		
+		
+			<div class="featuredBadges featuredBadges--message">
+				
+					
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/satanzx.1333385841/#badges" class="featuredBadge featuredBadge--10" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf fad fa-scroll-old  badgeIcon badgeIcon--10 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512" role="img" aria-hidden="true"><path d="M539.31 228.69L512 256l27.31 27.31a16 16 0 0 1 4.69 11.32V384h-89.37a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80.61 80c-44.11-.33-79.39-36.89-79.39-81V262.63a16 16 0 0 1 4.69-11.32L160 224l-27.31-27.31a16 16 0 0 1-4.69-11.32V65A65 65 0 0 0 63 0h385a96.1 96.1 0 0 1 95.68 88.2 16.15 16.15 0 0 1-4.63 12.8L512 128l27.31 27.31a16 16 0 0 1 4.69 11.32v50.74a16 16 0 0 1-4.69 11.32z" class="fa-secondary"></path><path d="M192 512h16c-2.59 0-5.14-.13-7.66-.37-2.75.24-5.53.37-8.34.37zM64 0A64 64 0 0 0 0 64v48a16 16 0 0 0 16 16h112V65A65 65 0 0 0 64 0zm560 384H454.63a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80 80h320a112 112 0 0 0 112-112.06A16 16 0 0 0 624 384z" class="fa-primary"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>10 Happy Years</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+					
+				
+			</div>
+		
+	
+
+			
+
+		</div>
+		
+			
+			
+				<div class="message-userExtras">
+				
+					
+						<dl class="pairs pairs--justified"><dt style="">Joined</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">Dec 12, 2011</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Messages</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">18</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Reaction score</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">0</dd>
+						</dl></div>
+			
+		
+		<span class="message-userArrow"></span>
+	</section></div>
+				
+
+				
+		
+					<div class="message-cell message-cell--main">
+					
+						<div class="message-main js-quickEditTarget">
+
+							<div class="message-content js-messageContent">
+							
+
+								
+									
+	
+
+	
+
+	
+	
+
+								
+
+								
+									
+	
+
+	<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-6729225" data-lb-caption-desc="Satanzx · Dec 27, 2011 at 4:48 AM">
+
+		
+
+		<article class="message-body  js-selectToQuote"><div itemprop="text">
+				
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<div class="bbWrapper">Is my method correct ?</div>
+
+	
+
+		
+			
+		
+
+		
+	
+
+				
+			</div>
+
+			<div class="js-selectToQuoteEnd"> </div>
+			
+				
+			
+		</article><section class="message-attachments"><h4 class="block-textHeader">Attachments</h4>
+			<ul class="attachmentList"><li class="file file--linked">
+		<a class="u-anchorTarget" id="attachment-95205"></a>
+		
+			
+	
+
+
+			<a class="file-preview " href="https://forum.ragezone.com/attachments/untitled-webp.95205/" target="_blank">
+				<img src="https://forum.ragezone.com/data/attachments/67/67669-982ad6d7d72373e8cc9b40b5a5ac1939.jpg?hash=yck9NyAxEJ" alt="Untitled - Coding new NPCs - RaGEZONE Forums" width="188" height="150" loading="lazy"></a>
+		
+
+		<div class="file-content">
+			<div class="file-info">
+				<span class="file-name" title="Untitled.webp">Untitled.webp</span>
+				<div class="file-meta">
+					249.1 KB
+					
+					· Views: 52
+					
+				</div>
+			</div>
+		</div>
+	</li>
+
+					
+				
+			</ul></section></div>
+
+								
+
+								
+									
+	
+
+	
+
+								
+
+								
+									
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+								
+
+							
+							</div>
+
+							
+								
+	
+
+	<footer class="message-footer"><div class="message-microdata" itemprop="interactionStatistic" itemtype="https://schema.org/InteractionCounter" itemscope>
+				<meta itemprop="userInteractionCount" content="0"><meta itemprop="interactionType" content="https://schema.org/LikeAction"></div>
+		
+
+		<div class="reactionsBar js-reactionsList ">
+			
+		</div>
+
+		
+
+		<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+	</footer></div>
+
+					
+					</div>
+				
+
+		
+			<div class="message-cell message-cell--vote">
+				<div class="message-column">
+				
+					
+						
+
+	
+	
+	<div class="contentVote  js-contentVote " data-xf-init="content-vote" data-content-id="post-6729225">
+		
+			<meta itemprop="upvoteCount" content="0"><a href="javascript:" class="contentVote-vote is-disabled contentVote-vote--up " data-vote="up"><span class="u-srOnly">Upvote</span></a>
+
+		<span class="contentVote-score   js-voteCount" data-score="0">0</span>
+
+		
+	</div>
+
+
+					
+
+					
+				
+				</div>
+			</div>
+		
+	
+			</div>
+		
+	</article><header data-template-name="public:post_macros::post_attribution" class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed"> <a href="https://bit.ly/3ztZXnj">RaGEZONE Sponsor</a> </li> </ul></header><article class="message message--post"><div class="message-inner"> <div class="message-cell message-cell--main"> <div class="message-main"> <div class="message-content"> <div class="message-userContent"> <article class="message-body"><div class="bbWrapper"> <div class="JamSpannerUnit samAlignCenter samDisplayInlineBlock" data-xf-init="sam-unit" data-position="post_below_container_1"> <div class="samItem"> <a href="https://bit.ly/3ztZXnj" target="_blank" rel="sponsored"> <img src="https://forum.ragezone.com/data/mentalbypass/167c4753cc5ad1.webp" alt="The Best DDoS Protected Servers"></a> </div> </div> </div> </article></div> </div> </div> </div> </div> </article></div>
+	</div>
+
+	
+		<div class="block-outer block-outer--after">
+			
+				
+
+				
+				
+					<div class="block-outer-opposite">
+						
+							<a href="https://forum.ragezone.com/login/" class="button button--link button--wrap" data-xf-click="overlay"><span class="button-text">
+								You must log in or register to reply here.
+							</span></a>
+						
+					</div>
+				
+			
+		</div>
+	
+
+	
+	
+
+</div>
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+    
+
+
+
+<div class="blockMessage blockMessage--none">
+	
+
+	
+
+	
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+					
+	
+
+		
+			
+		
+
+		
+	
+
+
+				</div>
+
+				
+			</div>
+
+			
+	
+
+		
+			
+		
+
+		
+	
+
+
+			
+	
+		<ul class="p-breadcrumbs p-breadcrumbs--bottom" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/#the-mmo-community.55" itemprop="item">
+			
+				<span itemprop="name">The MMO Community</span>
+			
+		</a>
+		<meta itemprop="position" content="1"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/mmo-server-developments.168/" itemprop="item">
+			
+				<span itemprop="name">MMO Server Developments</span>
+			
+		</a>
+		<meta itemprop="position" content="2"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/tales-of-pirates.440/" itemprop="item">
+			
+				<span itemprop="name">Tales of Pirates</span>
+			
+		</a>
+		<meta itemprop="position" content="3"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/tales-of-pirates-help.973/" itemprop="item">
+			
+				<span itemprop="name">Tales of Pirates Help</span>
+			
+		</a>
+		<meta itemprop="position" content="4"></li>
+
+				
+			
+		</ul></div>
+	</div>
+	
+	<div class="pre-footer">
+	<div class="pre-footer-overlay"></div>
+	<div class="pre-footer-inner">
+		<div class="pre-footer--container">
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content -links">
+						<h3>RaGEZONE Sponsor</h3>
+						<ul class="pre-footer--links"><a href="https://bit.ly/3ztZXnj" target="blank"><img src="https://forum.ragezone.com/images/partner/HF_Footer.png" alt="HyperFilter" width="300" height="200" loading="lazy"></a>
+						</ul></div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content">
+						<h3>About RaGEZONE</h3>
+						<div class="pre-footer-html--content">
+							RaGEZONE® is the top forum for MMO, MMORPG, and mobile game development. We provide binaries, source codes, and tutorials for your favorite games, making it the go-to resource for developers and fans. You can also find and share private servers, fostering a vibrant gamer community.
+						</div>
+					</div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="block" data-widget-id="62" data-widget-key="forum_overview_forum_statistics" data-widget-definition="online_statistics">
+	<div class="block-container">
+		<h3 class="block-minorHeader">Forum Statistics</h3>
+		<div class="block-body block-row">
+			<dl class="pairs pairs--justified"><dt>Members online</dt>
+				<dd>1,081</dd>
+			</dl><dl class="pairs pairs--justified"><dt>Guests online</dt>
+				<dd>20,688</dd>
+			</dl><dl class="pairs pairs--justified"><dt>Total visitors</dt>
+				<dd>21,769</dd>
+			</dl></div>
+		<div class="block-footer">
+			Totals may include hidden visitors.
+		</div>
+	</div>
+</div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content -links">
+						<h3>RaGEZONE Partners</h3>
+						<ul class="pre-footer--links"><div align="center">
+<a href="https://yeovilhospital.co.uk/"><img src="https://forum.ragezone.com/images/partner/yeovil.png" alt="UK sites not on GamStop" width="300" height="100" loading="lazy"></a>
+</div>
+						</ul></div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+	<footer class="p-footer" id="footer"><div class="p-footer-inner">
+
+			<div class="p-footer-row">
+				
+					<div class="p-footer-row-main">
+						<ul class="p-footer-linkList"><li>
+									
+										
+											<a href="https://forum.ragezone.com/misc/style" data-xf-click="overlay" data-xf-init="tooltip" title="Style chooser" rel="nofollow">
+												<i class="fa--xf far fa-paint-brush "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#paint-brush"></use></svg></i> RaGEZONE®
+											</a>
+										
+										
+											<a href="https://forum.ragezone.com/misc/style-variation" rel="nofollow" class="js-styleVariationsLink" data-xf-init="tooltip" title="Style variation" data-xf-click="menu" data-z-index-ref=".u-bottomFixer" role="button" aria-expanded="false" aria-haspopup="true">
+
+												<i class="fa--xf far fa-adjust "><svg xmlns="http://www.w3.org/2000/svg" role="img"><title>Style variation</title><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#adjust"></use></svg></i>
+											</a>
+
+											<div class="menu" data-menu="menu" aria-hidden="true">
+												<div class="menu-content js-styleVariationsMenu">
+													
+
+	
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?reset=1" class="menu-linkRow is-selected" rel="nofollow" data-xf-click="style-variation" data-variation="">
+
+		<i class="fa--xf far fa-adjust "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#adjust"></use></svg></i>
+
+		
+			System
+		
+	</a>
+
+
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?variation=default" class="menu-linkRow " rel="nofollow" data-xf-click="style-variation" data-variation="default">
+
+		<i class="fa--xf far fa-sun "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#sun"></use></svg></i>
+
+		
+			Light
+		
+	</a>
+
+
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?variation=alternate" class="menu-linkRow " rel="nofollow" data-xf-click="style-variation" data-variation="alternate">
+
+		<i class="fa--xf far fa-moon "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#moon"></use></svg></i>
+
+		
+			Dark
+		
+	</a>
+
+	
+
+	
+		
+	
+
+												</div>
+											</div>
+										
+									
+								</li>
+							
+							
+						
+						</ul></div>
+				
+				<div class="p-footer-row-opposite">
+					<ul class="p-footer-linkList"><li><a href="https://forum.ragezone.com/misc/contact" data-xf-click="overlay">Contact us</a></li>
+							
+						
+
+						
+
+						
+							<li><a href="https://ragezone.com/privacy-policy/">Privacy policy</a></li>
+						
+
+						
+							<li><a href="https://forum.ragezone.com/help/">Help</a></li>
+						
+
+						
+							<li><a href="https://forum.ragezone.com">Home</a></li>
+						
+
+						<li><a href="https://forum.ragezone.com/community/-/index.rss" target="_blank" class="p-footer-rssLink" title="RSS"><span aria-hidden="true"><i class="fa--xf far fa-rss "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#rss"></use></svg></i><span class="u-srOnly">RSS</span></span></a></li>
+					</ul></div>
+			</div>
+
+			
+				<div class="p-footer-copyright">
+				
+					<a href="https://xenforo.com" class="u-concealed" dir="ltr" target="_blank" rel="sponsored noopener">Community platform by XenForo<sup>®</sup><span class="copyright">© 2010-2025 XenForo Ltd.</span></a>
+					
+				
+					<br>
+					Sponsored by <a href="https://www.hyperfilter.com/panel/link.php?id=4">HyperFilter</a> - Powered by <a href="https://litespeedtech.com/">LiteSpeed</a> - MySQL tuning by <a href="https://releem.com/">Releem</a>. <br><a href="https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003000837">RaGEZONE®</a> is a registered trademark.
+				</div>
+			
+			
+		</div>
+	</footer></div> 
+
+
+
+<div class="u-bottomFixer js-bottomFixTarget">
+	
+	
+</div>
+
+<div class="u-navButtons js-navButtons">
+	<a href="javascript:" class="button button--scroll"><span class="button-text"><i class="fa--xf far fa-arrow-left "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#arrow-left"></use></svg></i><span class="u-srOnly">Back</span></span></a>
+</div>
+
+
+
+
+	<form style="display:none" hidden="hidden">
+		<input type="text" name="_xfClientLoadTime" value="" id="_xfClientLoadTime" title="_xfClientLoadTime" tabindex="-1"></form>
+
+	
+	
+	
+
+
+
+
+
+	
+	
+		
+		
+			<script data-cfasync="false" src="https://forum.ragezone.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script type="application/ld+json">
+				{
+    "@context": "https://schema.org",
+    "@type": "QAPage",
+    "url": "https://forum.ragezone.com/threads/coding-new-npcs.805343/",
+    "mainEntity": {
+        "@type": "Question",
+        "@id": "https://forum.ragezone.com/threads/coding-new-npcs.805343/",
+        "name": "Coding new NPCs",
+        "datePublished": "2011-12-27T04:30:02+00:00",
+        "url": "https://forum.ragezone.com/threads/coding-new-npcs.805343/",
+        "text": "I need help on coding new NPCs , well , i do know how to code one but everytime i coded and try , its either the NPC talk chinese words or have script errors . i'm currently trying to work on this .\n\nfunction ALL_apparal ()\n\n Talk( 1,\"Hi , i'm the Apparel seller !\")\n Text( 1,\"Trade\", BuyPage )\n\n\tInitTrade()\n\tWeapon( 5230 )\n\tWeapon( 5231 )\n\tWeapon( 5232 )\n\tWeapon( 5233 )\n\tWeapon(\t5234 )\n\tWeapon( 5235 )\n\tWeapon( 5236 )\n\tWeapon( 5237 )\n\tWeapon( 5238 )\n\tWeapon( 5239 )\n\tWeapon( 5240 )\n\tWeapon( 5245 )\n\tWeapon( 5246 )\n\tWeapon( 5247 )\n\tWeapon( 5248 )\n\tWeapon( 5249 )\n\tWeapon( 5250 )\n\tWeapon( 5251 )\n\tWeapon( 5252 )\n\tWeapon( 5253 )\n\tWeapon( 5254 )\n\tWeapon( 5255 )\n\tWeapon( 5256 )\n\tWeapon( 5257 )\n\tWeapon( 5258 )\n\tWeapon( 5259 )\n\tWeapon( 5260 )\n\tWeapon( 5261 )\n\tWeapon( 5262 )\n\tWeapon( 5263 )\n\tWeapon( 5264 )\n\tDefence( 5001 )\n\tDefence( 5002 )\n\tDefence( 5003 )\n\tDefence( 5004 )\n\tDefence( 5005 )\n\tDefence( 5006 )\n\tDefence( 5007 )\n\tDefence( 5008 )\n\tDefence( 5009 )\n\tDefence( 5010 )\n\tDefence( 5012 )\n\tDefence( 5011 )\n\tDefence( 5072 )\n\tDefence( 5073 )\n\tDefence( 5074 )\n\tDefence( 5099 )\n\tDefence( 5100 )\n\tDefence( 5101 )\n\tDefence( 5103 )\n\tDefence( 5104 )\n\tDefence( 5105 )\n\tDefence( 5280 )\n\tDefence( 5281 )\n\tDefence( 5282 )\n\tDefence( 5283 )\n\tDefence( 5284 )\n\tDefence( 5285 )\n\tDefence( 5286 )\n\tDefence( 5609 )\n\tDefence( 5610 )\n\tDefence( 5611 )\n\tDefence( 5612 )\n\tDefence( 5613 )\n\tDefence( 5614 )\n\tDefence( 5615 )\n\tDefence( 5618 )\n\tDefence( 5620 )\n\tDefence( 5624 )\n\tDefence( 5900 )\n\tDefence( 5901 )\n\tDefence( 5902 )\n\tDefence( 5903 )\n\tDefence( 5904 )\n\tDefence( 5905 )\n\tDefence( 5906 )\n\tDefence( 5907 )\n\tDefence( 5908 )\n\tOther( 5014 )\n\tOther( 5015 )\n\tOther( 5016 )\n\tOther( 5017 )\n\tOther( 5018 )\n\tOther( 5019 )\n\tOther( 5020 )\n\tOther( 5021 )\n\tOther( 5022 )\n\tOther( 5023 )\n\tOther( 5024 )\n\tOther( 5025 )\n\tOther( 5026 )\n\tOther( 5027 )\n\tOther( 5028 )\n\tOther( 5029 )\n\tOther( 5030 )\n\tOther( 5031 )\n\tOther( 5032 )\n\tOther( 5033 )\n\tOther( 5034 )\n\tOther( 5035 )\n\tOther( 5036 )\n\tOther( 5037 )\n\tOther( 5038 )\n\tOther( 5039 )\n\tOther( 5040 )\n\tOther( 5041 )\n\tOther( 5042 )\n\tOther( 5043 )\n\tOther( 5044 )\n\tOther( 5045 )\n\tOther( 5046 )\n\tOther( 5047 )\n\tOther( 5048 )\n\tOther( 5049 )\n\tOther( 5050 )\n\tOther( 5051 )\n\tOther( 5052 )\n\tOther( 5056 )\n\tOther( 5057 )\n\tOther( 5058 )\n\tOther( 5059 )\n\tOther( 5060 )\n\tOther( 5061 )\n\tOther( 5062 )\n\tOther( 5063 )\n\tOther( 5064 )\n\tOther( 5065 )\n\tOther( 5066 )\n\tOther( 5067 )\n\tOther( 5068 )\n\tOther( 5069 )\n\tOther( 5070 )\n\tOther( 5071 )\n\tOther( 5072 )\n\tOther( 5075 )\n\tOther( 5076 )\n\tOther( 5077 )\n\tOther( 5078 )\n\tOther( 5079 )\n\tOther( 5080 )\n\tOther( 5081 )\n\tOther( 5082 )\n\tOther( 5083 )\n\tOther( 5084 )\n\tOther( 5085 )\n\tOther( 5086 )\n\tOther( 5087 )\n\tOther( 5088 )\n\tOther( 5089 )\n\tOther( 5090 )\n\tOther( 5091 )\n\tOther( 5093 )\n\tOther( 5094 )\n\tOther( 5096 )\n\tOther( 5097 )\n\tOther( 5098 )\n\tOther( 5106 )\n\tOther( 5107 )\n\tOther( 5108 )\n\tOther( 5109 )\n\tOther( 5110 )\n\tOther( 5111 )\n\tOther( 5112 )\n\tOther( 5113 )\n\tOther( 5114 )\n\tOther( 5115 )\n\tOther( 5116 )\n\tOther( 5117 )\n\tOther( 5118 )\n \tOther( 5119 )\n\tOther( 5120 )\n\tOther( 5121 )\n\tOther( 5123 )\n\tOther( 5124 )\n\tOther( 5125 )\n\tOther( 5127 )\n\tOther( 5128 )\n\tOther( 5129 )\n\tOther( 5146 )\n\tOther( 5147 )\n\tOther( 5148 )\n\tOther( 5149 )\n\tOther( 5151 )\n\tOther( 5152 )\n\tOther( 5153 )\n\tOther( 5154 )\n\tOther( 5155 )\n\tOther( 5156 )\n\tOther( 5157 )\n\tOther( 5158 )\n\tOther( 5159 )\n\tOther( 5221 )\n\tOther( 5222 )\n\tOther( 5223 )\n\tOther( 5224 )\n\tOther( 5225 )\n\tOther( 5226 )\n\nend Is this correct ?\n\nI really appreciate if someone can kindly help me on this alittle thanks . :rolleyes:\n\nadd me one Msn or send me a email : pa-f-1@hotmail.com\n\nFeel Free to comment , or give me some helps",
+        "answerCount": 1,
+        "upvoteCount": 0,
+        "author": {
+            "@type": "Person",
+            "@id": "https://forum.ragezone.com/members/satanzx.1333385841/",
+            "name": "Satanzx",
+            "url": "https://forum.ragezone.com/members/satanzx.1333385841/"
+        },
+        "suggestedAnswer": [
+            {
+                "@type": "Answer",
+                "datePublished": "2011-12-27T04:48:05+00:00",
+                "url": "https://forum.ragezone.com/posts/6729225/",
+                "text": "Is my method correct ?",
+                "upvoteCount": 0,
+                "author": {
+                    "@type": "Person",
+                    "@id": "https://forum.ragezone.com/members/satanzx.1333385841/",
+                    "name": "Satanzx",
+                    "url": "https://forum.ragezone.com/members/satanzx.1333385841/"
+                }
+            }
+        ]
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "RaGEZONE - MMO Development Forums",
+        "alternateName": "RaGEZONE\u00ae",
+        "description": "RaGEZONE is a website dedicated to the development of massively multiplayer online role-playing games (MMORPGs).",
+        "url": "https://forum.ragezone.com",
+        "logo": "https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp"
+    }
+}
+			</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"62ee815100b84bcdb0817c36ba5e49d4","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed78cfe0ec39d99',t:'MTc3NjM4ODIzMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

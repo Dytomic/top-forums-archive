@@ -1,0 +1,2898 @@
+<html lang="en-US" dir="ltr"><head><meta charset="utf-8"><title>Авто добавление статов при удержании кнопки - C++ - Go-piratia for Tales of Pirates (Пиратия онлайн)</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="twitter:card" content="summary"><meta property="og:title" content="Авто добавление статов при удержании кнопки"><meta property="og:type" content="website"><meta property="og:url" content="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/"><meta name="description" content="UIStateForm.cpp 1) Находим строку: using namespace GUI; Под ней вставляем: namespace { enum class EStatBtn { NONE, STR, AGI, CON, STA, DEX }; static bool s_holdActive = false; static EStatBtn s_activeBtn = EStatBtn::NONE; static int s_stage = 0; static DWORD s_intervalMs = 300; static DWORD s_nex..."><meta property="og:description" content="UIStateForm.cpp 1) Находим строку: using namespace GUI; Под ней вставляем: namespace { enum class EStatBtn { NONE, STR, AGI, CON, STA, DEX }; static bool s_holdActive = false; static EStatBtn s_activeBtn = EStatBtn::NONE; static int s_stage = 0; static DWORD s_intervalMs = 300; static DWORD s_nex..."><meta property="og:updated_time" content="2025-10-16T07:51:00Z"><meta property="og:site_name" content="Go-piratia for Tales of Pirates (Пиратия онлайн)"><meta property="og:locale" content="en_US"><link rel="canonical" href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/"><link as="style" rel="preload" href="https://go-piratia.ru/applications/core/interface/ckeditor/ckeditor/skins/ips/editor.css?t=N349"><link rel="manifest" href="https://go-piratia.ru/manifest.webmanifest/"><meta name="msapplication-config" content="https://go-piratia.ru/browserconfig.xml/"><meta name="msapplication-starturl" content="/"><meta name="application-name" content="Go-piratia for Tales of Pirates (Пиратия онлайн)"><meta name="apple-mobile-web-app-title" content="Go-piratia for Tales of Pirates (Пиратия онлайн)"><meta name="theme-color" content="#ffffff"><link rel="preload" href="https://go-piratia.ru//go-piratia.ru/applications/core/interface/font/fontawesome-webfont.woff2?v=4.7.0" as="font" crossorigin="anonymous"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/341e4a57816af3ba440d891ca87450ff_framework.css?v=4e52a1ea3c1699102320" media="all"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/05e81b71abe4f22d6eb8d1a929494829_responsive.css?v=4e52a1ea3c1699102320" media="all"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/20446cf2d164adcc029377cb04d43d17_flags.css?v=4e52a1ea3c1699102320" media="all"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/90eb5adf50a8c640f633d47fd7eb1778_core.css?v=4e52a1ea3c1699102320" media="all"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/5a0da001ccc2200dc5625c3f3934497d_core_responsive.css?v=4e52a1ea3c1699102320" media="all"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/24bd4821c74747f952801a16eb6c868a_main.css?v=4e52a1ea3c1699102320" media="all"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/13136374e1b49ed2a6386fef2a59fb0c_skins.css?v=4e52a1ea3c1699102320" media="all"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/62e269ced0fdab7e30e026f1d30ae516_forums.css?v=4e52a1ea3c1699102320" media="all"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/76e62c573090645fb99a15a363d8620e_forums_responsive.css?v=4e52a1ea3c1699102320" media="all"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/ebdea0c6a7dab6d37900b9190d3ac77b_topics.css?v=4e52a1ea3c1699102320" media="all"><link rel="stylesheet" href="https://go-piratia.ru/uploads/css_built_3/258adbb6e4f3e83cd3b355f84e3fa002_custom.css?v=4e52a1ea3c1699102320" media="all"><link rel="shortcut icon" href="https://go-piratia.ru/uploads/monthly_2023_05/1668178298_--1.ico" type="image/x-icon"><script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src='https://vk.com/js/api/openapi.js?169',t.onload=function(){VK.Retargeting.Init("VK-RTRG-1746935-9ZxrM"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-1746935-9ZxrM" style="position:fixed; left:-999px;" alt=""></noscript></head><body class="ipsApp ipsApp_front ipsJS_none ipsClearfix" data-controller="core.front.core.app" data-message="" data-pageapp="forums" data-pagelocation="front" data-pagemodule="forums" data-pagecontroller="topic" data-pageid="230">
+		
+        
+
+        
+
+		<a href="#ipsLayout_mainArea" class="ipsHide" title="Go to main content on this page" accesskey="m">Jump to content</a>
+		
+
+
+
+
+
+		<div id="ipsLayout_header" class="ipsClearfix">
+			<header><div class="ipsLayout_container">
+					
+
+
+<a href="https://go-piratia.ru/" id="elLogo" accesskey="1"><img src="https://go-piratia.ru/uploads/monthly_2023_11/loooogo-gigapixel-art-height-2000px.png.3ada4657246c22fb77373602d90e5653.png" alt="Go-piratia for Tales of Pirates (Пиратия онлайн)"></a>
+
+					
+						
+
+	<ul id="elUserNav" class="ipsList_inline cSignedOut ipsResponsive_showDesktop"><li class="cUserNav_icon">
+			<a href="https://vk.com/go.piratia.news" target="_blank" class="cShareLink cShareLink_vk" rel="noopener noreferrer"><i class="fa fa-vk"></i></a>
+		</li>
+	
+		<li class="cUserNav_icon">
+			<a href="https://t.me/magicsea_chat" target="_blank" class="cShareLink cShareLink_facebook" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+		</li>
+	
+
+        
+		
+        
+        
+            
+            <li id="elSignInLink">
+                <a href="https://go-piratia.ru/login/" data-ipsmenu-closeonclick="false" data-ipsmenu id="elUserSignIn">
+                    Existing user? Sign In  <i class="fa fa-caret-down"></i>
+                </a>
+                
+<div id="elUserSignIn_menu" class="ipsMenu ipsMenu_auto ipsHide">
+	<form accept-charset="utf-8" method="post" action="https://go-piratia.ru/login/">
+		<input type="hidden" name="csrfKey" value="877ece064350042334368c1558b72504"><input type="hidden" name="ref" value="aHR0cHM6Ly9nby1waXJhdGlhLnJ1L3RvcGljLzIzMC0lRDAlQjAlRDAlQjIlRDElODIlRDAlQkUtJUQwJUI0JUQwJUJFJUQwJUIxJUQwJUIwJUQwJUIyJUQwJUJCJUQwJUI1JUQwJUJEJUQwJUI4JUQwJUI1LSVEMSU4MSVEMSU4MiVEMCVCMCVEMSU4MiVEMCVCRSVEMCVCMi0lRDAlQkYlRDElODAlRDAlQjgtJUQxJTgzJUQwJUI0JUQwJUI1JUQxJTgwJUQwJUI2JUQwJUIwJUQwJUJEJUQwJUI4JUQwJUI4LSVEMCVCQSVEMCVCRCVEMCVCRSVEMCVCRiVEMCVCQSVEMCVCOC8="><div data-role="loginForm">
+			
+			
+			
+				
+<div class="ipsPad ipsForm ipsForm_vertical">
+	<h4 class="ipsType_sectionHead">Sign In</h4>
+	<br><br><ul class="ipsList_reset"><li class="ipsFieldRow ipsFieldRow_noLabel ipsFieldRow_fullWidth">
+			
+			
+				<input type="text" placeholder="Display Name or Email Address" name="auth" autocomplete="email"></li>
+		<li class="ipsFieldRow ipsFieldRow_noLabel ipsFieldRow_fullWidth">
+			<input type="password" placeholder="Password" name="password" autocomplete="current-password"></li>
+		<li class="ipsFieldRow ipsFieldRow_checkbox ipsClearfix">
+			<span class="ipsCustomInput">
+				<input type="checkbox" name="remember_me" id="remember_me_checkbox" value="1" checked aria-checked="true"><span></span>
+			</span>
+			<div class="ipsFieldRow_content">
+				<label class="ipsFieldRow_label" for="remember_me_checkbox">Remember me</label>
+				<span class="ipsFieldRow_desc">Not recommended on shared computers</span>
+			</div>
+		</li>
+		<li class="ipsFieldRow ipsFieldRow_fullWidth">
+			<button type="submit" name="_processLogin" value="usernamepassword" class="ipsButton ipsButton_primary ipsButton_small" id="elSignIn_submit">Sign In</button>
+			
+				<p class="ipsType_right ipsType_small">
+					
+						<a href="https://go-piratia.ru/lostpassword/" data-ipsdialog data-ipsdialog-title="Forgot your password?">
+					
+					Forgot your password?</a>
+				</p>
+			
+		</li>
+	</ul></div>
+			
+		</div>
+	</form>
+</div>
+            </li>
+            
+        
+		
+			<li>
+				
+					<a href="https://go-piratia.ru/register/" data-ipsdialog data-ipsdialog-size="narrow" data-ipsdialog-title="Sign Up" id="elRegisterButton" class="ipsButton ipsButton_normal ipsButton_primary">Sign Up</a>
+				
+			</li>
+		
+	</ul><ul class="ipsMobileHamburger ipsList_reset ipsResponsive_hideDesktop"><li data-ipsdrawer data-ipsdrawer-drawerelem="#elMobileDrawer">
+		<a href="#">
+			
+			
+				
+			
+			
+			
+			<i class="fa fa-navicon"></i>
+		</a>
+	</li>
+</ul></div>
+			</header><nav data-controller="core.front.core.navBar" class=" ipsResponsive_showDesktop"><div class="ipsNavBar_primary ipsLayout_container ">
+			<ul data-role="primaryNavBar" class="ipsClearfix"><li class="ipsNavBar_active" data-active id="elNavSecondary_1" data-role="navBarItem" data-navapp="core" data-navext="CustomItem">
+			
+			
+				<a href="https://go-piratia.ru" data-navitem-id="1" data-navdefault>
+					Browse<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+				<ul class="ipsNavBar_secondary " data-role="secondaryNavBar"><li id="elNavSecondary_16" data-role="navBarItem" data-navapp="core" data-navext="Leaderboard">
+			
+			
+				<a href="https://go-piratia.ru/pastleaders/" data-navitem-id="16">
+					Leaderboard<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+	
+		
+		
+		<li id="elNavSecondary_15" data-role="navBarItem" data-navapp="core" data-navext="OnlineUsers">
+			
+			
+				<a href="https://go-piratia.ru/online/" data-navitem-id="15">
+					Online Users<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+	
+		
+		
+		<li id="elNavSecondary_14" data-role="navBarItem" data-navapp="core" data-navext="StaffDirectory">
+			
+			
+				<a href="https://go-piratia.ru/staff/" data-navitem-id="14">
+					Staff<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+	
+	
+
+	
+		
+		
+		<li id="elNavSecondary_12" data-role="navBarItem" data-navapp="gallery" data-navext="Gallery">
+			
+			
+				<a href="https://go-piratia.ru/gallery/" data-navitem-id="12">
+					Gallery<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+	
+		
+		
+		<li id="elNavSecondary_11" data-role="navBarItem" data-navapp="downloads" data-navext="Downloads">
+			
+			
+				<a href="https://go-piratia.ru/files/" data-navitem-id="11">
+					Downloads<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+	
+		
+		
+			
+		
+		<li class="ipsNavBar_active" data-active id="elNavSecondary_10" data-role="navBarItem" data-navapp="forums" data-navext="Forums">
+			
+			
+				<a href="https://go-piratia.ru" data-navitem-id="10" data-navdefault>
+					Forums<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+	
+		
+		
+		<li id="elNavSecondary_3" data-role="navBarItem" data-navapp="core" data-navext="Clubs">
+			
+			
+				<a href="https://go-piratia.ru/clubs/" data-navitem-id="3">
+					Clubs<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+					<li class="ipsHide" id="elNavigationMore_1" data-role="navMore">
+						<a href="#" data-ipsmenu data-ipsmenu-appendto="#elNavigationMore_1" id="elNavigationMore_1_dropdown">More <i class="fa fa-caret-down"></i></a>
+						<ul class="ipsHide ipsMenu ipsMenu_auto" id="elNavigationMore_1_dropdown_menu" data-role="moreDropdown"></ul></li>
+				</ul></li>
+	
+	
+
+	
+		
+		
+		<li id="elNavSecondary_2" data-role="navBarItem" data-navapp="core" data-navext="CustomItem">
+			
+			
+				<a href="https://go-piratia.ru/discover/" data-navitem-id="2">
+					Activity<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+				<ul class="ipsNavBar_secondary ipsHide" data-role="secondaryNavBar"><li id="elNavSecondary_9" data-role="navBarItem" data-navapp="core" data-navext="Promoted">
+			
+			
+				<a href="https://go-piratia.ru/ourpicks/" data-navitem-id="9">
+					Our Picks<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+	
+		
+		
+		<li id="elNavSecondary_8" data-role="navBarItem" data-navapp="core" data-navext="Search">
+			
+			
+				<a href="https://go-piratia.ru/search/" data-navitem-id="8">
+					Search<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+	
+	
+
+	
+	
+
+	
+	
+
+	
+		
+		
+		<li id="elNavSecondary_4" data-role="navBarItem" data-navapp="core" data-navext="AllActivity">
+			
+			
+				<a href="https://go-piratia.ru/discover/" data-navitem-id="4">
+					All Activity<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+					<li class="ipsHide" id="elNavigationMore_2" data-role="navMore">
+						<a href="#" data-ipsmenu data-ipsmenu-appendto="#elNavigationMore_2" id="elNavigationMore_2_dropdown">More <i class="fa fa-caret-down"></i></a>
+						<ul class="ipsHide ipsMenu ipsMenu_auto" id="elNavigationMore_2_dropdown_menu" data-role="moreDropdown"></ul></li>
+				</ul></li>
+	
+	
+
+	
+		
+		
+		<li id="elNavSecondary_18" data-role="navBarItem" data-navapp="chatbox" data-navext="Chatbox">
+			
+			
+				<a href="https://go-piratia.ru/chatbox/" data-navitem-id="18">
+					Chat<span class="ipsNavBar_active__identifier"></span>
+				</a>
+			
+			
+		</li>
+	
+	
+
+				<li class="ipsHide" id="elNavigationMore" data-role="navMore">
+					<a href="#" data-ipsmenu data-ipsmenu-appendto="#elNavigationMore" id="elNavigationMore_dropdown">More</a>
+					<ul class="ipsNavBar_secondary ipsHide" data-role="secondaryNavBar"><li class="ipsHide" id="elNavigationMore_more" data-role="navMore">
+							<a href="#" data-ipsmenu data-ipsmenu-appendto="#elNavigationMore_more" id="elNavigationMore_more_dropdown">More <i class="fa fa-caret-down"></i></a>
+							<ul class="ipsHide ipsMenu ipsMenu_auto" id="elNavigationMore_more_dropdown_menu" data-role="moreDropdown"></ul></li>
+					</ul></li>
+			</ul><div id="elSearchWrapper">
+		<div id="elSearch" data-controller="core.front.core.quickSearch">
+			<form accept-charset="utf-8" action="https://go-piratia.ru//go-piratia.ru/search/?do=quicksearch" method="post">
+                <input type="search" id="elSearchField" placeholder="Search..." name="q" autocomplete="off" aria-label="Search"><details class="cSearchFilter"><summary class="cSearchFilter__text"></summary><ul class="cSearchFilter__menu"><li><label><input type="radio" name="type" value="all"><span class="cSearchFilter__menuText">Everywhere</span></label></li>
+                        
+                            
+                                <li><label><input type="radio" name="type" value='contextual_{"type":"forums_topic","nodes":28}' checked><span class="cSearchFilter__menuText">This Forum</span></label></li>
+                            
+                                <li><label><input type="radio" name="type" value='contextual_{"type":"forums_topic","item":230}' checked><span class="cSearchFilter__menuText">This Topic</span></label></li>
+                            
+                        
+                        
+                            <li><label><input type="radio" name="type" value="core_statuses_status"><span class="cSearchFilter__menuText">Status Updates</span></label></li>
+                        
+                            <li><label><input type="radio" name="type" value="forums_topic"><span class="cSearchFilter__menuText">Topics</span></label></li>
+                        
+                            <li><label><input type="radio" name="type" value="downloads_file"><span class="cSearchFilter__menuText">Files</span></label></li>
+                        
+                            <li><label><input type="radio" name="type" value="gallery_image"><span class="cSearchFilter__menuText">Images</span></label></li>
+                        
+                            <li><label><input type="radio" name="type" value="gallery_album_item"><span class="cSearchFilter__menuText">Albums</span></label></li>
+                        
+                            <li><label><input type="radio" name="type" value="cms_pages_pageitem"><span class="cSearchFilter__menuText">Pages</span></label></li>
+                        
+                            <li><label><input type="radio" name="type" value="cms_records1"><span class="cSearchFilter__menuText">Article</span></label></li>
+                        
+                            <li><label><input type="radio" name="type" value="core_members"><span class="cSearchFilter__menuText">Members</span></label></li>
+                        
+                    </ul></details><button class="cSearchSubmit" type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
+			</form>
+		</div>
+	</div>
+
+		</div>
+	</nav><ul id="elMobileNav" class="ipsResponsive_hideDesktop" data-controller="core.front.core.mobileNav"><li id="elMobileBreadcrumb">
+						<a href="https://go-piratia.ru/forum/28-c/">
+							<span>C++</span>
+						</a>
+					</li>
+				
+				
+			
+				
+				
+			
+		
+	
+	
+	
+	<li>
+		<a data-action="defaultStream" href="https://go-piratia.ru/discover/"><i class="fa fa-newspaper-o" aria-hidden="true"></i></a>
+	</li>
+
+	
+
+	
+		<li class="ipsJS_show">
+			<a href="https://go-piratia.ru/search/"><i class="fa fa-search"></i></a>
+		</li>
+	
+</ul></div>
+		<main id="ipsLayout_body" class="ipsLayout_container"><div id="ipsLayout_contentArea">
+				<div id="ipsLayout_contentWrapper">
+					
+<nav class="ipsBreadcrumb ipsBreadcrumb_top ipsFaded_withHover"><ul class="ipsList_inline ipsPos_right"><li>
+			<a data-action="defaultStream" class="ipsType_light " href="https://go-piratia.ru/discover/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span>All Activity</span></a>
+		</li>
+		
+	</ul><ul data-role="breadcrumbList"><li>
+			<a title="Home" href="https://go-piratia.ru/">
+				<span>Home <i class="fa fa-angle-right"></i></span>
+			</a>
+		</li>
+		
+		
+			<li>
+				
+					<a href="https://go-piratia.ru/forum/14-development/">
+						<span>Development <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+					</a>
+				
+			</li>
+		
+			<li>
+				
+					<a href="https://go-piratia.ru/forum/15-documentation/">
+						<span>Documentation <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+					</a>
+				
+			</li>
+		
+			<li>
+				
+					<a href="https://go-piratia.ru/forum/28-c/">
+						<span>C++ <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+					</a>
+				
+			</li>
+		
+			<li>
+				
+					Авто добавление статов при удержании кнопки
+				
+			</li>
+		
+	</ul></nav><div id="ipsLayout_mainArea">
+						
+						
+						
+						
+
+	
+
+
+
+
+						
+
+
+
+<div class="ipsPageHeader ipsResponsive_pull ipsBox ipsPadding sm:ipsPadding:half ipsMargin_bottom">
+		
+	
+	<div class="ipsFlex ipsFlex-ai:center ipsFlex-fw:wrap ipsGap:4">
+		<div class="ipsFlex-flex:11">
+			<h1 class="ipsType_pageTitle ipsContained_container">
+				
+
+				
+				
+					<span class="ipsType_break ipsContained">
+						<span>Авто добавление статов при удержании кнопки</span>
+					</span>
+				
+			</h1>
+			
+			
+		</div>
+		
+	</div>
+	<hr class="ipsHr"><div class="ipsPageHeader__meta ipsFlex ipsFlex-jc:between ipsFlex-ai:center ipsFlex-fw:wrap ipsGap:3">
+		<div class="ipsFlex-flex:11">
+			<div class="ipsPhotoPanel ipsPhotoPanel_mini ipsPhotoPanel_notPhone ipsClearfix">
+				
+
+
+	<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard" class="ipsUserPhoto ipsUserPhoto_mini" title="Go to Grim4ik's profile">
+		<img src="https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg" alt="Grim4ik" loading="lazy"></a>
+
+				<div>
+					<p class="ipsType_reset ipsType_blendLinks">
+						<span class="ipsType_normal">
+						
+							<strong>By 
+
+
+<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard&amp;referrer=https%253A%252F%252Fgo-piratia.ru%252Ftopic%252F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%252F" title="Go to Grim4ik's profile" class="ipsType_break">Grim4ik</a></strong><br><span class="ipsType_light"><time datetime="2025-10-15T11:39:20Z" title="10/15/25 11:39  AM" data-short="Oct 15">October 15, 2025</time> in <a href="https://go-piratia.ru/forum/28-c/">C++</a></span>
+						
+						</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+			<div class="ipsFlex-flex:01 ipsResponsive_hidePhone">
+				<div class="ipsShareLinks">
+					
+						
+
+
+    <a href="#elShareItem_1913183660_menu" id="elShareItem_1913183660" data-ipsmenu class="ipsShareButton ipsButton ipsButton_verySmall ipsButton_link ipsButton_link--light">
+        <span><i class="fa fa-share-alt"></i></span>  Share
+    </a>
+
+    <div class="ipsPadding ipsMenu ipsMenu_auto ipsHide" id="elShareItem_1913183660_menu" data-controller="core.front.core.sharelink">
+        <ul class="ipsList_inline"><li>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%2F" class="cShareLink cShareLink_twitter" target="_blank" data-role="shareLink" title="Share on Twitter" data-ipstooltip rel="nofollow noopener">
+	<i class="fa fa-twitter"></i>
+</a></li>
+            
+                <li>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F" class="cShareLink cShareLink_facebook" target="_blank" data-role="shareLink" title="Share on Facebook" data-ipstooltip rel="noopener nofollow">
+	<i class="fa fa-facebook"></i>
+</a></li>
+            
+                <li>
+<a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_reddit" target="_blank" title="Share on Reddit" data-ipstooltip>
+	<i class="fa fa-reddit"></i>
+</a></li>
+            
+                <li>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_linkedin" target="_blank" data-role="shareLink" title="Share on LinkedIn" data-ipstooltip>
+	<i class="fa fa-linkedin"></i>
+</a></li>
+            
+                <li>
+<a href="https://pinterest.com/pin/create/button/?url=https://go-piratia.ru/topic/230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8/&amp;media=" class="cShareLink cShareLink_pinterest" rel="nofollow noopener" target="_blank" data-role="shareLink" title="Share on Pinterest" data-ipstooltip>
+	<i class="fa fa-pinterest"></i>
+</a></li>
+            
+        </ul><hr class="ipsHr"><button class="ipsHide ipsButton ipsButton_verySmall ipsButton_light ipsButton_fullWidth ipsMargin_top:half" data-controller="core.front.core.webshare" data-role="webShare" data-websharetitle="Авто добавление статов при удержании кнопки" data-websharetext="Авто добавление статов при удержании кнопки" data-webshareurl="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/">More sharing options...</button>
+        
+    </div>
+
+					
+					
+
+
+
+					
+
+<div data-followapp="forums" data-followarea="topic" data-followid="230" data-controller="core.front.core.followButton">
+	
+
+	<a href="https://go-piratia.ru/login/" rel="nofollow" class="ipsFollow ipsPos_middle ipsButton ipsButton_light ipsButton_verySmall " data-role="followButton" data-ipstooltip title="Sign in to follow this">
+		<span>Followers</span>
+		<span class="ipsCommentCount">3</span>
+	</a>
+
+</div>
+				</div>
+			</div>
+					
+	</div>
+	
+	
+</div>
+
+
+
+
+
+
+
+
+<div class="ipsClearfix">
+	<ul class="ipsToolList ipsToolList_horizontal ipsClearfix ipsSpacer_both "><li class="ipsToolList_primaryAction">
+				<span data-controller="forums.front.topic.reply">
+					
+						<a href="#replyForm" rel="nofollow" class="ipsButton ipsButton_important ipsButton_medium ipsButton_fullWidth" data-action="replyToTopic">Reply to this topic</a>
+					
+				</span>
+			</li>
+		
+		
+			<li class="ipsResponsive_hidePhone">
+				
+					<a href="https://go-piratia.ru/forum/28-c/?do=add" rel="nofollow" class="ipsButton ipsButton_link ipsButton_medium ipsButton_fullWidth" title="Start a new topic in this forum">Start new topic</a>
+				
+			</li>
+		
+		
+	</ul></div>
+
+<div id="comments" data-controller="core.front.core.commentFeed,forums.front.topic.view, core.front.core.ignoredComments" data-autopoll data-baseurl="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/" data-lastpage data-feedid="topic-230" class="cTopic ipsClear ipsSpacer_top">
+	
+			
+	
+
+	
+
+<div data-controller="core.front.core.recommendedComments" data-url="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?recommended=comments" class="ipsRecommendedComments ipsHide">
+	<div data-role="recommendedComments">
+		<h2 class="ipsType_sectionHead ipsType_large ipsType_bold ipsMargin_bottom">Recommended Posts</h2>
+		
+	</div>
+</div>
+	
+	<div id="elPostFeed" data-role="commentFeed" data-controller="core.front.core.moderation">
+		<form action="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?csrfKey=877ece064350042334368c1558b72504&amp;do=multimodComment" method="post" data-ipspageaction data-role="moderationTools">
+			
+			
+				
+
+					
+
+					
+					
+
+
+
+<a id="comment-550"></a>
+<article id="elComment_550" class="cPost ipsBox ipsResponsive_pull  ipsComment  ipsComment_parent ipsClearfix ipsClear ipsColumns ipsColumns_noSpacing ipsColumns_collapsePhone    "><div class="cAuthorPane_mobile ipsResponsive_showPhone">
+		<div class="cAuthorPane_photo">
+			<div class="cAuthorPane_photoWrap">
+				
+
+
+	<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard" class="ipsUserPhoto ipsUserPhoto_large" title="Go to Grim4ik's profile">
+		<img src="https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg" alt="Grim4ik" loading="lazy"></a>
+
+				
+				<span class="cAuthorPane_badge cAuthorPane_badge--moderator" data-ipstooltip title="Grim4ik is a moderator"></span>
+				
+				
+			</div>
+		</div>
+		<div class="cAuthorPane_content">
+			<h3 class="ipsType_sectionHead cAuthorPane_author ipsType_break ipsType_blendLinks ipsFlex ipsFlex-ai:center">
+				
+
+
+<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard&amp;referrer=https%253A%252F%252Fgo-piratia.ru%252Ftopic%252F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%252F" title="Go to Grim4ik's profile" class="ipsType_break"><span style="color:#699bff">Grim4ik</span></a>
+			</h3>
+			<div class="ipsType_light ipsType_reset">
+				<a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=550" rel="nofollow" class="ipsType_blendLinks">Posted <time datetime="2025-10-15T11:39:20Z" title="10/15/25 11:39  AM" data-short="Oct 15">October 15, 2025</time></a>
+				
+			</div>
+		</div>
+	</div>
+	<aside class="ipsComment_author cAuthorPane ipsColumn ipsColumn_medium ipsResponsive_hidePhone"><h3 class="ipsType_sectionHead cAuthorPane_author ipsType_blendLinks ipsType_break"><strong>
+
+
+<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard&amp;referrer=https%253A%252F%252Fgo-piratia.ru%252Ftopic%252F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%252F" title="Go to Grim4ik's profile" class="ipsType_break">Grim4ik</a></strong>
+			
+		</h3>
+		<ul class="cAuthorPane_info ipsList_reset"><li data-role="photo" class="cAuthorPane_photo">
+				<div class="cAuthorPane_photoWrap">
+					
+
+
+	<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard" class="ipsUserPhoto ipsUserPhoto_large" title="Go to Grim4ik's profile">
+		<img src="https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg" alt="Grim4ik" loading="lazy"></a>
+
+					
+						<span class="cAuthorPane_badge cAuthorPane_badge--moderator" data-ipstooltip title="Grim4ik is a moderator"></span>
+					
+					
+				</div>
+			</li>
+			
+				<li data-role="group"><span style="color:#699bff">Server owner</span></li>
+				
+			
+			
+				<li data-role="stats" class="ipsMargin_top">
+					<ul class="ipsList_reset ipsType_light ipsFlex ipsFlex-ai:center ipsFlex-jc:center ipsGap_row:2 cAuthorPane_stats"><li>
+							
+								<a href="https://go-piratia.ru/profile/624-grim4ik/content/" rel="nofollow" title="12 posts" data-ipstooltip class="ipsType_blendLinks">
+							
+								<i class="fa fa-comment"></i> 12
+							
+								</a>
+							
+						</li>
+						
+					</ul></li>
+			
+			
+				
+
+			
+		</ul></aside><div class="ipsColumn ipsColumn_fluid ipsMargin:none">
+		
+
+<div id="comment-550_wrap" data-controller="core.front.core.comment" data-commentapp="forums" data-commenttype="forums" data-commentid="550" data-quotedata='{"userid":624,"username":"Grim4ik","timestamp":1760528360,"contentapp":"forums","contenttype":"forums","contentid":230,"contentclass":"forums_Topic","contentcommentid":550}' class="ipsComment_content ipsType_medium">
+
+	<div class="ipsComment_meta ipsType_light ipsFlex ipsFlex-ai:center ipsFlex-jc:between ipsFlex-fd:row-reverse">
+		<div class="ipsType_light ipsType_reset ipsType_blendLinks ipsComment_toolWrap">
+			<div class="ipsResponsive_hidePhone ipsComment_badges">
+				<ul class="ipsList_reset ipsFlex ipsFlex-jc:end ipsFlex-fw:wrap ipsGap:2 ipsGap_row:1"></ul></div>
+			<ul class="ipsList_reset ipsComment_tools"><li>
+					<a href="#elControls_550_menu" class="ipsComment_ellipsis" id="elControls_550" title="More options..." data-ipsmenu data-ipsmenu-appendto="#comment-550_wrap"><i class="fa fa-ellipsis-h"></i></a>
+					<ul id="elControls_550_menu" class="ipsMenu ipsMenu_narrow ipsHide"><li class="ipsMenu_item"><a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/" title="Share this post" data-ipsdialog data-ipsdialog-size="narrow" data-ipsdialog-content="#elShareComment_550_menu" data-ipsdialog-title="Share this post" id="elSharePost_550" data-role="shareComment">Share</a></li>
+						
+                        
+						
+						
+						
+							
+								
+							
+							
+							
+							
+							
+							
+						
+					</ul></li>
+				
+			</ul></div>
+
+		<div class="ipsType_reset ipsResponsive_hidePhone">
+			<a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=550" rel="nofollow" class="ipsType_blendLinks">Posted <time datetime="2025-10-15T11:39:20Z" title="10/15/25 11:39  AM" data-short="Oct 15">October 15, 2025</time></a>
+			
+			<span class="ipsResponsive_hidePhone">
+				
+					(edited)
+				
+				
+			</span>
+		</div>
+	</div>
+
+	
+
+    
+
+	<div class="cPost_contentWrap">
+		
+		<div data-role="commentContent" class="ipsType_normal ipsType_richText ipsPadding_bottom ipsContained" data-controller="core.front.core.lightboxedImages">
+			<p>
+	<strong>UIStateForm.cpp</strong><br><br>
+	1) Находим строку:
+</p>
+
+<pre class="ipsCode prettyprint lang-c prettyprinted"><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> GUI</span><span class="pun">;</span></pre>
+
+<p>
+	Под ней вставляем:
+</p>
+
+<pre class="ipsCode prettyprint lang-c prettyprinted"><span class="kwd">namespace</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+</span><span class="kwd">enum</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> NONE</span><span class="pun">,</span><span class="pln"> STR</span><span class="pun">,</span><span class="pln"> AGI</span><span class="pun">,</span><span class="pln"> CON</span><span class="pun">,</span><span class="pln"> STA</span><span class="pun">,</span><span class="pln"> DEX </span><span class="pun">};</span><span class="pln">
+
+</span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">bool</span><span class="pln">      s_holdActive </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">static</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pln">  s_activeBtn  </span><span class="pun">=</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">NONE</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">static</span><span class="pln"> </span><span class="typ">int</span><span class="pln">       s_stage      </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">        
+</span><span class="kwd">static</span><span class="pln"> DWORD     s_intervalMs </span><span class="pun">=</span><span class="pln"> </span><span class="lit">300</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">static</span><span class="pln"> DWORD     s_nextTick   </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">static</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pln"> </span><span class="typ">ResolveStatBtnByName</span><span class="pun">(</span><span class="kwd">const</span><span class="pln"> std</span><span class="pun">::</span><span class="pln">string</span><span class="pun">&amp;</span><span class="pln"> n</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n </span><span class="pun">==</span><span class="pln"> </span><span class="str">"btnStr"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">STR</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n </span><span class="pun">==</span><span class="pln"> </span><span class="str">"btnAgi"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">AGI</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n </span><span class="pun">==</span><span class="pln"> </span><span class="str">"btnCon"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">CON</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n </span><span class="pun">==</span><span class="pln"> </span><span class="str">"btnSta"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">STA</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">n </span><span class="pun">==</span><span class="pln"> </span><span class="str">"btnDex"</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">DEX</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">NONE</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">static</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> </span><span class="typ">AttrIdFromBtn</span><span class="pun">(</span><span class="typ">EStatBtn</span><span class="pln"> b</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">b</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">STR</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> ATTR_STR</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">AGI</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> ATTR_AGI</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">CON</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> ATTR_CON</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">STA</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> ATTR_STA</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">DEX</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> ATTR_DEX</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">default</span><span class="pun">:</span><span class="pln">            </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">DoAddOne</span><span class="pun">(</span><span class="typ">EStatBtn</span><span class="pln"> btn</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">const</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> attrId </span><span class="pun">=</span><span class="pln"> </span><span class="typ">AttrIdFromBtn</span><span class="pun">(</span><span class="pln">btn</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">attrId </span><span class="pun">&lt;</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="typ">CCharacter</span><span class="pun">*</span><span class="pln"> pCha </span><span class="pun">=</span><span class="pln"> g_stUIBoat</span><span class="pun">.</span><span class="typ">GetHuman</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">pCha</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">SGameAttr</span><span class="pun">*</span><span class="pln"> ga </span><span class="pun">=</span><span class="pln"> pCha</span><span class="pun">-&gt;</span><span class="pln">getGameAttr</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">ga </span><span class="pun">||</span><span class="pln"> ga</span><span class="pun">-&gt;</span><span class="pln">get</span><span class="pun">(</span><span class="pln">ATTR_AP</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="typ">CChaAttr</span><span class="pln"> attr</span><span class="pun">;</span><span class="pln">
+    attr</span><span class="pun">.</span><span class="typ">ResetChangeFlag</span><span class="pun">();</span><span class="pln">
+    attr</span><span class="pun">.</span><span class="typ">DirectSetAttr</span><span class="pun">(</span><span class="pln">attrId</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pun">);</span><span class="pln">
+    attr</span><span class="pun">.</span><span class="typ">SetChangeBitFlag</span><span class="pun">(</span><span class="pln">attrId</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">auto</span><span class="pun">*</span><span class="pln"> proCir </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">CProCirculateCS</span><span class="pun">*)</span><span class="pln">g_NetIF</span><span class="pun">-&gt;</span><span class="typ">GetProCir</span><span class="pun">())</span><span class="pln">
+        proCir</span><span class="pun">-&gt;</span><span class="typ">SynBaseAttribute</span><span class="pun">(&amp;</span><span class="pln">attr</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">static</span><span class="pln"> POINT </span><span class="typ">GetClientCursor</span><span class="pun">(</span><span class="pln">HWND hwnd</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    POINT p</span><span class="pun">;</span><span class="pln"> </span><span class="pun">::</span><span class="typ">GetCursorPos</span><span class="pun">(&amp;</span><span class="pln">p</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hwnd</span><span class="pun">)</span><span class="pln"> </span><span class="pun">::</span><span class="typ">ScreenToClient</span><span class="pun">(</span><span class="pln">hwnd</span><span class="pun">,</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln">p</span><span class="pun">);</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">bool</span><span class="pln"> </span><span class="typ">IsMouseOverBtn</span><span class="pun">(</span><span class="pln">HWND hwnd</span><span class="pun">,</span><span class="pln"> </span><span class="typ">CForm</span><span class="pun">*</span><span class="pln"> frm</span><span class="pun">,</span><span class="pln"> </span><span class="typ">CGuiData</span><span class="pun">*</span><span class="pln"> btn</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">frm </span><span class="pun">||</span><span class="pln"> </span><span class="pun">!</span><span class="pln">btn </span><span class="pun">||</span><span class="pln"> </span><span class="pun">!</span><span class="pln">btn</span><span class="pun">-&gt;</span><span class="typ">GetIsShow</span><span class="pun">())</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+    POINT c </span><span class="pun">=</span><span class="pln"> </span><span class="typ">GetClientCursor</span><span class="pun">(</span><span class="pln">hwnd</span><span class="pun">);</span><span class="pln">
+
+    </span><span class="kwd">const</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> x </span><span class="pun">=</span><span class="pln"> frm</span><span class="pun">-&gt;</span><span class="typ">GetLeft</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> btn</span><span class="pun">-&gt;</span><span class="typ">GetLeft</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">const</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> y </span><span class="pun">=</span><span class="pln"> frm</span><span class="pun">-&gt;</span><span class="typ">GetTop</span><span class="pun">()</span><span class="pln">  </span><span class="pun">+</span><span class="pln"> btn</span><span class="pun">-&gt;</span><span class="typ">GetTop</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">const</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> w </span><span class="pun">=</span><span class="pln"> btn</span><span class="pun">-&gt;</span><span class="typ">GetWidth</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">const</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> h </span><span class="pun">=</span><span class="pln"> btn</span><span class="pun">-&gt;</span><span class="typ">GetHeight</span><span class="pun">();</span><span class="pln">
+
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(</span><span class="pln">c</span><span class="pun">.</span><span class="pln">x </span><span class="pun">&gt;=</span><span class="pln"> x </span><span class="pun">&amp;&amp;</span><span class="pln"> c</span><span class="pun">.</span><span class="pln">x </span><span class="pun">&lt;</span><span class="pln"> x </span><span class="pun">+</span><span class="pln"> w </span><span class="pun">&amp;&amp;</span><span class="pln"> c</span><span class="pun">.</span><span class="pln">y </span><span class="pun">&gt;=</span><span class="pln"> y </span><span class="pun">&amp;&amp;</span><span class="pln"> c</span><span class="pun">.</span><span class="pln">y </span><span class="pun">&lt;</span><span class="pln"> y </span><span class="pun">+</span><span class="pln"> h</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">static</span><span class="pln"> </span><span class="typ">CGuiData</span><span class="pun">*</span><span class="pln"> </span><span class="typ">ButtonByEnum</span><span class="pun">(</span><span class="typ">CTextButton</span><span class="pun">*</span><span class="pln"> btnStr</span><span class="pun">,</span><span class="pln"> </span><span class="typ">CTextButton</span><span class="pun">*</span><span class="pln"> btnAgi</span><span class="pun">,</span><span class="pln">
+                              </span><span class="typ">CTextButton</span><span class="pun">*</span><span class="pln"> btnCon</span><span class="pun">,</span><span class="pln"> </span><span class="typ">CTextButton</span><span class="pun">*</span><span class="pln"> btnSta</span><span class="pun">,</span><span class="pln">
+                              </span><span class="typ">CTextButton</span><span class="pun">*</span><span class="pln"> btnDex</span><span class="pun">,</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pln"> b</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">b</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">STR</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> btnStr</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">AGI</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> btnAgi</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">CON</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> btnCon</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">STA</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> btnSta</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">case</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">DEX</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">return</span><span class="pln"> btnDex</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">default</span><span class="pun">:</span><span class="pln">            </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">nullptr</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">StartHold</span><span class="pun">(</span><span class="typ">EStatBtn</span><span class="pln"> b</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    s_activeBtn  </span><span class="pun">=</span><span class="pln"> b</span><span class="pun">;</span><span class="pln">
+    s_holdActive </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">b </span><span class="pun">!=</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">NONE</span><span class="pun">);</span><span class="pln">
+    s_stage      </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+    s_intervalMs </span><span class="pun">=</span><span class="pln"> </span><span class="lit">300</span><span class="pun">;</span><span class="pln">                        
+    s_nextTick   </span><span class="pun">=</span><span class="pln"> </span><span class="pun">::</span><span class="typ">GetTickCount</span><span class="pun">()</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> s_intervalMs</span><span class="pun">;</span><span class="pln">
+
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">StopHold</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    s_holdActive </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+    s_activeBtn  </span><span class="pun">=</span><span class="pln"> </span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">NONE</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="pun">}</span></pre>
+
+<p>
+	2) Находим существующую функцию:
+</p>
+
+<pre class="ipsCode prettyprint lang-c prettyprinted"><span class="kwd">void</span><span class="pln"> </span><span class="typ">CStateMgr</span><span class="pun">::</span><span class="typ">FrameMove</span><span class="pun">(</span><span class="pln">DWORD dwTime</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> frmState</span><span class="pun">-&gt;</span><span class="typ">GetIsShow</span><span class="pun">()</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">CTimeWork</span><span class="pln"> time</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> time</span><span class="pun">.</span><span class="typ">IsTimeOut</span><span class="pun">(</span><span class="pln"> dwTime </span><span class="pun">)</span><span class="pln"> </span><span class="pun">)</span><span class="pln">
+            </span><span class="typ">RefreshStateFrm</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+
+<p>
+	Заменяем целиком функцию на:
+</p>
+
+<pre class="ipsCode prettyprint lang-c prettyprinted"><span class="kwd">void</span><span class="pln"> </span><span class="typ">CStateMgr</span><span class="pun">::</span><span class="typ">FrameMove</span><span class="pun">(</span><span class="pln">DWORD dwTime</span><span class="pun">)</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">frmState</span><span class="pun">-&gt;</span><span class="typ">GetIsShow</span><span class="pun">())</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">CTimeWork</span><span class="pln"> time</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">time</span><span class="pun">.</span><span class="typ">IsTimeOut</span><span class="pun">(</span><span class="pln">dwTime</span><span class="pun">))</span><span class="pln">
+            </span><span class="typ">RefreshStateFrm</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    HWND hwnd </span><span class="pun">=</span><span class="pln"> </span><span class="pun">::</span><span class="typ">GetActiveWindow</span><span class="pun">();</span><span class="pln">
+
+    </span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">bool</span><span class="pln"> lmbDown </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(::</span><span class="typ">GetAsyncKeyState</span><span class="pun">(</span><span class="pln">VK_LBUTTON</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> </span><span class="lit">0x8000</span><span class="pun">)</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">lmbDown </span><span class="pun">&amp;&amp;</span><span class="pln"> </span><span class="pun">!</span><span class="pln">s_holdActive</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">IsMouseOverBtn</span><span class="pun">(</span><span class="pln">hwnd</span><span class="pun">,</span><span class="pln"> frmState</span><span class="pun">,</span><span class="pln"> btnStr</span><span class="pun">))</span><span class="pln">      </span><span class="typ">StartHold</span><span class="pun">(</span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">STR</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">IsMouseOverBtn</span><span class="pun">(</span><span class="pln">hwnd</span><span class="pun">,</span><span class="pln"> frmState</span><span class="pun">,</span><span class="pln"> btnAgi</span><span class="pun">))</span><span class="pln"> </span><span class="typ">StartHold</span><span class="pun">(</span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">AGI</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">IsMouseOverBtn</span><span class="pun">(</span><span class="pln">hwnd</span><span class="pun">,</span><span class="pln"> frmState</span><span class="pun">,</span><span class="pln"> btnCon</span><span class="pun">))</span><span class="pln"> </span><span class="typ">StartHold</span><span class="pun">(</span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">CON</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">IsMouseOverBtn</span><span class="pun">(</span><span class="pln">hwnd</span><span class="pun">,</span><span class="pln"> frmState</span><span class="pun">,</span><span class="pln"> btnSta</span><span class="pun">))</span><span class="pln"> </span><span class="typ">StartHold</span><span class="pun">(</span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">STA</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="typ">IsMouseOverBtn</span><span class="pun">(</span><span class="pln">hwnd</span><span class="pun">,</span><span class="pln"> frmState</span><span class="pun">,</span><span class="pln"> btnDex</span><span class="pun">))</span><span class="pln"> </span><span class="typ">StartHold</span><span class="pun">(</span><span class="typ">EStatBtn</span><span class="pun">::</span><span class="pln">DEX</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">s_holdActive</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">CGuiData</span><span class="pun">*</span><span class="pln"> activeBtnPtr </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ButtonByEnum</span><span class="pun">(</span><span class="pln">btnStr</span><span class="pun">,</span><span class="pln"> btnAgi</span><span class="pun">,</span><span class="pln"> btnCon</span><span class="pun">,</span><span class="pln"> btnSta</span><span class="pun">,</span><span class="pln"> btnDex</span><span class="pun">,</span><span class="pln"> s_activeBtn</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">bool</span><span class="pln"> stillOver </span><span class="pun">=</span><span class="pln"> </span><span class="typ">IsMouseOverBtn</span><span class="pun">(</span><span class="pln">hwnd</span><span class="pun">,</span><span class="pln"> frmState</span><span class="pun">,</span><span class="pln"> activeBtnPtr</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">lmbDown </span><span class="pun">||</span><span class="pln"> </span><span class="pun">!</span><span class="pln">stillOver</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">StopHold</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">s_holdActive</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        DWORD now </span><span class="pun">=</span><span class="pln"> </span><span class="pun">::</span><span class="typ">GetTickCount</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">now </span><span class="pun">&gt;=</span><span class="pln"> s_nextTick</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+            </span><span class="typ">DoAddOne</span><span class="pun">(</span><span class="pln">s_activeBtn</span><span class="pun">);</span><span class="pln">
+
+            </span><span class="kwd">if</span><span class="pln">      </span><span class="pun">(</span><span class="pln">s_stage </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> s_intervalMs </span><span class="pun">=</span><span class="pln"> </span><span class="lit">150</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">s_stage </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> s_intervalMs </span><span class="pun">=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span><span class="pln">
+            </span><span class="kwd">else</span><span class="pln">                   s_intervalMs </span><span class="pun">=</span><span class="pln"> </span><span class="lit">80</span><span class="pun">;</span><span class="pln">
+            </span><span class="pun">++</span><span class="pln">s_stage</span><span class="pun">;</span><span class="pln">
+            s_nextTick </span><span class="pun">=</span><span class="pln"> now </span><span class="pun">+</span><span class="pln"> s_intervalMs</span><span class="pun">;</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+
+<p>
+	3) Найти функцию:
+</p>
+
+<pre class="ipsCode prettyprint lang-c prettyprinted"><span class="kwd">void</span><span class="pln"> </span><span class="typ">CStateMgr</span><span class="pun">::</span><span class="typ">MainMouseDown</span><span class="pun">(</span><span class="typ">CGuiData</span><span class="pln"> </span><span class="pun">*</span><span class="pln">pSender</span><span class="pun">,</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> x</span><span class="pun">,</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> y</span><span class="pun">,</span><span class="pln"> DWORD key</span><span class="pun">)</span></pre>
+
+<p>
+	Если в функции есть строки ниже, их удалить или замутить, остальное без изменения:
+</p>
+
+<pre class="ipsCode prettyprint lang-c prettyprinted"><span class="pln">s_activeBtn  </span><span class="pun">=</span><span class="pln"> </span><span class="typ">ResolveStatBtnByName</span><span class="pun">(</span><span class="pln">name</span><span class="pun">);</span><span class="pln">   </span><span class="com">// ← ЭТО УДАЛИТЬ, если было</span><span class="pln">
+s_holdActive </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">                      </span><span class="com">// ← ТАКОГО ТОЖЕ БЫТЬ НЕ ДОЛЖНО</span></pre>
+
+<p>
+	Это все!
+</p>
+
+
+			
+				
+
+<span class="ipsType_reset ipsType_medium ipsType_light" data-excludequote>
+	<strong>Edited <time datetime="2025-10-16T06:18:34Z" title="10/16/25 06:18  AM" data-short="Oct 16">October 16, 2025</time> by Grim4ik</strong>
+	
+	
+</span>
+			
+		</div>
+
+		
+			<div class="ipsItemControls">
+				
+					
+						
+
+	<div data-controller="core.front.core.reaction" class="ipsItemControls_right ipsClearfix ">	
+		<div class="ipsReact ipsPos_right">
+			
+				
+				<div class="ipsReact_blurb " data-role="reactionBlurb">
+					
+						
+
+	
+	<ul class="ipsReact_reactions"><li class="ipsReact_reactCount">
+					
+						<span data-ipstooltip title="Like">
+					
+							<span>
+								<img src="https://go-piratia.ru/uploads/reactions/react_like.png" alt="Like" loading="lazy"></span>
+							<span>
+								1
+							</span>
+					
+						</span>
+					
+				</li>
+			
+		
+	</ul></div>
+			
+			
+			
+		</div>
+	</div>
+
+					
+				
+				<ul class="ipsComment_controls ipsClearfix ipsItemControls_left" data-role="commentControls"><li data-ipsquote-editor="topic_comment" data-ipsquote-target="#comment-550" class="ipsJS_show">
+								<button class="ipsButton ipsButton_light ipsButton_verySmall ipsButton_narrow cMultiQuote ipsHide" data-action="multiQuoteComment" data-ipstooltip data-ipsquote-multiquote data-mqid="mq550" title="MultiQuote"><i class="fa fa-plus"></i></button>
+							</li>
+							<li data-ipsquote-editor="topic_comment" data-ipsquote-target="#comment-550" class="ipsJS_show">
+								<a href="#" data-action="quoteComment" data-ipsquote-singlequote>Quote</a>
+							</li>
+						
+						
+												
+					
+					<li class="ipsHide" data-role="commentLoading">
+						<span class="ipsLoading ipsLoading_tiny ipsLoading_noAnim"></span>
+					</li>
+				</ul></div>
+		
+
+		
+	</div>
+
+	
+
+	
+
+
+
+<div class="ipsPadding ipsHide cPostShareMenu" id="elShareComment_550_menu">
+	<h5 class="ipsType_normal ipsType_reset">Link to comment</h5>
+	
+		
+	
+	
+	<input type="text" value="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/" class="ipsField_fullWidth"><h5 class="ipsType_normal ipsType_reset ipsSpacer_top">Share on other sites</h5>
+	
+
+	<ul class="ipsList_inline ipsList_noSpacing ipsClearfix" data-controller="core.front.core.sharelink"><li>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%2F%3Fdo%3DfindComment%26comment%3D550" class="cShareLink cShareLink_twitter" target="_blank" data-role="shareLink" title="Share on Twitter" data-ipstooltip rel="nofollow noopener">
+	<i class="fa fa-twitter"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D550" class="cShareLink cShareLink_facebook" target="_blank" data-role="shareLink" title="Share on Facebook" data-ipstooltip rel="noopener nofollow">
+	<i class="fa fa-facebook"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D550&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_reddit" target="_blank" title="Share on Reddit" data-ipstooltip>
+	<i class="fa fa-reddit"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D550&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_linkedin" target="_blank" data-role="shareLink" title="Share on LinkedIn" data-ipstooltip>
+	<i class="fa fa-linkedin"></i>
+</a></li>
+		
+			<li>
+<a href="https://pinterest.com/pin/create/button/?url=https://go-piratia.ru/topic/230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8/?do=findComment%26comment=550&amp;media=" class="cShareLink cShareLink_pinterest" rel="nofollow noopener" target="_blank" data-role="shareLink" title="Share on Pinterest" data-ipstooltip>
+	<i class="fa fa-pinterest"></i>
+</a></li>
+		
+	</ul><hr class="ipsHr"><button class="ipsHide ipsButton ipsButton_small ipsButton_light ipsButton_fullWidth ipsMargin_top:half" data-controller="core.front.core.webshare" data-role="webShare" data-websharetitle="Авто добавление статов при удержании кнопки" data-websharetext='UIStateForm.cpp 
+	 
+	1) Находим строку:
+ 
+
+using namespace GUI;
+
+
+	Под ней вставляем:
+ 
+
+namespace {
+
+enum class EStatBtn { NONE, STR, AGI, CON, STA, DEX };
+
+static bool      s_holdActive = false;
+static EStatBtn  s_activeBtn  = EStatBtn::NONE;
+static int       s_stage      = 0;        
+static DWORD     s_intervalMs = 300;
+static DWORD     s_nextTick   = 0;
+
+static EStatBtn ResolveStatBtnByName(const std::string&amp; n) {
+    if (n == "btnStr") return EStatBtn::STR;
+    if (n == "btnAgi") return EStatBtn::AGI;
+    if (n == "btnCon") return EStatBtn::CON;
+    if (n == "btnSta") return EStatBtn::STA;
+    if (n == "btnDex") return EStatBtn::DEX;
+    return EStatBtn::NONE;
+}
+
+static int AttrIdFromBtn(EStatBtn b) {
+    switch (b) {
+        case EStatBtn::STR: return ATTR_STR;
+        case EStatBtn::AGI: return ATTR_AGI;
+        case EStatBtn::CON: return ATTR_CON;
+        case EStatBtn::STA: return ATTR_STA;
+        case EStatBtn::DEX: return ATTR_DEX;
+        default:            return -1;
+    }
+}
+
+static void DoAddOne(EStatBtn btn) {
+    const int attrId = AttrIdFromBtn(btn);
+    if (attrId &lt; 0) return;
+
+    CCharacter* pCha = g_stUIBoat.GetHuman();
+    if (!pCha) return;
+    SGameAttr* ga = pCha-&gt;getGameAttr();
+    if (!ga || ga-&gt;get(ATTR_AP) &lt;= 0) return;
+
+    CChaAttr attr;
+    attr.ResetChangeFlag();
+    attr.DirectSetAttr(attrId, 1);
+    attr.SetChangeBitFlag(attrId);
+    if (auto* proCir = (CProCirculateCS*)g_NetIF-&gt;GetProCir())
+        proCir-&gt;SynBaseAttribute(&amp;attr);
+}
+
+static POINT GetClientCursor(HWND hwnd) {
+    POINT p; ::GetCursorPos(&amp;p);
+    if (hwnd) ::ScreenToClient(hwnd, &amp;p);
+    return p;
+}
+
+static bool IsMouseOverBtn(HWND hwnd, CForm* frm, CGuiData* btn) {
+    if (!frm || !btn || !btn-&gt;GetIsShow()) return false;
+    POINT c = GetClientCursor(hwnd);
+
+    const int x = frm-&gt;GetLeft() + btn-&gt;GetLeft();
+    const int y = frm-&gt;GetTop()  + btn-&gt;GetTop();
+    const int w = btn-&gt;GetWidth();
+    const int h = btn-&gt;GetHeight();
+
+    return (c.x &gt;= x &amp;&amp; c.x &lt; x + w &amp;&amp; c.y &gt;= y &amp;&amp; c.y &lt; y + h);
+}
+
+static CGuiData* ButtonByEnum(CTextButton* btnStr, CTextButton* btnAgi,
+                              CTextButton* btnCon, CTextButton* btnSta,
+                              CTextButton* btnDex, EStatBtn b) {
+    switch (b) {
+        case EStatBtn::STR: return btnStr;
+        case EStatBtn::AGI: return btnAgi;
+        case EStatBtn::CON: return btnCon;
+        case EStatBtn::STA: return btnSta;
+        case EStatBtn::DEX: return btnDex;
+        default:            return nullptr;
+    }
+}
+
+static void StartHold(EStatBtn b) {
+    s_activeBtn  = b;
+    s_holdActive = (b != EStatBtn::NONE);
+    s_stage      = 0;
+    s_intervalMs = 300;                        
+    s_nextTick   = ::GetTickCount() + s_intervalMs;
+
+}
+
+static void StopHold() {
+    s_holdActive = false;
+    s_activeBtn  = EStatBtn::NONE;
+}
+
+}
+
+
+	2) Находим существующую функцию:
+ 
+
+void CStateMgr::FrameMove(DWORD dwTime)
+{
+    if( frmState-&gt;GetIsShow() )
+    {
+        static CTimeWork time(100);
+        if( time.IsTimeOut( dwTime ) )
+            RefreshStateFrm();
+    }
+}
+
+
+	Заменяем целиком функцию на:
+ 
+
+void CStateMgr::FrameMove(DWORD dwTime)
+{
+    if (frmState-&gt;GetIsShow())
+    {
+        static CTimeWork time(100);
+        if (time.IsTimeOut(dwTime))
+            RefreshStateFrm();
+    }
+
+    HWND hwnd = ::GetActiveWindow();
+
+    const bool lmbDown = (::GetAsyncKeyState(VK_LBUTTON) &amp; 0x8000) != 0;
+
+    if (lmbDown &amp;&amp; !s_holdActive) {
+        if (IsMouseOverBtn(hwnd, frmState, btnStr))      StartHold(EStatBtn::STR);
+        else if (IsMouseOverBtn(hwnd, frmState, btnAgi)) StartHold(EStatBtn::AGI);
+        else if (IsMouseOverBtn(hwnd, frmState, btnCon)) StartHold(EStatBtn::CON);
+        else if (IsMouseOverBtn(hwnd, frmState, btnSta)) StartHold(EStatBtn::STA);
+        else if (IsMouseOverBtn(hwnd, frmState, btnDex)) StartHold(EStatBtn::DEX);
+    }
+
+    if (s_holdActive) {
+        CGuiData* activeBtnPtr = ButtonByEnum(btnStr, btnAgi, btnCon, btnSta, btnDex, s_activeBtn);
+        const bool stillOver = IsMouseOverBtn(hwnd, frmState, activeBtnPtr);
+        if (!lmbDown || !stillOver) {
+            StopHold();
+        }
+    }
+
+    if (s_holdActive) {
+        DWORD now = ::GetTickCount();
+        if (now &gt;= s_nextTick) {
+            DoAddOne(s_activeBtn);
+
+            if      (s_stage == 0) s_intervalMs = 150;
+            else if (s_stage == 1) s_intervalMs = 100;
+            else                   s_intervalMs = 80;
+            ++s_stage;
+            s_nextTick = now + s_intervalMs;
+        }
+    }
+}
+
+
+	3) Найти функцию:
+ 
+
+void CStateMgr::MainMouseDown(CGuiData *pSender, int x, int y, DWORD key)
+
+
+	Если в функции есть строки ниже, их удалить или замутить, остальное без изменения:
+ 
+
+s_activeBtn  = ResolveStatBtnByName(name);   // ← ЭТО УДАЛИТЬ, если было
+s_holdActive = true;                      // ← ТАКОГО ТОЖЕ БЫТЬ НЕ ДОЛЖНО
+
+
+	Это все!
+ 
+' data-webshareurl="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=550">More sharing options...</button>
+
+	
+</div>
+</div>
+	</div>
+</article><a id="comment-551"></a>
+<article id="elComment_551" class="cPost ipsBox ipsResponsive_pull  ipsComment  ipsComment_parent ipsClearfix ipsClear ipsColumns ipsColumns_noSpacing ipsColumns_collapsePhone    "><div class="cAuthorPane_mobile ipsResponsive_showPhone">
+		<div class="cAuthorPane_photo">
+			<div class="cAuthorPane_photoWrap">
+				
+
+
+	<a href="https://go-piratia.ru/profile/38-graf/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/38-graf/?do=hovercard" class="ipsUserPhoto ipsUserPhoto_large" title="Go to Graf's profile">
+		<img src="https://go-piratia.ru/uploads/monthly_2023_05/ava.thumb.jpg.f3aa0b3f39d7e22fcbeea0f6a848db69.jpg" alt="Graf" loading="lazy"></a>
+
+				
+				<span class="cAuthorPane_badge cAuthorPane_badge--moderator" data-ipstooltip title="Graf is a moderator"></span>
+				
+				
+			</div>
+		</div>
+		<div class="cAuthorPane_content">
+			<h3 class="ipsType_sectionHead cAuthorPane_author ipsType_break ipsType_blendLinks ipsFlex ipsFlex-ai:center">
+				
+
+
+<a href="https://go-piratia.ru/profile/38-graf/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/38-graf/?do=hovercard&amp;referrer=https%253A%252F%252Fgo-piratia.ru%252Ftopic%252F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%252F" title="Go to Graf's profile" class="ipsType_break"><span style="color:#bd08ff">Graf</span></a>
+			</h3>
+			<div class="ipsType_light ipsType_reset">
+				<a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=551" rel="nofollow" class="ipsType_blendLinks">Posted <time datetime="2025-10-15T17:04:45Z" title="10/15/25 05:04  PM" data-short="Oct 15">October 15, 2025</time></a>
+				
+			</div>
+		</div>
+	</div>
+	<aside class="ipsComment_author cAuthorPane ipsColumn ipsColumn_medium ipsResponsive_hidePhone"><h3 class="ipsType_sectionHead cAuthorPane_author ipsType_blendLinks ipsType_break"><strong>
+
+
+<a href="https://go-piratia.ru/profile/38-graf/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/38-graf/?do=hovercard&amp;referrer=https%253A%252F%252Fgo-piratia.ru%252Ftopic%252F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%252F" title="Go to Graf's profile" class="ipsType_break">Graf</a></strong>
+			
+		</h3>
+		<ul class="cAuthorPane_info ipsList_reset"><li data-role="photo" class="cAuthorPane_photo">
+				<div class="cAuthorPane_photoWrap">
+					
+
+
+	<a href="https://go-piratia.ru/profile/38-graf/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/38-graf/?do=hovercard" class="ipsUserPhoto ipsUserPhoto_large" title="Go to Graf's profile">
+		<img src="https://go-piratia.ru/uploads/monthly_2023_05/ava.thumb.jpg.f3aa0b3f39d7e22fcbeea0f6a848db69.jpg" alt="Graf" loading="lazy"></a>
+
+					
+						<span class="cAuthorPane_badge cAuthorPane_badge--moderator" data-ipstooltip title="Graf is a moderator"></span>
+					
+					
+				</div>
+			</li>
+			
+				<li data-role="group"><span style="color:#bd08ff">Developer</span></li>
+				
+			
+			
+				<li data-role="stats" class="ipsMargin_top">
+					<ul class="ipsList_reset ipsType_light ipsFlex ipsFlex-ai:center ipsFlex-jc:center ipsGap_row:2 cAuthorPane_stats"><li>
+							
+								<a href="https://go-piratia.ru/profile/38-graf/content/" rel="nofollow" title="38 posts" data-ipstooltip class="ipsType_blendLinks">
+							
+								<i class="fa fa-comment"></i> 38
+							
+								</a>
+							
+						</li>
+						
+					</ul></li>
+			
+			
+				
+
+			
+		</ul></aside><div class="ipsColumn ipsColumn_fluid ipsMargin:none">
+		
+
+<div id="comment-551_wrap" data-controller="core.front.core.comment" data-commentapp="forums" data-commenttype="forums" data-commentid="551" data-quotedata='{"userid":38,"username":"Graf","timestamp":1760547885,"contentapp":"forums","contenttype":"forums","contentid":230,"contentclass":"forums_Topic","contentcommentid":551}' class="ipsComment_content ipsType_medium">
+
+	<div class="ipsComment_meta ipsType_light ipsFlex ipsFlex-ai:center ipsFlex-jc:between ipsFlex-fd:row-reverse">
+		<div class="ipsType_light ipsType_reset ipsType_blendLinks ipsComment_toolWrap">
+			<div class="ipsResponsive_hidePhone ipsComment_badges">
+				<ul class="ipsList_reset ipsFlex ipsFlex-jc:end ipsFlex-fw:wrap ipsGap:2 ipsGap_row:1"></ul></div>
+			<ul class="ipsList_reset ipsComment_tools"><li>
+					<a href="#elControls_551_menu" class="ipsComment_ellipsis" id="elControls_551" title="More options..." data-ipsmenu data-ipsmenu-appendto="#comment-551_wrap"><i class="fa fa-ellipsis-h"></i></a>
+					<ul id="elControls_551_menu" class="ipsMenu ipsMenu_narrow ipsHide"><li class="ipsMenu_item"><a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=551" rel="nofollow" title="Share this post" data-ipsdialog data-ipsdialog-size="narrow" data-ipsdialog-content="#elShareComment_551_menu" data-ipsdialog-title="Share this post" id="elSharePost_551" data-role="shareComment">Share</a></li>
+						
+                        
+						
+						
+						
+							
+								
+							
+							
+							
+							
+							
+							
+						
+					</ul></li>
+				
+			</ul></div>
+
+		<div class="ipsType_reset ipsResponsive_hidePhone">
+			<a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=551" rel="nofollow" class="ipsType_blendLinks">Posted <time datetime="2025-10-15T17:04:45Z" title="10/15/25 05:04  PM" data-short="Oct 15">October 15, 2025</time></a>
+			
+			<span class="ipsResponsive_hidePhone">
+				
+				
+			</span>
+		</div>
+	</div>
+
+	
+
+    
+
+	<div class="cPost_contentWrap">
+		
+		<div data-role="commentContent" class="ipsType_normal ipsType_richText ipsPadding_bottom ipsContained" data-controller="core.front.core.lightboxedImages">
+			<p>
+	<a contenteditable="false" data-ipshover="" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard" data-mentionid="624" href="https://go-piratia.ru/profile/624-grim4ik/" rel="">@Grim4ik</a> Добрый вечер. Не уверен в корректности "заменить весь код". Хотя бы комментарии добавьте, чтобы люди могли нужные части кода себе перетащить.
+</p>
+
+
+			
+		</div>
+
+		
+			<div class="ipsItemControls">
+				
+					
+						
+
+	<div data-controller="core.front.core.reaction" class="ipsItemControls_right ipsClearfix ">	
+		<div class="ipsReact ipsPos_right">
+			
+				
+				<div class="ipsReact_blurb " data-role="reactionBlurb">
+					
+						
+
+	
+	<ul class="ipsReact_reactions"><li class="ipsReact_reactCount">
+					
+						<span data-ipstooltip title="Like">
+					
+							<span>
+								<img src="https://go-piratia.ru/uploads/reactions/react_like.png" alt="Like" loading="lazy"></span>
+							<span>
+								1
+							</span>
+					
+						</span>
+					
+				</li>
+			
+		
+	</ul></div>
+			
+			
+			
+		</div>
+	</div>
+
+					
+				
+				<ul class="ipsComment_controls ipsClearfix ipsItemControls_left" data-role="commentControls"><li data-ipsquote-editor="topic_comment" data-ipsquote-target="#comment-551" class="ipsJS_show">
+								<button class="ipsButton ipsButton_light ipsButton_verySmall ipsButton_narrow cMultiQuote ipsHide" data-action="multiQuoteComment" data-ipstooltip data-ipsquote-multiquote data-mqid="mq551" title="MultiQuote"><i class="fa fa-plus"></i></button>
+							</li>
+							<li data-ipsquote-editor="topic_comment" data-ipsquote-target="#comment-551" class="ipsJS_show">
+								<a href="#" data-action="quoteComment" data-ipsquote-singlequote>Quote</a>
+							</li>
+						
+						
+												
+					
+					<li class="ipsHide" data-role="commentLoading">
+						<span class="ipsLoading ipsLoading_tiny ipsLoading_noAnim"></span>
+					</li>
+				</ul></div>
+		
+
+		
+	</div>
+
+	
+
+	
+
+
+
+<div class="ipsPadding ipsHide cPostShareMenu" id="elShareComment_551_menu">
+	<h5 class="ipsType_normal ipsType_reset">Link to comment</h5>
+	
+		
+	
+	
+	<input type="text" value="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=551" class="ipsField_fullWidth"><h5 class="ipsType_normal ipsType_reset ipsSpacer_top">Share on other sites</h5>
+	
+
+	<ul class="ipsList_inline ipsList_noSpacing ipsClearfix" data-controller="core.front.core.sharelink"><li>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%2F%3Fdo%3DfindComment%26comment%3D551" class="cShareLink cShareLink_twitter" target="_blank" data-role="shareLink" title="Share on Twitter" data-ipstooltip rel="nofollow noopener">
+	<i class="fa fa-twitter"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D551" class="cShareLink cShareLink_facebook" target="_blank" data-role="shareLink" title="Share on Facebook" data-ipstooltip rel="noopener nofollow">
+	<i class="fa fa-facebook"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D551&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_reddit" target="_blank" title="Share on Reddit" data-ipstooltip>
+	<i class="fa fa-reddit"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D551&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_linkedin" target="_blank" data-role="shareLink" title="Share on LinkedIn" data-ipstooltip>
+	<i class="fa fa-linkedin"></i>
+</a></li>
+		
+			<li>
+<a href="https://pinterest.com/pin/create/button/?url=https://go-piratia.ru/topic/230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8/?do=findComment%26comment=551&amp;media=" class="cShareLink cShareLink_pinterest" rel="nofollow noopener" target="_blank" data-role="shareLink" title="Share on Pinterest" data-ipstooltip>
+	<i class="fa fa-pinterest"></i>
+</a></li>
+		
+	</ul><hr class="ipsHr"><button class="ipsHide ipsButton ipsButton_small ipsButton_light ipsButton_fullWidth ipsMargin_top:half" data-controller="core.front.core.webshare" data-role="webShare" data-websharetitle="Авто добавление статов при удержании кнопки" data-websharetext='@Grim4ik Добрый вечер. Не уверен в корректности "заменить весь код". Хотя бы комментарии добавьте, чтобы люди могли нужные части кода себе перетащить.
+ 
+' data-webshareurl="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=551">More sharing options...</button>
+
+	
+</div>
+</div>
+	</div>
+</article><a id="comment-553"></a>
+<article id="elComment_553" class="cPost ipsBox ipsResponsive_pull  ipsComment  ipsComment_parent ipsClearfix ipsClear ipsColumns ipsColumns_noSpacing ipsColumns_collapsePhone    "><div class="cAuthorPane_mobile ipsResponsive_showPhone">
+		<div class="cAuthorPane_photo">
+			<div class="cAuthorPane_photoWrap">
+				
+
+
+	<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard" class="ipsUserPhoto ipsUserPhoto_large" title="Go to Grim4ik's profile">
+		<img src="https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg" alt="Grim4ik" loading="lazy"></a>
+
+				
+				<span class="cAuthorPane_badge cAuthorPane_badge--moderator" data-ipstooltip title="Grim4ik is a moderator"></span>
+				
+				
+			</div>
+		</div>
+		<div class="cAuthorPane_content">
+			<h3 class="ipsType_sectionHead cAuthorPane_author ipsType_break ipsType_blendLinks ipsFlex ipsFlex-ai:center">
+				
+
+
+<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard&amp;referrer=https%253A%252F%252Fgo-piratia.ru%252Ftopic%252F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%252F" title="Go to Grim4ik's profile" class="ipsType_break"><span style="color:#699bff">Grim4ik</span></a>
+			</h3>
+			<div class="ipsType_light ipsType_reset">
+				<a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=553" rel="nofollow" class="ipsType_blendLinks">Posted <time datetime="2025-10-16T06:20:36Z" title="10/16/25 06:20  AM" data-short="Oct 16">October 16, 2025</time></a>
+				
+			</div>
+		</div>
+	</div>
+	<aside class="ipsComment_author cAuthorPane ipsColumn ipsColumn_medium ipsResponsive_hidePhone"><h3 class="ipsType_sectionHead cAuthorPane_author ipsType_blendLinks ipsType_break"><strong>
+
+
+<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard&amp;referrer=https%253A%252F%252Fgo-piratia.ru%252Ftopic%252F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%252F" title="Go to Grim4ik's profile" class="ipsType_break">Grim4ik</a></strong>
+			
+		</h3>
+		<ul class="cAuthorPane_info ipsList_reset"><li data-role="photo" class="cAuthorPane_photo">
+				<div class="cAuthorPane_photoWrap">
+					
+
+
+	<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard" class="ipsUserPhoto ipsUserPhoto_large" title="Go to Grim4ik's profile">
+		<img src="https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg" alt="Grim4ik" loading="lazy"></a>
+
+					
+						<span class="cAuthorPane_badge cAuthorPane_badge--moderator" data-ipstooltip title="Grim4ik is a moderator"></span>
+					
+					
+				</div>
+			</li>
+			
+				<li data-role="group"><span style="color:#699bff">Server owner</span></li>
+				
+			
+			
+				<li data-role="stats" class="ipsMargin_top">
+					<ul class="ipsList_reset ipsType_light ipsFlex ipsFlex-ai:center ipsFlex-jc:center ipsGap_row:2 cAuthorPane_stats"><li>
+							
+								<a href="https://go-piratia.ru/profile/624-grim4ik/content/" rel="nofollow" title="12 posts" data-ipstooltip class="ipsType_blendLinks">
+							
+								<i class="fa fa-comment"></i> 12
+							
+								</a>
+							
+						</li>
+						
+					</ul></li>
+			
+			
+				
+
+			
+		</ul></aside><div class="ipsColumn ipsColumn_fluid ipsMargin:none">
+		
+
+<div id="comment-553_wrap" data-controller="core.front.core.comment" data-commentapp="forums" data-commenttype="forums" data-commentid="553" data-quotedata='{"userid":624,"username":"Grim4ik","timestamp":1760595636,"contentapp":"forums","contenttype":"forums","contentid":230,"contentclass":"forums_Topic","contentcommentid":553}' class="ipsComment_content ipsType_medium">
+
+	<div class="ipsComment_meta ipsType_light ipsFlex ipsFlex-ai:center ipsFlex-jc:between ipsFlex-fd:row-reverse">
+		<div class="ipsType_light ipsType_reset ipsType_blendLinks ipsComment_toolWrap">
+			<div class="ipsResponsive_hidePhone ipsComment_badges">
+				<ul class="ipsList_reset ipsFlex ipsFlex-jc:end ipsFlex-fw:wrap ipsGap:2 ipsGap_row:1"><li><strong class="ipsBadge ipsBadge_large ipsComment_authorBadge">Author</strong></li>
+					
+					
+					
+					
+					
+				</ul></div>
+			<ul class="ipsList_reset ipsComment_tools"><li>
+					<a href="#elControls_553_menu" class="ipsComment_ellipsis" id="elControls_553" title="More options..." data-ipsmenu data-ipsmenu-appendto="#comment-553_wrap"><i class="fa fa-ellipsis-h"></i></a>
+					<ul id="elControls_553_menu" class="ipsMenu ipsMenu_narrow ipsHide"><li class="ipsMenu_item"><a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=553" rel="nofollow" title="Share this post" data-ipsdialog data-ipsdialog-size="narrow" data-ipsdialog-content="#elShareComment_553_menu" data-ipsdialog-title="Share this post" id="elSharePost_553" data-role="shareComment">Share</a></li>
+						
+                        
+						
+						
+						
+							
+								
+							
+							
+							
+							
+							
+							
+						
+					</ul></li>
+				
+			</ul></div>
+
+		<div class="ipsType_reset ipsResponsive_hidePhone">
+			<a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=553" rel="nofollow" class="ipsType_blendLinks">Posted <time datetime="2025-10-16T06:20:36Z" title="10/16/25 06:20  AM" data-short="Oct 16">October 16, 2025</time></a>
+			
+			<span class="ipsResponsive_hidePhone">
+				
+				
+			</span>
+		</div>
+	</div>
+
+	
+
+    
+
+	<div class="cPost_contentWrap">
+		
+		<div data-role="commentContent" class="ipsType_normal ipsType_richText ipsPadding_bottom ipsContained" data-controller="core.front.core.lightboxedImages">
+			<blockquote class="ipsQuote" data-ipsquote="" data-ipsquote-contentapp="forums" data-ipsquote-contentclass="forums_Topic" data-ipsquote-contentcommentid="551" data-ipsquote-contentid="230" data-ipsquote-contenttype="forums" data-ipsquote-timestamp="1760547885" data-ipsquote-userid="38" data-ipsquote-username="Graf">
+	<div class="ipsQuote_citation">
+		13 часов назад, Graf сказал:
+	</div>
+
+	<div class="ipsQuote_contents">
+		<p>
+			<a contenteditable="false" data-ipshover="" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard" data-mentionid="624" href="https://go-piratia.ru/profile/624-grim4ik/" rel="">@Grim4ik</a> Добрый вечер. Не уверен в корректности "заменить весь код". Хотя бы комментарии добавьте, чтобы люди могли нужные части кода себе перетащить.
+		</p>
+	</div>
+</blockquote>
+
+<p>
+	Добрый день! <br><br>
+	Поправил, сделал просто замены функции по шагам, не трогая целый код!<br>
+	 
+</p>
+
+
+			
+		</div>
+
+		
+			<div class="ipsItemControls">
+				
+					
+						
+
+	<div data-controller="core.front.core.reaction" class="ipsItemControls_right ipsClearfix ">	
+		<div class="ipsReact ipsPos_right">
+			
+				
+				<div class="ipsReact_blurb " data-role="reactionBlurb">
+					
+						
+
+	
+	<ul class="ipsReact_reactions"><li class="ipsReact_reactCount">
+					
+						<span data-ipstooltip title="Like">
+					
+							<span>
+								<img src="https://go-piratia.ru/uploads/reactions/react_like.png" alt="Like" loading="lazy"></span>
+							<span>
+								1
+							</span>
+					
+						</span>
+					
+				</li>
+			
+		
+	</ul></div>
+			
+			
+			
+		</div>
+	</div>
+
+					
+				
+				<ul class="ipsComment_controls ipsClearfix ipsItemControls_left" data-role="commentControls"><li data-ipsquote-editor="topic_comment" data-ipsquote-target="#comment-553" class="ipsJS_show">
+								<button class="ipsButton ipsButton_light ipsButton_verySmall ipsButton_narrow cMultiQuote ipsHide" data-action="multiQuoteComment" data-ipstooltip data-ipsquote-multiquote data-mqid="mq553" title="MultiQuote"><i class="fa fa-plus"></i></button>
+							</li>
+							<li data-ipsquote-editor="topic_comment" data-ipsquote-target="#comment-553" class="ipsJS_show">
+								<a href="#" data-action="quoteComment" data-ipsquote-singlequote>Quote</a>
+							</li>
+						
+						
+												
+					
+					<li class="ipsHide" data-role="commentLoading">
+						<span class="ipsLoading ipsLoading_tiny ipsLoading_noAnim"></span>
+					</li>
+				</ul></div>
+		
+
+		
+	</div>
+
+	
+
+	
+
+
+
+<div class="ipsPadding ipsHide cPostShareMenu" id="elShareComment_553_menu">
+	<h5 class="ipsType_normal ipsType_reset">Link to comment</h5>
+	
+		
+	
+	
+	<input type="text" value="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=553" class="ipsField_fullWidth"><h5 class="ipsType_normal ipsType_reset ipsSpacer_top">Share on other sites</h5>
+	
+
+	<ul class="ipsList_inline ipsList_noSpacing ipsClearfix" data-controller="core.front.core.sharelink"><li>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%2F%3Fdo%3DfindComment%26comment%3D553" class="cShareLink cShareLink_twitter" target="_blank" data-role="shareLink" title="Share on Twitter" data-ipstooltip rel="nofollow noopener">
+	<i class="fa fa-twitter"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D553" class="cShareLink cShareLink_facebook" target="_blank" data-role="shareLink" title="Share on Facebook" data-ipstooltip rel="noopener nofollow">
+	<i class="fa fa-facebook"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D553&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_reddit" target="_blank" title="Share on Reddit" data-ipstooltip>
+	<i class="fa fa-reddit"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D553&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_linkedin" target="_blank" data-role="shareLink" title="Share on LinkedIn" data-ipstooltip>
+	<i class="fa fa-linkedin"></i>
+</a></li>
+		
+			<li>
+<a href="https://pinterest.com/pin/create/button/?url=https://go-piratia.ru/topic/230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8/?do=findComment%26comment=553&amp;media=" class="cShareLink cShareLink_pinterest" rel="nofollow noopener" target="_blank" data-role="shareLink" title="Share on Pinterest" data-ipstooltip>
+	<i class="fa fa-pinterest"></i>
+</a></li>
+		
+	</ul><hr class="ipsHr"><button class="ipsHide ipsButton ipsButton_small ipsButton_light ipsButton_fullWidth ipsMargin_top:half" data-controller="core.front.core.webshare" data-role="webShare" data-websharetitle="Авто добавление статов при удержании кнопки" data-websharetext="Добрый день!  
+	 
+	Поправил, сделал просто замены функции по шагам, не трогая целый код! 
+	 
+ 
+" data-webshareurl="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=553">More sharing options...</button>
+
+	
+</div>
+</div>
+	</div>
+</article><a id="comment-555"></a>
+<article id="elComment_555" class="cPost ipsBox ipsResponsive_pull  ipsComment  ipsComment_parent ipsClearfix ipsClear ipsColumns ipsColumns_noSpacing ipsColumns_collapsePhone    "><div class="cAuthorPane_mobile ipsResponsive_showPhone">
+		<div class="cAuthorPane_photo">
+			<div class="cAuthorPane_photoWrap">
+				
+
+
+	<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard" class="ipsUserPhoto ipsUserPhoto_large" title="Go to Grim4ik's profile">
+		<img src="https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg" alt="Grim4ik" loading="lazy"></a>
+
+				
+				<span class="cAuthorPane_badge cAuthorPane_badge--moderator" data-ipstooltip title="Grim4ik is a moderator"></span>
+				
+				
+			</div>
+		</div>
+		<div class="cAuthorPane_content">
+			<h3 class="ipsType_sectionHead cAuthorPane_author ipsType_break ipsType_blendLinks ipsFlex ipsFlex-ai:center">
+				
+
+
+<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard&amp;referrer=https%253A%252F%252Fgo-piratia.ru%252Ftopic%252F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%252F" title="Go to Grim4ik's profile" class="ipsType_break"><span style="color:#699bff">Grim4ik</span></a>
+			</h3>
+			<div class="ipsType_light ipsType_reset">
+				<a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=555" rel="nofollow" class="ipsType_blendLinks">Posted <time datetime="2025-10-16T07:51:00Z" title="10/16/25 07:51  AM" data-short="Oct 16">October 16, 2025</time></a>
+				
+			</div>
+		</div>
+	</div>
+	<aside class="ipsComment_author cAuthorPane ipsColumn ipsColumn_medium ipsResponsive_hidePhone"><h3 class="ipsType_sectionHead cAuthorPane_author ipsType_blendLinks ipsType_break"><strong>
+
+
+<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard&amp;referrer=https%253A%252F%252Fgo-piratia.ru%252Ftopic%252F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%252F" title="Go to Grim4ik's profile" class="ipsType_break">Grim4ik</a></strong>
+			
+		</h3>
+		<ul class="cAuthorPane_info ipsList_reset"><li data-role="photo" class="cAuthorPane_photo">
+				<div class="cAuthorPane_photoWrap">
+					
+
+
+	<a href="https://go-piratia.ru/profile/624-grim4ik/" rel="nofollow" data-ipshover data-ipshover-width="370" data-ipshover-target="https://go-piratia.ru/profile/624-grim4ik/?do=hovercard" class="ipsUserPhoto ipsUserPhoto_large" title="Go to Grim4ik's profile">
+		<img src="https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg" alt="Grim4ik" loading="lazy"></a>
+
+					
+						<span class="cAuthorPane_badge cAuthorPane_badge--moderator" data-ipstooltip title="Grim4ik is a moderator"></span>
+					
+					
+				</div>
+			</li>
+			
+				<li data-role="group"><span style="color:#699bff">Server owner</span></li>
+				
+			
+			
+				<li data-role="stats" class="ipsMargin_top">
+					<ul class="ipsList_reset ipsType_light ipsFlex ipsFlex-ai:center ipsFlex-jc:center ipsGap_row:2 cAuthorPane_stats"><li>
+							
+								<a href="https://go-piratia.ru/profile/624-grim4ik/content/" rel="nofollow" title="12 posts" data-ipstooltip class="ipsType_blendLinks">
+							
+								<i class="fa fa-comment"></i> 12
+							
+								</a>
+							
+						</li>
+						
+					</ul></li>
+			
+			
+				
+
+			
+		</ul></aside><div class="ipsColumn ipsColumn_fluid ipsMargin:none">
+		
+
+<div id="comment-555_wrap" data-controller="core.front.core.comment" data-commentapp="forums" data-commenttype="forums" data-commentid="555" data-quotedata='{"userid":624,"username":"Grim4ik","timestamp":1760601060,"contentapp":"forums","contenttype":"forums","contentid":230,"contentclass":"forums_Topic","contentcommentid":555}' class="ipsComment_content ipsType_medium">
+
+	<div class="ipsComment_meta ipsType_light ipsFlex ipsFlex-ai:center ipsFlex-jc:between ipsFlex-fd:row-reverse">
+		<div class="ipsType_light ipsType_reset ipsType_blendLinks ipsComment_toolWrap">
+			<div class="ipsResponsive_hidePhone ipsComment_badges">
+				<ul class="ipsList_reset ipsFlex ipsFlex-jc:end ipsFlex-fw:wrap ipsGap:2 ipsGap_row:1"><li><strong class="ipsBadge ipsBadge_large ipsComment_authorBadge">Author</strong></li>
+					
+					
+					
+					
+					
+				</ul></div>
+			<ul class="ipsList_reset ipsComment_tools"><li>
+					<a href="#elControls_555_menu" class="ipsComment_ellipsis" id="elControls_555" title="More options..." data-ipsmenu data-ipsmenu-appendto="#comment-555_wrap"><i class="fa fa-ellipsis-h"></i></a>
+					<ul id="elControls_555_menu" class="ipsMenu ipsMenu_narrow ipsHide"><li class="ipsMenu_item"><a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=555" rel="nofollow" title="Share this post" data-ipsdialog data-ipsdialog-size="narrow" data-ipsdialog-content="#elShareComment_555_menu" data-ipsdialog-title="Share this post" id="elSharePost_555" data-role="shareComment">Share</a></li>
+						
+                        
+						
+						
+						
+							
+								
+							
+							
+							
+							
+							
+							
+						
+					</ul></li>
+				
+			</ul></div>
+
+		<div class="ipsType_reset ipsResponsive_hidePhone">
+			<a href="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=555" rel="nofollow" class="ipsType_blendLinks">Posted <time datetime="2025-10-16T07:51:00Z" title="10/16/25 07:51  AM" data-short="Oct 16">October 16, 2025</time></a>
+			
+			<span class="ipsResponsive_hidePhone">
+				
+				
+			</span>
+		</div>
+	</div>
+
+	
+
+    
+
+	<div class="cPost_contentWrap">
+		
+		<div data-role="commentContent" class="ipsType_normal ipsType_richText ipsPadding_bottom ipsContained" data-controller="core.front.core.lightboxedImages">
+			<p>
+	<strong>Небольшой UPDATE</strong><br><br>
+	Словил баг, что защита сервера выкидывает, при добавлении большого количества статов за раз. По этому добавление внизу, делает мини паузу через каждые 25 статов и с сервера больше не выбрасывает.<br><br>
+	1) В функции <strong>namespace </strong>после <strong>static DWORD     s_nextTick   = 0; </strong>вставляем:
+</p>
+
+<pre class="ipsCode prettyprint lang-c prettyprinted"><span class="kwd">static</span><span class="pln"> </span><span class="typ">int</span><span class="pln">       s_holdCount  </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></pre>
+
+<p>
+	2) В <strong>static void StartHold(EStatBtn b) </strong>после <strong>s_nextTick   = ::GetTickCount() + s_intervalMs; </strong>вставляем:
+</p>
+
+<pre class="ipsCode prettyprint lang-c prettyprinted"><span class="pln">s_holdCount  </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></pre>
+
+<p>
+	3) В <strong>FrameMove </strong>заменить кусок функции <strong>if (now &gt;= s_nextTick) </strong>{ ... } на:<br>
+	 
+</p>
+
+<pre class="ipsCode prettyprint lang-c prettyprinted"><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">now </span><span class="pun">&gt;=</span><span class="pln"> s_nextTick</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">s_holdCount </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">25</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">StopHold</span><span class="pun">();</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="typ">CCharacter</span><span class="pun">*</span><span class="pln"> pCha </span><span class="pun">=</span><span class="pln"> g_stUIBoat</span><span class="pun">.</span><span class="typ">GetHuman</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">pCha</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="typ">StopHold</span><span class="pun">();</span><span class="pln"> </span><span class="kwd">return</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+    </span><span class="typ">SGameAttr</span><span class="pun">*</span><span class="pln"> ga </span><span class="pun">=</span><span class="pln"> pCha</span><span class="pun">-&gt;</span><span class="pln">getGameAttr</span><span class="pun">();</span><span class="pln">
+    </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">ga </span><span class="pun">||</span><span class="pln"> ga</span><span class="pun">-&gt;</span><span class="pln">get</span><span class="pun">(</span><span class="pln">ATTR_AP</span><span class="pun">)</span><span class="pln"> </span><span class="pun">&lt;=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="typ">StopHold</span><span class="pun">();</span><span class="pln"> </span><span class="kwd">return</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="typ">DoAddOne</span><span class="pun">(</span><span class="pln">s_activeBtn</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">++</span><span class="pln">s_holdCount</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">if</span><span class="pln">      </span><span class="pun">(</span><span class="pln">s_stage </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"> s_intervalMs </span><span class="pun">=</span><span class="pln"> </span><span class="lit">150</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">s_stage </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> s_intervalMs </span><span class="pun">=</span><span class="pln"> </span><span class="lit">100</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">else</span><span class="pln">                   s_intervalMs </span><span class="pun">=</span><span class="pln"> </span><span class="lit">80</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">++</span><span class="pln">s_stage</span><span class="pun">;</span><span class="pln">
+    s_nextTick </span><span class="pun">=</span><span class="pln"> now </span><span class="pun">+</span><span class="pln"> s_intervalMs</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></pre>
+
+<p>
+	 
+</p>
+
+
+			
+		</div>
+
+		
+			<div class="ipsItemControls">
+				
+					
+						
+
+	<div data-controller="core.front.core.reaction" class="ipsItemControls_right ipsClearfix ">	
+		<div class="ipsReact ipsPos_right">
+			
+				
+				<div class="ipsReact_blurb ipsHide" data-role="reactionBlurb">
+					
+				</div>
+			
+			
+			
+		</div>
+	</div>
+
+					
+				
+				<ul class="ipsComment_controls ipsClearfix ipsItemControls_left" data-role="commentControls"><li data-ipsquote-editor="topic_comment" data-ipsquote-target="#comment-555" class="ipsJS_show">
+								<button class="ipsButton ipsButton_light ipsButton_verySmall ipsButton_narrow cMultiQuote ipsHide" data-action="multiQuoteComment" data-ipstooltip data-ipsquote-multiquote data-mqid="mq555" title="MultiQuote"><i class="fa fa-plus"></i></button>
+							</li>
+							<li data-ipsquote-editor="topic_comment" data-ipsquote-target="#comment-555" class="ipsJS_show">
+								<a href="#" data-action="quoteComment" data-ipsquote-singlequote>Quote</a>
+							</li>
+						
+						
+												
+					
+					<li class="ipsHide" data-role="commentLoading">
+						<span class="ipsLoading ipsLoading_tiny ipsLoading_noAnim"></span>
+					</li>
+				</ul></div>
+		
+
+		
+	</div>
+
+	
+
+	
+
+
+
+<div class="ipsPadding ipsHide cPostShareMenu" id="elShareComment_555_menu">
+	<h5 class="ipsType_normal ipsType_reset">Link to comment</h5>
+	
+		
+	
+	
+	<input type="text" value="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=555" class="ipsField_fullWidth"><h5 class="ipsType_normal ipsType_reset ipsSpacer_top">Share on other sites</h5>
+	
+
+	<ul class="ipsList_inline ipsList_noSpacing ipsClearfix" data-controller="core.front.core.sharelink"><li>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%2F%3Fdo%3DfindComment%26comment%3D555" class="cShareLink cShareLink_twitter" target="_blank" data-role="shareLink" title="Share on Twitter" data-ipstooltip rel="nofollow noopener">
+	<i class="fa fa-twitter"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D555" class="cShareLink cShareLink_facebook" target="_blank" data-role="shareLink" title="Share on Facebook" data-ipstooltip rel="noopener nofollow">
+	<i class="fa fa-facebook"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D555&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_reddit" target="_blank" title="Share on Reddit" data-ipstooltip>
+	<i class="fa fa-reddit"></i>
+</a></li>
+		
+			<li>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F%3Fdo%3DfindComment%26comment%3D555&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_linkedin" target="_blank" data-role="shareLink" title="Share on LinkedIn" data-ipstooltip>
+	<i class="fa fa-linkedin"></i>
+</a></li>
+		
+			<li>
+<a href="https://pinterest.com/pin/create/button/?url=https://go-piratia.ru/topic/230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8/?do=findComment%26comment=555&amp;media=" class="cShareLink cShareLink_pinterest" rel="nofollow noopener" target="_blank" data-role="shareLink" title="Share on Pinterest" data-ipstooltip>
+	<i class="fa fa-pinterest"></i>
+</a></li>
+		
+	</ul><hr class="ipsHr"><button class="ipsHide ipsButton ipsButton_small ipsButton_light ipsButton_fullWidth ipsMargin_top:half" data-controller="core.front.core.webshare" data-role="webShare" data-websharetitle="Авто добавление статов при удержании кнопки" data-websharetext="Небольшой UPDATE 
+	 
+	Словил баг, что защита сервера выкидывает, при добавлении большого количества статов за раз. По этому добавление внизу, делает мини паузу через каждые 25 статов и с сервера больше не выбрасывает. 
+	 
+	1) В функции namespace после static DWORD     s_nextTick   = 0; вставляем:
+ 
+
+static int       s_holdCount  = 0;
+
+
+	2) В static void StartHold(EStatBtn b) после s_nextTick   = ::GetTickCount() + s_intervalMs; вставляем:
+ 
+
+s_holdCount  = 0;
+
+
+	3) В FrameMove заменить кусок функции if (now &gt;= s_nextTick) { ... } на: 
+	 
+ 
+
+if (now &gt;= s_nextTick) {
+    if (s_holdCount &gt;= 25) {
+        StopHold();
+        return;
+    }
+
+    CCharacter* pCha = g_stUIBoat.GetHuman();
+    if (!pCha) { StopHold(); return; }
+    SGameAttr* ga = pCha-&gt;getGameAttr();
+    if (!ga || ga-&gt;get(ATTR_AP) &lt;= 0) { StopHold(); return; }
+
+    DoAddOne(s_activeBtn);
+    ++s_holdCount;
+
+    if      (s_stage == 0) s_intervalMs = 150;
+    else if (s_stage == 1) s_intervalMs = 100;
+    else                   s_intervalMs = 80;
+    ++s_stage;
+    s_nextTick = now + s_intervalMs;
+}
+
+
+	 
+ 
+" data-webshareurl="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/?do=findComment&amp;comment=555">More sharing options...</button>
+
+	
+</div>
+</div>
+	</div>
+</article><input type="hidden" name="csrfKey" value="877ece064350042334368c1558b72504"></form>
+	</div>
+
+	
+	
+	
+	
+	
+		<a id="replyForm"></a>
+	<div data-role="replyArea" class="cTopicPostArea ipsBox ipsResponsive_pull ipsPadding  ipsSpacer_top">
+			
+				
+				
+
+	
+		<div class="ipsPadding_bottom ipsBorder_bottom ipsMargin_bottom cGuestTeaser">
+			<h2 class="ipsType_pageTitle">Join the conversation</h2>
+			<p class="ipsType_normal ipsType_reset">
+	
+				
+					You can post now and register later.
+				
+				If you have an account, <a class="ipsType_brandedLink" href="https://go-piratia.ru/login/" data-ipsdialog data-ipsdialog-size="medium" data-ipsdialog-title="Sign In Now">sign in now</a> to post with your account.
+				
+			</p>
+	
+		</div>
+	
+
+
+<form accept-charset="utf-8" class="ipsForm ipsForm_vertical" action="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="commentform_230_submitted" value="1"><input type="hidden" name="csrfKey" value="877ece064350042334368c1558b72504"><input type="hidden" name="_contentReply" value="1"><input type="hidden" name="MAX_FILE_SIZE" value="103809024"><input type="hidden" name="plupload" value="dc3c4ccc70a36f8a0551155645e31e5a"><div class="ipsComposeArea ipsComposeArea_withPhoto ipsClearfix ipsContained">
+		<div data-role="whosTyping" class="ipsHide ipsMargin_bottom"></div>
+		<div class="ipsPos_left ipsResponsive_hidePhone ipsResponsive_block">
+
+	<span class="ipsUserPhoto ipsUserPhoto_small ">
+		<img src="https://go-piratia.ru/uploads/set_resources_3/84c1e40ea0e759e3f1505eb1788ddf3c_default_photo.png" alt="Guest" loading="lazy"></span>
+</div>
+		<div class="ipsComposeArea_editor">
+			
+				
+					
+				
+					
+						<ul class="ipsForm ipsForm_horizontal ipsMargin_bottom:half" data-ipseditor-toollist><li class="ipsFieldRow ipsFieldRow_fullWidth">
+								
+
+
+	<input type="email" name="guest_email" value="" id="elInput_guest_email" aria-required="true" placeholder="Enter your email address (this is not shown to other users)" autocomplete="email"></li>
+						</ul><div class="ipsType_normal ipsType_richText ipsType_break" data-ipseditor data-ipseditor-controller="https://go-piratia.ru/index.php?app=core&amp;module=system&amp;controller=editor" data-ipseditor-minimized data-ipseditor-toolbars='{"desktop":[{"name":"row1","items":["Bold","Italic","Underline","Strike","-","ipsLink","Ipsquote","ipsCode","ipsEmoticon","-","BulletedList","NumberedList","-","JustifyLeft","JustifyCenter","JustifyRight","-","TextColor","FontSize","Font","-","Ipsspoiler","ipsPreview"]},"\/"],"tablet":[{"name":"row1","items":["Bold","Italic","Underline","-","ipsLink","Ipsquote","ipsEmoticon","-","BulletedList","NumberedList","-","ipsPreview"]},"\/"],"phone":[{"name":"row1","items":["Bold","Italic","Underline","-","ipsEmoticon","-","ipsLink","-","ipsPreview"]},"\/"]}' data-ipseditor-extraplugins="" data-ipseditor-postkey="ecd9b599f4aadf54b08cec092685abd2" data-ipseditor-autosavekey="reply-forums/forums-230" data-ipseditor-skin="ips" data-ipseditor-name="topic_comment_230" data-ipseditor-pastebehaviour="rich" data-ipseditor-ipsplugins="ipsautolink,ipsautosave,ipsctrlenter,ipscode,ipscontextmenu,ipsemoticon,ipsimage,ipslink,ipsmentions,ipspage,ipspaste,ipsquote,ipsspoiler,ipsautogrow,ipssource,removeformat,ipspreview" data-ipseditor-contentclass="IPS\forums\Topic" data-ipseditor-contentid="230">
+    <div data-role="editorComposer">
+		<noscript>
+			<textarea name="topic_comment_230_noscript" rows="15"></textarea></noscript>
+		<div class="ipsHide norewrite" data-role="mainEditorArea">
+			<textarea name="topic_comment_230" data-role="contentEditor" class="ipsHide" tabindex="1"></textarea></div>
+		
+			<div class="ipsComposeArea_dummy ipsJS_show" tabindex="1"><i class="fa fa-comment-o"></i> Reply to this topic...</div>
+		
+		<div class="ipsHide ipsComposeArea_editorPaste" data-role="pasteMessage">
+			<p class="ipsType_reset ipsPad_half">
+				
+					<a class="ipsPos_right ipsType_normal ipsCursor_pointer ipsComposeArea_editorPasteSwitch" data-action="keepPasteFormatting" title="Keep formatting" data-ipstooltip>×</a>
+					<i class="fa fa-info-circle"></i>  Pasted as rich text.   <a class="ipsCursor_pointer" data-action="removePasteFormatting">Paste as plain text instead</a>
+				
+			</p>
+		</div>
+		<div class="ipsHide ipsComposeArea_editorPaste" data-role="emoticonMessage">
+			<p class="ipsType_reset ipsPad_half">
+				<i class="fa fa-info-circle"></i>  Only 75 emoji are allowed.
+			</p>
+		</div>
+		<div class="ipsHide ipsComposeArea_editorPaste" data-role="embedMessage">
+			<p class="ipsType_reset ipsPad_half">
+				<a class="ipsPos_right ipsType_normal ipsCursor_pointer ipsComposeArea_editorPasteSwitch" data-action="keepEmbeddedMedia" title="Keep embedded content" data-ipstooltip>×</a>
+				<i class="fa fa-info-circle"></i>  Your link has been automatically embedded.   <a class="ipsCursor_pointer" data-action="removeEmbeddedMedia">Display as a link instead</a>
+			</p>
+		</div>
+		<div class="ipsHide ipsComposeArea_editorPaste" data-role="embedFailMessage">
+			<p class="ipsType_reset ipsPad_half">
+			</p>
+		</div>
+		<div class="ipsHide ipsComposeArea_editorPaste" data-role="autoSaveRestoreMessage">
+			<p class="ipsType_reset ipsPad_half">
+				<a class="ipsPos_right ipsType_normal ipsCursor_pointer ipsComposeArea_editorPasteSwitch" data-action="keepRestoredContents" title="Keep restored contents" data-ipstooltip>×</a>
+				<i class="fa fa-info-circle"></i>  Your previous content has been restored.   <a class="ipsCursor_pointer" data-action="clearEditorContents">Clear editor</a>
+			</p>
+		</div>
+		<div class="ipsHide ipsComposeArea_editorPaste" data-role="imageMessage">
+			<p class="ipsType_reset ipsPad_half">
+				<a class="ipsPos_right ipsType_normal ipsCursor_pointer ipsComposeArea_editorPasteSwitch" data-action="removeImageMessage">×</a>
+				<i class="fa fa-info-circle"></i>  You cannot paste images directly. Upload or insert images from URL.
+			</p>
+		</div>
+		
+	<div data-ipseditor-toollist class="ipsAreaBackground_light ipsClearfix">
+		<div data-role="attachmentArea">
+			<div class="ipsComposeArea_dropZone ipsComposeArea_dropZoneSmall ipsClearfix ipsClearfix" id="elEditorDrop_topic_comment_230">
+				<div>
+					<ul class="ipsList_inline ipsClearfix"><div>
+							<ul class="ipsList_inline ipsClearfix"><li class="ipsPos_right">
+									<a class="ipsButton ipsButton_veryLight ipsButton_verySmall" href="#" data-ipsdialog data-ipsdialog-forcereload data-ipsdialog-title="Insert image from URL" data-ipsdialog-url="https://go-piratia.ru/index.php?app=core&amp;module=system&amp;controller=editor&amp;do=link&amp;image=1&amp;postKey=ecd9b599f4aadf54b08cec092685abd2&amp;editorId=topic_comment_230&amp;csrfKey=877ece064350042334368c1558b72504">Insert image from URL</a></li>
+								
+							</ul></div>
+						
+					</ul></div>
+			</div>		
+		</div>
+	</div>
+	</div>
+	<div data-role="editorPreview" class="ipsHide">
+		<div class="ipsAreaBackground_light ipsPad_half" data-role="previewToolbar">
+			<a href="#" class="ipsPos_right" data-action="closePreview" title="Return to editing mode" data-ipstooltip>×</a>
+			<ul class="ipsButton_split"><li data-action="resizePreview" data-size="desktop"><a href="#" title="View at approximate desktop size" data-ipstooltip class="ipsButton ipsButton_verySmall ipsButton_primary">Desktop</a></li>
+				<li data-action="resizePreview" data-size="tablet"><a href="#" title="View at approximate tablet size" data-ipstooltip class="ipsButton ipsButton_verySmall ipsButton_light">Tablet</a></li>
+				<li data-action="resizePreview" data-size="phone"><a href="#" title="View at approximate phone size" data-ipstooltip class="ipsButton ipsButton_verySmall ipsButton_light">Phone</a></li>
+			</ul></div>
+		<div data-role="previewContainer" class="ipsAreaBackground ipsType_center"></div>
+	</div>
+</div>
+						
+					
+				
+					
+				
+			
+			<ul class="ipsToolList ipsToolList_horizontal ipsClear ipsClearfix ipsJS_hide" data-ipseditor-toollist><li>
+
+	<button type="submit" class="ipsButton ipsButton_primary" tabindex="2" accesskey="s" role="button">Submit Reply</button>
+</li>
+				
+			</ul></div>
+	</div>
+</form>
+			
+		</div>
+	
+
+	
+		<div class="ipsBox ipsPadding ipsResponsive_pull ipsResponsive_showPhone ipsMargin_top">
+			<div class="ipsShareLinks">
+				
+					
+
+
+    <a href="#elShareItem_605849578_menu" id="elShareItem_605849578" data-ipsmenu class="ipsShareButton ipsButton ipsButton_verySmall ipsButton_light ">
+        <span><i class="fa fa-share-alt"></i></span>  Share
+    </a>
+
+    <div class="ipsPadding ipsMenu ipsMenu_auto ipsHide" id="elShareItem_605849578_menu" data-controller="core.front.core.sharelink">
+        <ul class="ipsList_inline"><li>
+<a href="https://twitter.com/share?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%2525D0%2525B0%2525D0%2525B2%2525D1%252582%2525D0%2525BE-%2525D0%2525B4%2525D0%2525BE%2525D0%2525B1%2525D0%2525B0%2525D0%2525B2%2525D0%2525BB%2525D0%2525B5%2525D0%2525BD%2525D0%2525B8%2525D0%2525B5-%2525D1%252581%2525D1%252582%2525D0%2525B0%2525D1%252582%2525D0%2525BE%2525D0%2525B2-%2525D0%2525BF%2525D1%252580%2525D0%2525B8-%2525D1%252583%2525D0%2525B4%2525D0%2525B5%2525D1%252580%2525D0%2525B6%2525D0%2525B0%2525D0%2525BD%2525D0%2525B8%2525D0%2525B8-%2525D0%2525BA%2525D0%2525BD%2525D0%2525BE%2525D0%2525BF%2525D0%2525BA%2525D0%2525B8%2F" class="cShareLink cShareLink_twitter" target="_blank" data-role="shareLink" title="Share on Twitter" data-ipstooltip rel="nofollow noopener">
+	<i class="fa fa-twitter"></i>
+</a></li>
+            
+                <li>
+<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F" class="cShareLink cShareLink_facebook" target="_blank" data-role="shareLink" title="Share on Facebook" data-ipstooltip rel="noopener nofollow">
+	<i class="fa fa-facebook"></i>
+</a></li>
+            
+                <li>
+<a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_reddit" target="_blank" title="Share on Reddit" data-ipstooltip>
+	<i class="fa fa-reddit"></i>
+</a></li>
+            
+                <li>
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fgo-piratia.ru%2Ftopic%2F230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8%2F&amp;title=%D0%90%D0%B2%D1%82%D0%BE+%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2+%D0%BF%D1%80%D0%B8+%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8+%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8" rel="nofollow noopener" class="cShareLink cShareLink_linkedin" target="_blank" data-role="shareLink" title="Share on LinkedIn" data-ipstooltip>
+	<i class="fa fa-linkedin"></i>
+</a></li>
+            
+                <li>
+<a href="https://pinterest.com/pin/create/button/?url=https://go-piratia.ru/topic/230-%25D0%25B0%25D0%25B2%25D1%2582%25D0%25BE-%25D0%25B4%25D0%25BE%25D0%25B1%25D0%25B0%25D0%25B2%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25B8%25D0%25B5-%25D1%2581%25D1%2582%25D0%25B0%25D1%2582%25D0%25BE%25D0%25B2-%25D0%25BF%25D1%2580%25D0%25B8-%25D1%2583%25D0%25B4%25D0%25B5%25D1%2580%25D0%25B6%25D0%25B0%25D0%25BD%25D0%25B8%25D0%25B8-%25D0%25BA%25D0%25BD%25D0%25BE%25D0%25BF%25D0%25BA%25D0%25B8/&amp;media=" class="cShareLink cShareLink_pinterest" rel="nofollow noopener" target="_blank" data-role="shareLink" title="Share on Pinterest" data-ipstooltip>
+	<i class="fa fa-pinterest"></i>
+</a></li>
+            
+        </ul><hr class="ipsHr"><button class="ipsHide ipsButton ipsButton_verySmall ipsButton_light ipsButton_fullWidth ipsMargin_top:half" data-controller="core.front.core.webshare" data-role="webShare" data-websharetitle="Авто добавление статов при удержании кнопки" data-websharetext="Авто добавление статов при удержании кнопки" data-webshareurl="https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/">More sharing options...</button>
+        
+    </div>
+
+				
+					
+
+<div data-followapp="forums" data-followarea="topic" data-followid="230" data-controller="core.front.core.followButton">
+	
+
+	<a href="https://go-piratia.ru/login/" rel="nofollow" class="ipsFollow ipsPos_middle ipsButton ipsButton_light ipsButton_verySmall " data-role="followButton" data-ipstooltip title="Sign in to follow this">
+		<span>Followers</span>
+		<span class="ipsCommentCount">3</span>
+	</a>
+
+</div>
+				
+			</div>
+		</div>
+	
+</div>
+
+
+
+<div class="ipsPager ipsSpacer_top">
+	<div class="ipsPager_prev">
+		
+			<a href="https://go-piratia.ru/forum/28-c/" title="Go to C++" rel="parent">
+				<span class="ipsPager_type">Go to topic listing</span>
+			</a>
+		
+	</div>
+	
+</div>
+
+
+						
+
+
+					</div>
+					
+
+
+					
+<nav class="ipsBreadcrumb ipsBreadcrumb_bottom ipsFaded_withHover"><ul class="ipsList_inline ipsPos_right"><li>
+			<a data-action="defaultStream" class="ipsType_light " href="https://go-piratia.ru/discover/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span>All Activity</span></a>
+		</li>
+		
+	</ul><ul data-role="breadcrumbList"><li>
+			<a title="Home" href="https://go-piratia.ru/">
+				<span>Home <i class="fa fa-angle-right"></i></span>
+			</a>
+		</li>
+		
+		
+			<li>
+				
+					<a href="https://go-piratia.ru/forum/14-development/">
+						<span>Development <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+					</a>
+				
+			</li>
+		
+			<li>
+				
+					<a href="https://go-piratia.ru/forum/15-documentation/">
+						<span>Documentation <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+					</a>
+				
+			</li>
+		
+			<li>
+				
+					<a href="https://go-piratia.ru/forum/28-c/">
+						<span>C++ <i class="fa fa-angle-right" aria-hidden="true"></i></span>
+					</a>
+				
+			</li>
+		
+			<li>
+				
+					Авто добавление статов при удержании кнопки
+				
+			</li>
+		
+	</ul></nav></div>
+			</div>
+			
+		</main><div class="chatBar right " data-controller="bim.chatbox.main">
+			
+
+
+
+
+
+
+
+
+<div id="roomChat" class="bimChatbox room_1 inGlobalChat  minimize skin_white">
+	
+		<div class="chatboxContainer ipsBox" data-controller="bim.chatbox.room,bim.chatbox.media" data-roomid="1">
+			<h2 class="ipsType_sectionTitle ipsType_reset miniTitle ipsHide">
+				<ul class="ipsPos_right ipsList_inline ipsList_noSpacing"><li>
+						<a href="#" data-action="toggleChat" class="controlBtn" title="Show/Hide">
+							<i class="fa fa-chevron-down"></i>
+						</a>
+					</li>
+				</ul><div class="popupTitle" data-action="toggleChat" title="Chat">
+					<i class="fa fa-comments"></i> <span class="public">Chat</span>
+				</div>	
+			</h2>
+			<h2 class="ipsType_sectionTitle ipsType_reset mainTitle">
+				<ul class="ipsPos_right ipsList_inline ipsList_noSpacing"><li>
+							<a href="#" data-action="toggleChat" class="controlBtn" title="Show/Hide">
+								<i class="fa fa-chevron-down"></i>
+							</a>			
+						</li>
+					
+				</ul><div class="popupTitle">
+					
+					
+					
+						<a href="#" data-action="closeChat" class="getBack ipsHide">
+							<i class="fa fa-chevron-left"></i>
+						</a>
+						<span class="public">Chat</span>
+					
+				</div>	
+			</h2>
+			
+			
+				
+					<div id="chatboxRoom">
+						<div id="chatContentIframe" class="ipsScrollbar cbScroll" style="height: 300px;">
+							<div class="chatboxIndentifyGuest">
+								<div class="enterName ">
+									<h2 class="ipsType_sectionTitle ipsType_reset">
+										<div>Please enter your display name</div>	
+									</h2>
+									<div class="ipsPadding">
+										<form data-action="guestForm">
+											<input type="text" class="guestName" placeholder="Please enter your display name" autocomplete="off"><button data-action="saveGuestName" type="submit" class="ipsButton ipsButton_verySmall ipsButton_important ipsButton_fullWidth ipsMargin_top ipsMargin_bottom">
+												Login As Guest
+											</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+						
+			
+		</div>
+	
+	
+</div>
+
+
+			
+		</div>
+	
+
+		<footer id="ipsLayout_footer" class="ipsClearfix"><div class="ipsLayout_container">
+				
+				
+
+<ul id="elFooterSocialLinks" class="ipsList_inline ipsType_center ipsSpacer_top"></ul><ul class="ipsList_inline ipsType_center ipsSpacer_top" id="elFooterLinks"><li>
+			<a href="#elNavLang_menu" id="elNavLang" data-ipsmenu data-ipsmenu-above>Language <i class="fa fa-caret-down"></i></a>
+			<ul id="elNavLang_menu" class="ipsMenu ipsMenu_selectable ipsHide"><li class="ipsMenu_item">
+					<form action="https://go-piratia.ru//go-piratia.ru/language/?csrfKey=877ece064350042334368c1558b72504" method="post">
+					<input type="hidden" name="ref" value="aHR0cHM6Ly9nby1waXJhdGlhLnJ1L3RvcGljLzIzMC0lRDAlQjAlRDAlQjIlRDElODIlRDAlQkUtJUQwJUI0JUQwJUJFJUQwJUIxJUQwJUIwJUQwJUIyJUQwJUJCJUQwJUI1JUQwJUJEJUQwJUI4JUQwJUI1LSVEMSU4MSVEMSU4MiVEMCVCMCVEMSU4MiVEMCVCRSVEMCVCMi0lRDAlQkYlRDElODAlRDAlQjgtJUQxJTgzJUQwJUI0JUQwJUI1JUQxJTgwJUQwJUI2JUQwJUIwJUQwJUJEJUQwJUI4JUQwJUI4LSVEMCVCQSVEMCVCRCVEMCVCRSVEMCVCRiVEMCVCQSVEMCVCOC8="><button type="submit" name="id" value="2" class="ipsButton ipsButton_link ipsButton_link_secondary"><i class="ipsFlag ipsFlag-ru"></i> Русский (RU) </button>
+					</form>
+				</li>
+			
+				<li class="ipsMenu_item ipsMenu_itemChecked">
+					<form action="https://go-piratia.ru//go-piratia.ru/language/?csrfKey=877ece064350042334368c1558b72504" method="post">
+					<input type="hidden" name="ref" value="aHR0cHM6Ly9nby1waXJhdGlhLnJ1L3RvcGljLzIzMC0lRDAlQjAlRDAlQjIlRDElODIlRDAlQkUtJUQwJUI0JUQwJUJFJUQwJUIxJUQwJUIwJUQwJUIyJUQwJUJCJUQwJUI1JUQwJUJEJUQwJUI4JUQwJUI1LSVEMSU4MSVEMSU4MiVEMCVCMCVEMSU4MiVEMCVCRSVEMCVCMi0lRDAlQkYlRDElODAlRDAlQjgtJUQxJTgzJUQwJUI0JUQwJUI1JUQxJTgwJUQwJUI2JUQwJUIwJUQwJUJEJUQwJUI4JUQwJUI4LSVEMCVCQSVEMCVCRCVEMCVCRSVEMCVCRiVEMCVCQSVEMCVCOC8="><button type="submit" name="id" value="1" class="ipsButton ipsButton_link ipsButton_link_secondary"><i class="ipsFlag ipsFlag-us"></i> English (USA) (Default)</button>
+					</form>
+				</li>
+			
+			</ul></li>
+	
+	
+	
+	
+	
+		<li><a rel="nofollow" href="https://go-piratia.ru/contact/" data-ipsdialog data-ipsdialog-remotesubmit data-ipsdialog-flashmessage="Thanks, your message has been sent to the administrators." data-ipsdialog-title="Contact Us">Contact Us</a></li>
+	
+</ul><p id="elCopyright">
+	<span id="elCopyright_userLine">PKODEV |  Tales of Pirates | Pirates Online | TOP | KOP | Serverdev | Maindev | Pkodev.net |  Go-piratia | King of Pirates | MMORPG | TOP Servers</span>
+	<a rel="nofollow" title="Invision Community" href="https://www.invisioncommunity.com/">Powered by Invision Community</a><br><a href="https://ipbmafia.ru" style="display:none">Поддержка Invision Community в России</a>
+</p>
+			</div>
+		</footer><div id="elMobileDrawer" class="ipsDrawer ipsHide">
+	<div class="ipsDrawer_menu">
+		<a href="#" class="ipsDrawer_close" data-action="close"><span>×</span></a>
+		<div class="ipsDrawer_content ipsFlex ipsFlex-fd:column">
+			
+				<div class="ipsPadding ipsBorder_bottom">
+					<ul class="ipsToolList ipsToolList_vertical"><li>
+							<a href="https://go-piratia.ru/login/" id="elSigninButton_mobile" class="ipsButton ipsButton_light ipsButton_small ipsButton_fullWidth">Existing user? Sign In</a>
+						</li>
+						
+							<li>
+								
+									<a href="https://go-piratia.ru/register/" data-ipsdialog data-ipsdialog-size="narrow" data-ipsdialog-title="Sign Up" data-ipsdialog-fixed="true" id="elRegisterButton_mobile" class="ipsButton ipsButton_small ipsButton_fullWidth ipsButton_important">Sign Up</a>
+								
+							</li>
+						
+					</ul></div>
+			
+
+			
+				<ul class="elMobileDrawer__social ipsList_inline ipsType_center ipsMargin_vertical"><li class="cUserNav_icon">
+			<a href="https://vk.com/go.piratia.news" target="_blank" class="cShareLink cShareLink_vk" rel="noopener noreferrer"><i class="fa fa-vk"></i></a>
+		</li>
+	
+		<li class="cUserNav_icon">
+			<a href="https://t.me/magicsea_chat" target="_blank" class="cShareLink cShareLink_facebook" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+		</li>
+	
+
+				</ul><ul class="ipsDrawer_list ipsFlex-flex:11"><li class="ipsDrawer_itemParent">
+								<h4 class="ipsDrawer_title"><a href="#">Browse</a></h4>
+								<ul class="ipsDrawer_list"><li data-action="back"><a href="#">Back</a></li>
+									
+									
+										
+										
+										
+											
+												
+											
+										
+											
+												
+											
+										
+											
+												
+											
+										
+											
+										
+											
+												
+											
+										
+											
+												
+											
+										
+											
+												
+													
+													
+									
+													
+									
+									
+									
+										
+
+
+	
+		
+			<li>
+				<a href="https://go-piratia.ru/pastleaders/">
+					Leaderboard
+				</a>
+			</li>
+		
+	
+
+	
+		
+			<li>
+				<a href="https://go-piratia.ru/online/">
+					Online Users
+				</a>
+			</li>
+		
+	
+
+	
+		
+			<li>
+				<a href="https://go-piratia.ru/staff/">
+					Staff
+				</a>
+			</li>
+		
+	
+
+	
+
+	
+		
+			<li>
+				<a href="https://go-piratia.ru/gallery/">
+					Gallery
+				</a>
+			</li>
+		
+	
+
+	
+		
+			<li>
+				<a href="https://go-piratia.ru/files/">
+					Downloads
+				</a>
+			</li>
+		
+	
+
+	
+		
+			<li>
+				<a href="https://go-piratia.ru">
+					Forums
+				</a>
+			</li>
+		
+	
+
+	
+		
+			<li>
+				<a href="https://go-piratia.ru/clubs/">
+					Clubs
+				</a>
+			</li>
+		
+	
+
+										
+								</ul></li>
+						
+					
+				
+					
+						
+						
+							<li class="ipsDrawer_itemParent">
+								<h4 class="ipsDrawer_title"><a href="#">Activity</a></h4>
+								<ul class="ipsDrawer_list"><li data-action="back"><a href="#">Back</a></li>
+									
+									
+										
+										
+										
+											
+												
+											
+										
+											
+												
+											
+										
+											
+										
+											
+										
+											
+										
+											
+												
+													
+													
+									
+													
+									
+									
+									
+										
+
+
+	
+		
+			<li>
+				<a href="https://go-piratia.ru/ourpicks/">
+					Our Picks
+				</a>
+			</li>
+		
+	
+
+	
+		
+			<li>
+				<a href="https://go-piratia.ru/search/">
+					Search
+				</a>
+			</li>
+		
+	
+
+	
+
+	
+
+	
+
+	
+		
+			<li>
+				<a href="https://go-piratia.ru/discover/">
+					All Activity
+				</a>
+			</li>
+		
+	
+
+										
+								</ul></li>
+						
+					
+				
+					
+						
+						
+							<li><a href="https://go-piratia.ru/chatbox/">Chat</a></li>
+						
+					
+				
+				
+			</ul></div>
+	</div>
+</div>
+
+<div id="elMobileCreateMenuDrawer" class="ipsDrawer ipsHide">
+	<div class="ipsDrawer_menu">
+		<a href="#" class="ipsDrawer_close" data-action="close"><span>×</span></a>
+		<div class="ipsDrawer_content ipsSpacer_bottom ipsPad">
+			<ul class="ipsDrawer_list"><li class="ipsDrawer_listTitle ipsType_reset">Create New...</li>
+				
+			</ul></div>
+	</div>
+</div>
+		
+		
+
+	
+	<script type="text/javascript">
+		var ipsDebug = false;		
+	
+		var CKEDITOR_BASEPATH = '//go-piratia.ru/applications/core/interface/ckeditor/ckeditor/';
+	
+		var ipsSettings = {
+			
+			
+			cookie_path: "/",
+			
+			cookie_prefix: "ips4_",
+			
+			
+			cookie_ssl: true,
+			
+			upload_imgURL: "",
+			message_imgURL: "",
+			notification_imgURL: "",
+			baseURL: "//go-piratia.ru/",
+			jsURL: "//go-piratia.ru/applications/core/interface/js/js.php",
+			csrfKey: "877ece064350042334368c1558b72504",
+			antiCache: "4e52a1ea3c1699102320",
+			jsAntiCache: "4e52a1ea3c1706591884",
+			disableNotificationSounds: true,
+			useCompiledFiles: true,
+			links_external: true,
+			memberID: 0,
+			lazyLoadEnabled: false,
+			blankImg: "//go-piratia.ru/applications/core/interface/js/spacer.png",
+			googleAnalyticsEnabled: false,
+			matomoEnabled: false,
+			viewProfiles: true,
+			mapProvider: 'none',
+			mapApiKey: '',
+			pushPublicKey: null,
+			relativeDates: true
+		};
+		
+		
+		
+		
+			ipsSettings['maxImageDimensions'] = {
+				width: 1000,
+				height: 750
+			};
+		
+		
+	</script><script type="text/javascript" src="https://go-piratia.ru/uploads/javascript_global/root_library.js?v=4e52a1ea3c1706591884" data-ips></script><script type="text/javascript" src="https://go-piratia.ru/uploads/javascript_global/root_js_lang_1.js?v=4e52a1ea3c1706591884" data-ips></script><script type="text/javascript" src="https://go-piratia.ru/uploads/javascript_global/root_framework.js?v=4e52a1ea3c1706591884" data-ips></script><script type="text/javascript" src="https://go-piratia.ru/uploads/javascript_core/global_global_core.js?v=4e52a1ea3c1706591884" data-ips></script><script type="text/javascript" src="https://go-piratia.ru/uploads/javascript_global/root_front.js?v=4e52a1ea3c1706591884" data-ips></script><script type="text/javascript" src="https://go-piratia.ru/uploads/javascript_core/front_front_core.js?v=4e52a1ea3c1706591884" data-ips></script><script type="text/javascript" src="https://go-piratia.ru//go-piratia.ru/applications/core/interface/jquery/jquery-ui.js?v=4e52a1ea3c1706591884" data-ips></script><script type="text/javascript" src="https://go-piratia.ru/uploads/javascript_chatbox/front_front_chatbox.js?v=4e52a1ea3c1706591884" data-ips></script><script type="text/javascript" src="https://go-piratia.ru/uploads/javascript_forums/front_front_topic.js?v=4e52a1ea3c1706591884" data-ips></script><script type="text/javascript" src="https://go-piratia.ru/uploads/javascript_global/root_map.js?v=4e52a1ea3c1706591884" data-ips></script><script type="text/javascript">
+		
+			ips.setSetting( 'date_format', jQuery.parseJSON('"mm\/dd\/yy"') );
+		
+			ips.setSetting( 'date_first_day', jQuery.parseJSON('0') );
+		
+			ips.setSetting( 'ipb_url_filter_option', jQuery.parseJSON('"none"') );
+		
+			ips.setSetting( 'url_filter_any_action', jQuery.parseJSON('"allow"') );
+		
+			ips.setSetting( 'bypass_profanity', jQuery.parseJSON('0') );
+		
+			ips.setSetting( 'emoji_style', jQuery.parseJSON('"native"') );
+		
+			ips.setSetting( 'emoji_shortcodes', jQuery.parseJSON('true') );
+		
+			ips.setSetting( 'emoji_ascii', jQuery.parseJSON('true') );
+		
+			ips.setSetting( 'emoji_cache', jQuery.parseJSON('1682757858') );
+		
+			ips.setSetting( 'image_jpg_quality', jQuery.parseJSON('85') );
+		
+			ips.setSetting( 'cloud2', jQuery.parseJSON('false') );
+		
+			ips.setSetting( 'chatbox_member_name', jQuery.parseJSON('null') );
+		
+			ips.setSetting( 'chatbox_popup_height', jQuery.parseJSON('480') );
+		
+			ips.setSetting( 'chatbox_bar_full', jQuery.parseJSON('"0"') );
+		
+			ips.setSetting( 'chatbox_bar_mini', jQuery.parseJSON('"Phone,Tablet,Desktop"') );
+		
+			ips.setSetting( 'chatbox_bar_pos', jQuery.parseJSON('"right"') );
+		
+			ips.setSetting( 'chatbox_force_scroll_down', jQuery.parseJSON('"0"') );
+		
+			ips.setSetting( 'chatbox_tabCount', jQuery.parseJSON('-1') );
+		
+			ips.setSetting( 'chatbox_no_disconnect', jQuery.parseJSON('"0"') );
+		
+			ips.setSetting( 'chatbox_timeago', jQuery.parseJSON('"1"') );
+		
+			ips.setSetting( 'chatbox_no_emoji', jQuery.parseJSON('"0"') );
+		
+			ips.setSetting( 'chatbox_userFormat', {"2":{"prefix":"<span style=\u0027color:#ffc94a\u0027>","suffix":"<\/span>"},"3":{"prefix":"<span style=\u0027color:#ff75ba\u0027>","suffix":"<\/span>"},"4":{"prefix":"<span style=\u0027color:#ff0000\u0027>","suffix":"<\/span>"},"6":{"prefix":"<span style=\u0027color:#81ff21\u0027>","suffix":"<\/span>"},"7":{"prefix":"<span style=\u0027color:#699bff\u0027>","suffix":"<\/span>"},"8":{"prefix":"<span style=\u0027color:#bd08ff\u0027>","suffix":"<\/span>"},"9":{"prefix":"","suffix":""},"10":{"prefix":"","suffix":""}} );
+		
+			ips.setSetting( 'chatbox_version', jQuery.parseJSON('"2.7.1"') );
+		
+			ips.setSetting( 'isAnonymous', jQuery.parseJSON('false') );
+		
+		
+	</script><script type="application/ld+json">
+{
+    "name": "\u0410\u0432\u0442\u043e \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0441\u0442\u0430\u0442\u043e\u0432 \u043f\u0440\u0438 \u0443\u0434\u0435\u0440\u0436\u0430\u043d\u0438\u0438 \u043a\u043d\u043e\u043f\u043a\u0438",
+    "headline": "\u0410\u0432\u0442\u043e \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0441\u0442\u0430\u0442\u043e\u0432 \u043f\u0440\u0438 \u0443\u0434\u0435\u0440\u0436\u0430\u043d\u0438\u0438 \u043a\u043d\u043e\u043f\u043a\u0438",
+    "text": "UIStateForm.cpp \n\t \n\t1) \u041d\u0430\u0445\u043e\u0434\u0438\u043c \u0441\u0442\u0440\u043e\u043a\u0443:\n \n\nusing namespace GUI;\n\n\n\t\u041f\u043e\u0434 \u043d\u0435\u0439 \u0432\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u043c:\n \n\nnamespace {\n\nenum class EStatBtn { NONE, STR, AGI, CON, STA, DEX };\n\nstatic bool      s_holdActive = false;\nstatic EStatBtn  s_activeBtn  = EStatBtn::NONE;\nstatic int       s_stage      = 0;        \nstatic DWORD     s_intervalMs = 300;\nstatic DWORD     s_nextTick   = 0;\n\nstatic EStatBtn ResolveStatBtnByName(const std::string\u0026amp; n) {\n    if (n == \"btnStr\") return EStatBtn::STR;\n    if (n == \"btnAgi\") return EStatBtn::AGI;\n    if (n == \"btnCon\") return EStatBtn::CON;\n    if (n == \"btnSta\") return EStatBtn::STA;\n    if (n == \"btnDex\") return EStatBtn::DEX;\n    return EStatBtn::NONE;\n}\n\nstatic int AttrIdFromBtn(EStatBtn b) {\n    switch (b) {\n        case EStatBtn::STR: return ATTR_STR;\n        case EStatBtn::AGI: return ATTR_AGI;\n        case EStatBtn::CON: return ATTR_CON;\n        case EStatBtn::STA: return ATTR_STA;\n        case EStatBtn::DEX: return ATTR_DEX;\n        default:            return -1;\n    }\n}\n\nstatic void DoAddOne(EStatBtn btn) {\n    const int attrId = AttrIdFromBtn(btn);\n    if (attrId \u0026lt; 0) return;\n\n    CCharacter* pCha = g_stUIBoat.GetHuman();\n    if (!pCha) return;\n    SGameAttr* ga = pCha-\u0026gt;getGameAttr();\n    if (!ga || ga-\u0026gt;get(ATTR_AP) \u0026lt;= 0) return;\n\n    CChaAttr attr;\n    attr.ResetChangeFlag();\n    attr.DirectSetAttr(attrId, 1);\n    attr.SetChangeBitFlag(attrId);\n    if (auto* proCir = (CProCirculateCS*)g_NetIF-\u0026gt;GetProCir())\n        proCir-\u0026gt;SynBaseAttribute(\u0026amp;attr);\n}\n\nstatic POINT GetClientCursor(HWND hwnd) {\n    POINT p; ::GetCursorPos(\u0026amp;p);\n    if (hwnd) ::ScreenToClient(hwnd, \u0026amp;p);\n    return p;\n}\n\nstatic bool IsMouseOverBtn(HWND hwnd, CForm* frm, CGuiData* btn) {\n    if (!frm || !btn || !btn-\u0026gt;GetIsShow()) return false;\n    POINT c = GetClientCursor(hwnd);\n\n    const int x = frm-\u0026gt;GetLeft() + btn-\u0026gt;GetLeft();\n    const int y = frm-\u0026gt;GetTop()  + btn-\u0026gt;GetTop();\n    const int w = btn-\u0026gt;GetWidth();\n    const int h = btn-\u0026gt;GetHeight();\n\n    return (c.x \u0026gt;= x \u0026amp;\u0026amp; c.x \u0026lt; x + w \u0026amp;\u0026amp; c.y \u0026gt;= y \u0026amp;\u0026amp; c.y \u0026lt; y + h);\n}\n\nstatic CGuiData* ButtonByEnum(CTextButton* btnStr, CTextButton* btnAgi,\n                              CTextButton* btnCon, CTextButton* btnSta,\n                              CTextButton* btnDex, EStatBtn b) {\n    switch (b) {\n        case EStatBtn::STR: return btnStr;\n        case EStatBtn::AGI: return btnAgi;\n        case EStatBtn::CON: return btnCon;\n        case EStatBtn::STA: return btnSta;\n        case EStatBtn::DEX: return btnDex;\n        default:            return nullptr;\n    }\n}\n\nstatic void StartHold(EStatBtn b) {\n    s_activeBtn  = b;\n    s_holdActive = (b != EStatBtn::NONE);\n    s_stage      = 0;\n    s_intervalMs = 300;                        \n    s_nextTick   = ::GetTickCount() + s_intervalMs;\n\n}\n\nstatic void StopHold() {\n    s_holdActive = false;\n    s_activeBtn  = EStatBtn::NONE;\n}\n\n}\n\n\n\t2) \u041d\u0430\u0445\u043e\u0434\u0438\u043c \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0443\u044e \u0444\u0443\u043d\u043a\u0446\u0438\u044e:\n \n\nvoid CStateMgr::FrameMove(DWORD dwTime)\n{\n    if( frmState-\u0026gt;GetIsShow() )\n    {\n        static CTimeWork time(100);\n        if( time.IsTimeOut( dwTime ) )\n            RefreshStateFrm();\n    }\n}\n\n\n\t\u0417\u0430\u043c\u0435\u043d\u044f\u0435\u043c \u0446\u0435\u043b\u0438\u043a\u043e\u043c \u0444\u0443\u043d\u043a\u0446\u0438\u044e \u043d\u0430:\n \n\nvoid CStateMgr::FrameMove(DWORD dwTime)\n{\n    if (frmState-\u0026gt;GetIsShow())\n    {\n        static CTimeWork time(100);\n        if (time.IsTimeOut(dwTime))\n            RefreshStateFrm();\n    }\n\n    HWND hwnd = ::GetActiveWindow();\n\n    const bool lmbDown = (::GetAsyncKeyState(VK_LBUTTON) \u0026amp; 0x8000) != 0;\n\n    if (lmbDown \u0026amp;\u0026amp; !s_holdActive) {\n        if (IsMouseOverBtn(hwnd, frmState, btnStr))      StartHold(EStatBtn::STR);\n        else if (IsMouseOverBtn(hwnd, frmState, btnAgi)) StartHold(EStatBtn::AGI);\n        else if (IsMouseOverBtn(hwnd, frmState, btnCon)) StartHold(EStatBtn::CON);\n        else if (IsMouseOverBtn(hwnd, frmState, btnSta)) StartHold(EStatBtn::STA);\n        else if (IsMouseOverBtn(hwnd, frmState, btnDex)) StartHold(EStatBtn::DEX);\n    }\n\n    if (s_holdActive) {\n        CGuiData* activeBtnPtr = ButtonByEnum(btnStr, btnAgi, btnCon, btnSta, btnDex, s_activeBtn);\n        const bool stillOver = IsMouseOverBtn(hwnd, frmState, activeBtnPtr);\n        if (!lmbDown || !stillOver) {\n            StopHold();\n        }\n    }\n\n    if (s_holdActive) {\n        DWORD now = ::GetTickCount();\n        if (now \u0026gt;= s_nextTick) {\n            DoAddOne(s_activeBtn);\n\n            if      (s_stage == 0) s_intervalMs = 150;\n            else if (s_stage == 1) s_intervalMs = 100;\n            else                   s_intervalMs = 80;\n            ++s_stage;\n            s_nextTick = now + s_intervalMs;\n        }\n    }\n}\n\n\n\t3) \u041d\u0430\u0439\u0442\u0438 \u0444\u0443\u043d\u043a\u0446\u0438\u044e:\n \n\nvoid CStateMgr::MainMouseDown(CGuiData *pSender, int x, int y, DWORD key)\n\n\n\t\u0415\u0441\u043b\u0438 \u0432 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 \u0435\u0441\u0442\u044c \u0441\u0442\u0440\u043e\u043a\u0438 \u043d\u0438\u0436\u0435, \u0438\u0445 \u0443\u0434\u0430\u043b\u0438\u0442\u044c \u0438\u043b\u0438 \u0437\u0430\u043c\u0443\u0442\u0438\u0442\u044c, \u043e\u0441\u0442\u0430\u043b\u044c\u043d\u043e\u0435 \u0431\u0435\u0437 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f:\n \n\ns_activeBtn  = ResolveStatBtnByName(name);   // \u2190 \u042d\u0422\u041e \u0423\u0414\u0410\u041b\u0418\u0422\u042c, \u0435\u0441\u043b\u0438 \u0431\u044b\u043b\u043e\ns_holdActive = true;                      // \u2190 \u0422\u0410\u041a\u041e\u0413\u041e \u0422\u041e\u0416\u0415 \u0411\u042b\u0422\u042c \u041d\u0415 \u0414\u041e\u041b\u0416\u041d\u041e\n\n\n\t\u042d\u0442\u043e \u0432\u0441\u0435!\n \n",
+    "dateCreated": "2025-10-15T11:39:20+0000",
+    "datePublished": "2025-10-15T11:39:20+0000",
+    "dateModified": "2025-10-16T07:51:00+0000",
+    "image": "https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg",
+    "author": {
+        "@type": "Person",
+        "name": "Grim4ik",
+        "image": "https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg",
+        "url": "https://go-piratia.ru/profile/624-grim4ik/"
+    },
+    "interactionStatistic": [
+        {
+            "@type": "InteractionCounter",
+            "interactionType": "http://schema.org/ViewAction",
+            "userInteractionCount": 2136
+        },
+        {
+            "@type": "InteractionCounter",
+            "interactionType": "http://schema.org/CommentAction",
+            "userInteractionCount": 3
+        },
+        {
+            "@type": "InteractionCounter",
+            "interactionType": "http://schema.org/FollowAction",
+            "userInteractionCount": 3
+        }
+    ],
+    "@context": "http://schema.org",
+    "@type": "DiscussionForumPosting",
+    "@id": "https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/",
+    "isPartOf": {
+        "@id": "https://go-piratia.ru/#website"
+    },
+    "publisher": {
+        "@id": "https://go-piratia.ru/#organization",
+        "member": {
+            "@type": "Person",
+            "name": "Grim4ik",
+            "image": "https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg",
+            "url": "https://go-piratia.ru/profile/624-grim4ik/"
+        }
+    },
+    "url": "https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/",
+    "discussionUrl": "https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/"
+    },
+    "pageStart": 1,
+    "pageEnd": 1,
+    "comment": [
+        {
+            "@type": "Comment",
+            "@id": "https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/#comment-551",
+            "url": "https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/#comment-551",
+            "author": {
+                "@type": "Person",
+                "name": "Graf",
+                "image": "https://go-piratia.ru/uploads/monthly_2023_05/ava.thumb.jpg.f3aa0b3f39d7e22fcbeea0f6a848db69.jpg",
+                "url": "https://go-piratia.ru/profile/38-graf/"
+            },
+            "dateCreated": "2025-10-15T17:04:45+0000",
+            "text": "@Grim4ik\u00a0\u0414\u043e\u0431\u0440\u044b\u0439 \u0432\u0435\u0447\u0435\u0440. \u041d\u0435 \u0443\u0432\u0435\u0440\u0435\u043d \u0432 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u043e\u0441\u0442\u0438 \"\u0437\u0430\u043c\u0435\u043d\u0438\u0442\u044c \u0432\u0435\u0441\u044c \u043a\u043e\u0434\". \u0425\u043e\u0442\u044f \u0431\u044b \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0438 \u0434\u043e\u0431\u0430\u0432\u044c\u0442\u0435, \u0447\u0442\u043e\u0431\u044b \u043b\u044e\u0434\u0438 \u043c\u043e\u0433\u043b\u0438 \u043d\u0443\u0436\u043d\u044b\u0435 \u0447\u0430\u0441\u0442\u0438 \u043a\u043e\u0434\u0430 \u0441\u0435\u0431\u0435 \u043f\u0435\u0440\u0435\u0442\u0430\u0449\u0438\u0442\u044c.\n \n",
+            "upvoteCount": 1
+        },
+        {
+            "@type": "Comment",
+            "@id": "https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/#comment-553",
+            "url": "https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/#comment-553",
+            "author": {
+                "@type": "Person",
+                "name": "Grim4ik",
+                "image": "https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg",
+                "url": "https://go-piratia.ru/profile/624-grim4ik/"
+            },
+            "dateCreated": "2025-10-16T06:20:36+0000",
+            "text": "\u0414\u043e\u0431\u0440\u044b\u0439 \u0434\u0435\u043d\u044c!\u00a0 \n\t \n\t\u041f\u043e\u043f\u0440\u0430\u0432\u0438\u043b, \u0441\u0434\u0435\u043b\u0430\u043b \u043f\u0440\u043e\u0441\u0442\u043e \u0437\u0430\u043c\u0435\u043d\u044b \u0444\u0443\u043d\u043a\u0446\u0438\u0438 \u043f\u043e \u0448\u0430\u0433\u0430\u043c, \u043d\u0435 \u0442\u0440\u043e\u0433\u0430\u044f \u0446\u0435\u043b\u044b\u0439 \u043a\u043e\u0434! \n\t\u00a0\n \n",
+            "upvoteCount": 1
+        },
+        {
+            "@type": "Comment",
+            "@id": "https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/#comment-555",
+            "url": "https://go-piratia.ru/topic/230-%D0%B0%D0%B2%D1%82%D0%BE-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%83%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B8-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8/#comment-555",
+            "author": {
+                "@type": "Person",
+                "name": "Grim4ik",
+                "image": "https://go-piratia.ru/uploads/monthly_2025_09/LogoAdmin3.thumb.jpg.d4732f3058ad313643c07d269adf6310.jpg",
+                "url": "https://go-piratia.ru/profile/624-grim4ik/"
+            },
+            "dateCreated": "2025-10-16T07:51:00+0000",
+            "text": "\u041d\u0435\u0431\u043e\u043b\u044c\u0448\u043e\u0439 UPDATE \n\t \n\t\u0421\u043b\u043e\u0432\u0438\u043b \u0431\u0430\u0433, \u0447\u0442\u043e \u0437\u0430\u0449\u0438\u0442\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430 \u0432\u044b\u043a\u0438\u0434\u044b\u0432\u0430\u0435\u0442, \u043f\u0440\u0438 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0438 \u0431\u043e\u043b\u044c\u0448\u043e\u0433\u043e \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u0441\u0442\u0430\u0442\u043e\u0432 \u0437\u0430 \u0440\u0430\u0437. \u041f\u043e \u044d\u0442\u043e\u043c\u0443 \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u0432\u043d\u0438\u0437\u0443, \u0434\u0435\u043b\u0430\u0435\u0442 \u043c\u0438\u043d\u0438 \u043f\u0430\u0443\u0437\u0443 \u0447\u0435\u0440\u0435\u0437 \u043a\u0430\u0436\u0434\u044b\u0435 25 \u0441\u0442\u0430\u0442\u043e\u0432 \u0438 \u0441 \u0441\u0435\u0440\u0432\u0435\u0440\u0430 \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435 \u0432\u044b\u0431\u0440\u0430\u0441\u044b\u0432\u0430\u0435\u0442. \n\t \n\t1) \u0412 \u0444\u0443\u043d\u043a\u0446\u0438\u0438\u00a0namespace\u00a0\u043f\u043e\u0441\u043b\u0435\u00a0static DWORD \u00a0 \u00a0 s_nextTick \u00a0 = 0;\u00a0\u0432\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u043c:\n \n\nstatic int       s_holdCount  = 0;\n\n\n\t2) \u0412\u00a0static void StartHold(EStatBtn b)\u00a0\u043f\u043e\u0441\u043b\u0435\u00a0s_nextTick \u00a0 = ::GetTickCount() + s_intervalMs;\u00a0\u0432\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u043c:\n \n\ns_holdCount  = 0;\n\n\n\t3) \u0412\u00a0FrameMove\u00a0\u0437\u0430\u043c\u0435\u043d\u0438\u0442\u044c \u043a\u0443\u0441\u043e\u043a \u0444\u0443\u043d\u043a\u0446\u0438\u0438\u00a0if (now \u0026gt;= s_nextTick) { ... } \u043d\u0430: \n\t\u00a0\n \n\nif (now \u0026gt;= s_nextTick) {\n    if (s_holdCount \u0026gt;= 25) {\n        StopHold();\n        return;\n    }\n\n    CCharacter* pCha = g_stUIBoat.GetHuman();\n    if (!pCha) { StopHold(); return; }\n    SGameAttr* ga = pCha-\u0026gt;getGameAttr();\n    if (!ga || ga-\u0026gt;get(ATTR_AP) \u0026lt;= 0) { StopHold(); return; }\n\n    DoAddOne(s_activeBtn);\n    ++s_holdCount;\n\n    if      (s_stage == 0) s_intervalMs = 150;\n    else if (s_stage == 1) s_intervalMs = 100;\n    else                   s_intervalMs = 80;\n    ++s_stage;\n    s_nextTick = now + s_intervalMs;\n}\n\n\n\t\u00a0\n \n",
+            "upvoteCount": 0
+        }
+    ]
+}	
+</script><script type="application/ld+json">
+{
+    "@context": "http://www.schema.org",
+    "publisher": "https://go-piratia.ru/#organization",
+    "@type": "WebSite",
+    "@id": "https://go-piratia.ru/#website",
+    "mainEntityOfPage": "https://go-piratia.ru/",
+    "name": "Go-piratia for Tales of Pirates (\u041f\u0438\u0440\u0430\u0442\u0438\u044f \u043e\u043d\u043b\u0430\u0439\u043d)",
+    "url": "https://go-piratia.ru/",
+    "potentialAction": {
+        "type": "SearchAction",
+        "query-input": "required name=query",
+        "target": "https://go-piratia.ru/search/?q={query}"
+    },
+    "inLanguage": [
+        {
+            "@type": "Language",
+            "name": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439 (RU)",
+            "alternateName": "ru-RU"
+        },
+        {
+            "@type": "Language",
+            "name": "English (USA)",
+            "alternateName": "en-US"
+        }
+    ]
+}	
+</script><script type="application/ld+json">
+{
+    "@context": "http://www.schema.org",
+    "@type": "Organization",
+    "@id": "https://magicseaonline.com#organization",
+    "mainEntityOfPage": "https://magicseaonline.com",
+    "name": "Magicsea Online",
+    "url": "https://magicseaonline.com",
+    "logo": {
+        "@type": "ImageObject",
+        "@id": "https://go-piratia.ru/#logo",
+        "url": "https://go-piratia.ru/uploads/monthly_2023_11/loooogo-gigapixel-art-height-2000px.png.3ada4657246c22fb77373602d90e5653.png"
+    },
+    "sameAs": [
+        "https://vk.com/go.piratia.news",
+        "https://t.me/magicsea_chat"
+    ]
+}	
+</script><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+                "@id": "https://go-piratia.ru/forum/14-development/",
+                "name": "Development"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://go-piratia.ru/forum/15-documentation/",
+                "name": "Documentation"
+            }
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@id": "https://go-piratia.ru/forum/28-c/",
+                "name": "C++"
+            }
+        }
+    ]
+}	
+</script><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "ContactPage",
+    "url": "https://go-piratia.ru/contact/"
+}	
+</script><script type="text/javascript">
+    (() => {
+        let gqlKeys = [];
+        for (let [k, v] of Object.entries(gqlKeys)) {
+            ips.setGraphQlData(k, v);
+        }
+    })();
+</script><script type="text/javascript">
+	
+		ips.setSetting( 'chatbox_1', {"roomname":"Chat","interval":10000,"flood":5,"limit":20,"length":300,"height":300,"sort":"asc","style":"standard","giphy":null,"autogrow":false,"allow_img":false,"allow_video":false,"allow_audio":false,"allow_select_skins":false,"autoload":false,"canManage":false,"canBypassFlood":false,"hideAnon":false,"use_editor":false,"enter_editor":false,"auto_guest":false,"soundfile":null,"musicbox":false,"song":null,"automsg":null,"alwaysON":false,"lastchat":0} );
+	
+</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"9b961e460bab4320abbfccdfad3538cf","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script></body></html>

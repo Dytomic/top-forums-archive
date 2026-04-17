@@ -1,0 +1,1813 @@
+<html id="XF" lang="en-GB" dir="LTR" data-xf="2.3" data-app="public" data-template="thread_view" data-container-key="node-838" data-content-key="thread-1134154" data-logged-in="false" data-cookie-prefix="xf_" data-csrf="" class="has-no-js template-thread_view" data-run-jobs=""><head><link rel="amphtml" href="https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/?amp=1"><meta charset="utf-8"><title>How to create server on Linux | RaGEZONE - MMO Development Forums</title><link rel="manifest" crossorigin="use-credentials" href="https://forum.ragezone.com/webmanifest.php"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="max-image-preview:large"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#324f72"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#323232"><meta name="apple-mobile-web-app-title" content="RaGEZONE®"><link rel="apple-touch-icon" href="https://forum.ragezone.com/data/assets/logo/maskable_icon_x192.webp"><meta name="description" content="This guide uses Arch Linux, the Terminal, pacman, yaourt almost all the way. This is not for everyone, you need some understanding of your Linux!
+ 
+There..."><meta property="og:description" content="This guide uses Arch Linux, the Terminal, pacman, yaourt almost all the way. This is not for everyone, you need some understanding of your Linux!
+ 
+There are 2 versions of SQL available on Linux: 2017 (evaluation - but it's for 64 bit apps only) and 2000. This guide will follow the installation..."><meta property="twitter:description" content="This guide uses Arch Linux, the Terminal, pacman, yaourt almost all the way. This is not for everyone, you need some understanding of your Linux!
+ 
+There are 2 versions of SQL available on Linux..."><meta property="og:url" content="https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/"><link rel="canonical" href="https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/"><meta property="og:site_name" content="RaGEZONE - MMO Development Forums"><meta property="og:type" content="website"><meta property="og:title" content="How to create server on Linux"><meta property="twitter:title" content="How to create server on Linux"><meta property="og:image" content="https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp"><meta property="twitter:image" content="https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp"><meta property="twitter:card" content="summary"><link rel="stylesheet" href="https://forum.ragezone.com/css.php?css=public%3Anormalize.css%2Cpublic%3Afa.css%2Cpublic%3Avariations.less%2Cpublic%3Acore.less%2Cpublic%3Aapp.less&amp;s=10&amp;l=1&amp;d=1776347396&amp;k=87ab3a911d687930196e0116e7b19437066fe4c4"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="https://forum.ragezone.com/css.php?css=public%3Abb_code.less%2Cpublic%3Amessage.less%2Cpublic%3Aozzmodz_badges.less%2Cpublic%3Aozzmodz_badges_featured_badges.less%2Cpublic%3Aozzmodz_cbhj_style_base16_solarized_dark.css%2Cpublic%3Asiropu_ads_manager_ad.less%2Cpublic%3Axc_hide_links_medias_to_guests_bb_code_hide.less%2Cpublic%3Aextra.less&amp;s=10&amp;l=1&amp;d=1776347396&amp;k=1b9be18a72731de6260d00033bfbf52a6d58bac8"><script src="https://forum.ragezone.com/js/xf/preamble.min.js?_v=b090ee27"></script><script src="https://forum.ragezone.com/js/vendor/vendor-compiled.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/xf/core-compiled.js?_v=b090ee27" defer></script><script>
+	XF.samViewCountMethod = "impression";
+	XF.samServerTime = 1776388029;
+	XF.samItem = ".samItem";
+	XF.samCodeUnit = ".samCodeUnit";
+	XF.JamSpannerUnit = ".JamSpannerUnit";
+</script><script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var bkp = document.querySelectorAll('div[data-ba]');
+		if (bkp) {
+			bkp.forEach(item => {
+				var ad = item;
+				if (ad.querySelector('ins.adsbygoogle').style.display == 'none') {
+					 XF.ajax('GET', XF.canonicalizeUrl('index.php?sam-item/' + ad.dataset.ba + '/get-backup'), {}, data => {
+						 if (data.backup) {
+							 ad.html(data.backup);
+						 }
+					 }, { skipDefault: true, global: false});
+				}
+			});
+		}
+		const advHere = document.querySelectorAll('.samAdvertiseHereLink');
+		if (advHere) {
+			advHere.forEach(item => {
+				var unit = item.parentNode;
+				if (unit.classList.contains('samCustomSize')) {
+					unit.style.marginBottom = 20;
+				}
+			});
+		}
+		const ff = document.querySelectorAll('div[data-position="footer_fixed"] > div[data-cv="true"]');
+		if (ff) {
+			ff.forEach(item => {
+				XF.trigger(item, 'adView');
+			});
+		}
+	});
+</script><script>
+		XF.ready(() =>
+		{
+			XF.extendObject(true, XF.config, {
+				// 
+				userId: 0,
+				enablePush: true,
+xs_TypeEditor: 'editor',
+				pushAppServerKey: 'BPKawPyIzrRkJg495w42az2fPsCPCvAv8lBF4srGXv4MGov_8j3Xb8kKY81-FRa70iHJ7owpAbQ7IN2Gaqv89rk',
+				url: {
+					fullBase: 'https://forum.ragezone.com/',
+					basePath: '/',
+					css: '/css.php?css=__SENTINEL__&s=10&l=1&d=1776347396',
+					js: '/js/__SENTINEL__?_v=b090ee27',
+					icon: '/data/local/icons/__VARIANT__.svg?v=1776243575#__NAME__',
+					iconInline: '/styles/fa/__VARIANT__/__NAME__.svg?v=5.15.3',
+					keepAlive: '/login/keep-alive'
+				},
+				cookie: {
+					path: '/',
+					domain: '',
+					prefix: 'xf_',
+					secure: true,
+					consentMode: 'disabled',
+					consented: ["optional","_third_party"]
+				},
+				cacheKey: 'f3ed7234243583f554e27d349fe769c5',
+				csrf: '',
+				js: {"\/js\/ozzmodz\/codeblockhighlightjs\/highlight.min.js?_v=b090ee27":true,"\/js\/ozzmodz\/codeblockhighlightjs\/code_block.min.js?_v=b090ee27":true,"\/js\/mentalbypass\/mentalbypass.js?_v=b090ee27":true,"\/js\/xf\\action.min.js?_v=b090ee27":true,"\/js\/XenSoluce\/Hide\/check-hide.min.js?_v=b090ee27":true},
+				fullJs: false,
+				css: {"public:bb_code.less":true,"public:message.less":true,"public:ozzmodz_badges.less":true,"public:ozzmodz_badges_featured_badges.less":true,"public:ozzmodz_cbhj_style_base16_solarized_dark.css":true,"public:siropu_ads_manager_ad.less":true,"public:xc_hide_links_medias_to_guests_bb_code_hide.less":true,"public:extra.less":true},
+				time: {
+					now: 1776388029,
+					today: 1776380400,
+					todayDow: 5,
+					tomorrow: 1776466800,
+					yesterday: 1776294000,
+					week: 1775862000,
+					month: 1774998000,
+					year: 1767225600
+				},
+				style: {
+					light: 'default',
+					dark: 'alternate',
+					defaultColorScheme: 'light'
+				},
+				borderSizeFeature: '3px',
+				fontAwesomeWeight: 'r',
+				enableRtnProtect: true,
+				
+				enableFormSubmitSticky: true,
+				imageOptimization: 'optimize',
+				imageOptimizationQuality: 0.85,
+				uploadMaxFilesize: 33554432,
+				uploadMaxWidth: 3840,
+				uploadMaxHeight: 2160,
+				allowedVideoExtensions: ["m4v","mov","mp4","mp4v","mpeg","mpg","ogv","webm"],
+				allowedAudioExtensions: ["mp3","opus","ogg","wav"],
+				shortcodeToEmoji: true,
+				visitorCounts: {
+					conversations_unread: '0',
+					alerts_unviewed: '0',
+					total_unread: '0',
+					title_count: true,
+					icon_indicator: true
+				},
+				jsMt: {"xf\/action.js":"6eed86ab","xf\/embed.js":"f79f40ed","xf\/form.js":"f79f40ed","xf\/structure.js":"6eed86ab","xf\/tooltip.js":"e13af6c4"},
+				jsState: {},
+				publicMetadataLogoUrl: 'https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp',
+				publicPushBadgeUrl: 'https://forum.ragezone.com/styles/default/xenforo/bell.png'
+			})
+
+			XF.extendObject(XF.phrases, {
+				// 
+"time.day": "{count} day",
+"time.days": "{count} days",
+"time.hour": "{count} hour",
+"time.hours": "{count} hours",
+"time.minute": "{count} minute",
+"time.minutes": "{count} minutes",
+"time.month": "{count} month",
+"time.months": "{count} months",
+"time.second": "{count} second",
+"time.seconds": "{count} seconds",
+"time.week": "time.week",
+"time.weeks": "{count} weeks",
+"time.year": "{count} year",
+"time.years": "{count} years",
+			pb_dailylogin_button_text_prev: "Previous",
+			pb_dailylogin_button_text_next: "Next",
+			pb_dailylogin_button_text_prev_year: "Previous year",
+			pb_dailylogin_button_text_year: "Year",
+			pb_dailylogin_button_text_today: "Today",
+			pb_dailylogin_button_text_month: "Month",
+			pb_dailylogin_button_text_week: "Week",
+			pb_dailylogin_button_text_day: "Day",
+			pb_dailylogin_button_text_list: "List",
+			pb_dailylogin_calendar_week_short: "W",
+			pb_dailylogin_calendar_week: "Week",
+			pb_dailylogin_calendar_close: "Close",
+			pb_dailylogin_calendar_time_hint: "Time",
+			pb_dailylogin_calendar_event_hint: "Event",
+			pb_dailylogin_calendar_all_day: "all-day",
+			pb_dailylogin_calendar_more: "more",
+			pb_dailylogin_calendar_no_events_to_display: "No events to display",
+				date_x_at_time_y:     "{date} at {time}",
+				day_x_at_time_y:      "{day} at {time}",
+				yesterday_at_x:       "Yesterday at {time}",
+				x_minutes_ago:        "{minutes} minutes ago",
+				one_minute_ago:       "1 minute ago",
+				a_moment_ago:         "A moment ago",
+				today_at_x:           "Today at {time}",
+				in_a_moment:          "In a moment",
+				in_a_minute:          "In a minute",
+				in_x_minutes:         "In {minutes} minutes",
+				later_today_at_x:     "Later today at {time}",
+				tomorrow_at_x:        "Tomorrow at {time}",
+				short_date_x_minutes: "{minutes}m",
+				short_date_x_hours:   "{hours}h",
+				short_date_x_days:    "{days}d",
+
+				day0: "Sunday",
+				day1: "Monday",
+				day2: "Tuesday",
+				day3: "Wednesday",
+				day4: "Thursday",
+				day5: "Friday",
+				day6: "Saturday",
+
+				dayShort0: "Sun",
+				dayShort1: "Mon",
+				dayShort2: "Tue",
+				dayShort3: "Wed",
+				dayShort4: "Thu",
+				dayShort5: "Fri",
+				dayShort6: "Sat",
+
+				month0: "January",
+				month1: "February",
+				month2: "March",
+				month3: "April",
+				month4: "May",
+				month5: "June",
+				month6: "July",
+				month7: "August",
+				month8: "September",
+				month9: "October",
+				month10: "November",
+				month11: "December",
+
+				active_user_changed_reload_page: "The active user has changed. Reload the page for the latest version.",
+				server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+				oops_we_ran_into_some_problems: "Oops! We ran into some problems.",
+				oops_we_ran_into_some_problems_more_details_console: "Oops! We ran into some problems. Please try again later. More error details may be in the browser console.",
+				file_too_large_to_upload: "The file is too large to be uploaded.",
+				uploaded_file_is_too_large_for_server_to_process: "The uploaded file is too large for the server to process.",
+				files_being_uploaded_are_you_sure: "Files are still being uploaded. Are you sure you want to submit this form?",
+				attach: "Attach files",
+				rich_text_box: "Rich text box",
+				close: "Close",
+				link_copied_to_clipboard: "Link copied to clipboard.",
+				text_copied_to_clipboard: "Text copied to clipboard.",
+				loading: "Loading…",
+				you_have_exceeded_maximum_number_of_selectable_items: "You have exceeded the maximum number of selectable items.",
+
+				processing: "Processing",
+				'processing...': "Processing…",
+
+				showing_x_of_y_items: "Showing {count} of {total} items",
+				showing_all_items: "Showing all items",
+				no_items_to_display: "No items to display",
+
+				number_button_up: "Increase",
+				number_button_down: "Decrease",
+
+				push_enable_notification_title: "Push notifications enabled successfully at RaGEZONE - MMO Development Forums",
+				push_enable_notification_body: "Thank you for enabling push notifications!",
+
+				pull_down_to_refresh: "Pull down to refresh",
+				release_to_refresh: "Release to refresh",
+				refreshing: "Refreshing…"
+			})
+		})
+	
+
+window.addEventListener('DOMContentLoaded',()=>{XF.Push.updateUserSubscriptionParent=XF.Push.updateUserSubscription;XF.Push.updateUserSubscription=function(b,a){"unsubscribe"===a&&XF.browser.safari&&XF.Push.setPushHistoryUserIds({});XF.Push.updateUserSubscriptionParent(b,a)}});
+</script><script src="https://forum.ragezone.com/js/ozzmodz/codeblockhighlightjs/highlight.min.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/ozzmodz/codeblockhighlightjs/code_block.min.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/mentalbypass/mentalbypass.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/xf\action.min.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/XenSoluce/Hide/check-hide.min.js?_v=b090ee27" defer></script><script>
+XF.ready(() =>
+{
+
+		XF.extendObject(true, XF.config, 
+		{
+			
+				apSsAvatarFrameStyle: 'square',
+			
+			
+			
+		});
+	
+})
+</script><link rel="icon" type="image/png" href="https://forum.ragezone.com/data/assets/logo/favicon-32x32.webp" sizes="32x32"></head><body data-template="thread_view">
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+<div class="p-pageWrapper" id="top">
+
+	
+
+	
+		
+			
+				<div class="height38"></div>
+			
+		
+	
+
+	<header class="p-header" id="header"><div class="p-header-inner">
+			<div class="p-header-content">
+
+				
+					<div class="p-header-logo p-header-logo--image">
+						<a href="https://forum.ragezone.com">
+							
+
+	
+
+	
+		
+		
+
+		
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations='{"default":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo.png","2":null},"alternate":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo-dark.png","2":null}}'><source srcset="/data/styles/10/styles/ragezone/xenforo/xenforo-logo-dark.png" media="(prefers-color-scheme: dark)"></source><img src="https://forum.ragezone.com/data/styles/10/styles/ragezone/xenforo/xenforo-logo.png" width="607" height="206" alt="RaGEZONE - MMO Development Forums"></picture></a>
+					</div>
+				
+
+				 <div class="JamSpannerUnit samAlignCenter samDisplayFlexbox samCustomSize" style="width: 468px; height: 60px;" data-xf-init="sam-unit" data-position="container_header"> <div class="samItem"> <a href="https://discord.gg/GuC8hamAyF" target="_blank" rel="sponsored"> <img src="https://forum.ragezone.com/data/mentalbypass/169cefe9a55b17.webp" alt="" width="468" height="60"></a> </div> <div class="samAdvertiseHereLink samAlignCenter" style="margin-top: 5px;"> <a href="https://forum.ragezone.com/ads-manager/packages/1/create-ad">Place your Ad here for £40.00 per Month!</a> </div> </div> 
+
+			</div>
+		</div>
+	</header><div class="p-navSticky p-navSticky--primary " data-xf-init="sticky-header">
+			
+		<nav class="p-nav"><div class="p-nav-inner">
+				<button type="button" class="button button--plain p-nav-menuTrigger" data-xf-click="off-canvas" data-menu=".js-headerOffCanvasMenu" tabindex="0" aria-label="Menu"><span class="button-text">
+					<i aria-hidden="true"></i>
+				</span></button>
+
+				
+					<div class="p-nav-smallLogo">
+						<a href="https://forum.ragezone.com">
+							
+
+	
+
+	
+		
+		
+
+		
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations='{"default":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo.png","2":null},"alternate":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo-dark.png","2":null}}'><source srcset="/data/styles/10/styles/ragezone/xenforo/xenforo-logo-dark.png" media="(prefers-color-scheme: dark)"></source><img src="https://forum.ragezone.com/data/styles/10/styles/ragezone/xenforo/xenforo-logo.png" width="607" height="206" alt="RaGEZONE - MMO Development Forums"></picture></a>
+					</div>
+				
+
+				<div class="p-nav-scroller hScroller" data-xf-init="h-scroller" data-auto-scroll=".p-navEl.is-selected">
+					<div class="hScroller-scroll">
+						<ul class="p-nav-list js-offCanvasNavSource"><li>
+								
+	<div class="p-navEl is-selected" data-has-children="true">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="forums">Forums</a>
+
+
+		<a data-xf-key="1" data-xf-click="menu" data-menu-pos-ref="&lt; .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="https://forum.ragezone.com/whats-new/posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="newPosts">New posts</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl " data-has-children="true">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/downloads/categories/server-files.3/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="xfrm">Downloads</a>
+
+
+		<a data-xf-key="2" data-xf-click="menu" data-menu-pos-ref="&lt; .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="https://forum.ragezone.com/downloads/latest-reviews" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="xfrmLatestReviews">Latest reviews</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl ">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/topsites/" class="p-navEl-link " data-xf-key="3" data-nav-id="rz_ts">Top Sites</a>
+
+
+		
+
+		
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl ">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/threads/how-to-use-the-ragezone-forum-advertising-system.1212910/" class="p-navEl-link " data-xf-key="4" data-nav-id="RZ_Advertising">Advertise On RZ</a>
+
+
+		
+
+		
+	
+	</div>
+
+							</li>
+						
+						</ul></div>
+				</div>
+
+				<div class="p-nav-opposite">
+					<div class="p-navgroup p-account p-navgroup--guest">
+						
+							
+								<a href="https://forum.ragezone.com/login/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--logIn" data-xf-click="overlay" data-follow-redirects="on">
+									<i aria-hidden="true"></i>
+									<span class="p-navgroup-linkText">Log in</span>
+								</a>
+							
+							<div class="menu menu--structural menu--medium" data-menu="menu" data-nav-id="userLogin" aria-hidden="true" data-href="https://forum.ragezone.com/login/"></div>
+							
+								<a href="https://forum.ragezone.com/login/register" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--register" data-xf-click="overlay" data-follow-redirects="on">
+									<i aria-hidden="true"></i>
+									<span class="p-navgroup-linkText">Register</span>
+								</a>
+							
+						
+					</div>
+
+					<div class="p-navgroup p-discovery p-discovery--noSearch">
+						<a href="https://forum.ragezone.com/whats-new/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--whatsnew" aria-label="What's new" title="What's new">
+							<i aria-hidden="true"></i>
+							<span class="p-navgroup-linkText">What's new</span>
+						</a>
+
+						
+					</div>
+				</div>
+			</div>
+		</nav></div>
+		
+		
+		
+		
+	
+	
+
+<div class="offCanvasMenu offCanvasMenu--nav js-headerOffCanvasMenu" data-menu="menu" aria-hidden="true" data-ocm-builder="navigation">
+		<div class="offCanvasMenu-backdrop" data-menu-close="true"></div>
+		<div class="offCanvasMenu-content">
+			<div class="offCanvasMenu-header">
+				Menu
+				<a class="offCanvasMenu-closer" data-menu-close="true" role="button" tabindex="0" aria-label="Close"></a>
+			</div>
+			
+				<div class="p-offCanvasRegisterLink">
+					<div class="offCanvasMenu-linkHolder">
+						<a href="https://forum.ragezone.com/login/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+							Log in
+						</a>
+					</div>
+					<hr class="offCanvasMenu-separator"><div class="offCanvasMenu-linkHolder">
+							<a href="https://forum.ragezone.com/login/register" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+								Register
+							</a>
+						</div>
+						<hr class="offCanvasMenu-separator"></div>
+			
+			<div class="js-offCanvasNavTarget"></div>
+			<div class="offCanvasMenu-installBanner js-installPromptContainer" style="display: none;" data-xf-init="install-prompt">
+				<div class="offCanvasMenu-installBanner-header">Install the app</div>
+				<button type="button" class="button js-installPromptButton"><span class="button-text">Install</span></button>
+				<template class="js-installTemplateIOS"><div class="js-installTemplateContent">
+						<div class="overlay-title">How to install the app on iOS</div>
+						<div class="block-body">
+							<div class="block-row">
+								<p>
+									Follow along with the video below to see how to install our site as a web app on your home screen.
+								</p>
+								<p style="text-align: center">
+									<video src="https://forum.ragezone.com/styles/default/xenforo/add_to_home.mp4" width="280" height="480" autoplay loop muted playsinline></video></p>
+								<p>
+									<small><strong>Note:</strong> This feature may not be available in some browsers.</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</template></div>
+		</div>
+	</div>
+
+	<div class="p-body">
+		<div class="p-body-inner">
+			
+
+
+			
+	
+
+		
+			
+		
+
+		
+	
+
+
+			
+	
+		<ul class="p-breadcrumbs " itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/#the-mmo-community.55" itemprop="item">
+			
+				<span itemprop="name">The MMO Community</span>
+			
+		</a>
+		<meta itemprop="position" content="1"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/mmo-server-developments.168/" itemprop="item">
+			
+				<span itemprop="name">MMO Server Developments</span>
+			
+		</a>
+		<meta itemprop="position" content="2"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/tales-of-pirates.440/" itemprop="item">
+			
+				<span itemprop="name">Tales of Pirates</span>
+			
+		</a>
+		<meta itemprop="position" content="3"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/tales-of-pirates-tutorials.838/" itemprop="item">
+			
+				<span itemprop="name">Tales of Pirates Tutorials</span>
+			
+		</a>
+		<meta itemprop="position" content="4"></li>
+
+				
+			
+		</ul><noscript class="js-jsWarning"><div class="blockMessage blockMessage--important blockMessage--iconic u-noJsOnly">JavaScript is disabled. For a better experience, please enable JavaScript in your browser before proceeding.</div></noscript>
+
+			
+	<div class="blockMessage blockMessage--important blockMessage--iconic js-browserWarning" style="display: none">You are using an out of date browser. It  may not display this or other websites correctly.<br>You should upgrade or use an <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">alternative browser</a>.</div>
+
+
+			
+				<div class="p-body-header">
+				
+					
+						<div class="p-title ">
+						
+							
+								<h1 class="p-title-value">How to create server on Linux
+	
+    
+    
+
+</h1>
+							
+							
+						
+						</div>
+					
+
+					
+						<div class="p-description">
+	<ul class="listInline listInline--bullet"><li>
+			<i class="fa--xf far fa-user "><svg xmlns="http://www.w3.org/2000/svg" role="img"><title>Thread starter</title><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#user"></use></svg></i>
+			<span class="u-srOnly">Thread starter</span>
+
+			<a href="https://forum.ragezone.com/members/riizq.1333373541/" class="username  u-concealed" dir="auto" data-user-id="1333373541" data-xf-init="member-tooltip"><span class="username--style73">Riizq</span></a>
+		</li>
+		<li>
+			<i class="fa--xf far fa-clock "><svg xmlns="http://www.w3.org/2000/svg" role="img"><title>Start date</title><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#clock"></use></svg></i>
+			<span class="u-srOnly">Start date</span>
+
+			<a href="https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/" class="u-concealed"><time class="u-dt" dir="auto" datetime="2017-06-21T12:14:25+0100" data-timestamp="1498043665" data-date="Jun 21, 2017" data-time="12:14 PM" data-short="Jun '17" title="Jun 21, 2017 at 12:14 PM">Jun 21, 2017</time></a>
+		</li>
+		
+
+
+		
+	</ul></div>
+					
+				
+				</div>
+			
+
+			<div class="p-body-main    is-active">
+				
+				
+
+				<div class="p-body-content">
+					
+	
+
+		
+			
+		
+
+		
+	
+
+
+					<div class="p-body-pageContent">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+
+	
+
+
+	
+		<link rel="alternate" type="application/json+oembed" href="https://forum.ragezone.com/api/oembed/?url=https%3A%2F%2Fforum.ragezone.com%2Fthreads%2Fhow-to-create-server-on-linux.1134154%2F" title="How to create server on Linux"><div class="block block--messages" data-xf-init="" data-type="post" data-href="https://forum.ragezone.com/inline-mod/" data-search-target="*">
+
+	<span class="u-anchorTarget" id="posts"></span>
+
+	
+		
+	
+
+	
+
+	<div class="block-outer"><div class="block-outer-opposite">
+				<div class="buttonGroup">
+				
+					
+
+
+	<a href="https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/?highlights=1" class="button button--link"><span class="button-text">
+		Highlights Only
+	</span></a>
+
+
+						
+						
+						
+						
+						
+
+						
+					
+				
+				</div>
+			</div></div>
+
+	
+
+	
+		
+	<div class="block-outer js-threadStatusField"></div>
+
+	
+
+	<div class="block-container lbContainer" data-xf-init="lightbox select-to-quote" data-message-selector=".js-post" data-wu-highlight-thread="0" data-lb-id="thread-1134154" data-lb-universal="">
+
+		<div class="block-body js-replyNewMessageContainer">
+			
+				
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+					
+
+					
+						
+
+	
+	
+
+	
+
+	
+	<article class="message message--post js-post js-inlineModContainer is-first  " data-author="Riizq" data-content="post-8799653" data-wu-highlight="0" data-wu-highlight-special="0" id="js-post-8799653"><span class="u-anchorTarget" id="post-8799653"></span>
+		
+			
+								
+
+	
+
+	<header class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed">
+				<a href="https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/post-8799653" rel="nofollow">
+					<time class="u-dt" dir="auto" datetime="2017-06-21T12:14:25+0100" data-timestamp="1498043665" data-date="Jun 21, 2017" data-time="12:14 PM" data-short="Jun '17" title="Jun 21, 2017 at 12:14 PM">Jun 21, 2017</time></a>
+			</li>
+			
+		</ul><ul class="message-attribution-opposite message-attribution-opposite--list "><li>
+				<a href="https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/post-8799653" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="https://forum.ragezone.com/posts/8799653/share" aria-label="Share" rel="nofollow">
+					<i class="fa--xf far fa-share-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#share-alt"></use></svg></i>
+				</a>
+			</li>
+			
+				<li class="u-hidden js-embedCopy">
+					
+	<a href="javascript:" data-xf-init="copy-to-clipboard" data-copy-text='&lt;div class="js-xf-embed" data-url="https://forum.ragezone.com" data-content="post-8799653"&gt;&lt;/div&gt;&lt;script defer src="https://forum.ragezone.com/js/xf/external_embed.js?_v=b090ee27"&gt;&lt;/script&gt;' data-success="Embed code HTML copied to clipboard." class="">
+		<i class="fa--xf far fa-code "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#code"></use></svg></i>
+	</a>
+
+				</li>
+			
+			
+			
+				<li>
+					<a href="https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/post-8799653" rel="nofollow">
+						#1
+					</a>
+				</li>
+			
+		</ul></header><div class="message-inner">
+				
+					<div class="message-cell message-cell--user ap-ss-postbitBackground ap-ss-postbitBackground--1333373541" style="">
+						
+
+	<section class="message-user ap-ss-postbitFilter ap-ss-postbitFilter--1333373541" style=""><div class="message-avatar ">
+			<div class="message-avatar-wrapper">
+				<a href="https://forum.ragezone.com/members/riizq.1333373541/" class="avatar avatar--l avatar--square" data-user-id="1333373541" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/l/1333373/1333373541.jpg?1680381268" alt="Riizq" class="avatar-u1333373541-l" width="192" height="192" itemprop="image"></a>
+				
+				
+			</div>
+		</div>
+		<div class="message-userDetails">
+			<div class="message-userName">
+				<h4 class="message-name"><a href="https://forum.ragezone.com/members/riizq.1333373541/" class="username " dir="auto" data-user-id="1333373541" data-xf-init="member-tooltip"><span class="username--style73" itemprop="name">Riizq</span></a></h4>
+			</div>
+
+	
+		<h5 class="userTitle message-userTitle" dir="auto">Preparing</h5>
+	
+			
+		<div class="userBanner userBanner--member500 message-userBanner" itemprop="jobTitle"><span class="userBanner-before"></span><strong>Loyal Member</strong><span class="userBanner-after"></span></div>
+
+			
+				
+
+				
+	
+		
+			
+		
+		
+			<div class="featuredBadges featuredBadges--message">
+				
+					
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/riizq.1333373541/#badges" class="featuredBadge featuredBadge--9" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf fad fa-medal  badgeIcon badgeIcon--9 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" role="img" aria-hidden="true"><path d="M127.18 0H16A16 16 0 0 0 2.92 25.18l111.27 159a207 207 0 0 1 109.56-53.39L154.62 15.54A32 32 0 0 0 127.18 0zM496 0H384.82a32 32 0 0 0-27.44 15.54l-69.13 115.21a207 207 0 0 1 109.56 53.38L509.08 25.18A16 16 0 0 0 496 0z" class="fa-secondary"></path><path d="M256 160a176 176 0 1 0 176 176 176 176 0 0 0-176-176zm92.52 157.26l-37.93 37 9 52.22a11.48 11.48 0 0 1-16.65 12.09L256 393.88l-46.9 24.65a11.48 11.48 0 0 1-16.65-12.09l9-52.22-37.93-37a11.49 11.49 0 0 1 6.35-19.59l52.4-7.63 23.43-47.52a11.5 11.5 0 0 1 20.61 0L289.74 290l52.43 7.64a11.49 11.49 0 0 1 6.35 19.62z" class="fa-primary"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>1000 Posts</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/riizq.1333373541/#badges" class="featuredBadge featuredBadge--33" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf far fa-trophy-alt  badgeIcon badgeIcon--33 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" role="img" aria-hidden="true"><path d="M359.3 138.9l-43.4-6.3-19.4-39.3c-3.5-7-13.5-7.1-17 0l-19.4 39.3-43.4 6.3c-7.8 1.1-10.9 10.7-5.3 16.2l31.4 30.6-7.4 43.2c-1.3 7.7 6.8 13.7 13.8 10l38.8-20.4 38.8 20.4c6.9 3.6 15.1-2.2 13.8-10l-7.4-43.2 31.4-30.6c5.6-5.5 2.5-15.1-5.3-16.2zM448 64V16c0-8.8-7.2-16-16-16H144c-8.8 0-16 7.2-16 16v48H16C7.2 64 0 71.2 0 80v60.8C0 201.1 68.3 266 159.6 283.4c27.4 57.9 68.1 88.2 104.4 97.4V464h-64c-22.1 0-40 17.9-40 40 0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8 0-22.1-17.9-40-40-40h-64v-83.2c36.3-9.3 77-39.5 104.4-97.4C507.5 266.1 576 201.2 576 140.8V80c0-8.8-7.2-16-16-16H448zM48 140.8V112h80c0 39.2 2.1 76.2 12.3 116.8-55.1-18.9-92.3-58.9-92.3-88zM288 336c-53 0-112-78.4-112-216V48h224v72c0 140.5-60.8 216-112 216zm240-195.2c0 29.1-37.2 69.1-92.3 88C445.9 188.2 448 151.1 448 112h80v28.8z"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>Trophy Point Collector</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/riizq.1333373541/#badges" class="featuredBadge featuredBadge--10" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf fad fa-scroll-old  badgeIcon badgeIcon--10 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512" role="img" aria-hidden="true"><path d="M539.31 228.69L512 256l27.31 27.31a16 16 0 0 1 4.69 11.32V384h-89.37a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80.61 80c-44.11-.33-79.39-36.89-79.39-81V262.63a16 16 0 0 1 4.69-11.32L160 224l-27.31-27.31a16 16 0 0 1-4.69-11.32V65A65 65 0 0 0 63 0h385a96.1 96.1 0 0 1 95.68 88.2 16.15 16.15 0 0 1-4.63 12.8L512 128l27.31 27.31a16 16 0 0 1 4.69 11.32v50.74a16 16 0 0 1-4.69 11.32z" class="fa-secondary"></path><path d="M192 512h16c-2.59 0-5.14-.13-7.66-.37-2.75.24-5.53.37-8.34.37zM64 0A64 64 0 0 0 0 64v48a16 16 0 0 0 16 16h112V65A65 65 0 0 0 64 0zm560 384H454.63a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80 80h320a112 112 0 0 0 112-112.06A16 16 0 0 0 624 384z" class="fa-primary"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>10 Happy Years</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+					
+				
+			</div>
+		
+	
+
+			
+
+		</div>
+		
+			
+			
+				<div class="message-userExtras">
+				
+					
+						<dl class="pairs pairs--justified"><dt style="">Joined</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">Sep 18, 2011</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Messages</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">1,104</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Reaction score</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">261</dd>
+						</dl></div>
+			
+		
+		<span class="message-userArrow"></span>
+	</section></div>
+				
+
+				
+					<div class="message-cell message-cell--main">
+					
+						<div class="message-main js-quickEditTarget">
+
+							<div class="message-content js-messageContent">
+							
+
+								
+									
+	
+
+	
+
+	
+	
+
+								
+
+								
+									
+	
+
+	<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-8799653" data-lb-caption-desc="Riizq · Jun 21, 2017 at 12:14 PM">
+
+		
+			
+
+	
+		
+	
+
+		
+
+		<article class="message-body  js-selectToQuote"><div>
+				
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<div class="bbWrapper">This guide uses Arch Linux, the Terminal, pacman, yaourt almost all the way. This is not for everyone, you need some understanding of your Linux!<br><br>
+There are 2 versions of SQL available on Linux: 2017 (evaluation - but it's for 64 bit apps only) and 2000. This guide will follow the installation of 2000 - the game can only be run 32 bits...<br><br>
+Installing SQL 2000 under wine:<br>
+Note for 64 bits systems: for any wine/winetricks related instruction to SQL server and your top server, you have to add this:<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>env WINEARCH=win32 WINEPREFIX=~/.wine32</code></pre>
+	</div>
+</div><br>
+This is because Winetricks prevents dotnet20sp2 from installing into a 64 bits prefix - it is 32 bits only! Examples:<br><br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>env WINEARCH=win32 WINEPREFIX=~/.wine32 winetricks winxp
+env WINEARCH=win32 WINEPREFIX=~/.wine32 winetricks dotnet20sp2
+...
+env WINEARCH=win32 WINEPREFIX=~/.wine32 wine MSDE2000A
+...</code></pre>
+	</div>
+</div> <br>
+First, to configure Wine to support SQL 2000, set it to win xp mode and install Net Framework 2.0 SP 2 and MDAC 2.8 (SP 2 is not needed but it is recommended):<br><br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>winetricks winxp
+winetricks dotnet20sp2
+winetricks mdac28</code></pre>
+	</div>
+</div><br>
+Then, cd to folder where MSDE2000A.exe is and install it - Remember to use .wine32 folder instead of .wine to use the 32 bits prefix on a 64 bit system:<br><br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>wine MSDE2000A.exe
+wine ~/.wine/drive_c/MSDERelA/setup.exe DISABLEROLLBACK=1 BLANKSAPWD=1 DISABLENETWORKPROTOCOLS=0 SECURITYMODE=SQL</code></pre>
+	</div>
+</div>The installer will fail! When time out failures start appearing, do a ctrl+c to abort, then copy the remaining files over - - Remember to use .wine32 folder instead of .wine (on both parameters) to use the 32 bits prefix on a 64 bit system, and to use your user name instead of "myusername":<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>cp ~/.wine/drive_c/users/myusername/Temp/SqlSetup/Temp/*.* ~/.wine/drive_c/windows/system32/</code></pre>
+	</div>
+</div><br>
+Now installation is finished. Restart wine or computer (otherwise SQL service might not run). T<b>hen MSSQLSERVER service will start automatically when first running a program on wine on 32 bits prefix.</b> You can also do the following to start it manually directly:<br><br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>wine net start MSSQLSERVER</code></pre>
+	</div>
+</div><br>
+To start the program that controls the service, you can do the following:<br><br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>wine "C:/Program Files/Microsoft SQL Server/80/Tools/Binn/sqlmangr.exe"</code></pre>
+	</div>
+</div><b>Sources:<br><div class="messageHide messageHide--link">
+	To view the content, you need to sign in or register
+
+</div><br><div class="messageHide messageHide--link">
+	To view the content, you need to sign in or register
+
+</div><br><br>
+Before we continue, the dbs have to be in the same environment of the installed SQL server. That means, you are using the ~/.wine32/drive_c folder on 64 bits and ~/.wine/drive_c on 32 bits.</b><br><br><b>These folders are usually hidden, so you might need to unhide them first</b> (you need to configure that in your system). Then unpack the db files to a folder inside that drive_c folder.<br><br>
+---<br><br>
+This guide will show how to setup SQuirreL SQL client. SQuirrel SQL and similar gui clients should be used for fully setup gui Linux environments and ease of use. This guide will assume you already installed the SQL server.<br><br><br><u><b>Setting up SQuirreL SQL client and connecting to server:</b></u><br><u><b>Installing:</b></u><br><br>
+Download it using yaourt:<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>yaourt -S squirrel-sql</code></pre>
+	</div>
+</div><br>
+After installing it, download MSSQL JDBC driver depending on the SQL version installed:<br><b>SQL 2017: version 6+: 
+	
+<div class="messageHide messageHide--link">
+	To view the content, you need to sign in or register
+
+</div>.</b> Extract <b>sqljdbc41.jar</b> (enu/jre7 folder) if SQL client uses Java 7, or sqljdbc42.jar (enu/jre8 folder) if using Java 8.<br><b>SQL 2000: version 3.0: 
+	
+<div class="messageHide messageHide--link">
+	To view the content, you need to sign in or register
+
+</div></b> Extract <b>sqljdbc4.jar.</b><br><br><b><u><br>
+Setting up the SQL client:</u></b><br>
+Start the client, click the drivers tab on the left side of the window, then right click "<b>Microsoft MSSQL Server JDBC Driver"</b>, then click modify.<br>
+Click <b>"Extra Class Path"</b> tab, then click <b>"Add"</b> button.<br><br>
+Now search for that file you just extracted. Then click "OK". On the bottom of window, you'll see <b>"Driver class com.microsoft.sqlserver.jdbc.SQLServerDriver successfully registered for driver definition: Microsoft MSSQL Server JDBC Driver"</b>, that means it worked.<br>
+Now click the<b> "Aliases"</b> tab on left side of window. Then click the <b>"+" </b>sign button (create new alias).<br>
+Put any name, select<b> "Microsoft MSSQL Server JDBC Driver"</b>. Now for the url, it's going to be like this:<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>jdbc:sqlserver://localhost:1433</code></pre>
+	</div>
+</div><br><b>localhost</b> can be the ip of your SQL server, if not local, and the 1433 can be changed to another if you have another SQL 2000 instance running or are using another port for the SQL server.<br>
+The user name is <b>sa</b>, and:<br><b>SQL 2017:</b> put the sa password given at installation.<br><b>SQL 2000</b>: leave the pass blank.<br>
+Then click OK.<br><br><b><u>Connecting to SQL server:</u></b><br><br>
+Now start SQL server if not started yet:<br>
+SQL 2017: it already starts on system start.<br>
+SQL 2000: starts only if you manually run a wine command or run the SQL manager.<br>
+Then click "Aliases" tab again, select the connection you created, and click the Connect button.<br><br>
+To run SQL commands, there's a set of tabs: Objects, SQL, Hibernate, Monitor. Click the SQL tab. Now the torture will start. Type the commands in the SQL commands section and then click the first line, and click the "running guy"  button. If you did any mistakes, red text is going to appear on the bottom.<br><br>
+SQL Commands:<br><br>
+Now continuing, this is the tricky part for those who don't know the SQL language (like me) - you gotta attach using the SQL language (specifically, TSQL for SQL 2000)! The scripts that follow will be the same in all and any SQL clients.<br><br><u><b>Attaching the databases (using SQL 2000 language):</b></u><br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>EXEC sp_attach_db @dbname = 'dbname',
+    @filename1 = 'dbpathfile.mdf',
+    @filename2 = 'dbpathfile.ldf';</code></pre>
+	</div>
+</div>   <br>
+Where dbname is the name of db (either <b>'accountserver' or 'gamedb'</b>), the dbpathfile.mdf is the path to the db .mdf file in wine, like 'C:\folder\db.mdf' and dbpathfile.ldf is the path to the db .ldf in wine too. So for example:<br><br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>EXEC sp_attach_db @dbname = 'accountserver',
+    @filename1 = 'C:\games\top-server-db\accountserver_data.mdf',
+    @filename2 = 'C:\games\top-server-db\accountserver_log.ldf';
+EXEC sp_attach_db @dbname = N'gamedb',
+    @filename1 = N'C:\games\top-server-db\gamedb_data.mdf',
+    @filename2 = N'C:\games\top-server-db\gamedb_log.ldf';</code></pre>
+	</div>
+</div><br><u><b>Creating SQL logins (using SQL 2000 language):</b></u><br><br>
+Now you have to create the logins needed by the server. Type in:<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>EXEC sp_addlogin 'account', 'pass', 'db';</code></pre>
+	</div>
+</div><br>
+For example:<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>EXEC sp_addlogin 'pko_account', 'Y87dc#$98', 'AccountServer';
+EXEC sp_addlogin 'pko_game', 'Y87dc#$98', 'GameDB';</code></pre>
+	</div>
+</div><u><b>Assigning ownership of databases to a SQL login (using SQL 2000 language):</b></u><br><br>
+Of course, changing the account names/passwords depending on server file cfgs. Then add the users to the dbs as owners, by typing in:<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>USE db;
+EXEC sp_adduser 'account', 'account', 'db_owner';</code></pre>
+	</div>
+</div><br>
+For example:<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>USE AccountServer;
+EXEC sp_adduser 'pko_account', 'pko_account', 'db_owner';
+USE GameDB;
+EXEC sp_adduser 'pko_game', 'pko_game', 'db_owner</code></pre>
+	</div>
+</div>';<br><br><u><b>Creating in-game accounts:</b></u><br><br>
+Using one of the sql clients above, use the guide below:<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		Code:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang=""><code>USE AccountServer; INSERT INTO account_login (name, password) VALUES ('&lt;Login&gt;', '&lt;PasswordMD5&gt;') USE GameDB; INSERT INTO account (act_id, act_name, gm) VALUES ((SELECT MAX(act_id) + 1 FROM account), '&lt;Login&gt;', &lt;GM-level&gt;);
+But just in case the forums get deleted for some reason, it's a good idea to keep a summary of it here - first part to create account, second part to make it gm or not:
+USE AccountServer;
+INSERT INTO account_login (name, password) VALUES ('&lt;Login&gt;', '&lt;PasswordMD5&gt;')
+
+USE GameDB;
+INSERT INTO account (act_id, act_name, gm) VALUES ((SELECT MAX(act_id) + 1 FROM account), '&lt;Login&gt;', &lt;GM-level&gt;);</code></pre>
+	</div>
+</div><br><u><b>Getting the server up and running:</b></u><br><br>
+Now you also need to unpack the server files to a folder in the:<br>
+SQL 2000: wine environment used by SQL server.<br>
+SQL 2017: anywhere as long as you own the folder. It doesn't matter which wine prefix you use either. Databases need to be in the certain folder specified in SQL 2017 guide part.<br><br>
+When you do, run them. Now, if you run gameserver, you might run into some errors that usually won't happen in Windows:<br><br><b>"Bad allocation" error:</b> Your server is using too much memory. 32 bit programs can use at most 4 GB of memory, but on Linux, for some reason, it can't use that much. Maybe even 2 GB is too much. I'm still not sure how to fix this, but the workaround is to load less things into 1 game server. Running linux with just barebones installed might help (which you would usually do on a dedicated server).<br><b>"Access Violation" error on GateServer:</b> Regular IP's put at <b>IP</b> key on <b>[ToClient]</b> will make this error to appear. You have to put a long and invalid string on that field. 1231234h25giftuihfi223 is good, hdf8duity357hruasdklhfj is good too. Anything is good, as long as it's not an IP and is long (maybe over 16 bytes long).<br><br><b><u>(EXTRA) Running client on Linux notes:</u></b><br><br>
+The client can run on a 64 bits prefix wine as well, and performance is like on Windows for me. There are some things to take note that are as follows:<br>
+It's best to install<b> wine-staging-nine</b> - it has patches that improve dx 9 games. I didn't test the client with it yet, but it should work. Configure it at <b>winecfg at Staging tab.</b><br><br>
+Some private server launchers will require <b>wine-mono</b> to be installed. Net Framework 4.0 might work too (look here: 
+	
+<div class="messageHide messageHide--link">
+	To view the content, you need to sign in or register
+
+</div>). When installing SQL 2000, mono gets uninstalled from that prefix. You might want to create another prefix just for that.<br><br>
+The flash bug on the server selection screen has the workaround which is on wine online database. But there's another workaround found by me which only applies to a Linux with borderless and titlebar-less window management - just move the window to the top-left corner until it snaps there. Now Flash will draw normally like on Windows.<br><br><u><b>Removed sections:</b></u><br><br><br><blockquote data-attributes="" data-quote="" data-source="" class="bbCodeBlock bbCodeBlock--expandable bbCodeBlock--quote js-expandWatch">
+	
+	<div class="bbCodeBlock-content">
+		
+		<div class="bbCodeBlock-expandContent js-expandContent ">
+			<b><u>Ignore this - this will stay here if Microsoft ever releases a 32 bit version of this or the game is made 64 bits... (or buy the bridge)<br>
+Installing SQL 2017:</u></b><br>
+More info on this new Microsoft development: 
+	
+<div class="messageHide messageHide--link">
+	To view the content, you need to sign in or register
+
+</div><br>
+Yaourt or another AUR client is required to install it. These instructions use sudo or su for root priviledges, and follow yaourt usage:<br><br>
+yaourt -S mssql-server<br>
+sudo /opt/mssql/bin/mssql-conf setup<br>
+Then answer the following prompts:<br>
+Do you accept licence terms? "Yes"<br>
+Enter the SQL Server system administrator password: Type the password you would like the system admin to use. 8 chars long at least, with 3 of the 4 of the following: upper case letters, lower case letters, numbers, and symbols.<br>
+Confirm the SQL Server system administrator password: Same as above.<br>
+That's all - very simple!<br><br>
+Until you get to handle permissions on your db... then you'll get into the common Linux headache:<br><br>
+Permissions:<br>
+FIrst, you need to add yourself to mssql group:<br><br>
+sudo usermod -aG mssql myusername<br>
+Where username is the name of your user. This won't be enough to make SQL access the databases. To do that the files need to be owned by user mssql and group mssql, and also have make follow rights set for other dbs. The only way to do that is by moving all databases to /var/opt/mssql/data folder, and making sure the permissions as above are set. Here's the Terminal way to do it:<br><br><br>
+su #all following commands need root rights<br>
+Repeat the following for each database you have - remember upper/lower case matter on Linux:<br><br>
+#Copy database to mssql database folder<br>
+cp mydatabase.mdf /var/opt/mssql/data/mydatabase.mdf<br>
+cp mydatabase.ldf /var/opt/mssql/data/mydatabase.ldf<br><br>
+cd /var/opt/mssql/data<br><br>
+#Change user ownership to mssql<br>
+chown mssql mydatabase.mdf<br>
+chown mssql mydatabase.ldf<br><br>
+#Change group ownership to mssql<br>
+chgrp mssql mydatabase.mdf<br>
+chgrp mssql mydatabase.ldf<br><br>
+#Set the same rights as the other files in folder (in octal)<br>
+chmod 640 mydatabase.mdf<br>
+chmod 640 mydatabase.ldf<br>
+Then exit su block:<br><br>
+exit #Leaves su block<br>
+This process should allow all the dbs to be attached without any problems. Just remember the path to the files per database:<br><br>
+/var/opt/mssql/data/mydatabase.mdf<br>
+/var/opt/mssql/data/mydatabase.ldf
+		</div>
+		<div class="bbCodeBlock-expandLink js-expandLink"><a role="button" tabindex="0">Click to expand...</a></div>
+	</div>
+</blockquote> <br><blockquote data-attributes="" data-quote="" data-source="" class="bbCodeBlock bbCodeBlock--expandable bbCodeBlock--quote js-expandWatch">
+	
+	<div class="bbCodeBlock-content">
+		
+		<div class="bbCodeBlock-expandContent js-expandContent ">
+			<b>Ignore this - mstools doesn't work on SQL 2000 servers or below.<br>
+Setting up mstools and connecting to server:<br>
+Run the follows:</b><br><br>
+yaourt -S mssql-tools<br>
+This will install sqlcmd and bcp. Then we need to connect to server:<br><br>
+sqlcmd -S localhost,1433 -U username -P sapassword<br>
+localhost can be the ip of your SQL server, if not local, and the 1433 can be changed to another if you have another SQL 2000 instance running or are using another port for the SQL server.<br>
+The user name is sa, and:<br>
+SQL 2017: put the sa password given at installation.<br>
+SQL 2000: leave the pass blank.<br>
+Then click OK.<br><br>
+Then an interactive prompt will show up. Type the sql commands as they are in the next section.
+		</div>
+		<div class="bbCodeBlock-expandLink js-expandLink"><a role="button" tabindex="0">Click to expand...</a></div>
+	</div>
+</blockquote></div>
+
+	
+
+		
+			
+		
+
+		
+	
+
+				
+			</div>
+
+			<div class="js-selectToQuoteEnd"> </div>
+			
+				
+			
+		</article></div>
+
+								
+
+								
+									
+	
+
+	
+
+								
+
+								
+									
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+								
+
+							
+							</div>
+
+							
+								
+	
+
+	<footer class="message-footer"><div class="reactionsBar js-reactionsList is-active">
+			
+	
+	
+		<ul class="reactionSummary"><li><span class="reaction reaction--small reaction--1" data-reaction-id="1"><i aria-hidden="true"></i><img src="https://cdn.jsdelivr.net/joypixels/assets/8.0/png/unicode/64/1f44d.png" loading="lazy" width="64" height="64" class="reaction-image reaction-image--emoji js-reaction" alt="Like" title="Like"></span></li>
+		
+		</ul><span class="u-srOnly">Reactions:</span>
+<a class="reactionsBar-link" href="https://forum.ragezone.com/posts/8799653/reactions" data-xf-click="overlay" data-cache="false" rel="nofollow"><bdi>albireo85</bdi></a>
+		</div>
+
+		
+
+		<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+	</footer></div>
+
+					
+					</div>
+				
+			</div>
+		
+	</article><header data-template-name="public:post_macros::post_attribution" class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed"> <a href="https://bit.ly/3ztZXnj">RaGEZONE Sponsor</a> </li> </ul></header><article class="message message--post"><div class="message-inner"> <div class="message-cell message-cell--main"> <div class="message-main"> <div class="message-content"> <div class="message-userContent"> <article class="message-body"><div class="bbWrapper"> <div class="JamSpannerUnit samAlignCenter samDisplayInlineBlock" data-xf-init="sam-unit" data-position="post_below_container_1"> <div class="samItem"> <a href="https://bit.ly/3ztZXnj" target="_blank" rel="sponsored"> <img src="https://forum.ragezone.com/data/mentalbypass/167c4753cc5ad1.webp" alt="The Best DDoS Protected Servers"></a> </div> </div> </div> </article></div> </div> </div> </div> </div> </article></div>
+	</div>
+
+	
+		<div class="block-outer block-outer--after">
+			
+				
+
+				
+				
+					<div class="block-outer-opposite">
+						
+							<a href="https://forum.ragezone.com/login/" class="button button--link button--wrap" data-xf-click="overlay"><span class="button-text">
+								You must log in or register to reply here.
+							</span></a>
+						
+					</div>
+				
+			
+		</div>
+	
+
+	
+	
+
+</div>
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+    
+
+
+
+<div class="blockMessage blockMessage--none">
+	
+
+	
+
+	
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+					
+	
+
+		
+			
+		
+
+		
+	
+
+
+				</div>
+
+				
+			</div>
+
+			
+	
+
+		
+			
+		
+
+		
+	
+
+
+			
+	
+		<ul class="p-breadcrumbs p-breadcrumbs--bottom" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/#the-mmo-community.55" itemprop="item">
+			
+				<span itemprop="name">The MMO Community</span>
+			
+		</a>
+		<meta itemprop="position" content="1"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/mmo-server-developments.168/" itemprop="item">
+			
+				<span itemprop="name">MMO Server Developments</span>
+			
+		</a>
+		<meta itemprop="position" content="2"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/tales-of-pirates.440/" itemprop="item">
+			
+				<span itemprop="name">Tales of Pirates</span>
+			
+		</a>
+		<meta itemprop="position" content="3"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/tales-of-pirates-tutorials.838/" itemprop="item">
+			
+				<span itemprop="name">Tales of Pirates Tutorials</span>
+			
+		</a>
+		<meta itemprop="position" content="4"></li>
+
+				
+			
+		</ul></div>
+	</div>
+	
+	<div class="pre-footer">
+	<div class="pre-footer-overlay"></div>
+	<div class="pre-footer-inner">
+		<div class="pre-footer--container">
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content -links">
+						<h3>RaGEZONE Sponsor</h3>
+						<ul class="pre-footer--links"><a href="https://bit.ly/3ztZXnj" target="blank"><img src="https://forum.ragezone.com/images/partner/HF_Footer.png" alt="HyperFilter" width="300" height="200" loading="lazy"></a>
+						</ul></div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content">
+						<h3>About RaGEZONE</h3>
+						<div class="pre-footer-html--content">
+							RaGEZONE® is the top forum for MMO, MMORPG, and mobile game development. We provide binaries, source codes, and tutorials for your favorite games, making it the go-to resource for developers and fans. You can also find and share private servers, fostering a vibrant gamer community.
+						</div>
+					</div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="block" data-widget-id="62" data-widget-key="forum_overview_forum_statistics" data-widget-definition="online_statistics">
+	<div class="block-container">
+		<h3 class="block-minorHeader">Forum Statistics</h3>
+		<div class="block-body block-row">
+			<dl class="pairs pairs--justified"><dt>Members online</dt>
+				<dd>1,073</dd>
+			</dl><dl class="pairs pairs--justified"><dt>Guests online</dt>
+				<dd>20,606</dd>
+			</dl><dl class="pairs pairs--justified"><dt>Total visitors</dt>
+				<dd>21,679</dd>
+			</dl></div>
+		<div class="block-footer">
+			Totals may include hidden visitors.
+		</div>
+	</div>
+</div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content -links">
+						<h3>RaGEZONE Partners</h3>
+						<ul class="pre-footer--links"><div align="center">
+<a href="https://yeovilhospital.co.uk/"><img src="https://forum.ragezone.com/images/partner/yeovil.png" alt="UK sites not on GamStop" width="300" height="100" loading="lazy"></a>
+</div>
+						</ul></div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+	<footer class="p-footer" id="footer"><div class="p-footer-inner">
+
+			<div class="p-footer-row">
+				
+					<div class="p-footer-row-main">
+						<ul class="p-footer-linkList"><li>
+									
+										
+											<a href="https://forum.ragezone.com/misc/style" data-xf-click="overlay" data-xf-init="tooltip" title="Style chooser" rel="nofollow">
+												<i class="fa--xf far fa-paint-brush "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#paint-brush"></use></svg></i> RaGEZONE®
+											</a>
+										
+										
+											<a href="https://forum.ragezone.com/misc/style-variation" rel="nofollow" class="js-styleVariationsLink" data-xf-init="tooltip" title="Style variation" data-xf-click="menu" data-z-index-ref=".u-bottomFixer" role="button" aria-expanded="false" aria-haspopup="true">
+
+												<i class="fa--xf far fa-adjust "><svg xmlns="http://www.w3.org/2000/svg" role="img"><title>Style variation</title><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#adjust"></use></svg></i>
+											</a>
+
+											<div class="menu" data-menu="menu" aria-hidden="true">
+												<div class="menu-content js-styleVariationsMenu">
+													
+
+	
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?reset=1" class="menu-linkRow is-selected" rel="nofollow" data-xf-click="style-variation" data-variation="">
+
+		<i class="fa--xf far fa-adjust "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#adjust"></use></svg></i>
+
+		
+			System
+		
+	</a>
+
+
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?variation=default" class="menu-linkRow " rel="nofollow" data-xf-click="style-variation" data-variation="default">
+
+		<i class="fa--xf far fa-sun "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#sun"></use></svg></i>
+
+		
+			Light
+		
+	</a>
+
+
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?variation=alternate" class="menu-linkRow " rel="nofollow" data-xf-click="style-variation" data-variation="alternate">
+
+		<i class="fa--xf far fa-moon "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#moon"></use></svg></i>
+
+		
+			Dark
+		
+	</a>
+
+	
+
+	
+		
+	
+
+												</div>
+											</div>
+										
+									
+								</li>
+							
+							
+						
+						</ul></div>
+				
+				<div class="p-footer-row-opposite">
+					<ul class="p-footer-linkList"><li><a href="https://forum.ragezone.com/misc/contact" data-xf-click="overlay">Contact us</a></li>
+							
+						
+
+						
+
+						
+							<li><a href="https://ragezone.com/privacy-policy/">Privacy policy</a></li>
+						
+
+						
+							<li><a href="https://forum.ragezone.com/help/">Help</a></li>
+						
+
+						
+							<li><a href="https://forum.ragezone.com">Home</a></li>
+						
+
+						<li><a href="https://forum.ragezone.com/community/-/index.rss" target="_blank" class="p-footer-rssLink" title="RSS"><span aria-hidden="true"><i class="fa--xf far fa-rss "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#rss"></use></svg></i><span class="u-srOnly">RSS</span></span></a></li>
+					</ul></div>
+			</div>
+
+			
+				<div class="p-footer-copyright">
+				
+					<a href="https://xenforo.com" class="u-concealed" dir="ltr" target="_blank" rel="sponsored noopener">Community platform by XenForo<sup>®</sup><span class="copyright">© 2010-2025 XenForo Ltd.</span></a>
+					
+				
+					<br>
+					Sponsored by <a href="https://www.hyperfilter.com/panel/link.php?id=4">HyperFilter</a> - Powered by <a href="https://litespeedtech.com/">LiteSpeed</a> - MySQL tuning by <a href="https://releem.com/">Releem</a>. <br><a href="https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003000837">RaGEZONE®</a> is a registered trademark.
+				</div>
+			
+			
+		</div>
+	</footer></div> 
+
+
+
+<div class="u-bottomFixer js-bottomFixTarget">
+	
+	
+</div>
+
+<div class="u-navButtons js-navButtons">
+	<a href="javascript:" class="button button--scroll"><span class="button-text"><i class="fa--xf far fa-arrow-left "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#arrow-left"></use></svg></i><span class="u-srOnly">Back</span></span></a>
+</div>
+
+
+
+
+	<form style="display:none" hidden="hidden">
+		<input type="text" name="_xfClientLoadTime" value="" id="_xfClientLoadTime" title="_xfClientLoadTime" tabindex="-1"></form>
+
+	
+	
+	
+
+
+
+
+
+	
+	
+		
+		
+			<script type="application/ld+json">
+				{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/",
+    "mainEntity": {
+        "@type": "DiscussionForumPosting",
+        "@id": "https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/",
+        "headline": "How to create server on Linux",
+        "datePublished": "2017-06-21T11:14:25+00:00",
+        "url": "https://forum.ragezone.com/threads/how-to-create-server-on-linux.1134154/",
+        "articleSection": "Tales of Pirates Tutorials",
+        "author": {
+            "@type": "Person",
+            "@id": "https://forum.ragezone.com/members/riizq.1333373541/",
+            "name": "Riizq",
+            "url": "https://forum.ragezone.com/members/riizq.1333373541/"
+        },
+        "interactionStatistic": [
+            {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ViewAction",
+                "userInteractionCount": 11085
+            },
+            {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/LikeAction",
+                "userInteractionCount": 1
+            }
+        ],
+        "articleBody": "This guide uses Arch Linux, the Terminal, pacman, yaourt almost all the way. This is not for everyone, you need some understanding of your Linux!\n \nThere are 2 versions of SQL available on Linux: 2017 (evaluation - but it's for 64 bit apps only) and 2000. This guide will follow the installation of 2000 - the game can only be run 32 bits...\n \nInstalling SQL 2000 under wine:\nNote for 64 bits systems: for any wine/winetricks related instruction to SQL server and your top server, you have to add this:\n\nenv WINEARCH=win32 WINEPREFIX=~/.wine32\n\nThis is because Winetricks prevents dotnet20sp2 from installing into a 64 bits prefix - it is 32 bits only! Examples:\n\nenv WINEARCH=win32 WINEPREFIX=~/.wine32 winetricks winxp\nenv WINEARCH=win32 WINEPREFIX=~/.wine32 winetricks dotnet20sp2\n...\nenv WINEARCH=win32 WINEPREFIX=~/.wine32 wine MSDE2000A\n...\n \n \nFirst, to configure Wine to support SQL 2000, set it to win xp mode and install Net Framework 2.0 SP 2 and MDAC 2.8 (SP 2 is not needed but it is recommended):\n\nwinetricks winxp\nwinetricks dotnet20sp2\nwinetricks mdac28\n\nThen, cd to folder where MSDE2000A.exe is and install it - Remember to use .wine32 folder instead of .wine to use the 32 bits prefix on a 64 bit system:\n\nwine MSDE2000A.exe\nwine ~/.wine/drive_c/MSDERelA/setup.exe DISABLEROLLBACK=1 BLANKSAPWD=1 DISABLENETWORKPROTOCOLS=0 SECURITYMODE=SQL\n\nThe installer will fail! When time out failures start appearing, do a ctrl+c to abort, then copy the remaining files over - - Remember to use .wine32 folder instead of .wine (on both parameters) to use the 32 bits prefix on a 64 bit system, and to use your user name instead of \"myusername\":\n\ncp ~/.wine/drive_c/users/myusername/Temp/SqlSetup/Temp/*.* ~/.wine/drive_c/windows/system32/\n\nNow installation is finished. Restart wine or computer (otherwise SQL service might not run). Then MSSQLSERVER service will start automatically when first running a program on wine on 32 bits prefix. You can also do the following to start it manually directly:\n\nwine net start MSSQLSERVER\n\nTo start the program that controls the service, you can do the following:\n\nwine \"C:/Program Files/Microsoft SQL Server/80/Tools/Binn/sqlmangr.exe\"\nSources:\nMS-SQL Server on Linux? Yes, it works! - My *nix world\nhttps://appdb.winehq.org/objectManager.php?sClass=version&iId=11016\n \nBefore we continue, the dbs have to be in the same environment of the installed SQL server. That means, you are using the ~/.wine32/drive_c folder on 64 bits and ~/.wine/drive_c on 32 bits.\n\nThese folders are usually hidden, so you might need to unhide them first (you need to configure that in your system). Then unpack the db files to a folder inside that drive_c folder.\n \n---\n \nThis guide will show how to setup SQuirreL SQL client. SQuirrel SQL and similar gui clients should be used for fully setup gui Linux environments and ease of use. This guide will assume you already installed the SQL server.\n \n\nSetting up SQuirreL SQL client and connecting to server:\nInstalling:\n\nDownload it using yaourt:\nyaourt -S squirrel-sql\n\nAfter installing it, download MSSQL JDBC driver depending on the SQL version installed:\nSQL 2017: version 6+: sqljdbc_6.0.8112.100_enu.tar.gz. Extract sqljdbc41.jar (enu/jre7 folder) if SQL client uses Java 7, or sqljdbc42.jar (enu/jre8 folder) if using Java 8.\nSQL 2000: version 3.0: sqljdbc_3.0.1301.101_enu.tar.gz. Extract sqljdbc4.jar.\n\n \nSetting up the SQL client:\nStart the client, click the drivers tab on the left side of the window, then right click \"Microsoft MSSQL Server JDBC Driver\", then click modify.\nClick \"Extra Class Path\" tab, then click \"Add\" button.\n\nNow search for that file you just extracted. Then click \"OK\". On the bottom of window, you'll see \"Driver class com.microsoft.sqlserver.jdbc.SQLServerDriver successfully registered for driver definition: Microsoft MSSQL Server JDBC Driver\", that means it worked.\nNow click the \"Aliases\" tab on left side of window. Then click the \"+\" sign button (create new alias).\nPut any name, select \"Microsoft MSSQL Server JDBC Driver\". Now for the url, it's going to be like this:\n\njdbc:sqlserver://localhost:1433\n\nlocalhost can be the ip of your SQL server, if not local, and the 1433 can be changed to another if you have another SQL 2000 instance running or are using another port for the SQL server.\nThe user name is sa, and:\nSQL 2017: put the sa password given at installation.\nSQL 2000: leave the pass blank.\nThen click OK.\n \nConnecting to SQL server:\n\nNow start SQL server if not started yet:\nSQL 2017: it already starts on system start.\nSQL 2000: starts only if you manually run a wine command or run the SQL manager.\nThen click \"Aliases\" tab again, select the connection you created, and click the Connect button.\n \nTo run SQL commands, there's a set of tabs: Objects, SQL, Hibernate, Monitor. Click the SQL tab. Now the torture will start. Type the commands in the SQL commands section and then click the first line, and click the \"running guy\"  button. If you did any mistakes, red text is going to appear on the bottom.\n \nSQL Commands:\n \nNow continuing, this is the tricky part for those who don't know the SQL language (like me) - you gotta attach using the SQL language (specifically, TSQL for SQL 2000)! The scripts that follow will be the same in all and any SQL clients.\n \nAttaching the databases (using SQL 2000 language):\nEXEC sp_attach_db @dbname = 'dbname',\n    @filename1 = 'dbpathfile.mdf',\n    @filename2 = 'dbpathfile.ldf';\n   \nWhere dbname is the name of db (either 'accountserver' or 'gamedb'), the dbpathfile.mdf is the path to the db .mdf file in wine, like 'C:\\folder\\db.mdf' and dbpathfile.ldf is the path to the db .ldf in wine too. So for example:\n\nEXEC sp_attach_db @dbname = 'accountserver',\n    @filename1 = 'C:\\games\\top-server-db\\accountserver_data.mdf',\n    @filename2 = 'C:\\games\\top-server-db\\accountserver_log.ldf';\nEXEC sp_attach_db @dbname = N'gamedb',\n    @filename1 = N'C:\\games\\top-server-db\\gamedb_data.mdf',\n    @filename2 = N'C:\\games\\top-server-db\\gamedb_log.ldf';\n \n\nCreating SQL logins (using SQL 2000 language):\n\nNow you have to create the logins needed by the server. Type in:\nEXEC sp_addlogin 'account', 'pass', 'db';\n\nFor example:\nEXEC sp_addlogin 'pko_account', 'Y87dc#$98', 'AccountServer';\nEXEC sp_addlogin 'pko_game', 'Y87dc#$98', 'GameDB';\n \nAssigning ownership of databases to a SQL login (using SQL 2000 language):\n\nOf course, changing the account names/passwords depending on server file cfgs. Then add the users to the dbs as owners, by typing in:\nUSE db;\nEXEC sp_adduser 'account', 'account', 'db_owner';\n\nFor example:\nUSE AccountServer;\nEXEC sp_adduser 'pko_account', 'pko_account', 'db_owner';\nUSE GameDB;\nEXEC sp_adduser 'pko_game', 'pko_game', 'db_owner';\n \nCreating in-game accounts:\n \nUsing one of the sql clients above, use the guide below:\nUSE AccountServer; INSERT INTO account_login (name, password) VALUES ('<Login>', '<PasswordMD5>') USE GameDB; INSERT INTO account (act_id, act_name, gm) VALUES ((SELECT MAX(act_id) + 1 FROM account), '<Login>', <GM-level>);\nBut just in case the forums get deleted for some reason, it's a good idea to keep a summary of it here - first part to create account, second part to make it gm or not:\nUSE AccountServer;\nINSERT INTO account_login (name, password) VALUES ('<Login>', '<PasswordMD5>')\n\nUSE GameDB;\nINSERT INTO account (act_id, act_name, gm) VALUES ((SELECT MAX(act_id) + 1 FROM account), '<Login>', <GM-level>);\n\nGetting the server up and running:\n\nNow you also need to unpack the server files to a folder in the:\nSQL 2000: wine environment used by SQL server.\nSQL 2017: anywhere as long as you own the folder. It doesn't matter which wine prefix you use either. Databases need to be in the certain folder specified in SQL 2017 guide part.\n\nWhen you do, run them. Now, if you run gameserver, you might run into some errors that usually won't happen in Windows:\n\n\"Bad allocation\" error: Your server is using too much memory. 32 bit programs can use at most 4 GB of memory, but on Linux, for some reason, it can't use that much. Maybe even 2 GB is too much. I'm still not sure how to fix this, but the workaround is to load less things into 1 game server. Running linux with just barebones installed might help (which you would usually do on a dedicated server).\n\"Access Violation\" error on GateServer: Regular IP's put at IP key on [ToClient] will make this error to appear. You have to put a long and invalid string on that field. 1231234h25giftuihfi223 is good, hdf8duity357hruasdklhfj is good too. Anything is good, as long as it's not an IP and is long (maybe over 16 bytes long).\n \n(EXTRA) Running client on Linux notes:\n\nThe client can run on a 64 bits prefix wine as well, and performance is like on Windows for me. There are some things to take note that are as follows:\nIt's best to install wine-staging-nine - it has patches that improve dx 9 games. I didn't test the client with it yet, but it should work. Configure it at winecfg at Staging tab.\n\nSome private server launchers will require wine-mono to be installed. Net Framework 4.0 might work too (look here: https://wiki.archlinux.org/index.php/wine#Installing_.NET_Framework_4.0). When installing SQL 2000, mono gets uninstalled from that prefix. You might want to create another prefix just for that.\n\nThe flash bug on the server selection screen has the workaround which is on wine online database. But there's another workaround found by me which only applies to a Linux with borderless and titlebar-less window management - just move the window to the top-left corner until it snaps there. Now Flash will draw normally like on Windows.\n \nRemoved sections:\n \n\nIgnore this - this will stay here if Microsoft ever releases a 32 bit version of this or the game is made 64 bits... (or buy the bridge)\nInstalling SQL 2017:\nMore info on this new Microsoft development: https://docs.microsoft.com/en-us/sql/linux/\nYaourt or another AUR client is required to install it. These instructions use sudo or su for root priviledges, and follow yaourt usage:\n\nyaourt -S mssql-server\nsudo /opt/mssql/bin/mssql-conf setup\nThen answer the following prompts:\nDo you accept licence terms? \"Yes\"\nEnter the SQL Server system administrator password: Type the password you would like the system admin to use. 8 chars long at least, with 3 of the 4 of the following: upper case letters, lower case letters, numbers, and symbols.\nConfirm the SQL Server system administrator password: Same as above.\nThat's all - very simple!\n \nUntil you get to handle permissions on your db... then you'll get into the common Linux headache:\n \nPermissions:\nFIrst, you need to add yourself to mssql group:\n\nsudo usermod -aG mssql myusername\nWhere username is the name of your user. This won't be enough to make SQL access the databases. To do that the files need to be owned by user mssql and group mssql, and also have make follow rights set for other dbs. The only way to do that is by moving all databases to /var/opt/mssql/data folder, and making sure the permissions as above are set. Here's the Terminal way to do it:\n \n\nsu #all following commands need root rights\nRepeat the following for each database you have - remember upper/lower case matter on Linux:\n\n#Copy database to mssql database folder\ncp mydatabase.mdf /var/opt/mssql/data/mydatabase.mdf\ncp mydatabase.ldf /var/opt/mssql/data/mydatabase.ldf\n\ncd /var/opt/mssql/data\n\n#Change user ownership to mssql\nchown mssql mydatabase.mdf\nchown mssql mydatabase.ldf\n\n#Change group ownership to mssql\nchgrp mssql mydatabase.mdf\nchgrp mssql mydatabase.ldf\n\n#Set the same rights as the other files in folder (in octal)\nchmod 640 mydatabase.mdf\nchmod 640 mydatabase.ldf\nThen exit su block:\n\nexit #Leaves su block\nThis process should allow all the dbs to be attached without any problems. Just remember the path to the files per database:\n\n/var/opt/mssql/data/mydatabase.mdf\n/var/opt/mssql/data/mydatabase.ldf\n\n \n\nIgnore this - mstools doesn't work on SQL 2000 servers or below.\nSetting up mstools and connecting to server:\nRun the follows:\n\nyaourt -S mssql-tools\nThis will install sqlcmd and bcp. Then we need to connect to server:\n\nsqlcmd -S localhost,1433 -U username -P sapassword\nlocalhost can be the ip of your SQL server, if not local, and the 1433 can be changed to another if you have another SQL 2000 instance running or are using another port for the SQL server.\nThe user name is sa, and:\nSQL 2017: put the sa password given at installation.\nSQL 2000: leave the pass blank.\nThen click OK.\n \nThen an interactive prompt will show up. Type the sql commands as they are in the next section."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "RaGEZONE - MMO Development Forums",
+        "alternateName": "RaGEZONE\u00ae",
+        "description": "RaGEZONE is a website dedicated to the development of massively multiplayer online role-playing games (MMORPGs).",
+        "url": "https://forum.ragezone.com",
+        "logo": "https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp"
+    }
+}
+			</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"62ee815100b84bcdb0817c36ba5e49d4","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed787fefe83e1d5',t:'MTc3NjM4ODAyOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

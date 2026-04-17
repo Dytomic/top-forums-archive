@@ -1,0 +1,3803 @@
+<html id="XF" lang="en-GB" dir="LTR" data-xf="2.3" data-app="public" data-template="forum_view" data-container-key="node-440" data-content-key="forum-440" data-logged-in="false" data-cookie-prefix="xf_" data-csrf="" class="has-no-js template-forum_view" data-run-jobs=""><head><meta charset="utf-8"><title>Tales of Pirates | RaGEZONE - MMO Development Forums</title><link rel="manifest" crossorigin="use-credentials" href="https://forum.ragezone.com/webmanifest.php"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="max-image-preview:large"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#324f72"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#323232"><meta name="apple-mobile-web-app-title" content="RaGEZONE®"><link rel="apple-touch-icon" href="https://forum.ragezone.com/data/assets/logo/maskable_icon_x192.webp"><link rel="canonical" href="https://forum.ragezone.com/community/tales-of-pirates.440/"><link rel="alternate" type="application/rss+xml" title="RSS feed for Tales of Pirates" href="https://forum.ragezone.com/community/tales-of-pirates.440/index.rss"><link rel="next" href="https://forum.ragezone.com/community/tales-of-pirates.440/page-2"><meta property="og:site_name" content="RaGEZONE - MMO Development Forums"><meta property="og:type" content="website"><meta property="og:title" content="Tales of Pirates"><meta property="twitter:title" content="Tales of Pirates"><meta name="description" content="Welcome to the Tales of Pirates server development forum section - join the community to discuss and share knowledge on developing private servers."><meta property="og:description" content="Welcome to the Tales of Pirates server development forum section - join the community to discuss and share knowledge on developing private servers."><meta property="twitter:description" content="Welcome to the Tales of Pirates server development forum section - join the community to discuss and share knowledge on developing private servers."><meta property="og:url" content="https://forum.ragezone.com/community/tales-of-pirates.440/"><meta property="og:image" content="https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp"><meta property="twitter:image" content="https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp"><meta property="twitter:card" content="summary"><link rel="stylesheet" href="https://forum.ragezone.com/css.php?css=public%3Anormalize.css%2Cpublic%3Afa.css%2Cpublic%3Avariations.less%2Cpublic%3Acore.less%2Cpublic%3Aapp.less&amp;s=10&amp;l=1&amp;d=1776347396&amp;k=87ab3a911d687930196e0116e7b19437066fe4c4"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="https://forum.ragezone.com/css.php?css=public%3Anode_list.less%2Cpublic%3Aozzmodz_badges.less%2Cpublic%3Asiropu_ads_manager_ad.less%2Cpublic%3Astructured_list.less%2Cpublic%3Ath_unco_user_name_style_cache.less%2Cpublic%3Aextra.less&amp;s=10&amp;l=1&amp;d=1776347396&amp;k=f935d46ead898c0ebf884142a3f249af4c9677bf"><script src="https://forum.ragezone.com/js/xf/preamble.min.js?_v=b090ee27"></script><script src="https://forum.ragezone.com/js/vendor/vendor-compiled.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/xf/core-compiled.js?_v=b090ee27" defer></script><script>
+	XF.samViewCountMethod = "impression";
+	XF.samServerTime = 1776386320;
+	XF.samItem = ".samItem";
+	XF.samCodeUnit = ".samCodeUnit";
+	XF.JamSpannerUnit = ".JamSpannerUnit";
+</script><script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var bkp = document.querySelectorAll('div[data-ba]');
+		if (bkp) {
+			bkp.forEach(item => {
+				var ad = item;
+				if (ad.querySelector('ins.adsbygoogle').style.display == 'none') {
+					 XF.ajax('GET', XF.canonicalizeUrl('index.php?sam-item/' + ad.dataset.ba + '/get-backup'), {}, data => {
+						 if (data.backup) {
+							 ad.html(data.backup);
+						 }
+					 }, { skipDefault: true, global: false});
+				}
+			});
+		}
+		const advHere = document.querySelectorAll('.samAdvertiseHereLink');
+		if (advHere) {
+			advHere.forEach(item => {
+				var unit = item.parentNode;
+				if (unit.classList.contains('samCustomSize')) {
+					unit.style.marginBottom = 20;
+				}
+			});
+		}
+		const ff = document.querySelectorAll('div[data-position="footer_fixed"] > div[data-cv="true"]');
+		if (ff) {
+			ff.forEach(item => {
+				XF.trigger(item, 'adView');
+			});
+		}
+	});
+</script><script>
+		XF.ready(() =>
+		{
+			XF.extendObject(true, XF.config, {
+				// 
+				userId: 0,
+				enablePush: true,
+xs_TypeEditor: 'editor',
+				pushAppServerKey: 'BPKawPyIzrRkJg495w42az2fPsCPCvAv8lBF4srGXv4MGov_8j3Xb8kKY81-FRa70iHJ7owpAbQ7IN2Gaqv89rk',
+				url: {
+					fullBase: 'https://forum.ragezone.com/',
+					basePath: '/',
+					css: '/css.php?css=__SENTINEL__&s=10&l=1&d=1776347396',
+					js: '/js/__SENTINEL__?_v=b090ee27',
+					icon: '/data/local/icons/__VARIANT__.svg?v=1776243575#__NAME__',
+					iconInline: '/styles/fa/__VARIANT__/__NAME__.svg?v=5.15.3',
+					keepAlive: '/login/keep-alive'
+				},
+				cookie: {
+					path: '/',
+					domain: '',
+					prefix: 'xf_',
+					secure: true,
+					consentMode: 'disabled',
+					consented: ["optional","_third_party"]
+				},
+				cacheKey: 'f3ed7234243583f554e27d349fe769c5',
+				csrf: '',
+				js: {"\/js\/mentalbypass\/mentalbypass.js?_v=b090ee27":true},
+				fullJs: false,
+				css: {"public:node_list.less":true,"public:ozzmodz_badges.less":true,"public:siropu_ads_manager_ad.less":true,"public:structured_list.less":true,"public:th_unco_user_name_style_cache.less":true,"public:extra.less":true},
+				time: {
+					now: 1776386320,
+					today: 1776380400,
+					todayDow: 5,
+					tomorrow: 1776466800,
+					yesterday: 1776294000,
+					week: 1775862000,
+					month: 1774998000,
+					year: 1767225600
+				},
+				style: {
+					light: 'default',
+					dark: 'alternate',
+					defaultColorScheme: 'light'
+				},
+				borderSizeFeature: '3px',
+				fontAwesomeWeight: 'r',
+				enableRtnProtect: true,
+				
+				enableFormSubmitSticky: true,
+				imageOptimization: 'optimize',
+				imageOptimizationQuality: 0.85,
+				uploadMaxFilesize: 33554432,
+				uploadMaxWidth: 3840,
+				uploadMaxHeight: 2160,
+				allowedVideoExtensions: ["m4v","mov","mp4","mp4v","mpeg","mpg","ogv","webm"],
+				allowedAudioExtensions: ["mp3","opus","ogg","wav"],
+				shortcodeToEmoji: true,
+				visitorCounts: {
+					conversations_unread: '0',
+					alerts_unviewed: '0',
+					total_unread: '0',
+					title_count: true,
+					icon_indicator: true
+				},
+				jsMt: {"xf\/action.js":"6eed86ab","xf\/embed.js":"f79f40ed","xf\/form.js":"f79f40ed","xf\/structure.js":"6eed86ab","xf\/tooltip.js":"e13af6c4"},
+				jsState: {},
+				publicMetadataLogoUrl: 'https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp',
+				publicPushBadgeUrl: 'https://forum.ragezone.com/styles/default/xenforo/bell.png'
+			})
+
+			XF.extendObject(XF.phrases, {
+				// 
+"time.day": "{count} day",
+"time.days": "{count} days",
+"time.hour": "{count} hour",
+"time.hours": "{count} hours",
+"time.minute": "{count} minute",
+"time.minutes": "{count} minutes",
+"time.month": "{count} month",
+"time.months": "{count} months",
+"time.second": "{count} second",
+"time.seconds": "{count} seconds",
+"time.week": "time.week",
+"time.weeks": "{count} weeks",
+"time.year": "{count} year",
+"time.years": "{count} years",
+			pb_dailylogin_button_text_prev: "Previous",
+			pb_dailylogin_button_text_next: "Next",
+			pb_dailylogin_button_text_prev_year: "Previous year",
+			pb_dailylogin_button_text_year: "Year",
+			pb_dailylogin_button_text_today: "Today",
+			pb_dailylogin_button_text_month: "Month",
+			pb_dailylogin_button_text_week: "Week",
+			pb_dailylogin_button_text_day: "Day",
+			pb_dailylogin_button_text_list: "List",
+			pb_dailylogin_calendar_week_short: "W",
+			pb_dailylogin_calendar_week: "Week",
+			pb_dailylogin_calendar_close: "Close",
+			pb_dailylogin_calendar_time_hint: "Time",
+			pb_dailylogin_calendar_event_hint: "Event",
+			pb_dailylogin_calendar_all_day: "all-day",
+			pb_dailylogin_calendar_more: "more",
+			pb_dailylogin_calendar_no_events_to_display: "No events to display",
+				date_x_at_time_y:     "{date} at {time}",
+				day_x_at_time_y:      "{day} at {time}",
+				yesterday_at_x:       "Yesterday at {time}",
+				x_minutes_ago:        "{minutes} minutes ago",
+				one_minute_ago:       "1 minute ago",
+				a_moment_ago:         "A moment ago",
+				today_at_x:           "Today at {time}",
+				in_a_moment:          "In a moment",
+				in_a_minute:          "In a minute",
+				in_x_minutes:         "In {minutes} minutes",
+				later_today_at_x:     "Later today at {time}",
+				tomorrow_at_x:        "Tomorrow at {time}",
+				short_date_x_minutes: "{minutes}m",
+				short_date_x_hours:   "{hours}h",
+				short_date_x_days:    "{days}d",
+
+				day0: "Sunday",
+				day1: "Monday",
+				day2: "Tuesday",
+				day3: "Wednesday",
+				day4: "Thursday",
+				day5: "Friday",
+				day6: "Saturday",
+
+				dayShort0: "Sun",
+				dayShort1: "Mon",
+				dayShort2: "Tue",
+				dayShort3: "Wed",
+				dayShort4: "Thu",
+				dayShort5: "Fri",
+				dayShort6: "Sat",
+
+				month0: "January",
+				month1: "February",
+				month2: "March",
+				month3: "April",
+				month4: "May",
+				month5: "June",
+				month6: "July",
+				month7: "August",
+				month8: "September",
+				month9: "October",
+				month10: "November",
+				month11: "December",
+
+				active_user_changed_reload_page: "The active user has changed. Reload the page for the latest version.",
+				server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+				oops_we_ran_into_some_problems: "Oops! We ran into some problems.",
+				oops_we_ran_into_some_problems_more_details_console: "Oops! We ran into some problems. Please try again later. More error details may be in the browser console.",
+				file_too_large_to_upload: "The file is too large to be uploaded.",
+				uploaded_file_is_too_large_for_server_to_process: "The uploaded file is too large for the server to process.",
+				files_being_uploaded_are_you_sure: "Files are still being uploaded. Are you sure you want to submit this form?",
+				attach: "Attach files",
+				rich_text_box: "Rich text box",
+				close: "Close",
+				link_copied_to_clipboard: "Link copied to clipboard.",
+				text_copied_to_clipboard: "Text copied to clipboard.",
+				loading: "Loading…",
+				you_have_exceeded_maximum_number_of_selectable_items: "You have exceeded the maximum number of selectable items.",
+
+				processing: "Processing",
+				'processing...': "Processing…",
+
+				showing_x_of_y_items: "Showing {count} of {total} items",
+				showing_all_items: "Showing all items",
+				no_items_to_display: "No items to display",
+
+				number_button_up: "Increase",
+				number_button_down: "Decrease",
+
+				push_enable_notification_title: "Push notifications enabled successfully at RaGEZONE - MMO Development Forums",
+				push_enable_notification_body: "Thank you for enabling push notifications!",
+
+				pull_down_to_refresh: "Pull down to refresh",
+				release_to_refresh: "Release to refresh",
+				refreshing: "Refreshing…"
+			})
+		})
+	
+
+window.addEventListener('DOMContentLoaded',()=>{XF.Push.updateUserSubscriptionParent=XF.Push.updateUserSubscription;XF.Push.updateUserSubscription=function(b,a){"unsubscribe"===a&&XF.browser.safari&&XF.Push.setPushHistoryUserIds({});XF.Push.updateUserSubscriptionParent(b,a)}});
+</script><script src="https://forum.ragezone.com/js/mentalbypass/mentalbypass.js?_v=b090ee27" defer></script><script>
+XF.ready(() =>
+{
+
+		XF.extendObject(true, XF.config, 
+		{
+			
+				apSsAvatarFrameStyle: 'square',
+			
+			
+			
+		});
+	
+})
+</script><link rel="icon" type="image/png" href="https://forum.ragezone.com/data/assets/logo/favicon-32x32.webp" sizes="32x32"></head><body data-template="forum_view">
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+<div class="p-pageWrapper" id="top">
+
+	
+
+	
+		
+			
+				<div class="height38"></div>
+			
+		
+	
+
+	<header class="p-header" id="header"><div class="p-header-inner">
+			<div class="p-header-content">
+
+				
+					<div class="p-header-logo p-header-logo--image">
+						<a href="https://forum.ragezone.com">
+							
+
+	
+
+	
+		
+		
+
+		
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations='{"default":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo.png","2":null},"alternate":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo-dark.png","2":null}}'><source srcset="/data/styles/10/styles/ragezone/xenforo/xenforo-logo-dark.png" media="(prefers-color-scheme: dark)"></source><img src="https://forum.ragezone.com/data/styles/10/styles/ragezone/xenforo/xenforo-logo.png" width="607" height="206" alt="RaGEZONE - MMO Development Forums"></picture></a>
+					</div>
+				
+
+				 <div class="JamSpannerUnit samAlignCenter samDisplayFlexbox samCustomSize" style="width: 468px; height: 60px;" data-xf-init="sam-unit" data-position="container_header"> <div class="samItem"> <a href="https://discord.gg/GuC8hamAyF" target="_blank" rel="sponsored"> <img src="https://forum.ragezone.com/data/mentalbypass/169cefe9a55b17.webp" alt="" width="468" height="60"></a> </div> <div class="samAdvertiseHereLink samAlignCenter" style="margin-top: 5px;"> <a href="https://forum.ragezone.com/ads-manager/packages/1/create-ad">Place your Ad here for £40.00 per Month!</a> </div> </div> 
+
+			</div>
+		</div>
+	</header><div class="p-navSticky p-navSticky--primary " data-xf-init="sticky-header">
+			
+		<nav class="p-nav"><div class="p-nav-inner">
+				<button type="button" class="button button--plain p-nav-menuTrigger" data-xf-click="off-canvas" data-menu=".js-headerOffCanvasMenu" tabindex="0" aria-label="Menu"><span class="button-text">
+					<i aria-hidden="true"></i>
+				</span></button>
+
+				
+					<div class="p-nav-smallLogo">
+						<a href="https://forum.ragezone.com">
+							
+
+	
+
+	
+		
+		
+
+		
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations='{"default":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo.png","2":null},"alternate":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo-dark.png","2":null}}'><source srcset="/data/styles/10/styles/ragezone/xenforo/xenforo-logo-dark.png" media="(prefers-color-scheme: dark)"></source><img src="https://forum.ragezone.com/data/styles/10/styles/ragezone/xenforo/xenforo-logo.png" width="607" height="206" alt="RaGEZONE - MMO Development Forums"></picture></a>
+					</div>
+				
+
+				<div class="p-nav-scroller hScroller" data-xf-init="h-scroller" data-auto-scroll=".p-navEl.is-selected">
+					<div class="hScroller-scroll">
+						<ul class="p-nav-list js-offCanvasNavSource"><li>
+								
+	<div class="p-navEl is-selected" data-has-children="true">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="forums">Forums</a>
+
+
+		<a data-xf-key="1" data-xf-click="menu" data-menu-pos-ref="&lt; .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="https://forum.ragezone.com/whats-new/posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="newPosts">New posts</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl " data-has-children="true">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/downloads/categories/server-files.3/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="xfrm">Downloads</a>
+
+
+		<a data-xf-key="2" data-xf-click="menu" data-menu-pos-ref="&lt; .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="https://forum.ragezone.com/downloads/latest-reviews" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="xfrmLatestReviews">Latest reviews</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl ">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/topsites/" class="p-navEl-link " data-xf-key="3" data-nav-id="rz_ts">Top Sites</a>
+
+
+		
+
+		
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl ">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/threads/how-to-use-the-ragezone-forum-advertising-system.1212910/" class="p-navEl-link " data-xf-key="4" data-nav-id="RZ_Advertising">Advertise On RZ</a>
+
+
+		
+
+		
+	
+	</div>
+
+							</li>
+						
+						</ul></div>
+				</div>
+
+				<div class="p-nav-opposite">
+					<div class="p-navgroup p-account p-navgroup--guest">
+						
+							
+								<a href="https://forum.ragezone.com/login/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--logIn" data-xf-click="overlay" data-follow-redirects="on">
+									<i aria-hidden="true"></i>
+									<span class="p-navgroup-linkText">Log in</span>
+								</a>
+							
+							<div class="menu menu--structural menu--medium" data-menu="menu" data-nav-id="userLogin" aria-hidden="true" data-href="https://forum.ragezone.com/login/"></div>
+							
+								<a href="https://forum.ragezone.com/login/register" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--register" data-xf-click="overlay" data-follow-redirects="on">
+									<i aria-hidden="true"></i>
+									<span class="p-navgroup-linkText">Register</span>
+								</a>
+							
+						
+					</div>
+
+					<div class="p-navgroup p-discovery p-discovery--noSearch">
+						<a href="https://forum.ragezone.com/whats-new/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--whatsnew" aria-label="What's new" title="What's new">
+							<i aria-hidden="true"></i>
+							<span class="p-navgroup-linkText">What's new</span>
+						</a>
+
+						
+					</div>
+				</div>
+			</div>
+		</nav></div>
+		
+		
+		
+		
+	
+	
+
+<div class="offCanvasMenu offCanvasMenu--nav js-headerOffCanvasMenu" data-menu="menu" aria-hidden="true" data-ocm-builder="navigation">
+		<div class="offCanvasMenu-backdrop" data-menu-close="true"></div>
+		<div class="offCanvasMenu-content">
+			<div class="offCanvasMenu-header">
+				Menu
+				<a class="offCanvasMenu-closer" data-menu-close="true" role="button" tabindex="0" aria-label="Close"></a>
+			</div>
+			
+				<div class="p-offCanvasRegisterLink">
+					<div class="offCanvasMenu-linkHolder">
+						<a href="https://forum.ragezone.com/login/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+							Log in
+						</a>
+					</div>
+					<hr class="offCanvasMenu-separator"><div class="offCanvasMenu-linkHolder">
+							<a href="https://forum.ragezone.com/login/register" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+								Register
+							</a>
+						</div>
+						<hr class="offCanvasMenu-separator"></div>
+			
+			<div class="js-offCanvasNavTarget"></div>
+			<div class="offCanvasMenu-installBanner js-installPromptContainer" style="display: none;" data-xf-init="install-prompt">
+				<div class="offCanvasMenu-installBanner-header">Install the app</div>
+				<button type="button" class="button js-installPromptButton"><span class="button-text">Install</span></button>
+				<template class="js-installTemplateIOS"><div class="js-installTemplateContent">
+						<div class="overlay-title">How to install the app on iOS</div>
+						<div class="block-body">
+							<div class="block-row">
+								<p>
+									Follow along with the video below to see how to install our site as a web app on your home screen.
+								</p>
+								<p style="text-align: center">
+									<video src="https://forum.ragezone.com/styles/default/xenforo/add_to_home.mp4" width="280" height="480" autoplay loop muted playsinline></video></p>
+								<p>
+									<small><strong>Note:</strong> This feature may not be available in some browsers.</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</template></div>
+		</div>
+	</div>
+
+	<div class="p-body">
+		<div class="p-body-inner">
+			
+
+
+			
+	
+
+		
+			
+		
+
+		
+	
+
+
+			
+	
+		<ul class="p-breadcrumbs " itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/#the-mmo-community.55" itemprop="item">
+			
+				<span itemprop="name">The MMO Community</span>
+			
+		</a>
+		<meta itemprop="position" content="1"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/mmo-server-developments.168/" itemprop="item">
+			
+				<span itemprop="name">MMO Server Developments</span>
+			
+		</a>
+		<meta itemprop="position" content="2"></li>
+
+				
+			
+		</ul><noscript class="js-jsWarning"><div class="blockMessage blockMessage--important blockMessage--iconic u-noJsOnly">JavaScript is disabled. For a better experience, please enable JavaScript in your browser before proceeding.</div></noscript>
+
+			
+	<div class="blockMessage blockMessage--important blockMessage--iconic js-browserWarning" style="display: none">You are using an out of date browser. It  may not display this or other websites correctly.<br>You should upgrade or use an <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">alternative browser</a>.</div>
+
+
+			
+				<div class="p-body-header">
+				
+					
+						<div class="p-title ">
+						
+							
+								<h1 class="p-title-value">Tales of Pirates
+
+    
+    
+
+</h1>
+							
+							
+						
+						</div>
+					
+
+					
+						<div class="p-description">Welcome to the Tales of Pirates server development forum section - join the community to discuss and share knowledge on developing private servers.</div>
+					
+				
+				</div>
+			
+
+			<div class="p-body-main    is-active">
+				
+				
+
+				<div class="p-body-content">
+					
+	
+
+		
+			
+		
+
+		
+	
+
+
+					<div class="p-body-pageContent">
+	
+
+
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+	
+
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+		
+			
+		
+
+		
+	
+
+	<div class="block">
+		<div class="block-container">
+			<div class="block-body">
+				
+	
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id836 node--depth2 node--forum node--read">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<a href="https://forum.ragezone.com/community/tales-of-pirates-developments.836/" data-xf-init="" data-shortcut="node-description">Tales of Pirates Developments</a>
+
+	
+
+		
+			
+		
+
+		
+	
+
+    
+    
+
+					
+				</h3>
+				
+					<div class="node-description ">All related Tales of Pirates developments can be shared and found here.</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							
+								<dl class="pairs pairs--inline"><dt><i class="fa--xf far fa-comment-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comment-alt"></use></svg></i></dt>
+									<dd>2</dd>
+								</dl><dl class="pairs pairs--inline"><dt><i class="fa--xf far fa-comments-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comments-alt"></use></svg></i></dt>
+									<dd>3</dd>
+								</dl></div>
+					
+
+					
+				</div>
+
+				
+					
+	
+	
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					
+						<dl class="pairs pairs--rows"><dt>Threads</dt>
+							<dd>2</dd>
+						</dl><dl class="pairs pairs--rows"><dt>Messages</dt>
+							<dd>3</dd>
+						</dl></div>
+			
+
+
+			<div class="node-extra">
+				
+
+	
+
+					<div class="node-extra-icon">
+						
+							<a href="https://forum.ragezone.com/members/kyleflow.2000323478/" class="avatar avatar--xs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000323478" data-xf-init="member-tooltip" style="background-color: #336666; color: #88c3c3">
+			<span class="avatar-u2000323478-s" role="img" aria-label="kyleflow">K</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="https://forum.ragezone.com/threads/cleric-healing-spring.1259515/post-9424644" class="node-extra-title" title="Cleric Healing Spring">Cleric Healing Spring</a>
+						
+					</div>
+
+
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet"><li><time class="node-extra-date u-dt" dir="auto" datetime="2026-01-23T09:12:42+0000" data-timestamp="1769159562" data-date="Jan 23, 2026" data-time="9:12 AM" data-short="Jan 23" title="Jan 23, 2026 at 9:12 AM">Jan 23, 2026</time></li>
+							
+								<li class="node-extra-user"><a href="https://forum.ragezone.com/members/kyleflow.2000323478/" class="username " dir="auto" data-user-id="2000323478" data-xf-init="member-tooltip">kyleflow</a></li>
+							
+						</ul></div>
+
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id837 node--depth2 node--forum node--unread">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<a href="https://forum.ragezone.com/community/tales-of-pirates-releases.837/" data-xf-init="" data-shortcut="node-description">Tales of Pirates Releases</a>
+
+	
+
+		
+			
+		
+
+		
+	
+
+    
+    
+
+					
+				</h3>
+				
+					<div class="node-description ">Find an share the latest Tales of Pirates server files and extensions here.</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							
+								<dl class="pairs pairs--inline"><dt><i class="fa--xf far fa-comment-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comment-alt"></use></svg></i></dt>
+									<dd>24</dd>
+								</dl><dl class="pairs pairs--inline"><dt><i class="fa--xf far fa-comments-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comments-alt"></use></svg></i></dt>
+									<dd>804</dd>
+								</dl></div>
+					
+
+					
+				</div>
+
+				
+					
+	
+	
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					
+						<dl class="pairs pairs--rows"><dt>Threads</dt>
+							<dd>24</dd>
+						</dl><dl class="pairs pairs--rows"><dt>Messages</dt>
+							<dd>804</dd>
+						</dl></div>
+			
+
+
+			<div class="node-extra">
+				
+
+	
+
+					<div class="node-extra-icon">
+						
+							<a href="https://forum.ragezone.com/members/kyleflow.2000323478/" class="avatar avatar--xs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000323478" data-xf-init="member-tooltip" style="background-color: #336666; color: #88c3c3">
+			<span class="avatar-u2000323478-s" role="img" aria-label="kyleflow">K</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="https://forum.ragezone.com/threads/tales-of-pirates-1-36-custom-by-me-pkodev-resource.1259453/post-9447103" class="node-extra-title" title="Tales of Pirates 1.36 - Custom by Me - Pkodev resource">Tales of Pirates 1.36 - Custom by Me - Pkodev resource</a>
+						
+					</div>
+
+
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet"><li><time class="node-extra-date u-dt" dir="auto" datetime="2026-04-11T09:06:59+0100" data-timestamp="1775894819" data-date="Apr 11, 2026" data-time="9:06 AM" data-short="5d" title="Apr 11, 2026 at 9:06 AM">Saturday at 9:06 AM</time></li>
+							
+								<li class="node-extra-user"><a href="https://forum.ragezone.com/members/kyleflow.2000323478/" class="username " dir="auto" data-user-id="2000323478" data-xf-init="member-tooltip">kyleflow</a></li>
+							
+						</ul></div>
+
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id838 node--depth2 node--forum node--read">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-comments "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comments"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<a href="https://forum.ragezone.com/community/tales-of-pirates-tutorials.838/" data-xf-init="" data-shortcut="node-description">Tales of Pirates Tutorials</a>
+
+	
+
+		
+			
+		
+
+		
+	
+
+    
+    
+
+					
+				</h3>
+				
+					<div class="node-description ">Stuck? Find or share your Tales of Pirates server tutorials here.</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							
+								<dl class="pairs pairs--inline"><dt><i class="fa--xf far fa-comment-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comment-alt"></use></svg></i></dt>
+									<dd>16</dd>
+								</dl><dl class="pairs pairs--inline"><dt><i class="fa--xf far fa-comments-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comments-alt"></use></svg></i></dt>
+									<dd>579</dd>
+								</dl></div>
+					
+
+					
+				</div>
+
+				
+					
+	
+	
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					
+						<dl class="pairs pairs--rows"><dt>Threads</dt>
+							<dd>16</dd>
+						</dl><dl class="pairs pairs--rows"><dt>Messages</dt>
+							<dd>579</dd>
+						</dl></div>
+			
+
+
+			<div class="node-extra">
+				
+
+	
+
+					<div class="node-extra-icon">
+						
+							<a href="https://forum.ragezone.com/members/rewolfen.2000380119/" class="avatar avatar--xs avatar--square" data-user-id="2000380119" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/2000380/2000380119.jpg?1725409037" srcset="/data/avatars/m/2000380/2000380119.jpg?1725409037 2x" alt="Rewolfen" class="avatar-u2000380119-s" width="48" height="48"></a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="https://forum.ragezone.com/threads/guia-top-2026-cliente.1259898/post-9426895" class="node-extra-title" title="[Guia]Top 2026 [Cliente]">[Guia]Top 2026 [Cliente]</a>
+						
+					</div>
+
+
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet"><li><time class="node-extra-date u-dt" dir="auto" datetime="2026-01-31T02:00:22+0000" data-timestamp="1769824822" data-date="Jan 31, 2026" data-time="2:00 AM" data-short="Jan 31" title="Jan 31, 2026 at 2:00 AM">Jan 31, 2026</time></li>
+							
+								<li class="node-extra-user"><a href="https://forum.ragezone.com/members/rewolfen.2000380119/" class="username " dir="auto" data-user-id="2000380119" data-xf-init="member-tooltip"><span class="username--style76">Rewolfen</span></a></li>
+							
+						</ul></div>
+
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+		
+	
+	
+	
+		
+	
+
+	<div class="node node--id973 node--depth2 node--forum node--read">
+		<div class="node-body">
+			<span class="node-icon" aria-hidden="true">
+				<i class="fa--xf far fa-question-circle "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#question-circle"></use></svg></i>
+			</span>
+			<div class="node-main js-nodeMain">
+				
+
+				
+				<h3 class="node-title">
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<a href="https://forum.ragezone.com/community/tales-of-pirates-help.973/" data-xf-init="" data-shortcut="node-description">Tales of Pirates Help</a>
+
+	
+
+		
+			
+		
+
+		
+	
+
+    
+    
+
+					
+				</h3>
+				
+					<div class="node-description ">Post your ToP help requests here.</div>
+				
+
+				<div class="node-meta">
+					
+						<div class="node-statsMeta">
+							
+								<dl class="pairs pairs--inline"><dt><i class="fa--xf far fa-comment-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comment-alt"></use></svg></i></dt>
+									<dd>203</dd>
+								</dl><dl class="pairs pairs--inline"><dt><i class="fa--xf far fa-comments-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#comments-alt"></use></svg></i></dt>
+									<dd>565</dd>
+								</dl></div>
+					
+
+					
+				</div>
+
+				
+					
+	
+	
+
+				
+
+				
+			</div>
+
+			
+				<div class="node-stats">
+					
+						<dl class="pairs pairs--rows"><dt>Threads</dt>
+							<dd>203</dd>
+						</dl><dl class="pairs pairs--rows"><dt>Messages</dt>
+							<dd>565</dd>
+						</dl></div>
+			
+
+
+			<div class="node-extra">
+				
+
+	
+
+					<div class="node-extra-icon">
+						
+							<a href="https://forum.ragezone.com/members/kyleflow.2000323478/" class="avatar avatar--xs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000323478" data-xf-init="member-tooltip" style="background-color: #336666; color: #88c3c3">
+			<span class="avatar-u2000323478-s" role="img" aria-label="kyleflow">K</span> 
+		</a>
+						
+					</div>
+					<div class="node-extra-row">
+						
+							<a href="https://forum.ragezone.com/threads/what-program-to-edit-wings-appearance.1260384/post-9429372" class="node-extra-title" title="what program to edit wings appearance">what program to edit wings appearance</a>
+						
+					</div>
+
+
+					<div class="node-extra-row">
+						<ul class="listInline listInline--bullet"><li><time class="node-extra-date u-dt" dir="auto" datetime="2026-02-09T12:19:53+0000" data-timestamp="1770639593" data-date="Feb 9, 2026" data-time="12:19 PM" data-short="Feb 9" title="Feb 9, 2026 at 12:19 PM">Feb 9, 2026</time></li>
+							
+								<li class="node-extra-user"><a href="https://forum.ragezone.com/members/kyleflow.2000323478/" class="username " dir="auto" data-user-id="2000323478" data-xf-init="member-tooltip">kyleflow</a></li>
+							
+						</ul></div>
+
+				
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+
+	
+
+			</div>
+		</div>
+	</div>
+	
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+
+
+
+
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+<div class="block " data-xf-init="" data-type="thread" data-href="https://forum.ragezone.com/inline-mod/">
+
+	<div class="block-outer"><div class="block-outer-main"><nav class="pageNavWrapper pageNavWrapper--mixed "><div class="pageNav  pageNav--skipEnd">
+	
+
+	<ul class="pageNav-main"><li class="pageNav-page pageNav-page--current "><a href="https://forum.ragezone.com/community/tales-of-pirates.440/">1</a></li>
+	
+
+
+		
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--later"><a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-2">2</a></li>
+	
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--later"><a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-3">3</a></li>
+	
+
+		
+
+		
+			
+				<li class="pageNav-page pageNav-page--skip pageNav-page--skipEnd">
+					<a data-xf-init="tooltip" title="Go to page" data-xf-click="menu" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">…</a>
+					
+
+	<div class="menu menu--pageJump" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h4 class="menu-header">Go to page</h4>
+			<div class="menu-row" data-xf-init="page-jump" data-page-url="/community/tales-of-pirates.440/page-%page%">
+				<div class="inputGroup inputGroup--numbers">
+					<div class="inputGroup inputGroup--numbers inputNumber" data-xf-init="number-box"><input type="number" pattern="\d*" class="input input--number js-numberBoxTextInput input input--numberNarrow js-pageJumpPage" value="4" min="1" max="57" step="1" required="required" data-menu-autofocus="true"></div>
+					<span class="inputGroup-text"><button type="button" class="button js-pageJumpGo"><span class="button-text">Go</span></button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+				</li>
+			
+		
+
+		
+
+	
+		<li class="pageNav-page "><a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-57">57</a></li>
+	
+
+	</ul><a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-2" class="pageNav-jump pageNav-jump--next">Next</a>
+	
+</div>
+
+<div class="pageNavSimple">
+	
+
+	<a class="pageNavSimple-el pageNavSimple-el--current" data-xf-init="tooltip" title="Go to page" data-xf-click="menu" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">
+		1 of 57
+	</a>
+	
+
+	<div class="menu menu--pageJump" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h4 class="menu-header">Go to page</h4>
+			<div class="menu-row" data-xf-init="page-jump" data-page-url="/community/tales-of-pirates.440/page-%page%">
+				<div class="inputGroup inputGroup--numbers">
+					<div class="inputGroup inputGroup--numbers inputNumber" data-xf-init="number-box"><input type="number" pattern="\d*" class="input input--number js-numberBoxTextInput input input--numberNarrow js-pageJumpPage" value="1" min="1" max="57" step="1" required="required" data-menu-autofocus="true"></div>
+					<span class="inputGroup-text"><button type="button" class="button js-pageJumpGo"><span class="button-text">Go</span></button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+		<a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-2" class="pageNavSimple-el pageNavSimple-el--next">
+			Next <i aria-hidden="true"></i>
+		</a>
+		<a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-57" class="pageNavSimple-el pageNavSimple-el--last" data-xf-init="tooltip" title="Last">
+			<i aria-hidden="true"></i> <span class="u-srOnly">Last</span>
+		</a>
+	
+</div>
+
+</nav></div></div>
+
+	<div class="block-container">
+
+		
+			<div class="block-filterBar">
+				<div class="filterBar">
+					
+
+					<a class="filterBar-menuTrigger" data-xf-click="menu" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">Filters</a>
+					<div class="menu menu--wide" data-menu="menu" aria-hidden="true" data-href="https://forum.ragezone.com/community/tales-of-pirates.440/filters" data-load-target=".js-filterMenuBody">
+						<div class="menu-content">
+							<h4 class="menu-header">Show only:</h4>
+							<div class="js-filterMenuBody">
+								<div class="menu-row">Loading…</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+
+		
+
+		<div class="block-body">
+			
+				<div class="structItemContainer">
+					
+
+	
+
+	
+
+
+					
+					
+
+					
+	
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+						
+							<div class="stickyItemContainer stickyItemContainer-sticky">
+								
+									<h3 class="block-minorHeader block-stickyHeader">
+										Sticky
+										
+									</h3>
+								
+								<div class="structItemContainer-group structItemContainer-group--sticky  is-active">
+									
+										
+
+	
+
+
+
+	<div class="structItem structItem--thread is-locked js-inlineModContainer js-threadListItem-523249" data-author="Dios" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/dios.115521/" class="avatar avatar--s avatar--square" data-user-id="115521" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/115/115521.jpg?1708921258" srcset="/data/avatars/m/115/115521.jpg?1708921258 2x" alt="Dios" class="avatar-u115521-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+				<ul class="structItem-statuses"><li>
+							<i class="structItem-status structItem-status--locked" aria-hidden="true" title="Locked"></i>
+							<span class="u-srOnly">Locked</span>
+						</li>
+					
+
+					
+						
+							<li>
+								<i class="structItem-status structItem-status--sticky" aria-hidden="true" title="Sticky"></i>
+								<span class="u-srOnly">Sticky</span>
+							</li>
+						
+					
+
+					
+						
+					
+
+					
+					
+
+					
+					
+						
+							
+						
+					
+				
+				
+				</ul><div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/section-rules-do-not-advertise-your-server-in-this-section.523249/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Section Rules (Do not advertise your server in this section)
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/dios.115521/" class="username " dir="auto" data-user-id="115521" data-xf-init="member-tooltip"><span class="username--style32">Dios</span></a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/section-rules-do-not-advertise-your-server-in-this-section.523249/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2009-01-07T14:11:39+0000" data-timestamp="1231337499" data-date="Jan 7, 2009" data-time="2:11 PM" data-short="Jan '09" title="Jan 7, 2009 at 2:11 PM">Jan 7, 2009</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>0</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>17K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/section-rules-do-not-advertise-your-server-in-this-section.523249/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2009-01-07T14:11:39+0000" data-timestamp="1231337499" data-date="Jan 7, 2009" data-time="2:11 PM" data-short="Jan '09" title="Jan 7, 2009 at 2:11 PM">Jan 7, 2009</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/dios.115521/" class="username " dir="auto" data-user-id="115521" data-xf-init="member-tooltip"><span class="username--style32">Dios</span></a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/dios.115521/" class="avatar avatar--xxs avatar--square" data-user-id="115521" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/115/115521.jpg?1708921258" alt="Dios" class="avatar-u115521-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+								</div>
+							</div>
+							
+							
+								
+									<h3 class="block-minorHeader block-stickyHeader">
+										Threads
+									</h3>
+								
+							
+
+							
+
+	
+
+		
+			
+		
+
+		
+	
+
+						
+
+						<div class="structItemContainer-group js-threadList">
+							
+								
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-1255459" data-author="kyleflow" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/kyleflow.2000323478/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="2000323478" data-xf-init="member-tooltip" style="background-color: #336666; color: #88c3c3">
+			<span class="avatar-u2000323478-s" role="img" aria-label="kyleflow">K</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/pkodev-is-done-come-here.1255459/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					PKODEV is Done. Come here?
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/kyleflow.2000323478/" class="username " dir="auto" data-user-id="2000323478" data-xf-init="member-tooltip">kyleflow</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/pkodev-is-done-come-here.1255459/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2025-11-05T16:42:18+0000" data-timestamp="1762360938" data-date="Nov 5, 2025" data-time="4:42 PM" data-short="Nov '25" title="Nov 5, 2025 at 4:42 PM">Nov 5, 2025</time></a></li>
+						
+					</ul><span class="structItem-pageJump">
+						
+							<a href="https://forum.ragezone.com/threads/pkodev-is-done-come-here.1255459/page-2">2</a>
+						
+						</span>
+					
+				
+			</div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>21</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>1K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/pkodev-is-done-come-here.1255459/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2026-02-24T20:37:23+0000" data-timestamp="1771965443" data-date="Feb 24, 2026" data-time="8:37 PM" data-short="Feb 24" title="Feb 24, 2026 at 8:37 PM">Feb 24, 2026</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/spidpex.2000090709/" class="username  th-unco-user-name-style-5" dir="auto" data-user-id="2000090709" data-xf-init="member-tooltip"><span class="username--style72">Spidpex</span></a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/spidpex.2000090709/" class="avatar avatar--xxs avatar--square" data-user-id="2000090709" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/2000090/2000090709.jpg?1725407620" alt="Spidpex" class="avatar-u2000090709-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-960429" data-author="andrewbob123" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/andrewbob123.2000011239/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="2000011239" data-xf-init="member-tooltip" style="background-color: #33cc99; color: #0f3d2e">
+			<span class="avatar-u2000011239-s" role="img" aria-label="andrewbob123">A</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/lgo-obj-lgo-online.960429/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					LGO -&gt; OBJ -&gt; LGO [online]
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/andrewbob123.2000011239/" class="username " dir="auto" data-user-id="2000011239" data-xf-init="member-tooltip">andrewbob123</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/lgo-obj-lgo-online.960429/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2013-09-25T01:37:34+0100" data-timestamp="1380069454" data-date="Sep 25, 2013" data-time="1:37 AM" data-short="Sep '13" title="Sep 25, 2013 at 1:37 AM">Sep 25, 2013</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>1</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>3K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/lgo-obj-lgo-online.960429/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2026-02-18T10:24:31+0000" data-timestamp="1771410271" data-date="Feb 18, 2026" data-time="10:24 AM" data-short="Feb 18" title="Feb 18, 2026 at 10:24 AM">Feb 18, 2026</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/cloudz93.2000442276/" class="username " dir="auto" data-user-id="2000442276" data-xf-init="member-tooltip">Cloudz93</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/cloudz93.2000442276/" class="avatar avatar--xxs avatar--square" data-user-id="2000442276" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/2000442/2000442276.jpg?1736946956" alt="Cloudz93" class="avatar-u2000442276-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-1254874" data-author="Ankaia" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/ankaia.2000494242/" class="avatar avatar--s avatar--square" data-user-id="2000494242" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/2000494/2000494242.jpg?1761447034" srcset="/data/avatars/m/2000494/2000494242.jpg?1761447034 2x" alt="Ankaia" class="avatar-u2000494242-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/change-ip-adress-in-the-client-top-pko.1254874/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Change ip adress in the client Top Pko
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/ankaia.2000494242/" class="username " dir="auto" data-user-id="2000494242" data-xf-init="member-tooltip">Ankaia</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/change-ip-adress-in-the-client-top-pko.1254874/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2025-10-26T02:53:04+0000" data-timestamp="1761447184" data-date="Oct 26, 2025" data-time="2:53 AM" data-short="Oct '25" title="Oct 26, 2025 at 2:53 AM">Oct 26, 2025</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>1</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>210</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/change-ip-adress-in-the-client-top-pko.1254874/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2025-12-07T20:27:51+0000" data-timestamp="1765139271" data-date="Dec 7, 2025" data-time="8:27 PM" data-short="Dec '25" title="Dec 7, 2025 at 8:27 PM">Dec 7, 2025</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/lexbergeron.2000501077/" class="username " dir="auto" data-user-id="2000501077" data-xf-init="member-tooltip">lexbergeron</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/lexbergeron.2000501077/" class="avatar avatar--xxs avatar--square" data-user-id="2000501077" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/2000501/2000501077.jpg?1764984227" alt="lexbergeron" class="avatar-u2000501077-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-877185" data-author="akalak" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/akalak.744661/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="744661" data-xf-init="member-tooltip" style="background-color: #33cc33; color: #0f3d0f">
+			<span class="avatar-u744661-s" role="img" aria-label="akalak">A</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/request-complete-and-detailed-guide-for-top-private-server.877185/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Request complete and detailed guide for top private server
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/akalak.744661/" class="username " dir="auto" data-user-id="744661" data-xf-init="member-tooltip">akalak</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/request-complete-and-detailed-guide-for-top-private-server.877185/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2012-09-06T11:51:08+0100" data-timestamp="1346928668" data-date="Sep 6, 2012" data-time="11:51 AM" data-short="Sep '12" title="Sep 6, 2012 at 11:51 AM">Sep 6, 2012</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>3</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>8K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/request-complete-and-detailed-guide-for-top-private-server.877185/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2019-04-19T14:12:23+0100" data-timestamp="1555679543" data-date="Apr 19, 2019" data-time="2:12 PM" data-short="Apr '19" title="Apr 19, 2019 at 2:12 PM">Apr 19, 2019</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/asking12.2000269301/" class="username " dir="auto" data-user-id="2000269301" data-xf-init="member-tooltip">asking12</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/asking12.2000269301/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000269301" data-xf-init="member-tooltip" style="background-color: #d65cd6; color: #661a66">
+			<span class="avatar-u2000269301-s" role="img" aria-label="asking12">A</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-1160931" data-author="asking12" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/asking12.2000269301/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="2000269301" data-xf-init="member-tooltip" style="background-color: #d65cd6; color: #661a66">
+			<span class="avatar-u2000269301-s" role="img" aria-label="asking12">A</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/need-full-guide-to-make-offline-server.1160931/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Need full guide to make offline server
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/asking12.2000269301/" class="username " dir="auto" data-user-id="2000269301" data-xf-init="member-tooltip">asking12</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/need-full-guide-to-make-offline-server.1160931/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2019-04-17T16:03:17+0100" data-timestamp="1555513397" data-date="Apr 17, 2019" data-time="4:03 PM" data-short="Apr '19" title="Apr 17, 2019 at 4:03 PM">Apr 17, 2019</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>0</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>8K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/need-full-guide-to-make-offline-server.1160931/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2019-04-17T16:03:17+0100" data-timestamp="1555513397" data-date="Apr 17, 2019" data-time="4:03 PM" data-short="Apr '19" title="Apr 17, 2019 at 4:03 PM">Apr 17, 2019</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/asking12.2000269301/" class="username " dir="auto" data-user-id="2000269301" data-xf-init="member-tooltip">asking12</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/asking12.2000269301/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000269301" data-xf-init="member-tooltip" style="background-color: #d65cd6; color: #661a66">
+			<span class="avatar-u2000269301-s" role="img" aria-label="asking12">A</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-1140048" data-author="Mervvin" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/mervvin.2000241212/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="2000241212" data-xf-init="member-tooltip" style="background-color: #145252; color: #47d1d1">
+			<span class="avatar-u2000241212-s" role="img" aria-label="Mervvin">M</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/looking-for-server-files-and-client.1140048/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Looking for Server Files and Client
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/mervvin.2000241212/" class="username " dir="auto" data-user-id="2000241212" data-xf-init="member-tooltip">Mervvin</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/looking-for-server-files-and-client.1140048/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2017-10-25T13:18:28+0100" data-timestamp="1508933908" data-date="Oct 25, 2017" data-time="1:18 PM" data-short="Oct '17" title="Oct 25, 2017 at 1:18 PM">Oct 25, 2017</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>2</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>10K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/looking-for-server-files-and-client.1140048/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2017-10-25T13:49:06+0100" data-timestamp="1508935746" data-date="Oct 25, 2017" data-time="1:49 PM" data-short="Oct '17" title="Oct 25, 2017 at 1:49 PM">Oct 25, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/mervvin.2000241212/" class="username " dir="auto" data-user-id="2000241212" data-xf-init="member-tooltip">Mervvin</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/mervvin.2000241212/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000241212" data-xf-init="member-tooltip" style="background-color: #145252; color: #47d1d1">
+			<span class="avatar-u2000241212-s" role="img" aria-label="Mervvin">M</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-635072" data-author="rafinhakbessa" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/rafinhakbessa.796471/" class="avatar avatar--s avatar--square" data-user-id="796471" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/796/796471.jpg?1725407169" alt="rafinhakbessa" class="avatar-u796471-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/b-top-private-server-guide-b.635072/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					[B]ToP Private Server Guide [/B]
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/rafinhakbessa.796471/" class="username " dir="auto" data-user-id="796471" data-xf-init="member-tooltip">rafinhakbessa</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/b-top-private-server-guide-b.635072/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2010-01-03T03:27:47+0000" data-timestamp="1262489267" data-date="Jan 3, 2010" data-time="3:27 AM" data-short="Jan '10" title="Jan 3, 2010 at 3:27 AM">Jan 3, 2010</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>2</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>12K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/b-top-private-server-guide-b.635072/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2017-08-17T05:32:14+0100" data-timestamp="1502944334" data-date="Aug 17, 2017" data-time="5:32 AM" data-short="Aug '17" title="Aug 17, 2017 at 5:32 AM">Aug 17, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/dagger.2000179314/" class="username " dir="auto" data-user-id="2000179314" data-xf-init="member-tooltip">dagger</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/dagger.2000179314/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000179314" data-xf-init="member-tooltip" style="background-color: #2985a3; color: #051114">
+			<span class="avatar-u2000179314-s" role="img" aria-label="dagger">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-932617" data-author="Zorno" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/zorno.817966/" class="avatar avatar--s avatar--square" data-user-id="817966" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/817/817966.jpg?1725407192" alt="Zorno" class="avatar-u817966-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/serverfiles-link.932617/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					serverfiles link
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/zorno.817966/" class="username " dir="auto" data-user-id="817966" data-xf-init="member-tooltip"><span class="username--style73">Zorno</span></a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/serverfiles-link.932617/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2013-05-20T20:25:30+0100" data-timestamp="1369077930" data-date="May 20, 2013" data-time="8:25 PM" data-short="May '13" title="May 20, 2013 at 8:25 PM">May 20, 2013</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>1</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>10K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/serverfiles-link.932617/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2017-08-17T05:21:34+0100" data-timestamp="1502943694" data-date="Aug 17, 2017" data-time="5:21 AM" data-short="Aug '17" title="Aug 17, 2017 at 5:21 AM">Aug 17, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/dagger.2000179314/" class="username " dir="auto" data-user-id="2000179314" data-xf-init="member-tooltip">dagger</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/dagger.2000179314/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000179314" data-xf-init="member-tooltip" style="background-color: #2985a3; color: #051114">
+			<span class="avatar-u2000179314-s" role="img" aria-label="dagger">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-1132132" data-author="yuexiae" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/yuexiae.617902/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="617902" data-xf-init="member-tooltip" style="background-color: #8529a3; color: #d299e6">
+			<span class="avatar-u617902-s" role="img" aria-label="yuexiae">Y</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/tales-of-pirates-mobile-version.1132132/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Tales of Pirates mobile version
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/yuexiae.617902/" class="username " dir="auto" data-user-id="617902" data-xf-init="member-tooltip">yuexiae</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/tales-of-pirates-mobile-version.1132132/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2017-05-17T12:49:28+0100" data-timestamp="1495021768" data-date="May 17, 2017" data-time="12:49 PM" data-short="May '17" title="May 17, 2017 at 12:49 PM">May 17, 2017</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>2</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>14K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/tales-of-pirates-mobile-version.1132132/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2017-05-28T09:26:40+0100" data-timestamp="1495960000" data-date="May 28, 2017" data-time="9:26 AM" data-short="May '17" title="May 28, 2017 at 9:26 AM">May 28, 2017</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/riizq.1333373541/" class="username " dir="auto" data-user-id="1333373541" data-xf-init="member-tooltip"><span class="username--style73">Riizq</span></a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/riizq.1333373541/" class="avatar avatar--xxs avatar--square" data-user-id="1333373541" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/1333373/1333373541.jpg?1680381268" alt="Riizq" class="avatar-u1333373541-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-1060088" data-author="Stephen Moore" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/stephen-moore.2000022488/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="2000022488" data-xf-init="member-tooltip" style="background-color: #33cccc; color: #0f3d3d">
+			<span class="avatar-u2000022488-s" role="img" aria-label="Stephen Moore">S</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/server-advertising.1060088/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Server Advertising
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/stephen-moore.2000022488/" class="username " dir="auto" data-user-id="2000022488" data-xf-init="member-tooltip">Stephen Moore</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/server-advertising.1060088/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2015-04-14T20:58:38+0100" data-timestamp="1429041518" data-date="Apr 14, 2015" data-time="8:58 PM" data-short="Apr '15" title="Apr 14, 2015 at 8:58 PM">Apr 14, 2015</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>1</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>10K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/server-advertising.1060088/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2015-05-08T04:44:09+0100" data-timestamp="1431056649" data-date="May 8, 2015" data-time="4:44 AM" data-short="May '15" title="May 8, 2015 at 4:44 AM">May 8, 2015</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/riizq.1333373541/" class="username " dir="auto" data-user-id="1333373541" data-xf-init="member-tooltip"><span class="username--style73">Riizq</span></a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/riizq.1333373541/" class="avatar avatar--xxs avatar--square" data-user-id="1333373541" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/1333373/1333373541.jpg?1680381268" alt="Riizq" class="avatar-u1333373541-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-1047321" data-author="martinx09" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/martinx09.513477/" class="avatar avatar--s avatar--square" data-user-id="513477" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/513/513477.jpg?1725406916" srcset="/data/avatars/m/513/513477.jpg?1725406916 2x" alt="martinx09" class="avatar-u513477-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/best-more-stable-server-files-for-a-low-rate-server.1047321/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Best (more stable) server files for a low-rate server?
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/martinx09.513477/" class="username " dir="auto" data-user-id="513477" data-xf-init="member-tooltip">martinx09</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/best-more-stable-server-files-for-a-low-rate-server.1047321/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2015-01-15T23:37:18+0000" data-timestamp="1421365038" data-date="Jan 15, 2015" data-time="11:37 PM" data-short="Jan '15" title="Jan 15, 2015 at 11:37 PM">Jan 15, 2015</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>3</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>10K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/best-more-stable-server-files-for-a-low-rate-server.1047321/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2015-03-17T11:08:35+0000" data-timestamp="1426590515" data-date="Mar 17, 2015" data-time="11:08 AM" data-short="Mar '15" title="Mar 17, 2015 at 11:08 AM">Mar 17, 2015</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/albireo85.661249/" class="username " dir="auto" data-user-id="661249" data-xf-init="member-tooltip">albireo85</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/albireo85.661249/" class="avatar avatar--xxs avatar--square" data-user-id="661249" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/661/661249.jpg?1725407071" alt="albireo85" class="avatar-u661249-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-1019292" data-author="greyfox41" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/greyfox41.2000122473/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="2000122473" data-xf-init="member-tooltip" style="background-color: #999966; color: #2e2e1f">
+			<span class="avatar-u2000122473-s" role="img" aria-label="greyfox41">G</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/clean-top-i-v1-36-2-0-server-file-pls.1019292/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Clean Top I v1.36(2.0) Server File pls
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/greyfox41.2000122473/" class="username " dir="auto" data-user-id="2000122473" data-xf-init="member-tooltip">greyfox41</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/clean-top-i-v1-36-2-0-server-file-pls.1019292/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2014-08-01T06:23:58+0100" data-timestamp="1406870638" data-date="Aug 1, 2014" data-time="6:23 AM" data-short="Aug '14" title="Aug 1, 2014 at 6:23 AM">Aug 1, 2014</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>2</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>10K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/clean-top-i-v1-36-2-0-server-file-pls.1019292/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2014-08-03T04:06:39+0100" data-timestamp="1407035199" data-date="Aug 3, 2014" data-time="4:06 AM" data-short="Aug '14" title="Aug 3, 2014 at 4:06 AM">Aug 3, 2014</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/greyfox41.2000122473/" class="username " dir="auto" data-user-id="2000122473" data-xf-init="member-tooltip">greyfox41</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/greyfox41.2000122473/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000122473" data-xf-init="member-tooltip" style="background-color: #999966; color: #2e2e1f">
+			<span class="avatar-u2000122473-s" role="img" aria-label="greyfox41">G</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread is-locked js-inlineModContainer js-threadListItem-592583" data-author="segredu" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/segredu.681389/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="681389" data-xf-init="member-tooltip" style="background-color: #e08585; color: #8f2424">
+			<span class="avatar-u681389-s" role="img" aria-label="segredu">S</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+				<ul class="structItem-statuses"><li>
+							<i class="structItem-status structItem-status--locked" aria-hidden="true" title="Locked"></i>
+							<span class="u-srOnly">Locked</span>
+						</li>
+					
+
+					
+						
+					
+
+					
+						
+					
+
+					
+					
+
+					
+					
+						
+							
+						
+					
+				
+				
+				</ul><div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/pirateking-server-2-0-repack-website.592583/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					PirateKing Server 2.0 repack + Website
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/segredu.681389/" class="username " dir="auto" data-user-id="681389" data-xf-init="member-tooltip">segredu</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/pirateking-server-2-0-repack-website.592583/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2009-07-30T00:56:05+0100" data-timestamp="1248911765" data-date="Jul 30, 2009" data-time="12:56 AM" data-short="Jul '09" title="Jul 30, 2009 at 12:56 AM">Jul 30, 2009</time></a></li>
+						
+					</ul><span class="structItem-pageJump">
+						
+							<a href="https://forum.ragezone.com/threads/pirateking-server-2-0-repack-website.592583/page-2">2</a>
+						
+							<a href="https://forum.ragezone.com/threads/pirateking-server-2-0-repack-website.592583/page-3">3</a>
+						
+						</span>
+					
+				
+			</div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 9">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>56</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>54K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/pirateking-server-2-0-repack-website.592583/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2014-08-01T05:56:27+0100" data-timestamp="1406868987" data-date="Aug 1, 2014" data-time="5:56 AM" data-short="Aug '14" title="Aug 1, 2014 at 5:56 AM">Aug 1, 2014</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/greyfox41.2000122473/" class="username " dir="auto" data-user-id="2000122473" data-xf-init="member-tooltip">greyfox41</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/greyfox41.2000122473/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000122473" data-xf-init="member-tooltip" style="background-color: #999966; color: #2e2e1f">
+			<span class="avatar-u2000122473-s" role="img" aria-label="greyfox41">G</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread is-locked js-inlineModContainer js-threadListItem-1013803" data-author="Allen Sobao" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/allen-sobao.2000004136/" class="avatar avatar--s avatar--square" data-user-id="2000004136" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/2000004/2000004136.jpg?1725407567" alt="Allen Sobao" class="avatar-u2000004136-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+				<ul class="structItem-statuses"><li>
+							<i class="structItem-status structItem-status--locked" aria-hidden="true" title="Locked"></i>
+							<span class="u-srOnly">Locked</span>
+						</li>
+					
+
+					
+						
+					
+
+					
+						
+					
+
+					
+					
+
+					
+					
+						
+							
+						
+					
+				
+				
+				</ul><div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/tales-of-pirates-full-source-code.1013803/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Tales of Pirates Full Source Code.
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/allen-sobao.2000004136/" class="username " dir="auto" data-user-id="2000004136" data-xf-init="member-tooltip">Allen Sobao</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/tales-of-pirates-full-source-code.1013803/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2014-07-05T01:10:42+0100" data-timestamp="1404519042" data-date="Jul 5, 2014" data-time="1:10 AM" data-short="Jul '14" title="Jul 5, 2014 at 1:10 AM">Jul 5, 2014</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>5</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>12K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/tales-of-pirates-full-source-code.1013803/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2014-07-05T02:12:28+0100" data-timestamp="1404522748" data-date="Jul 5, 2014" data-time="2:12 AM" data-short="Jul '14" title="Jul 5, 2014 at 2:12 AM">Jul 5, 2014</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/riizq.1333373541/" class="username " dir="auto" data-user-id="1333373541" data-xf-init="member-tooltip"><span class="username--style73">Riizq</span></a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/riizq.1333373541/" class="avatar avatar--xxs avatar--square" data-user-id="1333373541" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/1333373/1333373541.jpg?1680381268" alt="Riizq" class="avatar-u1333373541-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-1008236" data-author="blazingkid2" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/blazingkid2.1333411455/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="1333411455" data-xf-init="member-tooltip" style="background-color: #1f7a5c; color: #70dbb8">
+			<span class="avatar-u1333411455-s" role="img" aria-label="blazingkid2">B</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/can-someone-give-me-the-music-sound-folder.1008236/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Can Someone give me the music/sound folder?
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/blazingkid2.1333411455/" class="username " dir="auto" data-user-id="1333411455" data-xf-init="member-tooltip">blazingkid2</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/can-someone-give-me-the-music-sound-folder.1008236/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2014-06-10T00:48:08+0100" data-timestamp="1402357688" data-date="Jun 10, 2014" data-time="12:48 AM" data-short="Jun '14" title="Jun 10, 2014 at 12:48 AM">Jun 10, 2014</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>2</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>8K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/can-someone-give-me-the-music-sound-folder.1008236/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2014-06-25T10:58:18+0100" data-timestamp="1403690298" data-date="Jun 25, 2014" data-time="10:58 AM" data-short="Jun '14" title="Jun 25, 2014 at 10:58 AM">Jun 25, 2014</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/arsenalrkl.674238/" class="username " dir="auto" data-user-id="674238" data-xf-init="member-tooltip">arsenalrkl</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/arsenalrkl.674238/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="674238" data-xf-init="member-tooltip" style="background-color: #ebadeb; color: #b82eb8">
+			<span class="avatar-u674238-s" role="img" aria-label="arsenalrkl">A</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-1003113" data-author="lalaband2" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/lalaband2.2000094949/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="2000094949" data-xf-init="member-tooltip" style="background-color: #6699cc; color: #204060">
+			<span class="avatar-u2000094949-s" role="img" aria-label="lalaband2">L</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/dungeon-sea-online-dso.1003113/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Dungeon Sea Online (DSO)
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/lalaband2.2000094949/" class="username " dir="auto" data-user-id="2000094949" data-xf-init="member-tooltip">lalaband2</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/dungeon-sea-online-dso.1003113/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2014-05-15T13:00:26+0100" data-timestamp="1400155226" data-date="May 15, 2014" data-time="1:00 PM" data-short="May '14" title="May 15, 2014 at 1:00 PM">May 15, 2014</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>0</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>10K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/dungeon-sea-online-dso.1003113/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2014-05-15T13:00:26+0100" data-timestamp="1400155226" data-date="May 15, 2014" data-time="1:00 PM" data-short="May '14" title="May 15, 2014 at 1:00 PM">May 15, 2014</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/lalaband2.2000094949/" class="username " dir="auto" data-user-id="2000094949" data-xf-init="member-tooltip">lalaband2</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/lalaband2.2000094949/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000094949" data-xf-init="member-tooltip" style="background-color: #6699cc; color: #204060">
+			<span class="avatar-u2000094949-s" role="img" aria-label="lalaband2">L</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-987810" data-author="micah1121" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/micah1121.802331/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="802331" data-xf-init="member-tooltip" style="background-color: #6633cc; color: #d1c2f0">
+			<span class="avatar-u802331-s" role="img" aria-label="micah1121">M</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/tales-of-pirates-helping-people-discussion.987810/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Tales of Pirates [Helping People] Discussion
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/micah1121.802331/" class="username " dir="auto" data-user-id="802331" data-xf-init="member-tooltip">micah1121</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/tales-of-pirates-helping-people-discussion.987810/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2014-02-16T19:29:51+0000" data-timestamp="1392578991" data-date="Feb 16, 2014" data-time="7:29 PM" data-short="Feb '14" title="Feb 16, 2014 at 7:29 PM">Feb 16, 2014</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>0</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>8K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/tales-of-pirates-helping-people-discussion.987810/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2014-02-16T19:29:51+0000" data-timestamp="1392578991" data-date="Feb 16, 2014" data-time="7:29 PM" data-short="Feb '14" title="Feb 16, 2014 at 7:29 PM">Feb 16, 2014</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/micah1121.802331/" class="username " dir="auto" data-user-id="802331" data-xf-init="member-tooltip">micah1121</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/micah1121.802331/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="802331" data-xf-init="member-tooltip" style="background-color: #6633cc; color: #d1c2f0">
+			<span class="avatar-u802331-s" role="img" aria-label="micah1121">M</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-982687" data-author="stiapett" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/stiapett.2000051322/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="2000051322" data-xf-init="member-tooltip" style="background-color: #99cc66; color: #406020">
+			<span class="avatar-u2000051322-s" role="img" aria-label="stiapett">S</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/tales-of-pirates-clean-1-37-server-files.982687/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Tales of Pirates clean 1.37 server files
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/stiapett.2000051322/" class="username " dir="auto" data-user-id="2000051322" data-xf-init="member-tooltip">stiapett</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/tales-of-pirates-clean-1-37-server-files.982687/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2014-01-20T18:08:28+0000" data-timestamp="1390241308" data-date="Jan 20, 2014" data-time="6:08 PM" data-short="Jan '14" title="Jan 20, 2014 at 6:08 PM">Jan 20, 2014</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>0</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>8K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/tales-of-pirates-clean-1-37-server-files.982687/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2014-01-20T18:08:28+0000" data-timestamp="1390241308" data-date="Jan 20, 2014" data-time="6:08 PM" data-short="Jan '14" title="Jan 20, 2014 at 6:08 PM">Jan 20, 2014</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/stiapett.2000051322/" class="username " dir="auto" data-user-id="2000051322" data-xf-init="member-tooltip">stiapett</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/stiapett.2000051322/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="2000051322" data-xf-init="member-tooltip" style="background-color: #99cc66; color: #406020">
+			<span class="avatar-u2000051322-s" role="img" aria-label="stiapett">S</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-978163" data-author="herko125" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/herko125.521706/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="521706" data-xf-init="member-tooltip" style="background-color: #7ad65c; color: #2d661a">
+			<span class="avatar-u521706-s" role="img" aria-label="herko125">H</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/original-website-by-snowcrash.978163/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					Original website by SnowCrash
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/herko125.521706/" class="username " dir="auto" data-user-id="521706" data-xf-init="member-tooltip">herko125</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/original-website-by-snowcrash.978163/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2013-12-30T22:42:50+0000" data-timestamp="1388443370" data-date="Dec 30, 2013" data-time="10:42 PM" data-short="Dec '13" title="Dec 30, 2013 at 10:42 PM">Dec 30, 2013</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>1</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>6K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/original-website-by-snowcrash.978163/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2014-01-11T04:38:16+0000" data-timestamp="1389415096" data-date="Jan 11, 2014" data-time="4:38 AM" data-short="Jan '14" title="Jan 11, 2014 at 4:38 AM">Jan 11, 2014</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/m3-nfsk.2000037579/" class="username " dir="auto" data-user-id="2000037579" data-xf-init="member-tooltip">M3 nfsk</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/m3-nfsk.2000037579/" class="avatar avatar--xxs avatar--square" data-user-id="2000037579" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/s/2000037/2000037579.jpg?1725407590" alt="M3 nfsk" class="avatar-u2000037579-s" width="48" height="48"></a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+
+
+
+
+									
+
+	
+
+
+
+	<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-971306" data-author="dragonwrath" data-wu-highlight-thread="0">
+
+	
+		<div class="structItem-cell structItem-cell--icon">
+			<div class="structItem-iconContainer">
+				<a href="https://forum.ragezone.com/members/dragonwrath.764830/" class="avatar avatar--s avatar--square avatar--default avatar--default--dynamic" data-user-id="764830" data-xf-init="member-tooltip" style="background-color: #5c5cd6; color: #ebebfa">
+			<span class="avatar-u764830-s" role="img" aria-label="dragonwrath">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+			
+
+			<div class="structItem-title">
+				
+				
+				<a href="https://forum.ragezone.com/threads/in-need-of-server-files-1-37-2-0-database.971306/" class="" data-tp-primary="on" data-xf-init="" data-preview-url="">
+					In need of server files 1.37-2.0 + Database
+				</a>
+    
+    
+
+			</div>
+
+			<div class="structItem-minor">
+				
+
+				
+					<ul class="structItem-parts"><li><a href="https://forum.ragezone.com/members/dragonwrath.764830/" class="username " dir="auto" data-user-id="764830" data-xf-init="member-tooltip">dragonwrath</a></li>
+						<li class="structItem-startDate"><a href="https://forum.ragezone.com/threads/in-need-of-server-files-1-37-2-0-database.971306/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2013-11-25T08:50:50+0000" data-timestamp="1385369450" data-date="Nov 25, 2013" data-time="8:50 AM" data-short="Nov '13" title="Nov 25, 2013 at 8:50 AM">Nov 25, 2013</time></a></li>
+						
+					</ul></div>
+
+
+
+
+		</div>
+	
+
+	
+		
+			<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+				<dl class="pairs pairs--justified"><dt>Replies</dt>
+					<dd>0</dd>
+				</dl><dl class="pairs pairs--justified structItem-minor"><dt>Views</dt>
+					<dd>5K</dd>
+				</dl></div>
+		
+	
+
+	
+		<div class="structItem-cell structItem-cell--latest">
+			
+				<a href="https://forum.ragezone.com/threads/in-need-of-server-files-1-37-2-0-database.971306/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2013-11-25T08:50:50+0000" data-timestamp="1385369450" data-date="Nov 25, 2013" data-time="8:50 AM" data-short="Nov '13" title="Nov 25, 2013 at 8:50 AM">Nov 25, 2013</time></a>
+				<div class="structItem-minor">
+					
+						<a href="https://forum.ragezone.com/members/dragonwrath.764830/" class="username " dir="auto" data-user-id="764830" data-xf-init="member-tooltip">dragonwrath</a>
+					
+				</div>
+			
+		</div>
+	
+
+	
+		<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+			<div class="structItem-iconContainer">
+				
+					<a href="https://forum.ragezone.com/members/dragonwrath.764830/" class="avatar avatar--xxs avatar--square avatar--default avatar--default--dynamic" data-user-id="764830" data-xf-init="member-tooltip" style="background-color: #5c5cd6; color: #ebebfa">
+			<span class="avatar-u764830-s" role="img" aria-label="dragonwrath">D</span> 
+		</a>
+				
+			</div>
+		</div>
+	
+
+	</div>
+
+								
+
+
+								
+							
+						</div>
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="block-outer block-outer--after">
+		<div class="block-outer-main"><nav class="pageNavWrapper pageNavWrapper--mixed "><div class="pageNav  pageNav--skipEnd">
+	
+
+	<ul class="pageNav-main"><li class="pageNav-page pageNav-page--current "><a href="https://forum.ragezone.com/community/tales-of-pirates.440/">1</a></li>
+	
+
+
+		
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--later"><a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-2">2</a></li>
+	
+
+		
+			
+
+	
+		<li class="pageNav-page pageNav-page--later"><a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-3">3</a></li>
+	
+
+		
+
+		
+			
+				<li class="pageNav-page pageNav-page--skip pageNav-page--skipEnd">
+					<a data-xf-init="tooltip" title="Go to page" data-xf-click="menu" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">…</a>
+					
+
+	<div class="menu menu--pageJump" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h4 class="menu-header">Go to page</h4>
+			<div class="menu-row" data-xf-init="page-jump" data-page-url="/community/tales-of-pirates.440/page-%page%">
+				<div class="inputGroup inputGroup--numbers">
+					<div class="inputGroup inputGroup--numbers inputNumber" data-xf-init="number-box"><input type="number" pattern="\d*" class="input input--number js-numberBoxTextInput input input--numberNarrow js-pageJumpPage" value="4" min="1" max="57" step="1" required="required" data-menu-autofocus="true"></div>
+					<span class="inputGroup-text"><button type="button" class="button js-pageJumpGo"><span class="button-text">Go</span></button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+				</li>
+			
+		
+
+		
+
+	
+		<li class="pageNav-page "><a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-57">57</a></li>
+	
+
+	</ul><a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-2" class="pageNav-jump pageNav-jump--next">Next</a>
+	
+</div>
+
+<div class="pageNavSimple">
+	
+
+	<a class="pageNavSimple-el pageNavSimple-el--current" data-xf-init="tooltip" title="Go to page" data-xf-click="menu" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">
+		1 of 57
+	</a>
+	
+
+	<div class="menu menu--pageJump" data-menu="menu" aria-hidden="true">
+		<div class="menu-content">
+			<h4 class="menu-header">Go to page</h4>
+			<div class="menu-row" data-xf-init="page-jump" data-page-url="/community/tales-of-pirates.440/page-%page%">
+				<div class="inputGroup inputGroup--numbers">
+					<div class="inputGroup inputGroup--numbers inputNumber" data-xf-init="number-box"><input type="number" pattern="\d*" class="input input--number js-numberBoxTextInput input input--numberNarrow js-pageJumpPage" value="1" min="1" max="57" step="1" required="required" data-menu-autofocus="true"></div>
+					<span class="inputGroup-text"><button type="button" class="button js-pageJumpGo"><span class="button-text">Go</span></button></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+		<a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-2" class="pageNavSimple-el pageNavSimple-el--next">
+			Next <i aria-hidden="true"></i>
+		</a>
+		<a href="https://forum.ragezone.com/community/tales-of-pirates.440/page-57" class="pageNavSimple-el pageNavSimple-el--last" data-xf-init="tooltip" title="Last">
+			<i aria-hidden="true"></i> <span class="u-srOnly">Last</span>
+		</a>
+	
+</div>
+
+</nav></div>
+		
+		
+			<div class="block-outer-opposite">
+				
+					<a href="https://forum.ragezone.com/login/" class="button button--link button--wrap" data-xf-click="overlay"><span class="button-text">
+						You must log in or register to post here.
+					</span></a>
+				
+			</div>
+		
+	</div>
+</div>
+
+
+
+
+    
+
+
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+
+
+
+
+
+
+</div>
+					
+	
+
+		
+			
+		
+
+		
+	
+
+
+				</div>
+
+				
+			</div>
+
+			
+	
+
+		
+			
+		
+
+		
+	
+
+
+			
+	
+		<ul class="p-breadcrumbs p-breadcrumbs--bottom" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/#the-mmo-community.55" itemprop="item">
+			
+				<span itemprop="name">The MMO Community</span>
+			
+		</a>
+		<meta itemprop="position" content="1"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/mmo-server-developments.168/" itemprop="item">
+			
+				<span itemprop="name">MMO Server Developments</span>
+			
+		</a>
+		<meta itemprop="position" content="2"></li>
+
+				
+			
+		</ul></div>
+	</div>
+	
+	<div class="pre-footer">
+	<div class="pre-footer-overlay"></div>
+	<div class="pre-footer-inner">
+		<div class="pre-footer--container">
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content -links">
+						<h3>RaGEZONE Sponsor</h3>
+						<ul class="pre-footer--links"><a href="https://bit.ly/3ztZXnj" target="blank"><img src="https://forum.ragezone.com/images/partner/HF_Footer.png" alt="HyperFilter" width="300" height="200" loading="lazy"></a>
+						</ul></div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content">
+						<h3>About RaGEZONE</h3>
+						<div class="pre-footer-html--content">
+							RaGEZONE® is the top forum for MMO, MMORPG, and mobile game development. We provide binaries, source codes, and tutorials for your favorite games, making it the go-to resource for developers and fans. You can also find and share private servers, fostering a vibrant gamer community.
+						</div>
+					</div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="block" data-widget-id="62" data-widget-key="forum_overview_forum_statistics" data-widget-definition="online_statistics">
+	<div class="block-container">
+		<h3 class="block-minorHeader">Forum Statistics</h3>
+		<div class="block-body block-row">
+			<dl class="pairs pairs--justified"><dt>Members online</dt>
+				<dd>1,005</dd>
+			</dl><dl class="pairs pairs--justified"><dt>Guests online</dt>
+				<dd>19,361</dd>
+			</dl><dl class="pairs pairs--justified"><dt>Total visitors</dt>
+				<dd>20,366</dd>
+			</dl></div>
+		<div class="block-footer">
+			Totals may include hidden visitors.
+		</div>
+	</div>
+</div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content -links">
+						<h3>RaGEZONE Partners</h3>
+						<ul class="pre-footer--links"><div align="center">
+<a href="https://yeovilhospital.co.uk/"><img src="https://forum.ragezone.com/images/partner/yeovil.png" alt="UK sites not on GamStop" width="300" height="100" loading="lazy"></a>
+</div>
+						</ul></div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+	<footer class="p-footer" id="footer"><div class="p-footer-inner">
+
+			<div class="p-footer-row">
+				
+					<div class="p-footer-row-main">
+						<ul class="p-footer-linkList"><li>
+									
+										
+											<a href="https://forum.ragezone.com/misc/style" data-xf-click="overlay" data-xf-init="tooltip" title="Style chooser" rel="nofollow">
+												<i class="fa--xf far fa-paint-brush "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#paint-brush"></use></svg></i> RaGEZONE®
+											</a>
+										
+										
+											<a href="https://forum.ragezone.com/misc/style-variation" rel="nofollow" class="js-styleVariationsLink" data-xf-init="tooltip" title="Style variation" data-xf-click="menu" data-z-index-ref=".u-bottomFixer" role="button" aria-expanded="false" aria-haspopup="true">
+
+												<i class="fa--xf far fa-adjust "><svg xmlns="http://www.w3.org/2000/svg" role="img"><title>Style variation</title><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#adjust"></use></svg></i>
+											</a>
+
+											<div class="menu" data-menu="menu" aria-hidden="true">
+												<div class="menu-content js-styleVariationsMenu">
+													
+
+	
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?reset=1" class="menu-linkRow is-selected" rel="nofollow" data-xf-click="style-variation" data-variation="">
+
+		<i class="fa--xf far fa-adjust "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#adjust"></use></svg></i>
+
+		
+			System
+		
+	</a>
+
+
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?variation=default" class="menu-linkRow " rel="nofollow" data-xf-click="style-variation" data-variation="default">
+
+		<i class="fa--xf far fa-sun "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#sun"></use></svg></i>
+
+		
+			Light
+		
+	</a>
+
+
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?variation=alternate" class="menu-linkRow " rel="nofollow" data-xf-click="style-variation" data-variation="alternate">
+
+		<i class="fa--xf far fa-moon "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#moon"></use></svg></i>
+
+		
+			Dark
+		
+	</a>
+
+	
+
+	
+		
+	
+
+												</div>
+											</div>
+										
+									
+								</li>
+							
+							
+						
+						</ul></div>
+				
+				<div class="p-footer-row-opposite">
+					<ul class="p-footer-linkList"><li><a href="https://forum.ragezone.com/misc/contact" data-xf-click="overlay">Contact us</a></li>
+							
+						
+
+						
+
+						
+							<li><a href="https://ragezone.com/privacy-policy/">Privacy policy</a></li>
+						
+
+						
+							<li><a href="https://forum.ragezone.com/help/">Help</a></li>
+						
+
+						
+							<li><a href="https://forum.ragezone.com">Home</a></li>
+						
+
+						<li><a href="https://forum.ragezone.com/community/-/index.rss" target="_blank" class="p-footer-rssLink" title="RSS"><span aria-hidden="true"><i class="fa--xf far fa-rss "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#rss"></use></svg></i><span class="u-srOnly">RSS</span></span></a></li>
+					</ul></div>
+			</div>
+
+			
+				<div class="p-footer-copyright">
+				
+					<a href="https://xenforo.com" class="u-concealed" dir="ltr" target="_blank" rel="sponsored noopener">Community platform by XenForo<sup>®</sup><span class="copyright">© 2010-2025 XenForo Ltd.</span></a>
+					
+				
+					<br>
+					Sponsored by <a href="https://www.hyperfilter.com/panel/link.php?id=4">HyperFilter</a> - Powered by <a href="https://litespeedtech.com/">LiteSpeed</a> - MySQL tuning by <a href="https://releem.com/">Releem</a>. <br><a href="https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003000837">RaGEZONE®</a> is a registered trademark.
+				</div>
+			
+			
+		</div>
+	</footer></div> 
+
+
+
+<div class="u-bottomFixer js-bottomFixTarget">
+	
+	
+</div>
+
+<div class="u-navButtons js-navButtons">
+	<a href="javascript:" class="button button--scroll"><span class="button-text"><i class="fa--xf far fa-arrow-left "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#arrow-left"></use></svg></i><span class="u-srOnly">Back</span></span></a>
+</div>
+
+
+
+
+	<form style="display:none" hidden="hidden">
+		<input type="text" name="_xfClientLoadTime" value="" id="_xfClientLoadTime" title="_xfClientLoadTime" tabindex="-1"></form>
+
+	
+	
+	
+
+
+
+
+
+
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"62ee815100b84bcdb0817c36ba5e49d4","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed75fc4283a8ca3',t:'MTc3NjM4NjM4MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

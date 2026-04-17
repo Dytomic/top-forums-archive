@@ -1,0 +1,5017 @@
+<html id="XF" lang="en-GB" dir="LTR" data-xf="2.3" data-app="public" data-template="thread_view" data-container-key="node-440" data-content-key="thread-680281" data-logged-in="false" data-cookie-prefix="xf_" data-csrf="" class="has-no-js template-thread_view"><head><link rel="amphtml" href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/?amp=1"><meta charset="utf-8"><title>Problems with NPC creating. | RaGEZONE - MMO Development Forums</title><link rel="manifest" crossorigin="use-credentials" href="https://forum.ragezone.com/webmanifest.php"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="max-image-preview:large"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#324f72"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#323232"><meta name="apple-mobile-web-app-title" content="RaGEZONE®"><link rel="apple-touch-icon" href="https://forum.ragezone.com/data/assets/logo/maskable_icon_x192.webp"><meta name="description" content="So i'm kinda makind my own ToP privare v1.35 server and encountered problems when i create NPC's.
+
+So the problem appears when i try to add my NPC in my..."><meta property="og:description" content="So i'm kinda makind my own ToP privare v1.35 server and encountered problems when i create NPC's.
+
+So the problem appears when i try to add my NPC in my garnernpc.txt. I've made 4 NPC's in my NpcScript06.lua so far and only 2 of them work, for some reason all the other don't show any options or..."><meta property="twitter:description" content="So i'm kinda makind my own ToP privare v1.35 server and encountered problems when i create NPC's.
+
+So the problem appears when i try to add my NPC in my garnernpc.txt. I've made 4 NPC's in my..."><meta property="og:url" content="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/"><link rel="canonical" href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/"><meta property="og:image" content="https://forum.ragezone.com/images/404_image.png"><meta property="twitter:image" content="https://forum.ragezone.com/images/404_image.png"><meta property="twitter:card" content="summary"><meta property="og:site_name" content="RaGEZONE - MMO Development Forums"><meta property="og:type" content="website"><meta property="og:title" content="Problems with NPC creating."><meta property="twitter:title" content="Problems with NPC creating."><link rel="stylesheet" href="https://forum.ragezone.com/css.php?css=public%3Anormalize.css%2Cpublic%3Afa.css%2Cpublic%3Avariations.less%2Cpublic%3Acore.less%2Cpublic%3Aapp.less&amp;s=10&amp;l=1&amp;d=1776347396&amp;k=87ab3a911d687930196e0116e7b19437066fe4c4"><link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="https://forum.ragezone.com/css.php?css=public%3Abb_code.less%2Cpublic%3Alightbox.less%2Cpublic%3Amessage.less%2Cpublic%3Aozzmodz_badges.less%2Cpublic%3Aozzmodz_badges_featured_badges.less%2Cpublic%3Aozzmodz_cbhj_style_base16_solarized_dark.css%2Cpublic%3Asiropu_ads_manager_ad.less%2Cpublic%3AsvLazyImageLoader.less%2Cpublic%3Axc_hide_links_medias_to_guests_bb_code_hide.less%2Cpublic%3Aextra.less&amp;s=10&amp;l=1&amp;d=1776347396&amp;k=12712007f0a6c76d74c233e51c48fa04cd439772"><script src="https://forum.ragezone.com/js/xf/preamble.min.js?_v=b090ee27"></script><script src="https://forum.ragezone.com/js/vendor/vendor-compiled.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/xf/core-compiled.js?_v=b090ee27" defer></script><script>
+	XF.samViewCountMethod = "impression";
+	XF.samServerTime = 1776386884;
+	XF.samItem = ".samItem";
+	XF.samCodeUnit = ".samCodeUnit";
+	XF.JamSpannerUnit = ".JamSpannerUnit";
+</script><script>
+	window.addEventListener('DOMContentLoaded', () => {
+		var bkp = document.querySelectorAll('div[data-ba]');
+		if (bkp) {
+			bkp.forEach(item => {
+				var ad = item;
+				if (ad.querySelector('ins.adsbygoogle').style.display == 'none') {
+					 XF.ajax('GET', XF.canonicalizeUrl('index.php?sam-item/' + ad.dataset.ba + '/get-backup'), {}, data => {
+						 if (data.backup) {
+							 ad.html(data.backup);
+						 }
+					 }, { skipDefault: true, global: false});
+				}
+			});
+		}
+		const advHere = document.querySelectorAll('.samAdvertiseHereLink');
+		if (advHere) {
+			advHere.forEach(item => {
+				var unit = item.parentNode;
+				if (unit.classList.contains('samCustomSize')) {
+					unit.style.marginBottom = 20;
+				}
+			});
+		}
+		const ff = document.querySelectorAll('div[data-position="footer_fixed"] > div[data-cv="true"]');
+		if (ff) {
+			ff.forEach(item => {
+				XF.trigger(item, 'adView');
+			});
+		}
+	});
+</script><script>
+		XF.ready(() =>
+		{
+			XF.extendObject(true, XF.config, {
+				// 
+				userId: 0,
+				enablePush: true,
+xs_TypeEditor: 'editor',
+				pushAppServerKey: 'BPKawPyIzrRkJg495w42az2fPsCPCvAv8lBF4srGXv4MGov_8j3Xb8kKY81-FRa70iHJ7owpAbQ7IN2Gaqv89rk',
+				url: {
+					fullBase: 'https://forum.ragezone.com/',
+					basePath: '/',
+					css: '/css.php?css=__SENTINEL__&s=10&l=1&d=1776347396',
+					js: '/js/__SENTINEL__?_v=b090ee27',
+					icon: '/data/local/icons/__VARIANT__.svg?v=1776243575#__NAME__',
+					iconInline: '/styles/fa/__VARIANT__/__NAME__.svg?v=5.15.3',
+					keepAlive: '/login/keep-alive'
+				},
+				cookie: {
+					path: '/',
+					domain: '',
+					prefix: 'xf_',
+					secure: true,
+					consentMode: 'disabled',
+					consented: ["optional","_third_party"]
+				},
+				cacheKey: 'f3ed7234243583f554e27d349fe769c5',
+				csrf: '',
+				js: {"\/js\/sv\/lazyimageloader\/lazy-compiled.js?_v=b090ee27":true,"\/js\/xf\/lightbox-compiled.js?_v=b090ee27":true,"\/js\/sv\/lazyimageloader\/xf\/lightbox.min.js?_v=b090ee27":true,"\/js\/mentalbypass\/mentalbypass.js?_v=b090ee27":true,"\/js\/ozzmodz\/codeblockhighlightjs\/highlight.min.js?_v=b090ee27":true,"\/js\/ozzmodz\/codeblockhighlightjs\/languages\/php.min.js?_v=b090ee27":true,"\/js\/ozzmodz\/codeblockhighlightjs\/code_block.min.js?_v=b090ee27":true,"\/js\/xf\\action.min.js?_v=b090ee27":true,"\/js\/XenSoluce\/Hide\/check-hide.min.js?_v=b090ee27":true},
+				fullJs: false,
+				css: {"public:bb_code.less":true,"public:lightbox.less":true,"public:message.less":true,"public:ozzmodz_badges.less":true,"public:ozzmodz_badges_featured_badges.less":true,"public:ozzmodz_cbhj_style_base16_solarized_dark.css":true,"public:siropu_ads_manager_ad.less":true,"public:svLazyImageLoader.less":true,"public:xc_hide_links_medias_to_guests_bb_code_hide.less":true,"public:extra.less":true},
+				time: {
+					now: 1776386884,
+					today: 1776380400,
+					todayDow: 5,
+					tomorrow: 1776466800,
+					yesterday: 1776294000,
+					week: 1775862000,
+					month: 1774998000,
+					year: 1767225600
+				},
+				style: {
+					light: 'default',
+					dark: 'alternate',
+					defaultColorScheme: 'light'
+				},
+				borderSizeFeature: '3px',
+				fontAwesomeWeight: 'r',
+				enableRtnProtect: true,
+				
+				enableFormSubmitSticky: true,
+				imageOptimization: 'optimize',
+				imageOptimizationQuality: 0.85,
+				uploadMaxFilesize: 33554432,
+				uploadMaxWidth: 3840,
+				uploadMaxHeight: 2160,
+				allowedVideoExtensions: ["m4v","mov","mp4","mp4v","mpeg","mpg","ogv","webm"],
+				allowedAudioExtensions: ["mp3","opus","ogg","wav"],
+				shortcodeToEmoji: true,
+				visitorCounts: {
+					conversations_unread: '0',
+					alerts_unviewed: '0',
+					total_unread: '0',
+					title_count: true,
+					icon_indicator: true
+				},
+				jsMt: {"xf\/action.js":"6eed86ab","xf\/embed.js":"f79f40ed","xf\/form.js":"f79f40ed","xf\/structure.js":"6eed86ab","xf\/tooltip.js":"e13af6c4"},
+				jsState: {},
+				publicMetadataLogoUrl: 'https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp',
+				publicPushBadgeUrl: 'https://forum.ragezone.com/styles/default/xenforo/bell.png'
+			})
+
+			XF.extendObject(XF.phrases, {
+				// 
+"time.day": "{count} day",
+"time.days": "{count} days",
+"time.hour": "{count} hour",
+"time.hours": "{count} hours",
+"time.minute": "{count} minute",
+"time.minutes": "{count} minutes",
+"time.month": "{count} month",
+"time.months": "{count} months",
+"time.second": "{count} second",
+"time.seconds": "{count} seconds",
+"time.week": "time.week",
+"time.weeks": "{count} weeks",
+"time.year": "{count} year",
+"time.years": "{count} years",
+			pb_dailylogin_button_text_prev: "Previous",
+			pb_dailylogin_button_text_next: "Next",
+			pb_dailylogin_button_text_prev_year: "Previous year",
+			pb_dailylogin_button_text_year: "Year",
+			pb_dailylogin_button_text_today: "Today",
+			pb_dailylogin_button_text_month: "Month",
+			pb_dailylogin_button_text_week: "Week",
+			pb_dailylogin_button_text_day: "Day",
+			pb_dailylogin_button_text_list: "List",
+			pb_dailylogin_calendar_week_short: "W",
+			pb_dailylogin_calendar_week: "Week",
+			pb_dailylogin_calendar_close: "Close",
+			pb_dailylogin_calendar_time_hint: "Time",
+			pb_dailylogin_calendar_event_hint: "Event",
+			pb_dailylogin_calendar_all_day: "all-day",
+			pb_dailylogin_calendar_more: "more",
+			pb_dailylogin_calendar_no_events_to_display: "No events to display",
+				date_x_at_time_y:     "{date} at {time}",
+				day_x_at_time_y:      "{day} at {time}",
+				yesterday_at_x:       "Yesterday at {time}",
+				x_minutes_ago:        "{minutes} minutes ago",
+				one_minute_ago:       "1 minute ago",
+				a_moment_ago:         "A moment ago",
+				today_at_x:           "Today at {time}",
+				in_a_moment:          "In a moment",
+				in_a_minute:          "In a minute",
+				in_x_minutes:         "In {minutes} minutes",
+				later_today_at_x:     "Later today at {time}",
+				tomorrow_at_x:        "Tomorrow at {time}",
+				short_date_x_minutes: "{minutes}m",
+				short_date_x_hours:   "{hours}h",
+				short_date_x_days:    "{days}d",
+
+				day0: "Sunday",
+				day1: "Monday",
+				day2: "Tuesday",
+				day3: "Wednesday",
+				day4: "Thursday",
+				day5: "Friday",
+				day6: "Saturday",
+
+				dayShort0: "Sun",
+				dayShort1: "Mon",
+				dayShort2: "Tue",
+				dayShort3: "Wed",
+				dayShort4: "Thu",
+				dayShort5: "Fri",
+				dayShort6: "Sat",
+
+				month0: "January",
+				month1: "February",
+				month2: "March",
+				month3: "April",
+				month4: "May",
+				month5: "June",
+				month6: "July",
+				month7: "August",
+				month8: "September",
+				month9: "October",
+				month10: "November",
+				month11: "December",
+
+				active_user_changed_reload_page: "The active user has changed. Reload the page for the latest version.",
+				server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+				oops_we_ran_into_some_problems: "Oops! We ran into some problems.",
+				oops_we_ran_into_some_problems_more_details_console: "Oops! We ran into some problems. Please try again later. More error details may be in the browser console.",
+				file_too_large_to_upload: "The file is too large to be uploaded.",
+				uploaded_file_is_too_large_for_server_to_process: "The uploaded file is too large for the server to process.",
+				files_being_uploaded_are_you_sure: "Files are still being uploaded. Are you sure you want to submit this form?",
+				attach: "Attach files",
+				rich_text_box: "Rich text box",
+				close: "Close",
+				link_copied_to_clipboard: "Link copied to clipboard.",
+				text_copied_to_clipboard: "Text copied to clipboard.",
+				loading: "Loading…",
+				you_have_exceeded_maximum_number_of_selectable_items: "You have exceeded the maximum number of selectable items.",
+
+				processing: "Processing",
+				'processing...': "Processing…",
+
+				showing_x_of_y_items: "Showing {count} of {total} items",
+				showing_all_items: "Showing all items",
+				no_items_to_display: "No items to display",
+
+				number_button_up: "Increase",
+				number_button_down: "Decrease",
+
+				push_enable_notification_title: "Push notifications enabled successfully at RaGEZONE - MMO Development Forums",
+				push_enable_notification_body: "Thank you for enabling push notifications!",
+
+				pull_down_to_refresh: "Pull down to refresh",
+				release_to_refresh: "Release to refresh",
+				refreshing: "Refreshing…"
+			})
+		})
+	
+
+window.addEventListener('DOMContentLoaded',()=>{XF.Push.updateUserSubscriptionParent=XF.Push.updateUserSubscription;XF.Push.updateUserSubscription=function(b,a){"unsubscribe"===a&&XF.browser.safari&&XF.Push.setPushHistoryUserIds({});XF.Push.updateUserSubscriptionParent(b,a)}});
+</script><script src="https://forum.ragezone.com/js/sv/lazyimageloader/lazy-compiled.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/xf/lightbox-compiled.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/sv/lazyimageloader/xf/lightbox.min.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/mentalbypass/mentalbypass.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/ozzmodz/codeblockhighlightjs/highlight.min.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/ozzmodz/codeblockhighlightjs/languages/php.min.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/ozzmodz/codeblockhighlightjs/code_block.min.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/xf\action.min.js?_v=b090ee27" defer></script><script src="https://forum.ragezone.com/js/XenSoluce/Hide/check-hide.min.js?_v=b090ee27" defer></script><script>
+XF.ready(() =>
+{
+
+		XF.extendObject(true, XF.config, 
+		{
+			
+				apSsAvatarFrameStyle: 'square',
+			
+			
+			
+		});
+	
+})
+</script><link rel="icon" type="image/png" href="https://forum.ragezone.com/data/assets/logo/favicon-32x32.webp" sizes="32x32"></head><body data-template="thread_view">
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+<div class="p-pageWrapper" id="top">
+
+	
+
+	
+		
+			
+				<div class="height38"></div>
+			
+		
+	
+
+	<header class="p-header" id="header"><div class="p-header-inner">
+			<div class="p-header-content">
+
+				
+					<div class="p-header-logo p-header-logo--image">
+						<a href="https://forum.ragezone.com">
+							
+
+	
+
+	
+		
+		
+
+		
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations='{"default":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo.png","2":null},"alternate":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo-dark.png","2":null}}'><source srcset="/data/styles/10/styles/ragezone/xenforo/xenforo-logo-dark.png" media="(prefers-color-scheme: dark)"></source><img src="https://forum.ragezone.com/data/styles/10/styles/ragezone/xenforo/xenforo-logo.png" width="607" height="206" alt="RaGEZONE - MMO Development Forums"></picture></a>
+					</div>
+				
+
+				 <div class="JamSpannerUnit samAlignCenter samDisplayFlexbox samCustomSize" style="width: 468px; height: 60px;" data-xf-init="sam-unit" data-position="container_header"> <div class="samItem"> <a href="http://muonlines21.com/" target="_blank" rel="sponsored"> <img src="https://forum.ragezone.com/data/mentalbypass/169bc5e415ec5c.gif" alt="MuOnlineS21.com" width="468" height="60"></a> </div> <div class="samAdvertiseHereLink samAlignCenter" style="margin-top: 5px;"> <a href="https://forum.ragezone.com/ads-manager/packages/1/create-ad">Place your Ad here for £40.00 per Month!</a> </div> </div> 
+
+			</div>
+		</div>
+	</header><div class="p-navSticky p-navSticky--primary " data-xf-init="sticky-header">
+			
+		<nav class="p-nav"><div class="p-nav-inner">
+				<button type="button" class="button button--plain p-nav-menuTrigger" data-xf-click="off-canvas" data-menu=".js-headerOffCanvasMenu" tabindex="0" aria-label="Menu"><span class="button-text">
+					<i aria-hidden="true"></i>
+				</span></button>
+
+				
+					<div class="p-nav-smallLogo">
+						<a href="https://forum.ragezone.com">
+							
+
+	
+
+	
+		
+		
+
+		
+	
+		
+		
+
+		
+	
+
+	
+
+	<picture data-variations='{"default":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo.png","2":null},"alternate":{"1":"\/data\/styles\/10\/styles\/ragezone\/xenforo\/xenforo-logo-dark.png","2":null}}'><source srcset="/data/styles/10/styles/ragezone/xenforo/xenforo-logo-dark.png" media="(prefers-color-scheme: dark)"></source><img src="https://forum.ragezone.com/data/styles/10/styles/ragezone/xenforo/xenforo-logo.png" width="607" height="206" alt="RaGEZONE - MMO Development Forums"></picture></a>
+					</div>
+				
+
+				<div class="p-nav-scroller hScroller" data-xf-init="h-scroller" data-auto-scroll=".p-navEl.is-selected">
+					<div class="hScroller-scroll">
+						<ul class="p-nav-list js-offCanvasNavSource"><li>
+								
+	<div class="p-navEl is-selected" data-has-children="true">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="forums">Forums</a>
+
+
+		<a data-xf-key="1" data-xf-click="menu" data-menu-pos-ref="&lt; .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="https://forum.ragezone.com/whats-new/posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="newPosts">New posts</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl " data-has-children="true">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/downloads/categories/server-files.3/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="xfrm">Downloads</a>
+
+
+		<a data-xf-key="2" data-xf-click="menu" data-menu-pos-ref="&lt; .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+
+		
+	
+		<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+			<div class="menu-content">
+				
+					
+	
+	
+	<a href="https://forum.ragezone.com/downloads/latest-reviews" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="xfrmLatestReviews">Latest reviews</a>
+
+	
+
+				
+			</div>
+		</div>
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl ">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/topsites/" class="p-navEl-link " data-xf-key="3" data-nav-id="rz_ts">Top Sites</a>
+
+
+		
+
+		
+	
+	</div>
+
+							</li>
+						
+							<li>
+								
+	<div class="p-navEl ">
+	
+
+		
+	
+	<a href="https://forum.ragezone.com/threads/how-to-use-the-ragezone-forum-advertising-system.1212910/" class="p-navEl-link " data-xf-key="4" data-nav-id="RZ_Advertising">Advertise On RZ</a>
+
+
+		
+
+		
+	
+	</div>
+
+							</li>
+						
+						</ul></div>
+				</div>
+
+				<div class="p-nav-opposite">
+					<div class="p-navgroup p-account p-navgroup--guest">
+						
+							
+								<a href="https://forum.ragezone.com/login/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--logIn" data-xf-click="overlay" data-follow-redirects="on">
+									<i aria-hidden="true"></i>
+									<span class="p-navgroup-linkText">Log in</span>
+								</a>
+							
+							<div class="menu menu--structural menu--medium" data-menu="menu" data-nav-id="userLogin" aria-hidden="true" data-href="https://forum.ragezone.com/login/"></div>
+							
+								<a href="https://forum.ragezone.com/login/register" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--register" data-xf-click="overlay" data-follow-redirects="on">
+									<i aria-hidden="true"></i>
+									<span class="p-navgroup-linkText">Register</span>
+								</a>
+							
+						
+					</div>
+
+					<div class="p-navgroup p-discovery p-discovery--noSearch">
+						<a href="https://forum.ragezone.com/whats-new/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--whatsnew" aria-label="What's new" title="What's new">
+							<i aria-hidden="true"></i>
+							<span class="p-navgroup-linkText">What's new</span>
+						</a>
+
+						
+					</div>
+				</div>
+			</div>
+		</nav></div>
+		
+		
+		
+		
+	
+	
+
+<div class="offCanvasMenu offCanvasMenu--nav js-headerOffCanvasMenu" data-menu="menu" aria-hidden="true" data-ocm-builder="navigation">
+		<div class="offCanvasMenu-backdrop" data-menu-close="true"></div>
+		<div class="offCanvasMenu-content">
+			<div class="offCanvasMenu-header">
+				Menu
+				<a class="offCanvasMenu-closer" data-menu-close="true" role="button" tabindex="0" aria-label="Close"></a>
+			</div>
+			
+				<div class="p-offCanvasRegisterLink">
+					<div class="offCanvasMenu-linkHolder">
+						<a href="https://forum.ragezone.com/login/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+							Log in
+						</a>
+					</div>
+					<hr class="offCanvasMenu-separator"><div class="offCanvasMenu-linkHolder">
+							<a href="https://forum.ragezone.com/login/register" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+								Register
+							</a>
+						</div>
+						<hr class="offCanvasMenu-separator"></div>
+			
+			<div class="js-offCanvasNavTarget"></div>
+			<div class="offCanvasMenu-installBanner js-installPromptContainer" style="display: none;" data-xf-init="install-prompt">
+				<div class="offCanvasMenu-installBanner-header">Install the app</div>
+				<button type="button" class="button js-installPromptButton"><span class="button-text">Install</span></button>
+				<template class="js-installTemplateIOS"><div class="js-installTemplateContent">
+						<div class="overlay-title">How to install the app on iOS</div>
+						<div class="block-body">
+							<div class="block-row">
+								<p>
+									Follow along with the video below to see how to install our site as a web app on your home screen.
+								</p>
+								<p style="text-align: center">
+									<video src="https://forum.ragezone.com/styles/default/xenforo/add_to_home.mp4" width="280" height="480" autoplay loop muted playsinline></video></p>
+								<p>
+									<small><strong>Note:</strong> This feature may not be available in some browsers.</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</template></div>
+		</div>
+	</div>
+
+	<div class="p-body">
+		<div class="p-body-inner">
+			
+
+
+			
+	
+
+		
+			
+		
+
+		
+	
+
+
+			
+	
+		<ul class="p-breadcrumbs " itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/#the-mmo-community.55" itemprop="item">
+			
+				<span itemprop="name">The MMO Community</span>
+			
+		</a>
+		<meta itemprop="position" content="1"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/mmo-server-developments.168/" itemprop="item">
+			
+				<span itemprop="name">MMO Server Developments</span>
+			
+		</a>
+		<meta itemprop="position" content="2"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/tales-of-pirates.440/" itemprop="item">
+			
+				<span itemprop="name">Tales of Pirates</span>
+			
+		</a>
+		<meta itemprop="position" content="3"></li>
+
+				
+			
+		</ul><noscript class="js-jsWarning"><div class="blockMessage blockMessage--important blockMessage--iconic u-noJsOnly">JavaScript is disabled. For a better experience, please enable JavaScript in your browser before proceeding.</div></noscript>
+
+			
+	<div class="blockMessage blockMessage--important blockMessage--iconic js-browserWarning" style="display: none">You are using an out of date browser. It  may not display this or other websites correctly.<br>You should upgrade or use an <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">alternative browser</a>.</div>
+
+
+			
+				<div class="p-body-header">
+				
+					
+						<div class="p-title ">
+						
+							
+								<h1 class="p-title-value">Problems with NPC creating.
+	
+    
+    
+
+</h1>
+							
+							
+						
+						</div>
+					
+
+					
+						<div class="p-description">
+	<ul class="listInline listInline--bullet"><li>
+			<i class="fa--xf far fa-user "><svg xmlns="http://www.w3.org/2000/svg" role="img"><title>Thread starter</title><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#user"></use></svg></i>
+			<span class="u-srOnly">Thread starter</span>
+
+			<a href="https://forum.ragezone.com/members/sliplv.837622/" class="username  u-concealed" dir="auto" data-user-id="837622" data-xf-init="member-tooltip">SLIPLV</a>
+		</li>
+		<li>
+			<i class="fa--xf far fa-clock "><svg xmlns="http://www.w3.org/2000/svg" role="img"><title>Start date</title><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#clock"></use></svg></i>
+			<span class="u-srOnly">Start date</span>
+
+			<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/" class="u-concealed"><time class="u-dt" dir="auto" datetime="2010-07-26T19:10:20+0100" data-timestamp="1280167820" data-date="Jul 26, 2010" data-time="7:10 PM" data-short="Jul '10" title="Jul 26, 2010 at 7:10 PM">Jul 26, 2010</time></a>
+		</li>
+		
+
+
+		
+	</ul></div>
+					
+				
+				</div>
+			
+
+			<div class="p-body-main    is-active">
+				
+				
+
+				<div class="p-body-content">
+					
+	
+
+		
+			
+		
+
+		
+	
+
+
+					<div class="p-body-pageContent">
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+		
+	
+	
+	
+
+
+	
+	
+		
+	
+	
+	
+
+
+	
+
+
+
+
+	
+		<link rel="alternate" type="application/json+oembed" href="https://forum.ragezone.com/api/oembed/?url=https%3A%2F%2Fforum.ragezone.com%2Fthreads%2Fproblems-with-npc-creating.680281%2F" title="Problems with NPC creating."><div class="block block--messages" data-xf-init="" data-type="post" data-href="https://forum.ragezone.com/inline-mod/" data-search-target="*">
+
+	<span class="u-anchorTarget" id="posts"></span>
+
+	
+		
+	
+
+	
+
+	<div class="block-outer"><div class="block-outer-opposite">
+				<div class="buttonGroup">
+				
+					
+
+
+	<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/?highlights=1" class="button button--link"><span class="button-text">
+		Highlights Only
+	</span></a>
+
+
+						
+						
+						
+						
+						
+
+						
+					
+				
+				</div>
+			</div></div>
+
+	
+
+	
+		
+	<div class="block-outer js-threadStatusField"></div>
+
+	
+
+	<div class="block-container lbContainer" data-xf-init="lightbox select-to-quote" data-message-selector=".js-post" data-wu-highlight-thread="0" data-lb-id="thread-680281" data-lb-universal="">
+
+		<div class="block-body js-replyNewMessageContainer">
+			
+				
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+					
+
+					
+						
+
+	
+	
+
+	
+
+	
+	<article class="message message--post js-post js-inlineModContainer is-first  " data-author="SLIPLV" data-content="post-5802976" data-wu-highlight="0" data-wu-highlight-special="0" id="js-post-5802976"><span class="u-anchorTarget" id="post-5802976"></span>
+		
+			
+								
+
+	
+
+	<header class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed">
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5802976" rel="nofollow">
+					<time class="u-dt" dir="auto" datetime="2010-07-26T19:10:20+0100" data-timestamp="1280167820" data-date="Jul 26, 2010" data-time="7:10 PM" data-short="Jul '10" title="Jul 26, 2010 at 7:10 PM">Jul 26, 2010</time></a>
+			</li>
+			
+		</ul><ul class="message-attribution-opposite message-attribution-opposite--list "><li>
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5802976" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="https://forum.ragezone.com/posts/5802976/share" aria-label="Share" rel="nofollow">
+					<i class="fa--xf far fa-share-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#share-alt"></use></svg></i>
+				</a>
+			</li>
+			
+				<li class="u-hidden js-embedCopy">
+					
+	<a href="javascript:" data-xf-init="copy-to-clipboard" data-copy-text='&lt;div class="js-xf-embed" data-url="https://forum.ragezone.com" data-content="post-5802976"&gt;&lt;/div&gt;&lt;script defer src="https://forum.ragezone.com/js/xf/external_embed.js?_v=b090ee27"&gt;&lt;/script&gt;' data-success="Embed code HTML copied to clipboard." class="">
+		<i class="fa--xf far fa-code "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#code"></use></svg></i>
+	</a>
+
+				</li>
+			
+			
+			
+				<li>
+					<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5802976" rel="nofollow">
+						#1
+					</a>
+				</li>
+			
+		</ul></header><div class="message-inner">
+				
+					<div class="message-cell message-cell--user ap-ss-postbitBackground ap-ss-postbitBackground--837622" style="">
+						
+
+	<section class="message-user ap-ss-postbitFilter ap-ss-postbitFilter--837622" style=""><div class="message-avatar ">
+			<div class="message-avatar-wrapper">
+				<a href="https://forum.ragezone.com/members/sliplv.837622/" class="avatar avatar--l avatar--square avatar--default avatar--default--dynamic" data-user-id="837622" data-xf-init="member-tooltip" style="background-color: #cc9966; color: #603f20">
+			<span class="avatar-u837622-l" role="img" aria-label="SLIPLV">S</span> 
+		</a>
+				
+				
+			</div>
+		</div>
+		<div class="message-userDetails">
+			<div class="message-userName">
+				<h4 class="message-name"><a href="https://forum.ragezone.com/members/sliplv.837622/" class="username " dir="auto" data-user-id="837622" data-xf-init="member-tooltip"><span itemprop="name">SLIPLV</span></a></h4>
+			</div>
+
+	
+		<h5 class="userTitle message-userTitle" dir="auto">Newbie Spellweaver</h5>
+	
+			
+		
+
+			
+				
+
+				
+	
+		
+			
+		
+		
+			<div class="featuredBadges featuredBadges--message">
+				
+					
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/sliplv.837622/#badges" class="featuredBadge featuredBadge--10" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf fad fa-scroll-old  badgeIcon badgeIcon--10 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512" role="img" aria-hidden="true"><path d="M539.31 228.69L512 256l27.31 27.31a16 16 0 0 1 4.69 11.32V384h-89.37a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80.61 80c-44.11-.33-79.39-36.89-79.39-81V262.63a16 16 0 0 1 4.69-11.32L160 224l-27.31-27.31a16 16 0 0 1-4.69-11.32V65A65 65 0 0 0 63 0h385a96.1 96.1 0 0 1 95.68 88.2 16.15 16.15 0 0 1-4.63 12.8L512 128l27.31 27.31a16 16 0 0 1 4.69 11.32v50.74a16 16 0 0 1-4.69 11.32z" class="fa-secondary"></path><path d="M192 512h16c-2.59 0-5.14-.13-7.66-.37-2.75.24-5.53.37-8.34.37zM64 0A64 64 0 0 0 0 64v48a16 16 0 0 0 16 16h112V65A65 65 0 0 0 64 0zm560 384H454.63a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80 80h320a112 112 0 0 0 112-112.06A16 16 0 0 0 624 384z" class="fa-primary"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>10 Happy Years</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+					
+				
+			</div>
+		
+	
+
+			
+
+		</div>
+		
+			
+			
+				<div class="message-userExtras">
+				
+					
+						<dl class="pairs pairs--justified"><dt style="">Joined</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">Jul 18, 2010</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Messages</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">7</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Reaction score</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">0</dd>
+						</dl></div>
+			
+		
+		<span class="message-userArrow"></span>
+	</section></div>
+				
+
+				
+					<div class="message-cell message-cell--main">
+					
+						<div class="message-main js-quickEditTarget">
+
+							<div class="message-content js-messageContent">
+							
+
+								
+									
+	
+
+	
+
+	
+	
+
+								
+
+								
+									
+	
+
+	<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-5802976" data-lb-caption-desc="SLIPLV · Jul 26, 2010 at 7:10 PM">
+
+		
+			
+
+	
+		
+	
+
+		
+
+		<article class="message-body  js-selectToQuote"><div>
+				
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<div class="bbWrapper">So i'm kinda makind my own ToP privare v1.35 server and encountered problems when i create NPC's.<br><br>
+So the problem appears when i try to add my NPC in my <b>garnernpc.txt</b>. I've made 4 NPC's in my <b>NpcScript06.lua</b> so far and only 2 of them work, for some reason all the other don't show any options or text i wrote them to do, see in screenshots.<br><br><br>
+1st - This is called <b>mans_npc_2_kal</b> and exchanges 120 Crystal Ores for Kal, it works perfectly.<br><br><script class="js-extraPhrases" type="application/json">
+			{
+				"lightbox_close": "Close",
+				"lightbox_next": "Next",
+				"lightbox_previous": "Previous",
+				"lightbox_error": "The requested content cannot be loaded. Please try again later.",
+				"lightbox_start_slideshow": "Start slideshow",
+				"lightbox_stop_slideshow": "Stop slideshow",
+				"lightbox_full_screen": "Full screen",
+				"lightbox_thumbnails": "Thumbnails",
+				"lightbox_download": "Download",
+				"lightbox_share": "Share",
+				"lightbox_zoom": "Zoom",
+				"lightbox_new_window": "New window",
+				"lightbox_toggle_sidebar": "Toggle sidebar"
+			}
+			</script><div class="bbImageWrapper  lazyload js-lbImage" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" data-src="https://forum.ragezone.com/images/404_image.png" data-lb-sidebar-href="" data-lb-caption-extra-html="" data-single-image="1">
+		
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://forum.ragezone.com/images/404_image.png" data-url="https://forum.ragezone.com/images/404_image.png" class="bbImage lazyload" data-zoom-target="1" style="" alt="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" width="" height=""><noscript><img src="https://forum.ragezone.com/images/404_image.png" data-url="https://forum.ragezone.com/images/404_image.png" class="bbImage" data-zoom-target="1" style="" alt="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" width="" height=""></noscript>
+
+
+	</div><br><br>
+2nd - This one is called <b>mans_npc_3_zelts</b>, this one is supposed to exchange 1 Kal for 6 Million banknotes, but as you can see all it does is showing some text that i haven't made him to write.<br><br><div class="bbImageWrapper  lazyload js-lbImage" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" data-src="https://forum.ragezone.com/images/404_image.png" data-lb-sidebar-href="" data-lb-caption-extra-html="" data-single-image="1">
+		
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://forum.ragezone.com/images/404_image.png" data-url="https://forum.ragezone.com/images/404_image.png" class="bbImage lazyload" data-zoom-target="1" style="" alt="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" width="" height=""><noscript><img src="https://forum.ragezone.com/images/404_image.png" data-url="https://forum.ragezone.com/images/404_image.png" class="bbImage" data-zoom-target="1" style="" alt="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" width="" height=""></noscript>
+
+
+	</div><br><br>
+3rd - <b>mans_npc_skili</b> This is my second working NPC, it sells all the skills and works perfectly.<br><br><div class="bbImageWrapper  lazyload js-lbImage" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" data-src="https://forum.ragezone.com/images/404_image.png" data-lb-sidebar-href="" data-lb-caption-extra-html="" data-single-image="1">
+		
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://forum.ragezone.com/images/404_image.png" data-url="https://forum.ragezone.com/images/404_image.png" class="bbImage lazyload" data-zoom-target="1" style="" alt="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" width="" height=""><noscript><img src="https://forum.ragezone.com/images/404_image.png" data-url="https://forum.ragezone.com/images/404_image.png" class="bbImage" data-zoom-target="1" style="" alt="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" width="" height=""></noscript>
+
+
+	</div><br><br>
+4th - <b>mans_npc_1_ticket</b> This one was supposed to sell tickets, but does the same thing as 2nd.<br><br><div class="bbImageWrapper  lazyload js-lbImage" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" data-src="https://forum.ragezone.com/images/404_image.png" data-lb-sidebar-href="" data-lb-caption-extra-html="" data-single-image="1">
+		
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="https://forum.ragezone.com/images/404_image.png" data-url="https://forum.ragezone.com/images/404_image.png" class="bbImage lazyload" data-zoom-target="1" style="" alt="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" width="" height=""><noscript><img src="https://forum.ragezone.com/images/404_image.png" data-url="https://forum.ragezone.com/images/404_image.png" class="bbImage" data-zoom-target="1" style="" alt="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" title="SLIPLV - Problems with NPC creating. - RaGEZONE Forums" width="" height=""></noscript>
+
+
+	</div><br><br><br><br><br>
+So i was wondering why doesn't they work how i want them to? Later I tried replacing unneeded NPC's in my garnernpc file but it was no good, here's my server NPC files i have edited, can somoene help out? <br><b><br><div class="messageHide messageHide--link">
+	To view the content, you need to sign in or register
+
+</div><br><div class="messageHide messageHide--link">
+	To view the content, you need to sign in or register
+
+</div><br></b></div>
+
+	
+
+		
+			
+		
+
+		
+	
+
+				
+			</div>
+
+			<div class="js-selectToQuoteEnd"> </div>
+			
+				
+			
+		</article></div>
+
+								
+
+								
+									
+	
+
+	
+		<div class="message-lastEdit">
+			
+				Last edited: <time class="u-dt" dir="auto" datetime="2010-07-26T19:17:38+0100" data-timestamp="1280168258" data-date="Jul 26, 2010" data-time="7:17 PM" data-short="Jul '10" title="Jul 26, 2010 at 7:17 PM">Jul 26, 2010</time></div>
+	
+
+								
+
+								
+									
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+								
+
+							
+							</div>
+
+							
+								
+	
+
+	<footer class="message-footer"><div class="reactionsBar js-reactionsList ">
+			
+		</div>
+
+		
+
+		<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+	</footer></div>
+
+					
+					</div>
+				
+			</div>
+		
+	</article><header data-template-name="public:post_macros::post_attribution" class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed"> <a href="https://bit.ly/3ztZXnj">RaGEZONE Sponsor</a> </li> </ul></header><article class="message message--post"><div class="message-inner"> <div class="message-cell message-cell--main"> <div class="message-main"> <div class="message-content"> <div class="message-userContent"> <article class="message-body"><div class="bbWrapper"> <div class="JamSpannerUnit samAlignCenter samDisplayInlineBlock" data-xf-init="sam-unit" data-position="post_below_container_1"> <div class="samItem"> <a href="https://bit.ly/3ztZXnj" target="_blank" rel="sponsored"> <img src="https://forum.ragezone.com/data/mentalbypass/167c4753cc5ad1.webp" alt="The Best DDoS Protected Servers"></a> </div> </div> </div> </article></div> </div> </div> </div> </div> </article><article class="message message--post js-post js-inlineModContainer   " data-author="jairocaro" data-content="post-5805556" data-wu-highlight="0" data-wu-highlight-special="0" id="js-post-5805556" itemscope itemtype="https://schema.org/Comment" itemid="https://forum.ragezone.com/posts/5805556/"><meta itemprop="parentItem" itemscope itemid="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/"><div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="jairocaro"><meta itemprop="text" content="Hi, i would help you but i will need you post the text of yours npcs that is in npc scripts."><meta itemprop="url" content="https://forum.ragezone.com/members/jairocaro.838407/"></div>
+            
+                <meta itemprop="comment" content="Hi, i would help you but i will need you post the text of yours npcs that is in npc scripts."><meta itemprop="name" content="Post by jairocaro"><meta itemprop="text" content="Hi, i would help you but i will need you post the text of yours npcs that is in npc scripts."><div>
+                    <span itemprop="text" content="Hi, i would help you but i will need you post the text of yours npcs that is in npc scripts."></span>
+                  </div>
+            
+        
+		
+		<span class="u-anchorTarget" id="post-5805556"></span>
+		
+			
+								
+
+	
+
+	<header class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed">
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5805556" rel="nofollow" itemprop="url">
+					<time class="u-dt" dir="auto" datetime="2010-07-27T21:48:38+0100" data-timestamp="1280263718" data-date="Jul 27, 2010" data-time="9:48 PM" data-short="Jul '10" title="Jul 27, 2010 at 9:48 PM" itemprop="datePublished">Jul 27, 2010</time></a>
+			</li>
+			
+		</ul><ul class="message-attribution-opposite message-attribution-opposite--list "><li>
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5805556" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="https://forum.ragezone.com/posts/5805556/share" aria-label="Share" rel="nofollow">
+					<i class="fa--xf far fa-share-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#share-alt"></use></svg></i>
+				</a>
+			</li>
+			
+				<li class="u-hidden js-embedCopy">
+					
+	<a href="javascript:" data-xf-init="copy-to-clipboard" data-copy-text='&lt;div class="js-xf-embed" data-url="https://forum.ragezone.com" data-content="post-5805556"&gt;&lt;/div&gt;&lt;script defer src="https://forum.ragezone.com/js/xf/external_embed.js?_v=b090ee27"&gt;&lt;/script&gt;' data-success="Embed code HTML copied to clipboard." class="">
+		<i class="fa--xf far fa-code "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#code"></use></svg></i>
+	</a>
+
+				</li>
+			
+			
+			
+				<li>
+					<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5805556" rel="nofollow">
+						#2
+					</a>
+				</li>
+			
+		</ul></header><div class="message-inner">
+				
+					<div class="message-cell message-cell--user ap-ss-postbitBackground ap-ss-postbitBackground--838407" style="">
+						
+
+	<section class="message-user ap-ss-postbitFilter ap-ss-postbitFilter--838407" style="" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="https://forum.ragezone.com/members/jairocaro.838407/"><meta itemprop="url" content="https://forum.ragezone.com/posts/"><div class="message-avatar ">
+			<div class="message-avatar-wrapper">
+				<a href="https://forum.ragezone.com/members/jairocaro.838407/" class="avatar avatar--l avatar--square" data-user-id="838407" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/l/838/838407.jpg?1725407231" alt="jairocaro" class="avatar-u838407-l" width="192" height="192" itemprop="image"></a>
+				
+				
+			</div>
+		</div>
+		<div class="message-userDetails">
+			<div class="message-userName">
+				<h4 class="message-name"><a href="https://forum.ragezone.com/members/jairocaro.838407/" class="username " dir="auto" data-user-id="838407" data-xf-init="member-tooltip"><span itemprop="name">jairocaro</span></a></h4>
+			</div>
+
+	
+		<h5 class="userTitle message-userTitle" dir="auto" itemprop="jobTitle">Newbie Spellweaver</h5>
+	
+			
+		
+
+			
+				
+
+				
+	
+		
+			
+		
+		
+			<div class="featuredBadges featuredBadges--message">
+				
+					
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/jairocaro.838407/#badges" class="featuredBadge featuredBadge--10" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf fad fa-scroll-old  badgeIcon badgeIcon--10 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512" role="img" aria-hidden="true"><path d="M539.31 228.69L512 256l27.31 27.31a16 16 0 0 1 4.69 11.32V384h-89.37a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80.61 80c-44.11-.33-79.39-36.89-79.39-81V262.63a16 16 0 0 1 4.69-11.32L160 224l-27.31-27.31a16 16 0 0 1-4.69-11.32V65A65 65 0 0 0 63 0h385a96.1 96.1 0 0 1 95.68 88.2 16.15 16.15 0 0 1-4.63 12.8L512 128l27.31 27.31a16 16 0 0 1 4.69 11.32v50.74a16 16 0 0 1-4.69 11.32z" class="fa-secondary"></path><path d="M192 512h16c-2.59 0-5.14-.13-7.66-.37-2.75.24-5.53.37-8.34.37zM64 0A64 64 0 0 0 0 64v48a16 16 0 0 0 16 16h112V65A65 65 0 0 0 64 0zm560 384H454.63a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80 80h320a112 112 0 0 0 112-112.06A16 16 0 0 0 624 384z" class="fa-primary"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>10 Happy Years</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+					
+				
+			</div>
+		
+	
+
+			
+
+		</div>
+		
+			
+			
+				<div class="message-userExtras">
+				
+					
+						<dl class="pairs pairs--justified"><dt style="">Joined</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">Jul 21, 2010</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Messages</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">40</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Reaction score</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">1</dd>
+						</dl></div>
+			
+		
+		<span class="message-userArrow"></span>
+	</section></div>
+				
+
+				
+					<div class="message-cell message-cell--main">
+					
+						<div class="message-main js-quickEditTarget">
+
+							<div class="message-content js-messageContent">
+							
+
+								
+									
+	
+
+	
+
+	
+	
+
+								
+
+								
+									
+	
+
+	<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-5805556" data-lb-caption-desc="jairocaro · Jul 27, 2010 at 9:48 PM">
+
+		
+
+		<article class="message-body  js-selectToQuote"><div itemprop="text">
+				
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<div class="bbWrapper">Hi, i would help you but i will need you post the text of yours npcs that is in npc scripts.</div>
+
+	
+
+		
+			
+		
+
+		
+	
+
+				
+			</div>
+
+			<div class="js-selectToQuoteEnd"> </div>
+			
+				
+			
+		</article></div>
+
+								
+
+								
+									
+	
+
+	
+
+								
+
+								
+									
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+								
+
+							
+							</div>
+
+							
+								
+	
+
+	<footer class="message-footer"><div class="message-microdata" itemprop="interactionStatistic" itemtype="https://schema.org/InteractionCounter" itemscope>
+				<meta itemprop="userInteractionCount" content="0"><meta itemprop="interactionType" content="https://schema.org/LikeAction"></div>
+		
+
+		<div class="reactionsBar js-reactionsList ">
+			
+		</div>
+
+		
+
+		<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+	</footer></div>
+
+					
+					</div>
+				
+			</div>
+		
+	</article><article class="message message--post js-post js-inlineModContainer   " data-author="SLIPLV" data-content="post-5809631" data-wu-highlight="0" data-wu-highlight-special="0" id="js-post-5809631" itemscope itemtype="https://schema.org/Comment" itemid="https://forum.ragezone.com/posts/5809631/"><meta itemprop="parentItem" itemscope itemid="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/"><div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="SLIPLV"><meta itemprop="text" content="I already uploaded my NPC script, you can see it at the end of my first post, or maybe you want different file?"><meta itemprop="url" content="https://forum.ragezone.com/members/sliplv.837622/"></div>
+            
+                <meta itemprop="comment" content="I already uploaded my NPC script, you can see it at the end of my first post, or maybe you want different file?"><meta itemprop="name" content="Post by SLIPLV"><meta itemprop="text" content="I already uploaded my NPC script, you can see it at the end of my first post, or maybe you want different file?"><div>
+                    <span itemprop="text" content="I already uploaded my NPC script, you can see it at the end of my first post, or maybe you want different file?"></span>
+                  </div>
+            
+        
+		
+		<span class="u-anchorTarget" id="post-5809631"></span>
+		
+			
+								
+
+	
+
+	<header class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed">
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5809631" rel="nofollow" itemprop="url">
+					<time class="u-dt" dir="auto" datetime="2010-07-29T16:02:45+0100" data-timestamp="1280415765" data-date="Jul 29, 2010" data-time="4:02 PM" data-short="Jul '10" title="Jul 29, 2010 at 4:02 PM" itemprop="datePublished">Jul 29, 2010</time></a>
+			</li>
+			
+		</ul><ul class="message-attribution-opposite message-attribution-opposite--list "><li>
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5809631" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="https://forum.ragezone.com/posts/5809631/share" aria-label="Share" rel="nofollow">
+					<i class="fa--xf far fa-share-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#share-alt"></use></svg></i>
+				</a>
+			</li>
+			
+				<li class="u-hidden js-embedCopy">
+					
+	<a href="javascript:" data-xf-init="copy-to-clipboard" data-copy-text='&lt;div class="js-xf-embed" data-url="https://forum.ragezone.com" data-content="post-5809631"&gt;&lt;/div&gt;&lt;script defer src="https://forum.ragezone.com/js/xf/external_embed.js?_v=b090ee27"&gt;&lt;/script&gt;' data-success="Embed code HTML copied to clipboard." class="">
+		<i class="fa--xf far fa-code "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#code"></use></svg></i>
+	</a>
+
+				</li>
+			
+			
+			
+				<li>
+					<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5809631" rel="nofollow">
+						#3
+					</a>
+				</li>
+			
+		</ul></header><div class="message-inner">
+				
+					<div class="message-cell message-cell--user ap-ss-postbitBackground ap-ss-postbitBackground--837622" style="">
+						
+
+	<section class="message-user ap-ss-postbitFilter ap-ss-postbitFilter--837622" style="" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="https://forum.ragezone.com/members/sliplv.837622/"><meta itemprop="url" content="https://forum.ragezone.com/posts/"><div class="message-avatar ">
+			<div class="message-avatar-wrapper">
+				<a href="https://forum.ragezone.com/members/sliplv.837622/" class="avatar avatar--l avatar--square avatar--default avatar--default--dynamic" data-user-id="837622" data-xf-init="member-tooltip" style="background-color: #cc9966; color: #603f20">
+			<span class="avatar-u837622-l" role="img" aria-label="SLIPLV">S</span> 
+		</a>
+				
+				
+			</div>
+		</div>
+		<div class="message-userDetails">
+			<div class="message-userName">
+				<h4 class="message-name"><a href="https://forum.ragezone.com/members/sliplv.837622/" class="username " dir="auto" data-user-id="837622" data-xf-init="member-tooltip"><span itemprop="name">SLIPLV</span></a></h4>
+			</div>
+
+	
+		<h5 class="userTitle message-userTitle" dir="auto" itemprop="jobTitle">Newbie Spellweaver</h5>
+	
+			
+		
+
+			
+				
+
+				
+	
+		
+			
+		
+		
+			<div class="featuredBadges featuredBadges--message">
+				
+					
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/sliplv.837622/#badges" class="featuredBadge featuredBadge--10" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf fad fa-scroll-old  badgeIcon badgeIcon--10 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512" role="img" aria-hidden="true"><path d="M539.31 228.69L512 256l27.31 27.31a16 16 0 0 1 4.69 11.32V384h-89.37a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80.61 80c-44.11-.33-79.39-36.89-79.39-81V262.63a16 16 0 0 1 4.69-11.32L160 224l-27.31-27.31a16 16 0 0 1-4.69-11.32V65A65 65 0 0 0 63 0h385a96.1 96.1 0 0 1 95.68 88.2 16.15 16.15 0 0 1-4.63 12.8L512 128l27.31 27.31a16 16 0 0 1 4.69 11.32v50.74a16 16 0 0 1-4.69 11.32z" class="fa-secondary"></path><path d="M192 512h16c-2.59 0-5.14-.13-7.66-.37-2.75.24-5.53.37-8.34.37zM64 0A64 64 0 0 0 0 64v48a16 16 0 0 0 16 16h112V65A65 65 0 0 0 64 0zm560 384H454.63a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80 80h320a112 112 0 0 0 112-112.06A16 16 0 0 0 624 384z" class="fa-primary"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>10 Happy Years</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+					
+				
+			</div>
+		
+	
+
+			
+
+		</div>
+		
+			
+			
+				<div class="message-userExtras">
+				
+					
+						<dl class="pairs pairs--justified"><dt style="">Joined</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">Jul 18, 2010</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Messages</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">7</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Reaction score</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">0</dd>
+						</dl></div>
+			
+		
+		<span class="message-userArrow"></span>
+	</section></div>
+				
+
+				
+					<div class="message-cell message-cell--main">
+					
+						<div class="message-main js-quickEditTarget">
+
+							<div class="message-content js-messageContent">
+							
+
+								
+									
+	
+
+	
+
+	
+	
+
+								
+
+								
+									
+	
+
+	<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-5809631" data-lb-caption-desc="SLIPLV · Jul 29, 2010 at 4:02 PM">
+
+		
+
+		<article class="message-body  js-selectToQuote"><div itemprop="text">
+				
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<div class="bbWrapper">I already uploaded my NPC script, you can see it at the end of my first post, or maybe you want different file?</div>
+
+	
+
+		
+			
+		
+
+		
+	
+
+				
+			</div>
+
+			<div class="js-selectToQuoteEnd"> </div>
+			
+				
+			
+		</article></div>
+
+								
+
+								
+									
+	
+
+	
+
+								
+
+								
+									
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+								
+
+							
+							</div>
+
+							
+								
+	
+
+	<footer class="message-footer"><div class="message-microdata" itemprop="interactionStatistic" itemtype="https://schema.org/InteractionCounter" itemscope>
+				<meta itemprop="userInteractionCount" content="0"><meta itemprop="interactionType" content="https://schema.org/LikeAction"></div>
+		
+
+		<div class="reactionsBar js-reactionsList ">
+			
+		</div>
+
+		
+
+		<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+	</footer></div>
+
+					
+					</div>
+				
+			</div>
+		
+	</article><article class="message message--post js-post js-inlineModContainer   " data-author="DragonCryx" data-content="post-5811957" data-wu-highlight="0" data-wu-highlight-special="0" id="js-post-5811957" itemscope itemtype="https://schema.org/Comment" itemid="https://forum.ragezone.com/posts/5811957/"><meta itemprop="parentItem" itemscope itemid="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/"><div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="DragonCryx"><meta itemprop="text" content='Should work
+1st problem
+[php]
+TriggerCondition( 1, HasItem, 3457,1,1 )
+	TriggerAction( 1, TakeItem, 3457,1,1 )
+[/php]
+It cant be 3457,1,1 
+- 3457- Item IF
+- 1 - Amout
+- 1 - Its exchange system mean (1 or 4 to eq - 2 or 6 drop on the ground)
+
+2nd Problem
+1 Probably too many other items, Max is 48 
+[php]
+--------------------------------------------------------------------------
+--									--
+--									--
+--		NPCScript06.lua Created by knight.gong 2005.7.12.	--
+--									--
+--									--
+--------------------------------------------------------------------------
+print( "Loading NPCScript06.lua" )
+
+function mans_npc_1_ticket ()
+
+	Talk( 1,"Hello Sir, you can buy all the tickets here.")
+	Text( 1,"Trade", BuyPage)
+	InitTrade()
+	Other( 4602 )
+	Other( 3141 )
+	Other( 3059 )
+	Other( 3831 )
+	Other( 3834 )
+	Other( 3836 )
+	Other( 3837 )
+	Other( 3838 )
+	Other( 3839 )
+	Other( 3840 )
+	Other( 3841 )
+	Other( 3842 )
+	Other( 3843 )
+	Other( 3847 )
+
+end
+
+
+function mans_npc_2_kal ()
+
+	Talk( 1,"Hello, here you can exchange 120 Crystal Ores for 1 Kal Runestone.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 4546, 120 )
+	TriggerAction( 1, TakeItem, 4546, 120 )
+	TriggerAction( 1, GiveItem, 3457,1,1 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have enough Crystal Ores for thsi action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+
+function mans_npc_3_zelts ()
+
+	Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 3457,1 )
+	TriggerAction( 1, TakeItem, 3457,1, )
+	TriggerAction( 1, GiveItem, 0854,6 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have what it takes for this action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+function skills ()
+
+	Talk( 1,"You can buy various skills from me.")
+	Text( 1,"Trade", BuyPage)
+
+	InitTrade()
+	--Other(	3297	)
+	--Other(	3298	)
+	--Other(	3164	)
+	--Other(	3160	)
+	--Other(	3161	)
+	--Other(	3165	)
+	--Other(	3238	)
+	--Other(	3170	)
+	--Other(	3293	)
+	--Other(	3174	)
+	--Other(	3163	)
+	--Other(	3176	)
+	Other(	3180	)
+	Other(	3179	)
+	Other(	3177	)
+	Other(	3168	)
+	Other(	3162	)
+	Other(	3166	)
+	Other(	3167	)
+	Other(	3172	)
+	Other(	3173	)
+	Other(	3227	)
+	Other(	3231	)
+	Other(	3228	)
+	Other(	3229	)
+	Other(	3230	)
+	Other(	3232	)
+	Other(	3233	)
+	Other(	3234	)
+	Other(	3235	)
+	Other(	3236	)
+	Other(	3237	)
+	Other(	3225	)
+	Other(	3226	)
+	Other(	3294	)
+	Other(	3295	)
+	Other(	3141	)
+	Other(	4602	)
+	Other(	4603	)
+	Other(	4604	)
+	Other(	886	)
+	Other(	3075	)--Composition Catalyst
+	Other(	3884	)--Red Combining Fruit
+	Other(	3296	)
+	Other(	2679	)
+	Other(	2689	)
+	Other(	2699	)
+	Other(	2709	)
+	Other(	1611	)
+	Other(	1682	)
+	Other(	1842	)
+	Other(	1612	)
+	Other(	1710	)
+	Other(	1693	)
+	Other(	4716	)
+	Other(	1716	)
+	Other(	1711	)
+	Weapon(	3384	)
+	Weapon(	3932	)
+	Weapon(	1619	)
+	Weapon(	2396	)
+	Weapon(	1729	)
+	Weapon(	4459	)
+	Weapon(	1697	)
+	Weapon(	1730	)
+	Weapon(	1712	)
+	Weapon(	1734	)
+	Weapon(	1621	)
+	Weapon(	1703	)
+--	Weapon(	3288	)--Study Skill Book
+	Weapon( 2440    )
+	Weapon(	3187	)
+	Weapon(	3188	)
+	Weapon(	3190	)
+	Weapon(	3239	)
+	Weapon(	3197	)
+	Weapon(	3193	)
+	Weapon(	3241	)
+	Weapon(	3192	)
+	Weapon(	3198	)
+	Weapon(	3202	)
+	Weapon(	3203	)
+	Weapon(	3204	)
+	Defence( 3206	)
+	Defence( 3208	)
+	Defence( 3205	)
+	Defence( 3242	)
+	Defence( 3210	)
+	Defence( 3207	)
+	Defence( 3211	)
+	Defence( 3215	)
+	Defence( 3212	)
+	Defence( 3209	)
+	Defence( 3220	)
+	Defence( 3222	)
+	Defence( 3219	)
+	Defence( 3218	)
+	Defence( 3216	)
+	Defence( 3223	)
+	Defence( 3217	)
+	Defence( 3224	)--Healing Spring
+	Defence( 3301	)--Crystalline Blessing
+	Defence( 3300	)--Intense Magic
+
+end
+
+[/php]'><meta itemprop="url" content="https://forum.ragezone.com/members/dragoncryx.708874/"></div>
+            
+                <meta itemprop="comment" content='Should work
+1st problem
+[php]
+TriggerCondition( 1, HasItem, 3457,1,1 )
+	TriggerAction( 1, TakeItem, 3457,1,1 )
+[/php]
+It cant be 3457,1,1 
+- 3457- Item IF
+- 1 - Amout
+- 1 - Its exchange system mean (1 or 4 to eq - 2 or 6 drop on the ground)
+
+2nd Problem
+1 Probably too many other items, Max is 48 
+[php]
+--------------------------------------------------------------------------
+--									--
+--									--
+--		NPCScript06.lua Created by knight.gong 2005.7.12.	--
+--									--
+--									--
+--------------------------------------------------------------------------
+print( "Loading NPCScript06.lua" )
+
+function mans_npc_1_ticket ()
+
+	Talk( 1,"Hello Sir, you can buy all the tickets here.")
+	Text( 1,"Trade", BuyPage)
+	InitTrade()
+	Other( 4602 )
+	Other( 3141 )
+	Other( 3059 )
+	Other( 3831 )
+	Other( 3834 )
+	Other( 3836 )
+	Other( 3837 )
+	Other( 3838 )
+	Other( 3839 )
+	Other( 3840 )
+	Other( 3841 )
+	Other( 3842 )
+	Other( 3843 )
+	Other( 3847 )
+
+end
+
+
+function mans_npc_2_kal ()
+
+	Talk( 1,"Hello, here you can exchange 120 Crystal Ores for 1 Kal Runestone.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 4546, 120 )
+	TriggerAction( 1, TakeItem, 4546, 120 )
+	TriggerAction( 1, GiveItem, 3457,1,1 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have enough Crystal Ores for thsi action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+
+function mans_npc_3_zelts ()
+
+	Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 3457,1 )
+	TriggerAction( 1, TakeItem, 3457,1, )
+	TriggerAction( 1, GiveItem, 0854,6 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have what it takes for this action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+function skills ()
+
+	Talk( 1,"You can buy various skills from me.")
+	Text( 1,"Trade", BuyPage)
+
+	InitTrade()
+	--Other(	3297	)
+	--Other(	3298	)
+	--Other(	3164	)
+	--Other(	3160	)
+	--Other(	3161	)
+	--Other(	3165	)
+	--Other(	3238	)
+	--Other(	3170	)
+	--Other(	3293	)
+	--Other(	3174	)
+	--Other(	3163	)
+	--Other(	3176	)
+	Other(	3180	)
+	Other(	3179	)
+	Other(	3177	)
+	Other(	3168	)
+	Other(	3162	)
+	Other(	3166	)
+	Other(	3167	)
+	Other(	3172	)
+	Other(	3173	)
+	Other(	3227	)
+	Other(	3231	)
+	Other(	3228	)
+	Other(	3229	)
+	Other(	3230	)
+	Other(	3232	)
+	Other(	3233	)
+	Other(	3234	)
+	Other(	3235	)
+	Other(	3236	)
+	Other(	3237	)
+	Other(	3225	)
+	Other(	3226	)
+	Other(	3294	)
+	Other(	3295	)
+	Other(	3141	)
+	Other(	4602	)
+	Other(	4603	)
+	Other(	4604	)
+	Other(	886	)
+	Other(	3075	)--Composition Catalyst
+	Other(	3884	)--Red Combining Fruit
+	Other(	3296	)
+	Other(	2679	)
+	Other(	2689	)
+	Other(	2699	)
+	Other(	2709	)
+	Other(	1611	)
+	Other(	1682	)
+	Other(	1842	)
+	Other(	1612	)
+	Other(	1710	)
+	Other(	1693	)
+	Other(	4716	)
+	Other(	1716	)
+	Other(	1711	)
+	Weapon(	3384	)
+	Weapon(	3932	)
+	Weapon(	1619	)
+	Weapon(	2396	)
+	Weapon(	1729	)
+	Weapon(	4459	)
+	Weapon(	1697	)
+	Weapon(	1730	)
+	Weapon(	1712	)
+	Weapon(	1734	)
+	Weapon(	1621	)
+	Weapon(	1703	)
+--	Weapon(	3288	)--Study Skill Book
+	Weapon( 2440    )
+	Weapon(	3187	)
+	Weapon(	3188	)
+	Weapon(	3190	)
+	Weapon(	3239	)
+	Weapon(	3197	)
+	Weapon(	3193	)
+	Weapon(	3241	)
+	Weapon(	3192	)
+	Weapon(	3198	)
+	Weapon(	3202	)
+	Weapon(	3203	)
+	Weapon(	3204	)
+	Defence( 3206	)
+	Defence( 3208	)
+	Defence( 3205	)
+	Defence( 3242	)
+	Defence( 3210	)
+	Defence( 3207	)
+	Defence( 3211	)
+	Defence( 3215	)
+	Defence( 3212	)
+	Defence( 3209	)
+	Defence( 3220	)
+	Defence( 3222	)
+	Defence( 3219	)
+	Defence( 3218	)
+	Defence( 3216	)
+	Defence( 3223	)
+	Defence( 3217	)
+	Defence( 3224	)--Healing Spring
+	Defence( 3301	)--Crystalline Blessing
+	Defence( 3300	)--Intense Magic
+
+end
+
+[/php]'><meta itemprop="name" content="Post by DragonCryx"><meta itemprop="text" content='Should work
+1st problem
+[php]
+TriggerCondition( 1, HasItem, 3457,1,1 )
+	TriggerAction( 1, TakeItem, 3457,1,1 )
+[/php]
+It cant be 3457,1,1 
+- 3457- Item IF
+- 1 - Amout
+- 1 - Its exchange system mean (1 or 4 to eq - 2 or 6 drop on the ground)
+
+2nd Problem
+1 Probably too many other items, Max is 48 
+[php]
+--------------------------------------------------------------------------
+--									--
+--									--
+--		NPCScript06.lua Created by knight.gong 2005.7.12.	--
+--									--
+--									--
+--------------------------------------------------------------------------
+print( "Loading NPCScript06.lua" )
+
+function mans_npc_1_ticket ()
+
+	Talk( 1,"Hello Sir, you can buy all the tickets here.")
+	Text( 1,"Trade", BuyPage)
+	InitTrade()
+	Other( 4602 )
+	Other( 3141 )
+	Other( 3059 )
+	Other( 3831 )
+	Other( 3834 )
+	Other( 3836 )
+	Other( 3837 )
+	Other( 3838 )
+	Other( 3839 )
+	Other( 3840 )
+	Other( 3841 )
+	Other( 3842 )
+	Other( 3843 )
+	Other( 3847 )
+
+end
+
+
+function mans_npc_2_kal ()
+
+	Talk( 1,"Hello, here you can exchange 120 Crystal Ores for 1 Kal Runestone.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 4546, 120 )
+	TriggerAction( 1, TakeItem, 4546, 120 )
+	TriggerAction( 1, GiveItem, 3457,1,1 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have enough Crystal Ores for thsi action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+
+function mans_npc_3_zelts ()
+
+	Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 3457,1 )
+	TriggerAction( 1, TakeItem, 3457,1, )
+	TriggerAction( 1, GiveItem, 0854,6 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have what it takes for this action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+function skills ()
+
+	Talk( 1,"You can buy various skills from me.")
+	Text( 1,"Trade", BuyPage)
+
+	InitTrade()
+	--Other(	3297	)
+	--Other(	3298	)
+	--Other(	3164	)
+	--Other(	3160	)
+	--Other(	3161	)
+	--Other(	3165	)
+	--Other(	3238	)
+	--Other(	3170	)
+	--Other(	3293	)
+	--Other(	3174	)
+	--Other(	3163	)
+	--Other(	3176	)
+	Other(	3180	)
+	Other(	3179	)
+	Other(	3177	)
+	Other(	3168	)
+	Other(	3162	)
+	Other(	3166	)
+	Other(	3167	)
+	Other(	3172	)
+	Other(	3173	)
+	Other(	3227	)
+	Other(	3231	)
+	Other(	3228	)
+	Other(	3229	)
+	Other(	3230	)
+	Other(	3232	)
+	Other(	3233	)
+	Other(	3234	)
+	Other(	3235	)
+	Other(	3236	)
+	Other(	3237	)
+	Other(	3225	)
+	Other(	3226	)
+	Other(	3294	)
+	Other(	3295	)
+	Other(	3141	)
+	Other(	4602	)
+	Other(	4603	)
+	Other(	4604	)
+	Other(	886	)
+	Other(	3075	)--Composition Catalyst
+	Other(	3884	)--Red Combining Fruit
+	Other(	3296	)
+	Other(	2679	)
+	Other(	2689	)
+	Other(	2699	)
+	Other(	2709	)
+	Other(	1611	)
+	Other(	1682	)
+	Other(	1842	)
+	Other(	1612	)
+	Other(	1710	)
+	Other(	1693	)
+	Other(	4716	)
+	Other(	1716	)
+	Other(	1711	)
+	Weapon(	3384	)
+	Weapon(	3932	)
+	Weapon(	1619	)
+	Weapon(	2396	)
+	Weapon(	1729	)
+	Weapon(	4459	)
+	Weapon(	1697	)
+	Weapon(	1730	)
+	Weapon(	1712	)
+	Weapon(	1734	)
+	Weapon(	1621	)
+	Weapon(	1703	)
+--	Weapon(	3288	)--Study Skill Book
+	Weapon( 2440    )
+	Weapon(	3187	)
+	Weapon(	3188	)
+	Weapon(	3190	)
+	Weapon(	3239	)
+	Weapon(	3197	)
+	Weapon(	3193	)
+	Weapon(	3241	)
+	Weapon(	3192	)
+	Weapon(	3198	)
+	Weapon(	3202	)
+	Weapon(	3203	)
+	Weapon(	3204	)
+	Defence( 3206	)
+	Defence( 3208	)
+	Defence( 3205	)
+	Defence( 3242	)
+	Defence( 3210	)
+	Defence( 3207	)
+	Defence( 3211	)
+	Defence( 3215	)
+	Defence( 3212	)
+	Defence( 3209	)
+	Defence( 3220	)
+	Defence( 3222	)
+	Defence( 3219	)
+	Defence( 3218	)
+	Defence( 3216	)
+	Defence( 3223	)
+	Defence( 3217	)
+	Defence( 3224	)--Healing Spring
+	Defence( 3301	)--Crystalline Blessing
+	Defence( 3300	)--Intense Magic
+
+end
+
+[/php]'><div>
+                    <span itemprop="text" content='Should work
+1st problem
+[php]
+TriggerCondition( 1, HasItem, 3457,1,1 )
+	TriggerAction( 1, TakeItem, 3457,1,1 )
+[/php]
+It cant be 3457,1,1 
+- 3457- Item IF
+- 1 - Amout
+- 1 - Its exchange system mean (1 or 4 to eq - 2 or 6 drop on the ground)
+
+2nd Problem
+1 Probably too many other items, Max is 48 
+[php]
+--------------------------------------------------------------------------
+--									--
+--									--
+--		NPCScript06.lua Created by knight.gong 2005.7.12.	--
+--									--
+--									--
+--------------------------------------------------------------------------
+print( "Loading NPCScript06.lua" )
+
+function mans_npc_1_ticket ()
+
+	Talk( 1,"Hello Sir, you can buy all the tickets here.")
+	Text( 1,"Trade", BuyPage)
+	InitTrade()
+	Other( 4602 )
+	Other( 3141 )
+	Other( 3059 )
+	Other( 3831 )
+	Other( 3834 )
+	Other( 3836 )
+	Other( 3837 )
+	Other( 3838 )
+	Other( 3839 )
+	Other( 3840 )
+	Other( 3841 )
+	Other( 3842 )
+	Other( 3843 )
+	Other( 3847 )
+
+end
+
+
+function mans_npc_2_kal ()
+
+	Talk( 1,"Hello, here you can exchange 120 Crystal Ores for 1 Kal Runestone.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 4546, 120 )
+	TriggerAction( 1, TakeItem, 4546, 120 )
+	TriggerAction( 1, GiveItem, 3457,1,1 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have enough Crystal Ores for thsi action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+
+function mans_npc_3_zelts ()
+
+	Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 3457,1 )
+	TriggerAction( 1, TakeItem, 3457,1, )
+	TriggerAction( 1, GiveItem, 0854,6 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have what it takes for this action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+function skills ()
+
+	Talk( 1,"You can buy various skills from me.")
+	Text( 1,"Trade", BuyPage)
+
+	InitTrade()
+	--Other(	3297	)
+	--Other(	3298	)
+	--Other(	3164	)
+	--Other(	3160	)
+	--Other(	3161	)
+	--Other(	3165	)
+	--Other(	3238	)
+	--Other(	3170	)
+	--Other(	3293	)
+	--Other(	3174	)
+	--Other(	3163	)
+	--Other(	3176	)
+	Other(	3180	)
+	Other(	3179	)
+	Other(	3177	)
+	Other(	3168	)
+	Other(	3162	)
+	Other(	3166	)
+	Other(	3167	)
+	Other(	3172	)
+	Other(	3173	)
+	Other(	3227	)
+	Other(	3231	)
+	Other(	3228	)
+	Other(	3229	)
+	Other(	3230	)
+	Other(	3232	)
+	Other(	3233	)
+	Other(	3234	)
+	Other(	3235	)
+	Other(	3236	)
+	Other(	3237	)
+	Other(	3225	)
+	Other(	3226	)
+	Other(	3294	)
+	Other(	3295	)
+	Other(	3141	)
+	Other(	4602	)
+	Other(	4603	)
+	Other(	4604	)
+	Other(	886	)
+	Other(	3075	)--Composition Catalyst
+	Other(	3884	)--Red Combining Fruit
+	Other(	3296	)
+	Other(	2679	)
+	Other(	2689	)
+	Other(	2699	)
+	Other(	2709	)
+	Other(	1611	)
+	Other(	1682	)
+	Other(	1842	)
+	Other(	1612	)
+	Other(	1710	)
+	Other(	1693	)
+	Other(	4716	)
+	Other(	1716	)
+	Other(	1711	)
+	Weapon(	3384	)
+	Weapon(	3932	)
+	Weapon(	1619	)
+	Weapon(	2396	)
+	Weapon(	1729	)
+	Weapon(	4459	)
+	Weapon(	1697	)
+	Weapon(	1730	)
+	Weapon(	1712	)
+	Weapon(	1734	)
+	Weapon(	1621	)
+	Weapon(	1703	)
+--	Weapon(	3288	)--Study Skill Book
+	Weapon( 2440    )
+	Weapon(	3187	)
+	Weapon(	3188	)
+	Weapon(	3190	)
+	Weapon(	3239	)
+	Weapon(	3197	)
+	Weapon(	3193	)
+	Weapon(	3241	)
+	Weapon(	3192	)
+	Weapon(	3198	)
+	Weapon(	3202	)
+	Weapon(	3203	)
+	Weapon(	3204	)
+	Defence( 3206	)
+	Defence( 3208	)
+	Defence( 3205	)
+	Defence( 3242	)
+	Defence( 3210	)
+	Defence( 3207	)
+	Defence( 3211	)
+	Defence( 3215	)
+	Defence( 3212	)
+	Defence( 3209	)
+	Defence( 3220	)
+	Defence( 3222	)
+	Defence( 3219	)
+	Defence( 3218	)
+	Defence( 3216	)
+	Defence( 3223	)
+	Defence( 3217	)
+	Defence( 3224	)--Healing Spring
+	Defence( 3301	)--Crystalline Blessing
+	Defence( 3300	)--Intense Magic
+
+end
+
+[/php]'></span>
+                  </div>
+            
+        
+		
+		<span class="u-anchorTarget" id="post-5811957"></span>
+		
+			
+								
+
+	
+
+	<header class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed">
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5811957" rel="nofollow" itemprop="url">
+					<time class="u-dt" dir="auto" datetime="2010-07-30T16:48:58+0100" data-timestamp="1280504938" data-date="Jul 30, 2010" data-time="4:48 PM" data-short="Jul '10" title="Jul 30, 2010 at 4:48 PM" itemprop="datePublished">Jul 30, 2010</time></a>
+			</li>
+			
+		</ul><ul class="message-attribution-opposite message-attribution-opposite--list "><li>
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5811957" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="https://forum.ragezone.com/posts/5811957/share" aria-label="Share" rel="nofollow">
+					<i class="fa--xf far fa-share-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#share-alt"></use></svg></i>
+				</a>
+			</li>
+			
+				<li class="u-hidden js-embedCopy">
+					
+	<a href="javascript:" data-xf-init="copy-to-clipboard" data-copy-text='&lt;div class="js-xf-embed" data-url="https://forum.ragezone.com" data-content="post-5811957"&gt;&lt;/div&gt;&lt;script defer src="https://forum.ragezone.com/js/xf/external_embed.js?_v=b090ee27"&gt;&lt;/script&gt;' data-success="Embed code HTML copied to clipboard." class="">
+		<i class="fa--xf far fa-code "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#code"></use></svg></i>
+	</a>
+
+				</li>
+			
+			
+			
+				<li>
+					<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5811957" rel="nofollow">
+						#4
+					</a>
+				</li>
+			
+		</ul></header><div class="message-inner">
+				
+					<div class="message-cell message-cell--user ap-ss-postbitBackground ap-ss-postbitBackground--708874" style="">
+						
+
+	<section class="message-user ap-ss-postbitFilter ap-ss-postbitFilter--708874" style="" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="https://forum.ragezone.com/members/dragoncryx.708874/"><meta itemprop="url" content="https://forum.ragezone.com/posts/"><div class="message-avatar ">
+			<div class="message-avatar-wrapper">
+				<a href="https://forum.ragezone.com/members/dragoncryx.708874/" class="avatar avatar--l avatar--square" data-user-id="708874" data-xf-init="member-tooltip">
+			<img src="https://forum.ragezone.com/data/avatars/l/708/708874.jpg?1680380787" alt="DragonCryx" class="avatar-u708874-l" width="192" height="192" itemprop="image"></a>
+				
+				
+			</div>
+		</div>
+		<div class="message-userDetails">
+			<div class="message-userName">
+				<h4 class="message-name"><a href="https://forum.ragezone.com/members/dragoncryx.708874/" class="username " dir="auto" data-user-id="708874" data-xf-init="member-tooltip"><span itemprop="name">DragonCryx</span></a></h4>
+			</div>
+
+	
+		<h5 class="userTitle message-userTitle" dir="auto" itemprop="jobTitle">Skilled Illusionist</h5>
+	
+			
+		
+
+			
+				
+
+				
+	
+		
+			
+		
+		
+			<div class="featuredBadges featuredBadges--message">
+				
+					
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/dragoncryx.708874/#badges" class="featuredBadge featuredBadge--33" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf far fa-trophy-alt  badgeIcon badgeIcon--33 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" role="img" aria-hidden="true"><path d="M359.3 138.9l-43.4-6.3-19.4-39.3c-3.5-7-13.5-7.1-17 0l-19.4 39.3-43.4 6.3c-7.8 1.1-10.9 10.7-5.3 16.2l31.4 30.6-7.4 43.2c-1.3 7.7 6.8 13.7 13.8 10l38.8-20.4 38.8 20.4c6.9 3.6 15.1-2.2 13.8-10l-7.4-43.2 31.4-30.6c5.6-5.5 2.5-15.1-5.3-16.2zM448 64V16c0-8.8-7.2-16-16-16H144c-8.8 0-16 7.2-16 16v48H16C7.2 64 0 71.2 0 80v60.8C0 201.1 68.3 266 159.6 283.4c27.4 57.9 68.1 88.2 104.4 97.4V464h-64c-22.1 0-40 17.9-40 40 0 4.4 3.6 8 8 8h240c4.4 0 8-3.6 8-8 0-22.1-17.9-40-40-40h-64v-83.2c36.3-9.3 77-39.5 104.4-97.4C507.5 266.1 576 201.2 576 140.8V80c0-8.8-7.2-16-16-16H448zM48 140.8V112h80c0 39.2 2.1 76.2 12.3 116.8-55.1-18.9-92.3-58.9-92.3-88zM288 336c-53 0-112-78.4-112-216V48h224v72c0 140.5-60.8 216-112 216zm240-195.2c0 29.1-37.2 69.1-92.3 88C445.9 188.2 448 151.1 448 112h80v28.8z"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>Trophy Point Collector</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+					
+				
+			</div>
+		
+	
+
+			
+
+		</div>
+		
+			
+			
+				<div class="message-userExtras">
+				
+					
+						<dl class="pairs pairs--justified"><dt style="">Joined</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">Jun 5, 2009</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Messages</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">307</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Reaction score</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">25</dd>
+						</dl></div>
+			
+		
+		<span class="message-userArrow"></span>
+	</section></div>
+				
+
+				
+					<div class="message-cell message-cell--main">
+					
+						<div class="message-main js-quickEditTarget">
+
+							<div class="message-content js-messageContent">
+							
+
+								
+									
+	
+
+	
+
+	
+	
+
+								
+
+								
+									
+	
+
+	<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-5811957" data-lb-caption-desc="DragonCryx · Jul 30, 2010 at 4:48 PM">
+
+		
+
+		<article class="message-body  js-selectToQuote"><div itemprop="text">
+				
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<div class="bbWrapper">Should work<br>
+1st problem<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		PHP:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang="php"><code>TriggerCondition( 1, HasItem, 3457,1,1 )
+	TriggerAction( 1, TakeItem, 3457,1,1 )</code></pre>
+	</div>
+</div>It cant be 3457,1,1 <br>
+- 3457- Item IF<br>
+- 1 - Amout<br>
+- 1 - Its exchange system mean (1 or 4 to eq - 2 or 6 drop on the ground)<br><br>
+2nd Problem<br>
+1 Probably too many other items, Max is 48 <br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		PHP:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang="php"><code>--------------------------------------------------------------------------
+--									--
+--									--
+--		NPCScript06.lua Created by knight.gong 2005.7.12.	--
+--									--
+--									--
+--------------------------------------------------------------------------
+print( "Loading NPCScript06.lua" )
+
+function mans_npc_1_ticket ()
+
+	Talk( 1,"Hello Sir, you can buy all the tickets here.")
+	Text( 1,"Trade", BuyPage)
+	InitTrade()
+	Other( 4602 )
+	Other( 3141 )
+	Other( 3059 )
+	Other( 3831 )
+	Other( 3834 )
+	Other( 3836 )
+	Other( 3837 )
+	Other( 3838 )
+	Other( 3839 )
+	Other( 3840 )
+	Other( 3841 )
+	Other( 3842 )
+	Other( 3843 )
+	Other( 3847 )
+
+end
+
+
+function mans_npc_2_kal ()
+
+	Talk( 1,"Hello, here you can exchange 120 Crystal Ores for 1 Kal Runestone.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 4546, 120 )
+	TriggerAction( 1, TakeItem, 4546, 120 )
+	TriggerAction( 1, GiveItem, 3457,1,1 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have enough Crystal Ores for thsi action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+
+function mans_npc_3_zelts ()
+
+	Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 3457,1 )
+	TriggerAction( 1, TakeItem, 3457,1, )
+	TriggerAction( 1, GiveItem, 0854,6 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have what it takes for this action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+function skills ()
+
+	Talk( 1,"You can buy various skills from me.")
+	Text( 1,"Trade", BuyPage)
+
+	InitTrade()
+	--Other(	3297	)
+	--Other(	3298	)
+	--Other(	3164	)
+	--Other(	3160	)
+	--Other(	3161	)
+	--Other(	3165	)
+	--Other(	3238	)
+	--Other(	3170	)
+	--Other(	3293	)
+	--Other(	3174	)
+	--Other(	3163	)
+	--Other(	3176	)
+	Other(	3180	)
+	Other(	3179	)
+	Other(	3177	)
+	Other(	3168	)
+	Other(	3162	)
+	Other(	3166	)
+	Other(	3167	)
+	Other(	3172	)
+	Other(	3173	)
+	Other(	3227	)
+	Other(	3231	)
+	Other(	3228	)
+	Other(	3229	)
+	Other(	3230	)
+	Other(	3232	)
+	Other(	3233	)
+	Other(	3234	)
+	Other(	3235	)
+	Other(	3236	)
+	Other(	3237	)
+	Other(	3225	)
+	Other(	3226	)
+	Other(	3294	)
+	Other(	3295	)
+	Other(	3141	)
+	Other(	4602	)
+	Other(	4603	)
+	Other(	4604	)
+	Other(	886	)
+	Other(	3075	)--Composition Catalyst
+	Other(	3884	)--Red Combining Fruit
+	Other(	3296	)
+	Other(	2679	)
+	Other(	2689	)
+	Other(	2699	)
+	Other(	2709	)
+	Other(	1611	)
+	Other(	1682	)
+	Other(	1842	)
+	Other(	1612	)
+	Other(	1710	)
+	Other(	1693	)
+	Other(	4716	)
+	Other(	1716	)
+	Other(	1711	)
+	Weapon(	3384	)
+	Weapon(	3932	)
+	Weapon(	1619	)
+	Weapon(	2396	)
+	Weapon(	1729	)
+	Weapon(	4459	)
+	Weapon(	1697	)
+	Weapon(	1730	)
+	Weapon(	1712	)
+	Weapon(	1734	)
+	Weapon(	1621	)
+	Weapon(	1703	)
+--	Weapon(	3288	)--Study Skill Book
+	Weapon( 2440    )
+	Weapon(	3187	)
+	Weapon(	3188	)
+	Weapon(	3190	)
+	Weapon(	3239	)
+	Weapon(	3197	)
+	Weapon(	3193	)
+	Weapon(	3241	)
+	Weapon(	3192	)
+	Weapon(	3198	)
+	Weapon(	3202	)
+	Weapon(	3203	)
+	Weapon(	3204	)
+	Defence( 3206	)
+	Defence( 3208	)
+	Defence( 3205	)
+	Defence( 3242	)
+	Defence( 3210	)
+	Defence( 3207	)
+	Defence( 3211	)
+	Defence( 3215	)
+	Defence( 3212	)
+	Defence( 3209	)
+	Defence( 3220	)
+	Defence( 3222	)
+	Defence( 3219	)
+	Defence( 3218	)
+	Defence( 3216	)
+	Defence( 3223	)
+	Defence( 3217	)
+	Defence( 3224	)--Healing Spring
+	Defence( 3301	)--Crystalline Blessing
+	Defence( 3300	)--Intense Magic
+
+end</code></pre>
+	</div>
+</div></div>
+
+	
+
+		
+			
+		
+
+		
+	
+
+				
+			</div>
+
+			<div class="js-selectToQuoteEnd"> </div>
+			
+				
+			
+		</article></div>
+
+								
+
+								
+									
+	
+
+	
+		<div class="message-lastEdit">
+			
+				Last edited: <time class="u-dt" dir="auto" datetime="2010-07-30T16:56:57+0100" data-timestamp="1280505417" data-date="Jul 30, 2010" data-time="4:56 PM" data-short="Jul '10" title="Jul 30, 2010 at 4:56 PM" itemprop="dateModified">Jul 30, 2010</time></div>
+	
+
+								
+
+								
+									
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+								
+
+							
+							</div>
+
+							
+								
+	
+
+	<footer class="message-footer"><div class="message-microdata" itemprop="interactionStatistic" itemtype="https://schema.org/InteractionCounter" itemscope>
+				<meta itemprop="userInteractionCount" content="1"><meta itemprop="interactionType" content="https://schema.org/LikeAction"></div>
+		
+
+		<div class="reactionsBar js-reactionsList is-active">
+			
+	
+	
+		<ul class="reactionSummary"><li><span class="reaction reaction--small reaction--1" data-reaction-id="1"><i aria-hidden="true"></i><img src="https://cdn.jsdelivr.net/joypixels/assets/8.0/png/unicode/64/1f44d.png" loading="lazy" width="64" height="64" class="reaction-image reaction-image--emoji js-reaction" alt="Like" title="Like"></span></li>
+		
+		</ul><span class="u-srOnly">Reactions:</span>
+<a class="reactionsBar-link" href="https://forum.ragezone.com/posts/5811957/reactions" data-xf-click="overlay" data-cache="false" rel="nofollow"><bdi>SLIPLV</bdi></a>
+		</div>
+
+		
+
+		<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+	</footer></div>
+
+					
+					</div>
+				
+			</div>
+		
+	</article><article class="message message--post js-post js-inlineModContainer   " data-author="SLIPLV" data-content="post-5812377" data-wu-highlight="0" data-wu-highlight-special="0" id="js-post-5812377" itemscope itemtype="https://schema.org/Comment" itemid="https://forum.ragezone.com/posts/5812377/"><meta itemprop="parentItem" itemscope itemid="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/"><div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="SLIPLV"><meta itemprop="text" content="Thanks, i'll check it out, and edit post."><meta itemprop="url" content="https://forum.ragezone.com/members/sliplv.837622/"></div>
+            
+                <meta itemprop="comment" content="Thanks, i'll check it out, and edit post."><meta itemprop="name" content="Post by SLIPLV"><meta itemprop="text" content="Thanks, i'll check it out, and edit post."><div>
+                    <span itemprop="text" content="Thanks, i'll check it out, and edit post."></span>
+                  </div>
+            
+        
+		
+		<span class="u-anchorTarget" id="post-5812377"></span>
+		
+			
+								
+
+	
+
+	<header class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed">
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5812377" rel="nofollow" itemprop="url">
+					<time class="u-dt" dir="auto" datetime="2010-07-30T20:33:11+0100" data-timestamp="1280518391" data-date="Jul 30, 2010" data-time="8:33 PM" data-short="Jul '10" title="Jul 30, 2010 at 8:33 PM" itemprop="datePublished">Jul 30, 2010</time></a>
+			</li>
+			
+		</ul><ul class="message-attribution-opposite message-attribution-opposite--list "><li>
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5812377" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="https://forum.ragezone.com/posts/5812377/share" aria-label="Share" rel="nofollow">
+					<i class="fa--xf far fa-share-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#share-alt"></use></svg></i>
+				</a>
+			</li>
+			
+				<li class="u-hidden js-embedCopy">
+					
+	<a href="javascript:" data-xf-init="copy-to-clipboard" data-copy-text='&lt;div class="js-xf-embed" data-url="https://forum.ragezone.com" data-content="post-5812377"&gt;&lt;/div&gt;&lt;script defer src="https://forum.ragezone.com/js/xf/external_embed.js?_v=b090ee27"&gt;&lt;/script&gt;' data-success="Embed code HTML copied to clipboard." class="">
+		<i class="fa--xf far fa-code "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#code"></use></svg></i>
+	</a>
+
+				</li>
+			
+			
+			
+				<li>
+					<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5812377" rel="nofollow">
+						#5
+					</a>
+				</li>
+			
+		</ul></header><div class="message-inner">
+				
+					<div class="message-cell message-cell--user ap-ss-postbitBackground ap-ss-postbitBackground--837622" style="">
+						
+
+	<section class="message-user ap-ss-postbitFilter ap-ss-postbitFilter--837622" style="" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="https://forum.ragezone.com/members/sliplv.837622/"><meta itemprop="url" content="https://forum.ragezone.com/posts/"><div class="message-avatar ">
+			<div class="message-avatar-wrapper">
+				<a href="https://forum.ragezone.com/members/sliplv.837622/" class="avatar avatar--l avatar--square avatar--default avatar--default--dynamic" data-user-id="837622" data-xf-init="member-tooltip" style="background-color: #cc9966; color: #603f20">
+			<span class="avatar-u837622-l" role="img" aria-label="SLIPLV">S</span> 
+		</a>
+				
+				
+			</div>
+		</div>
+		<div class="message-userDetails">
+			<div class="message-userName">
+				<h4 class="message-name"><a href="https://forum.ragezone.com/members/sliplv.837622/" class="username " dir="auto" data-user-id="837622" data-xf-init="member-tooltip"><span itemprop="name">SLIPLV</span></a></h4>
+			</div>
+
+	
+		<h5 class="userTitle message-userTitle" dir="auto" itemprop="jobTitle">Newbie Spellweaver</h5>
+	
+			
+		
+
+			
+				
+
+				
+	
+		
+			
+		
+		
+			<div class="featuredBadges featuredBadges--message">
+				
+					
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/sliplv.837622/#badges" class="featuredBadge featuredBadge--10" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf fad fa-scroll-old  badgeIcon badgeIcon--10 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512" role="img" aria-hidden="true"><path d="M539.31 228.69L512 256l27.31 27.31a16 16 0 0 1 4.69 11.32V384h-89.37a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80.61 80c-44.11-.33-79.39-36.89-79.39-81V262.63a16 16 0 0 1 4.69-11.32L160 224l-27.31-27.31a16 16 0 0 1-4.69-11.32V65A65 65 0 0 0 63 0h385a96.1 96.1 0 0 1 95.68 88.2 16.15 16.15 0 0 1-4.63 12.8L512 128l27.31 27.31a16 16 0 0 1 4.69 11.32v50.74a16 16 0 0 1-4.69 11.32z" class="fa-secondary"></path><path d="M192 512h16c-2.59 0-5.14-.13-7.66-.37-2.75.24-5.53.37-8.34.37zM64 0A64 64 0 0 0 0 64v48a16 16 0 0 0 16 16h112V65A65 65 0 0 0 64 0zm560 384H454.63a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80 80h320a112 112 0 0 0 112-112.06A16 16 0 0 0 624 384z" class="fa-primary"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>10 Happy Years</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+					
+				
+			</div>
+		
+	
+
+			
+
+		</div>
+		
+			
+			
+				<div class="message-userExtras">
+				
+					
+						<dl class="pairs pairs--justified"><dt style="">Joined</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">Jul 18, 2010</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Messages</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">7</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Reaction score</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">0</dd>
+						</dl></div>
+			
+		
+		<span class="message-userArrow"></span>
+	</section></div>
+				
+
+				
+					<div class="message-cell message-cell--main">
+					
+						<div class="message-main js-quickEditTarget">
+
+							<div class="message-content js-messageContent">
+							
+
+								
+									
+	
+
+	
+
+	
+	
+
+								
+
+								
+									
+	
+
+	<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-5812377" data-lb-caption-desc="SLIPLV · Jul 30, 2010 at 8:33 PM">
+
+		
+
+		<article class="message-body  js-selectToQuote"><div itemprop="text">
+				
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<div class="bbWrapper">Thanks, i'll check it out, and edit post.</div>
+
+	
+
+		
+			
+		
+
+		
+	
+
+				
+			</div>
+
+			<div class="js-selectToQuoteEnd"> </div>
+			
+				
+			
+		</article></div>
+
+								
+
+								
+									
+	
+
+	
+
+								
+
+								
+									
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+								
+
+							
+							</div>
+
+							
+								
+	
+
+	<footer class="message-footer"><div class="message-microdata" itemprop="interactionStatistic" itemtype="https://schema.org/InteractionCounter" itemscope>
+				<meta itemprop="userInteractionCount" content="0"><meta itemprop="interactionType" content="https://schema.org/LikeAction"></div>
+		
+
+		<div class="reactionsBar js-reactionsList ">
+			
+		</div>
+
+		
+
+		<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+	</footer></div>
+
+					
+					</div>
+				
+			</div>
+		
+	</article><article class="message message--post js-post js-inlineModContainer   " data-author="micah1121" data-content="post-5834639" data-wu-highlight="0" data-wu-highlight-special="0" id="js-post-5834639" itemscope itemtype="https://schema.org/Comment" itemid="https://forum.ragezone.com/posts/5834639/"><meta itemprop="parentItem" itemscope itemid="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/"><div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <meta itemprop="name" content="micah1121"><meta itemprop="text" content='[QUOTE="DragonCryx, post: 5811957, member: 708874"]Should work
+1st problem
+[php]
+TriggerCondition( 1, HasItem, 3457,1,1 )
+	TriggerAction( 1, TakeItem, 3457,1,1 )
+[/php]
+It cant be 3457,1,1 
+- 3457- Item IF
+- 1 - Amout
+- 1 - Its exchange system mean (1 or 4 to eq - 2 or 6 drop on the ground)
+
+2nd Problem
+1 Probably too many other items, Max is 48 
+[php]
+--------------------------------------------------------------------------
+--									--
+--									--
+--		NPCScript06.lua Created by knight.gong 2005.7.12.	--
+--									--
+--									--
+--------------------------------------------------------------------------
+print( "Loading NPCScript06.lua" )
+
+function mans_npc_1_ticket ()
+
+	Talk( 1,"Hello Sir, you can buy all the tickets here.")
+	Text( 1,"Trade", BuyPage)
+	InitTrade()
+	Other( 4602 )
+	Other( 3141 )
+	Other( 3059 )
+	Other( 3831 )
+	Other( 3834 )
+	Other( 3836 )
+	Other( 3837 )
+	Other( 3838 )
+	Other( 3839 )
+	Other( 3840 )
+	Other( 3841 )
+	Other( 3842 )
+	Other( 3843 )
+	Other( 3847 )
+
+end
+
+
+function mans_npc_2_kal ()
+
+	Talk( 1,"Hello, here you can exchange 120 Crystal Ores for 1 Kal Runestone.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 4546, 120 )
+	TriggerAction( 1, TakeItem, 4546, 120 )
+	TriggerAction( 1, GiveItem, 3457,1,1 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have enough Crystal Ores for thsi action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+
+function mans_npc_3_zelts ()
+
+	Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 3457,1 )
+	TriggerAction( 1, TakeItem, 3457,1, )
+	TriggerAction( 1, GiveItem, 0854,6 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have what it takes for this action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+function skills ()
+
+	Talk( 1,"You can buy various skills from me.")
+	Text( 1,"Trade", BuyPage)
+
+	InitTrade()
+	--Other(	3297	)
+	--Other(	3298	)
+	--Other(	3164	)
+	--Other(	3160	)
+	--Other(	3161	)
+	--Other(	3165	)
+	--Other(	3238	)
+	--Other(	3170	)
+	--Other(	3293	)
+	--Other(	3174	)
+	--Other(	3163	)
+	--Other(	3176	)
+	Other(	3180	)
+	Other(	3179	)
+	Other(	3177	)
+	Other(	3168	)
+	Other(	3162	)
+	Other(	3166	)
+	Other(	3167	)
+	Other(	3172	)
+	Other(	3173	)
+	Other(	3227	)
+	Other(	3231	)
+	Other(	3228	)
+	Other(	3229	)
+	Other(	3230	)
+	Other(	3232	)
+	Other(	3233	)
+	Other(	3234	)
+	Other(	3235	)
+	Other(	3236	)
+	Other(	3237	)
+	Other(	3225	)
+	Other(	3226	)
+	Other(	3294	)
+	Other(	3295	)
+	Other(	3141	)
+	Other(	4602	)
+	Other(	4603	)
+	Other(	4604	)
+	Other(	886	)
+	Other(	3075	)--Composition Catalyst
+	Other(	3884	)--Red Combining Fruit
+	Other(	3296	)
+	Other(	2679	)
+	Other(	2689	)
+	Other(	2699	)
+	Other(	2709	)
+	Other(	1611	)
+	Other(	1682	)
+	Other(	1842	)
+	Other(	1612	)
+	Other(	1710	)
+	Other(	1693	)
+	Other(	4716	)
+	Other(	1716	)
+	Other(	1711	)
+	Weapon(	3384	)
+	Weapon(	3932	)
+	Weapon(	1619	)
+	Weapon(	2396	)
+	Weapon(	1729	)
+	Weapon(	4459	)
+	Weapon(	1697	)
+	Weapon(	1730	)
+	Weapon(	1712	)
+	Weapon(	1734	)
+	Weapon(	1621	)
+	Weapon(	1703	)
+--	Weapon(	3288	)--Study Skill Book
+	Weapon( 2440    )
+	Weapon(	3187	)
+	Weapon(	3188	)
+	Weapon(	3190	)
+	Weapon(	3239	)
+	Weapon(	3197	)
+	Weapon(	3193	)
+	Weapon(	3241	)
+	Weapon(	3192	)
+	Weapon(	3198	)
+	Weapon(	3202	)
+	Weapon(	3203	)
+	Weapon(	3204	)
+	Defence( 3206	)
+	Defence( 3208	)
+	Defence( 3205	)
+	Defence( 3242	)
+	Defence( 3210	)
+	Defence( 3207	)
+	Defence( 3211	)
+	Defence( 3215	)
+	Defence( 3212	)
+	Defence( 3209	)
+	Defence( 3220	)
+	Defence( 3222	)
+	Defence( 3219	)
+	Defence( 3218	)
+	Defence( 3216	)
+	Defence( 3223	)
+	Defence( 3217	)
+	Defence( 3224	)--Healing Spring
+	Defence( 3301	)--Crystalline Blessing
+	Defence( 3300	)--Intense Magic
+
+end
+
+[/php][/quote]
+Rejected! that wrong you can put as many items in a npc as you want thats not the problem. your garner npc txt doesnt really have nothing to do with it as long as your sure that you replaces the function name of what the npc does( what is says when you talk to it or the function name from your scripts your fine with that.make sure no other npc has the same function. anyways for your function
+function mans_npc_3_zelts ()
+
+    Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+    InitTrigger()
+    TriggerCondition( 1, HasItem, 3457,1 )
+    TriggerAction( 1, TakeItem, 3457,1, )
+    TriggerAction( 1, GiveItem, 0854,6 )
+    TriggerFailure( 1, JumpPage, 3 )
+    Talk( 3,"You do not have what it takes for this action." )
+    Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+its for 6m gold just put 
+function mans_npc_3_zelts ()
+
+    Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+    InitTrigger()
+    TriggerCondition( 1, HasItem, 3457,1 )
+    TriggerAction( 1, TakeItem, 3457,1 )
+    TriggerAction( 1, GiveMoney, 6000000 )
+    TriggerFailure( 1, JumpPage, 3 )
+    Talk( 3,"You do not have what it takes for this action." )
+    Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+anyways some times for long functions you have to put the actions on different numbers but your shouldnt have no problems at all but im going to just post my 2.0 server files o_o'><meta itemprop="url" content="https://forum.ragezone.com/members/micah1121.802331/"></div>
+            
+                <meta itemprop="comment" content='[QUOTE="DragonCryx, post: 5811957, member: 708874"]Should work
+1st problem
+[php]
+TriggerCondition( 1, HasItem, 3457,1,1 )
+	TriggerAction( 1, TakeItem, 3457,1,1 )
+[/php]
+It cant be 3457,1,1 
+- 3457- Item IF
+- 1 - Amout
+- 1 - Its exchange system mean (1 or 4 to eq - 2 or 6 drop on the ground)
+
+2nd Problem
+1 Probably too many other items, Max is 48 
+[php]
+--------------------------------------------------------------------------
+--									--
+--									--
+--		NPCScript06.lua Created by knight.gong 2005.7.12.	--
+--									--
+--									--
+--------------------------------------------------------------------------
+print( "Loading NPCScript06.lua" )
+
+function mans_npc_1_ticket ()
+
+	Talk( 1,"Hello Sir, you can buy all the tickets here.")
+	Text( 1,"Trade", BuyPage)
+	InitTrade()
+	Other( 4602 )
+	Other( 3141 )
+	Other( 3059 )
+	Other( 3831 )
+	Other( 3834 )
+	Other( 3836 )
+	Other( 3837 )
+	Other( 3838 )
+	Other( 3839 )
+	Other( 3840 )
+	Other( 3841 )
+	Other( 3842 )
+	Other( 3843 )
+	Other( 3847 )
+
+end
+
+
+function mans_npc_2_kal ()
+
+	Talk( 1,"Hello, here you can exchange 120 Crystal Ores for 1 Kal Runestone.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 4546, 120 )
+	TriggerAction( 1, TakeItem, 4546, 120 )
+	TriggerAction( 1, GiveItem, 3457,1,1 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have enough Crystal Ores for thsi action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+
+function mans_npc_3_zelts ()
+
+	Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 3457,1 )
+	TriggerAction( 1, TakeItem, 3457,1, )
+	TriggerAction( 1, GiveItem, 0854,6 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have what it takes for this action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+function skills ()
+
+	Talk( 1,"You can buy various skills from me.")
+	Text( 1,"Trade", BuyPage)
+
+	InitTrade()
+	--Other(	3297	)
+	--Other(	3298	)
+	--Other(	3164	)
+	--Other(	3160	)
+	--Other(	3161	)
+	--Other(	3165	)
+	--Other(	3238	)
+	--Other(	3170	)
+	--Other(	3293	)
+	--Other(	3174	)
+	--Other(	3163	)
+	--Other(	3176	)
+	Other(	3180	)
+	Other(	3179	)
+	Other(	3177	)
+	Other(	3168	)
+	Other(	3162	)
+	Other(	3166	)
+	Other(	3167	)
+	Other(	3172	)
+	Other(	3173	)
+	Other(	3227	)
+	Other(	3231	)
+	Other(	3228	)
+	Other(	3229	)
+	Other(	3230	)
+	Other(	3232	)
+	Other(	3233	)
+	Other(	3234	)
+	Other(	3235	)
+	Other(	3236	)
+	Other(	3237	)
+	Other(	3225	)
+	Other(	3226	)
+	Other(	3294	)
+	Other(	3295	)
+	Other(	3141	)
+	Other(	4602	)
+	Other(	4603	)
+	Other(	4604	)
+	Other(	886	)
+	Other(	3075	)--Composition Catalyst
+	Other(	3884	)--Red Combining Fruit
+	Other(	3296	)
+	Other(	2679	)
+	Other(	2689	)
+	Other(	2699	)
+	Other(	2709	)
+	Other(	1611	)
+	Other(	1682	)
+	Other(	1842	)
+	Other(	1612	)
+	Other(	1710	)
+	Other(	1693	)
+	Other(	4716	)
+	Other(	1716	)
+	Other(	1711	)
+	Weapon(	3384	)
+	Weapon(	3932	)
+	Weapon(	1619	)
+	Weapon(	2396	)
+	Weapon(	1729	)
+	Weapon(	4459	)
+	Weapon(	1697	)
+	Weapon(	1730	)
+	Weapon(	1712	)
+	Weapon(	1734	)
+	Weapon(	1621	)
+	Weapon(	1703	)
+--	Weapon(	3288	)--Study Skill Book
+	Weapon( 2440    )
+	Weapon(	3187	)
+	Weapon(	3188	)
+	Weapon(	3190	)
+	Weapon(	3239	)
+	Weapon(	3197	)
+	Weapon(	3193	)
+	Weapon(	3241	)
+	Weapon(	3192	)
+	Weapon(	3198	)
+	Weapon(	3202	)
+	Weapon(	3203	)
+	Weapon(	3204	)
+	Defence( 3206	)
+	Defence( 3208	)
+	Defence( 3205	)
+	Defence( 3242	)
+	Defence( 3210	)
+	Defence( 3207	)
+	Defence( 3211	)
+	Defence( 3215	)
+	Defence( 3212	)
+	Defence( 3209	)
+	Defence( 3220	)
+	Defence( 3222	)
+	Defence( 3219	)
+	Defence( 3218	)
+	Defence( 3216	)
+	Defence( 3223	)
+	Defence( 3217	)
+	Defence( 3224	)--Healing Spring
+	Defence( 3301	)--Crystalline Blessing
+	Defence( 3300	)--Intense Magic
+
+end
+
+[/php][/quote]
+Rejected! that wrong you can put as many items in a npc as you want thats not the problem. your garner npc txt doesnt really have nothing to do with it as long as your sure that you replaces the function name of what the npc does( what is says when you talk to it or the function name from your scripts your fine with that.make sure no other npc has the same function. anyways for your function
+function mans_npc_3_zelts ()
+
+    Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+    InitTrigger()
+    TriggerCondition( 1, HasItem, 3457,1 )
+    TriggerAction( 1, TakeItem, 3457,1, )
+    TriggerAction( 1, GiveItem, 0854,6 )
+    TriggerFailure( 1, JumpPage, 3 )
+    Talk( 3,"You do not have what it takes for this action." )
+    Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+its for 6m gold just put 
+function mans_npc_3_zelts ()
+
+    Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+    InitTrigger()
+    TriggerCondition( 1, HasItem, 3457,1 )
+    TriggerAction( 1, TakeItem, 3457,1 )
+    TriggerAction( 1, GiveMoney, 6000000 )
+    TriggerFailure( 1, JumpPage, 3 )
+    Talk( 3,"You do not have what it takes for this action." )
+    Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+anyways some times for long functions you have to put the actions on different numbers but your shouldnt have no problems at all but im going to just post my 2.0 server files o_o'><meta itemprop="name" content="Post by micah1121"><meta itemprop="text" content='[QUOTE="DragonCryx, post: 5811957, member: 708874"]Should work
+1st problem
+[php]
+TriggerCondition( 1, HasItem, 3457,1,1 )
+	TriggerAction( 1, TakeItem, 3457,1,1 )
+[/php]
+It cant be 3457,1,1 
+- 3457- Item IF
+- 1 - Amout
+- 1 - Its exchange system mean (1 or 4 to eq - 2 or 6 drop on the ground)
+
+2nd Problem
+1 Probably too many other items, Max is 48 
+[php]
+--------------------------------------------------------------------------
+--									--
+--									--
+--		NPCScript06.lua Created by knight.gong 2005.7.12.	--
+--									--
+--									--
+--------------------------------------------------------------------------
+print( "Loading NPCScript06.lua" )
+
+function mans_npc_1_ticket ()
+
+	Talk( 1,"Hello Sir, you can buy all the tickets here.")
+	Text( 1,"Trade", BuyPage)
+	InitTrade()
+	Other( 4602 )
+	Other( 3141 )
+	Other( 3059 )
+	Other( 3831 )
+	Other( 3834 )
+	Other( 3836 )
+	Other( 3837 )
+	Other( 3838 )
+	Other( 3839 )
+	Other( 3840 )
+	Other( 3841 )
+	Other( 3842 )
+	Other( 3843 )
+	Other( 3847 )
+
+end
+
+
+function mans_npc_2_kal ()
+
+	Talk( 1,"Hello, here you can exchange 120 Crystal Ores for 1 Kal Runestone.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 4546, 120 )
+	TriggerAction( 1, TakeItem, 4546, 120 )
+	TriggerAction( 1, GiveItem, 3457,1,1 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have enough Crystal Ores for thsi action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+
+function mans_npc_3_zelts ()
+
+	Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 3457,1 )
+	TriggerAction( 1, TakeItem, 3457,1, )
+	TriggerAction( 1, GiveItem, 0854,6 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have what it takes for this action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+function skills ()
+
+	Talk( 1,"You can buy various skills from me.")
+	Text( 1,"Trade", BuyPage)
+
+	InitTrade()
+	--Other(	3297	)
+	--Other(	3298	)
+	--Other(	3164	)
+	--Other(	3160	)
+	--Other(	3161	)
+	--Other(	3165	)
+	--Other(	3238	)
+	--Other(	3170	)
+	--Other(	3293	)
+	--Other(	3174	)
+	--Other(	3163	)
+	--Other(	3176	)
+	Other(	3180	)
+	Other(	3179	)
+	Other(	3177	)
+	Other(	3168	)
+	Other(	3162	)
+	Other(	3166	)
+	Other(	3167	)
+	Other(	3172	)
+	Other(	3173	)
+	Other(	3227	)
+	Other(	3231	)
+	Other(	3228	)
+	Other(	3229	)
+	Other(	3230	)
+	Other(	3232	)
+	Other(	3233	)
+	Other(	3234	)
+	Other(	3235	)
+	Other(	3236	)
+	Other(	3237	)
+	Other(	3225	)
+	Other(	3226	)
+	Other(	3294	)
+	Other(	3295	)
+	Other(	3141	)
+	Other(	4602	)
+	Other(	4603	)
+	Other(	4604	)
+	Other(	886	)
+	Other(	3075	)--Composition Catalyst
+	Other(	3884	)--Red Combining Fruit
+	Other(	3296	)
+	Other(	2679	)
+	Other(	2689	)
+	Other(	2699	)
+	Other(	2709	)
+	Other(	1611	)
+	Other(	1682	)
+	Other(	1842	)
+	Other(	1612	)
+	Other(	1710	)
+	Other(	1693	)
+	Other(	4716	)
+	Other(	1716	)
+	Other(	1711	)
+	Weapon(	3384	)
+	Weapon(	3932	)
+	Weapon(	1619	)
+	Weapon(	2396	)
+	Weapon(	1729	)
+	Weapon(	4459	)
+	Weapon(	1697	)
+	Weapon(	1730	)
+	Weapon(	1712	)
+	Weapon(	1734	)
+	Weapon(	1621	)
+	Weapon(	1703	)
+--	Weapon(	3288	)--Study Skill Book
+	Weapon( 2440    )
+	Weapon(	3187	)
+	Weapon(	3188	)
+	Weapon(	3190	)
+	Weapon(	3239	)
+	Weapon(	3197	)
+	Weapon(	3193	)
+	Weapon(	3241	)
+	Weapon(	3192	)
+	Weapon(	3198	)
+	Weapon(	3202	)
+	Weapon(	3203	)
+	Weapon(	3204	)
+	Defence( 3206	)
+	Defence( 3208	)
+	Defence( 3205	)
+	Defence( 3242	)
+	Defence( 3210	)
+	Defence( 3207	)
+	Defence( 3211	)
+	Defence( 3215	)
+	Defence( 3212	)
+	Defence( 3209	)
+	Defence( 3220	)
+	Defence( 3222	)
+	Defence( 3219	)
+	Defence( 3218	)
+	Defence( 3216	)
+	Defence( 3223	)
+	Defence( 3217	)
+	Defence( 3224	)--Healing Spring
+	Defence( 3301	)--Crystalline Blessing
+	Defence( 3300	)--Intense Magic
+
+end
+
+[/php][/quote]
+Rejected! that wrong you can put as many items in a npc as you want thats not the problem. your garner npc txt doesnt really have nothing to do with it as long as your sure that you replaces the function name of what the npc does( what is says when you talk to it or the function name from your scripts your fine with that.make sure no other npc has the same function. anyways for your function
+function mans_npc_3_zelts ()
+
+    Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+    InitTrigger()
+    TriggerCondition( 1, HasItem, 3457,1 )
+    TriggerAction( 1, TakeItem, 3457,1, )
+    TriggerAction( 1, GiveItem, 0854,6 )
+    TriggerFailure( 1, JumpPage, 3 )
+    Talk( 3,"You do not have what it takes for this action." )
+    Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+its for 6m gold just put 
+function mans_npc_3_zelts ()
+
+    Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+    InitTrigger()
+    TriggerCondition( 1, HasItem, 3457,1 )
+    TriggerAction( 1, TakeItem, 3457,1 )
+    TriggerAction( 1, GiveMoney, 6000000 )
+    TriggerFailure( 1, JumpPage, 3 )
+    Talk( 3,"You do not have what it takes for this action." )
+    Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+anyways some times for long functions you have to put the actions on different numbers but your shouldnt have no problems at all but im going to just post my 2.0 server files o_o'><div>
+                    <span itemprop="text" content='[QUOTE="DragonCryx, post: 5811957, member: 708874"]Should work
+1st problem
+[php]
+TriggerCondition( 1, HasItem, 3457,1,1 )
+	TriggerAction( 1, TakeItem, 3457,1,1 )
+[/php]
+It cant be 3457,1,1 
+- 3457- Item IF
+- 1 - Amout
+- 1 - Its exchange system mean (1 or 4 to eq - 2 or 6 drop on the ground)
+
+2nd Problem
+1 Probably too many other items, Max is 48 
+[php]
+--------------------------------------------------------------------------
+--									--
+--									--
+--		NPCScript06.lua Created by knight.gong 2005.7.12.	--
+--									--
+--									--
+--------------------------------------------------------------------------
+print( "Loading NPCScript06.lua" )
+
+function mans_npc_1_ticket ()
+
+	Talk( 1,"Hello Sir, you can buy all the tickets here.")
+	Text( 1,"Trade", BuyPage)
+	InitTrade()
+	Other( 4602 )
+	Other( 3141 )
+	Other( 3059 )
+	Other( 3831 )
+	Other( 3834 )
+	Other( 3836 )
+	Other( 3837 )
+	Other( 3838 )
+	Other( 3839 )
+	Other( 3840 )
+	Other( 3841 )
+	Other( 3842 )
+	Other( 3843 )
+	Other( 3847 )
+
+end
+
+
+function mans_npc_2_kal ()
+
+	Talk( 1,"Hello, here you can exchange 120 Crystal Ores for 1 Kal Runestone.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 4546, 120 )
+	TriggerAction( 1, TakeItem, 4546, 120 )
+	TriggerAction( 1, GiveItem, 3457,1,1 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have enough Crystal Ores for thsi action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+
+function mans_npc_3_zelts ()
+
+	Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 3457,1 )
+	TriggerAction( 1, TakeItem, 3457,1, )
+	TriggerAction( 1, GiveItem, 0854,6 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have what it takes for this action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+function skills ()
+
+	Talk( 1,"You can buy various skills from me.")
+	Text( 1,"Trade", BuyPage)
+
+	InitTrade()
+	--Other(	3297	)
+	--Other(	3298	)
+	--Other(	3164	)
+	--Other(	3160	)
+	--Other(	3161	)
+	--Other(	3165	)
+	--Other(	3238	)
+	--Other(	3170	)
+	--Other(	3293	)
+	--Other(	3174	)
+	--Other(	3163	)
+	--Other(	3176	)
+	Other(	3180	)
+	Other(	3179	)
+	Other(	3177	)
+	Other(	3168	)
+	Other(	3162	)
+	Other(	3166	)
+	Other(	3167	)
+	Other(	3172	)
+	Other(	3173	)
+	Other(	3227	)
+	Other(	3231	)
+	Other(	3228	)
+	Other(	3229	)
+	Other(	3230	)
+	Other(	3232	)
+	Other(	3233	)
+	Other(	3234	)
+	Other(	3235	)
+	Other(	3236	)
+	Other(	3237	)
+	Other(	3225	)
+	Other(	3226	)
+	Other(	3294	)
+	Other(	3295	)
+	Other(	3141	)
+	Other(	4602	)
+	Other(	4603	)
+	Other(	4604	)
+	Other(	886	)
+	Other(	3075	)--Composition Catalyst
+	Other(	3884	)--Red Combining Fruit
+	Other(	3296	)
+	Other(	2679	)
+	Other(	2689	)
+	Other(	2699	)
+	Other(	2709	)
+	Other(	1611	)
+	Other(	1682	)
+	Other(	1842	)
+	Other(	1612	)
+	Other(	1710	)
+	Other(	1693	)
+	Other(	4716	)
+	Other(	1716	)
+	Other(	1711	)
+	Weapon(	3384	)
+	Weapon(	3932	)
+	Weapon(	1619	)
+	Weapon(	2396	)
+	Weapon(	1729	)
+	Weapon(	4459	)
+	Weapon(	1697	)
+	Weapon(	1730	)
+	Weapon(	1712	)
+	Weapon(	1734	)
+	Weapon(	1621	)
+	Weapon(	1703	)
+--	Weapon(	3288	)--Study Skill Book
+	Weapon( 2440    )
+	Weapon(	3187	)
+	Weapon(	3188	)
+	Weapon(	3190	)
+	Weapon(	3239	)
+	Weapon(	3197	)
+	Weapon(	3193	)
+	Weapon(	3241	)
+	Weapon(	3192	)
+	Weapon(	3198	)
+	Weapon(	3202	)
+	Weapon(	3203	)
+	Weapon(	3204	)
+	Defence( 3206	)
+	Defence( 3208	)
+	Defence( 3205	)
+	Defence( 3242	)
+	Defence( 3210	)
+	Defence( 3207	)
+	Defence( 3211	)
+	Defence( 3215	)
+	Defence( 3212	)
+	Defence( 3209	)
+	Defence( 3220	)
+	Defence( 3222	)
+	Defence( 3219	)
+	Defence( 3218	)
+	Defence( 3216	)
+	Defence( 3223	)
+	Defence( 3217	)
+	Defence( 3224	)--Healing Spring
+	Defence( 3301	)--Crystalline Blessing
+	Defence( 3300	)--Intense Magic
+
+end
+
+[/php][/quote]
+Rejected! that wrong you can put as many items in a npc as you want thats not the problem. your garner npc txt doesnt really have nothing to do with it as long as your sure that you replaces the function name of what the npc does( what is says when you talk to it or the function name from your scripts your fine with that.make sure no other npc has the same function. anyways for your function
+function mans_npc_3_zelts ()
+
+    Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+    InitTrigger()
+    TriggerCondition( 1, HasItem, 3457,1 )
+    TriggerAction( 1, TakeItem, 3457,1, )
+    TriggerAction( 1, GiveItem, 0854,6 )
+    TriggerFailure( 1, JumpPage, 3 )
+    Talk( 3,"You do not have what it takes for this action." )
+    Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+its for 6m gold just put 
+function mans_npc_3_zelts ()
+
+    Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+    InitTrigger()
+    TriggerCondition( 1, HasItem, 3457,1 )
+    TriggerAction( 1, TakeItem, 3457,1 )
+    TriggerAction( 1, GiveMoney, 6000000 )
+    TriggerFailure( 1, JumpPage, 3 )
+    Talk( 3,"You do not have what it takes for this action." )
+    Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+anyways some times for long functions you have to put the actions on different numbers but your shouldnt have no problems at all but im going to just post my 2.0 server files o_o'></span>
+                  </div>
+            
+        
+		
+		<span class="u-anchorTarget" id="post-5834639"></span>
+		
+			
+								
+
+	
+
+	<header class="message-attribution message-attribution--split"><ul class="message-attribution-main listInline "><li class="u-concealed">
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5834639" rel="nofollow" itemprop="url">
+					<time class="u-dt" dir="auto" datetime="2010-08-09T05:44:18+0100" data-timestamp="1281329058" data-date="Aug 9, 2010" data-time="5:44 AM" data-short="Aug '10" title="Aug 9, 2010 at 5:44 AM" itemprop="datePublished">Aug 9, 2010</time></a>
+			</li>
+			
+		</ul><ul class="message-attribution-opposite message-attribution-opposite--list "><li>
+				<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5834639" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="https://forum.ragezone.com/posts/5834639/share" aria-label="Share" rel="nofollow">
+					<i class="fa--xf far fa-share-alt "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#share-alt"></use></svg></i>
+				</a>
+			</li>
+			
+				<li class="u-hidden js-embedCopy">
+					
+	<a href="javascript:" data-xf-init="copy-to-clipboard" data-copy-text='&lt;div class="js-xf-embed" data-url="https://forum.ragezone.com" data-content="post-5834639"&gt;&lt;/div&gt;&lt;script defer src="https://forum.ragezone.com/js/xf/external_embed.js?_v=b090ee27"&gt;&lt;/script&gt;' data-success="Embed code HTML copied to clipboard." class="">
+		<i class="fa--xf far fa-code "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#code"></use></svg></i>
+	</a>
+
+				</li>
+			
+			
+			
+				<li>
+					<a href="https://forum.ragezone.com/threads/problems-with-npc-creating.680281/post-5834639" rel="nofollow">
+						#6
+					</a>
+				</li>
+			
+		</ul></header><div class="message-inner">
+				
+					<div class="message-cell message-cell--user ap-ss-postbitBackground ap-ss-postbitBackground--802331" style="">
+						
+
+	<section class="message-user ap-ss-postbitFilter ap-ss-postbitFilter--802331" style="" itemprop="author" itemscope itemtype="https://schema.org/Person" itemid="https://forum.ragezone.com/members/micah1121.802331/"><meta itemprop="url" content="https://forum.ragezone.com/posts/"><div class="message-avatar ">
+			<div class="message-avatar-wrapper">
+				<a href="https://forum.ragezone.com/members/micah1121.802331/" class="avatar avatar--l avatar--square avatar--default avatar--default--dynamic" data-user-id="802331" data-xf-init="member-tooltip" style="background-color: #6633cc; color: #d1c2f0">
+			<span class="avatar-u802331-l" role="img" aria-label="micah1121">M</span> 
+		</a>
+				
+				
+			</div>
+		</div>
+		<div class="message-userDetails">
+			<div class="message-userName">
+				<h4 class="message-name"><a href="https://forum.ragezone.com/members/micah1121.802331/" class="username " dir="auto" data-user-id="802331" data-xf-init="member-tooltip"><span itemprop="name">micah1121</span></a></h4>
+			</div>
+
+	
+		<h5 class="userTitle message-userTitle" dir="auto" itemprop="jobTitle">Junior Spellweaver</h5>
+	
+			
+		
+
+			
+				
+
+				
+	
+		
+			
+		
+		
+			<div class="featuredBadges featuredBadges--message">
+				
+					
+						
+							
+	
+	
+	
+	
+	
+
+	
+		
+	
+	
+	
+		<a href="https://forum.ragezone.com/members/micah1121.802331/#badges" class="featuredBadge featuredBadge--10" data-xf-init="element-tooltip" data-element="| .tooltip-element">
+			
+	
+	
+	
+	
+	
+	
+	
+		
+		
+			<i class="fa--xf fad fa-scroll-old  badgeIcon badgeIcon--10 badgeIcon--fa badgeIcon-context--featured-message"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512" role="img" aria-hidden="true"><path d="M539.31 228.69L512 256l27.31 27.31a16 16 0 0 1 4.69 11.32V384h-89.37a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80.61 80c-44.11-.33-79.39-36.89-79.39-81V262.63a16 16 0 0 1 4.69-11.32L160 224l-27.31-27.31a16 16 0 0 1-4.69-11.32V65A65 65 0 0 0 63 0h385a96.1 96.1 0 0 1 95.68 88.2 16.15 16.15 0 0 1-4.63 12.8L512 128l27.31 27.31a16 16 0 0 1 4.69 11.32v50.74a16 16 0 0 1-4.69 11.32z" class="fa-secondary"></path><path d="M192 512h16c-2.59 0-5.14-.13-7.66-.37-2.75.24-5.53.37-8.34.37zM64 0A64 64 0 0 0 0 64v48a16 16 0 0 0 16 16h112V65A65 65 0 0 0 64 0zm560 384H454.63a16 16 0 0 0-11.32 4.69L416 416l-27.31-27.31a16 16 0 0 0-11.32-4.69H304a16 16 0 0 0-16 16v32a80 80 0 0 1-80 80h320a112 112 0 0 0 112-112.06A16 16 0 0 0 624 384z" class="fa-primary"></path></svg></i>
+		
+		
+		
+	
+	
+
+			
+		<span class="tooltip-element">
+			<b>10 Happy Years</b>
+			
+		</span>
+	
+		</a>
+	
+
+						
+					
+				
+			</div>
+		
+	
+
+			
+
+		</div>
+		
+			
+			
+				<div class="message-userExtras">
+				
+					
+						<dl class="pairs pairs--justified"><dt style="">Joined</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">Jan 23, 2010</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Messages</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">186</dd>
+						</dl><dl class="pairs pairs--justified"><dt style="">Reaction score</dt>
+							
+
+
+
+	
+
+	
+	
+
+
+<dd style="">12</dd>
+						</dl></div>
+			
+		
+		<span class="message-userArrow"></span>
+	</section></div>
+				
+
+				
+					<div class="message-cell message-cell--main">
+					
+						<div class="message-main js-quickEditTarget">
+
+							<div class="message-content js-messageContent">
+							
+
+								
+									
+	
+
+	
+
+	
+	
+
+								
+
+								
+									
+	
+
+	<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-5834639" data-lb-caption-desc="micah1121 · Aug 9, 2010 at 5:44 AM">
+
+		
+
+		<article class="message-body  js-selectToQuote"><div itemprop="text">
+				
+					
+	
+
+		
+			
+		
+
+		
+	
+
+<div class="bbWrapper"><blockquote data-attributes="member: 708874" data-quote="DragonCryx" data-source="post: 5811957" class="bbCodeBlock bbCodeBlock--expandable bbCodeBlock--quote js-expandWatch">
+	
+		<div class="bbCodeBlock-title">
+			
+				<a href="https://forum.ragezone.com/goto/post?id=5811957" class="bbCodeBlock-sourceJump" rel="nofollow" data-xf-click="attribution" data-content-selector="#post-5811957">DragonCryx said:</a>
+			
+		</div>
+	
+	<div class="bbCodeBlock-content">
+		
+		<div class="bbCodeBlock-expandContent js-expandContent ">
+			Should work<br>
+1st problem<br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		PHP:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang="php"><code>TriggerCondition( 1, HasItem, 3457,1,1 )
+	TriggerAction( 1, TakeItem, 3457,1,1 )</code></pre>
+	</div>
+</div>It cant be 3457,1,1 <br>
+- 3457- Item IF<br>
+- 1 - Amout<br>
+- 1 - Its exchange system mean (1 or 4 to eq - 2 or 6 drop on the ground)<br><br>
+2nd Problem<br>
+1 Probably too many other items, Max is 48 <br><div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+	<div class="bbCodeBlock-title">
+		PHP:
+	</div>
+	<div class="bbCodeBlock-content" dir="ltr">
+		<pre class="bbCodeCode" dir="ltr" data-xf-init="ozzmodz-cbhj-code-block" data-lang="php"><code>--------------------------------------------------------------------------
+--									--
+--									--
+--		NPCScript06.lua Created by knight.gong 2005.7.12.	--
+--									--
+--									--
+--------------------------------------------------------------------------
+print( "Loading NPCScript06.lua" )
+
+function mans_npc_1_ticket ()
+
+	Talk( 1,"Hello Sir, you can buy all the tickets here.")
+	Text( 1,"Trade", BuyPage)
+	InitTrade()
+	Other( 4602 )
+	Other( 3141 )
+	Other( 3059 )
+	Other( 3831 )
+	Other( 3834 )
+	Other( 3836 )
+	Other( 3837 )
+	Other( 3838 )
+	Other( 3839 )
+	Other( 3840 )
+	Other( 3841 )
+	Other( 3842 )
+	Other( 3843 )
+	Other( 3847 )
+
+end
+
+
+function mans_npc_2_kal ()
+
+	Talk( 1,"Hello, here you can exchange 120 Crystal Ores for 1 Kal Runestone.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 4546, 120 )
+	TriggerAction( 1, TakeItem, 4546, 120 )
+	TriggerAction( 1, GiveItem, 3457,1,1 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have enough Crystal Ores for thsi action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+
+function mans_npc_3_zelts ()
+
+	Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")
+	InitTrigger()
+	TriggerCondition( 1, HasItem, 3457,1 )
+	TriggerAction( 1, TakeItem, 3457,1, )
+	TriggerAction( 1, GiveItem, 0854,6 )
+	TriggerFailure( 1, JumpPage, 3 )
+	Talk( 3,"You do not have what it takes for this action." )
+	Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)
+
+end
+
+function skills ()
+
+	Talk( 1,"You can buy various skills from me.")
+	Text( 1,"Trade", BuyPage)
+
+	InitTrade()
+	--Other(	3297	)
+	--Other(	3298	)
+	--Other(	3164	)
+	--Other(	3160	)
+	--Other(	3161	)
+	--Other(	3165	)
+	--Other(	3238	)
+	--Other(	3170	)
+	--Other(	3293	)
+	--Other(	3174	)
+	--Other(	3163	)
+	--Other(	3176	)
+	Other(	3180	)
+	Other(	3179	)
+	Other(	3177	)
+	Other(	3168	)
+	Other(	3162	)
+	Other(	3166	)
+	Other(	3167	)
+	Other(	3172	)
+	Other(	3173	)
+	Other(	3227	)
+	Other(	3231	)
+	Other(	3228	)
+	Other(	3229	)
+	Other(	3230	)
+	Other(	3232	)
+	Other(	3233	)
+	Other(	3234	)
+	Other(	3235	)
+	Other(	3236	)
+	Other(	3237	)
+	Other(	3225	)
+	Other(	3226	)
+	Other(	3294	)
+	Other(	3295	)
+	Other(	3141	)
+	Other(	4602	)
+	Other(	4603	)
+	Other(	4604	)
+	Other(	886	)
+	Other(	3075	)--Composition Catalyst
+	Other(	3884	)--Red Combining Fruit
+	Other(	3296	)
+	Other(	2679	)
+	Other(	2689	)
+	Other(	2699	)
+	Other(	2709	)
+	Other(	1611	)
+	Other(	1682	)
+	Other(	1842	)
+	Other(	1612	)
+	Other(	1710	)
+	Other(	1693	)
+	Other(	4716	)
+	Other(	1716	)
+	Other(	1711	)
+	Weapon(	3384	)
+	Weapon(	3932	)
+	Weapon(	1619	)
+	Weapon(	2396	)
+	Weapon(	1729	)
+	Weapon(	4459	)
+	Weapon(	1697	)
+	Weapon(	1730	)
+	Weapon(	1712	)
+	Weapon(	1734	)
+	Weapon(	1621	)
+	Weapon(	1703	)
+--	Weapon(	3288	)--Study Skill Book
+	Weapon( 2440    )
+	Weapon(	3187	)
+	Weapon(	3188	)
+	Weapon(	3190	)
+	Weapon(	3239	)
+	Weapon(	3197	)
+	Weapon(	3193	)
+	Weapon(	3241	)
+	Weapon(	3192	)
+	Weapon(	3198	)
+	Weapon(	3202	)
+	Weapon(	3203	)
+	Weapon(	3204	)
+	Defence( 3206	)
+	Defence( 3208	)
+	Defence( 3205	)
+	Defence( 3242	)
+	Defence( 3210	)
+	Defence( 3207	)
+	Defence( 3211	)
+	Defence( 3215	)
+	Defence( 3212	)
+	Defence( 3209	)
+	Defence( 3220	)
+	Defence( 3222	)
+	Defence( 3219	)
+	Defence( 3218	)
+	Defence( 3216	)
+	Defence( 3223	)
+	Defence( 3217	)
+	Defence( 3224	)--Healing Spring
+	Defence( 3301	)--Crystalline Blessing
+	Defence( 3300	)--Intense Magic
+
+end</code></pre>
+	</div>
+</div>
+		</div>
+		<div class="bbCodeBlock-expandLink js-expandLink"><a role="button" tabindex="0">Click to expand...</a></div>
+	</div>
+</blockquote>Rejected! that wrong you can put as many items in a npc as you want thats not the problem. your garner npc txt doesnt really have nothing to do with it as long as your sure that you replaces the function name of what the npc does( what is says when you talk to it or the function name from your scripts your fine with that.make sure no other npc has the same function. anyways for your function<br>
+function mans_npc_3_zelts ()<br><br>
+    Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")<br>
+    InitTrigger()<br>
+    TriggerCondition( 1, HasItem, 3457,1 )<br>
+    TriggerAction( 1, TakeItem, 3457,1, )<br>
+    TriggerAction( 1, GiveItem, 0854,6 )<br>
+    TriggerFailure( 1, JumpPage, 3 )<br>
+    Talk( 3,"You do not have what it takes for this action." )<br>
+    Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)<br><br>
+end<br><br>
+its for 6m gold just put <br>
+function mans_npc_3_zelts ()<br><br>
+    Talk( 1,"Hello, here you can exchange 1 KAL Runestone for 6m gold.")<br>
+    InitTrigger()<br>
+    TriggerCondition( 1, HasItem, 3457,1 )<br>
+    TriggerAction( 1, TakeItem, 3457,1 )<br>
+    TriggerAction( 1, GiveMoney, 6000000 )<br>
+    TriggerFailure( 1, JumpPage, 3 )<br>
+    Talk( 3,"You do not have what it takes for this action." )<br>
+    Text( 1,"Exchange",MultiTrigger, GetMultiTrigger(), 1)<br><br>
+end<br><br>
+anyways some times for long functions you have to put the actions on different numbers but your shouldnt have no problems at all but im going to just post my 2.0 server files o_o</div>
+
+	
+
+		
+			
+		
+
+		
+	
+
+				
+			</div>
+
+			<div class="js-selectToQuoteEnd"> </div>
+			
+				
+			
+		</article></div>
+
+								
+
+								
+									
+	
+
+	
+		<div class="message-lastEdit">
+			
+				Last edited: <time class="u-dt" dir="auto" datetime="2010-08-09T05:52:54+0100" data-timestamp="1281329574" data-date="Aug 9, 2010" data-time="5:52 AM" data-short="Aug '10" title="Aug 9, 2010 at 5:52 AM" itemprop="dateModified">Aug 9, 2010</time></div>
+	
+
+								
+
+								
+									
+	
+
+		
+			
+		
+
+		
+	
+
+
+	
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+								
+
+							
+							</div>
+
+							
+								
+	
+
+	<footer class="message-footer"><div class="message-microdata" itemprop="interactionStatistic" itemtype="https://schema.org/InteractionCounter" itemscope>
+				<meta itemprop="userInteractionCount" content="0"><meta itemprop="interactionType" content="https://schema.org/LikeAction"></div>
+		
+
+		<div class="reactionsBar js-reactionsList ">
+			
+		</div>
+
+		
+
+		<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+	</footer></div>
+
+					
+					</div>
+				
+			</div>
+		
+	</article></div>
+	</div>
+
+	
+		<div class="block-outer block-outer--after">
+			
+				
+
+				
+				
+					<div class="block-outer-opposite">
+						
+							<a href="https://forum.ragezone.com/login/" class="button button--link button--wrap" data-xf-click="overlay"><span class="button-text">
+								You must log in or register to reply here.
+							</span></a>
+						
+					</div>
+				
+			
+		</div>
+	
+
+	
+	
+
+</div>
+
+
+	
+
+		
+			
+		
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+    
+
+
+
+<div class="blockMessage blockMessage--none">
+	
+
+	
+
+	
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+					
+	
+
+		
+			
+		
+
+		
+	
+
+
+				</div>
+
+				
+			</div>
+
+			
+	
+
+		
+			
+		
+
+		
+	
+
+
+			
+	
+		<ul class="p-breadcrumbs p-breadcrumbs--bottom" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/#the-mmo-community.55" itemprop="item">
+			
+				<span itemprop="name">The MMO Community</span>
+			
+		</a>
+		<meta itemprop="position" content="1"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/mmo-server-developments.168/" itemprop="item">
+			
+				<span itemprop="name">MMO Server Developments</span>
+			
+		</a>
+		<meta itemprop="position" content="2"></li>
+
+				
+					
+					
+	<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+		<a href="https://forum.ragezone.com/community/tales-of-pirates.440/" itemprop="item">
+			
+				<span itemprop="name">Tales of Pirates</span>
+			
+		</a>
+		<meta itemprop="position" content="3"></li>
+
+				
+			
+		</ul></div>
+	</div>
+	
+	<div class="pre-footer">
+	<div class="pre-footer-overlay"></div>
+	<div class="pre-footer-inner">
+		<div class="pre-footer--container">
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content -links">
+						<h3>RaGEZONE Sponsor</h3>
+						<ul class="pre-footer--links"><a href="https://bit.ly/3ztZXnj" target="blank"><img src="https://forum.ragezone.com/images/partner/HF_Footer.png" alt="HyperFilter" width="300" height="200" loading="lazy"></a>
+						</ul></div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content">
+						<h3>About RaGEZONE</h3>
+						<div class="pre-footer-html--content">
+							RaGEZONE® is the top forum for MMO, MMORPG, and mobile game development. We provide binaries, source codes, and tutorials for your favorite games, making it the go-to resource for developers and fans. You can also find and share private servers, fostering a vibrant gamer community.
+						</div>
+					</div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="block" data-widget-id="62" data-widget-key="forum_overview_forum_statistics" data-widget-definition="online_statistics">
+	<div class="block-container">
+		<h3 class="block-minorHeader">Forum Statistics</h3>
+		<div class="block-body block-row">
+			<dl class="pairs pairs--justified"><dt>Members online</dt>
+				<dd>1,032</dd>
+			</dl><dl class="pairs pairs--justified"><dt>Guests online</dt>
+				<dd>19,940</dd>
+			</dl><dl class="pairs pairs--justified"><dt>Total visitors</dt>
+				<dd>20,972</dd>
+			</dl></div>
+		<div class="block-footer">
+			Totals may include hidden visitors.
+		</div>
+	</div>
+</div>
+
+				
+			</div>
+			<div class="pre-footer--column">
+				
+					<div class="pre-footer--content -links">
+						<h3>RaGEZONE Partners</h3>
+						<ul class="pre-footer--links"><div align="center">
+<a href="https://yeovilhospital.co.uk/"><img src="https://forum.ragezone.com/images/partner/yeovil.png" alt="UK sites not on GamStop" width="300" height="100" loading="lazy"></a>
+</div>
+						</ul></div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+	<footer class="p-footer" id="footer"><div class="p-footer-inner">
+
+			<div class="p-footer-row">
+				
+					<div class="p-footer-row-main">
+						<ul class="p-footer-linkList"><li>
+									
+										
+											<a href="https://forum.ragezone.com/misc/style" data-xf-click="overlay" data-xf-init="tooltip" title="Style chooser" rel="nofollow">
+												<i class="fa--xf far fa-paint-brush "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#paint-brush"></use></svg></i> RaGEZONE®
+											</a>
+										
+										
+											<a href="https://forum.ragezone.com/misc/style-variation" rel="nofollow" class="js-styleVariationsLink" data-xf-init="tooltip" title="Style variation" data-xf-click="menu" data-z-index-ref=".u-bottomFixer" role="button" aria-expanded="false" aria-haspopup="true">
+
+												<i class="fa--xf far fa-adjust "><svg xmlns="http://www.w3.org/2000/svg" role="img"><title>Style variation</title><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#adjust"></use></svg></i>
+											</a>
+
+											<div class="menu" data-menu="menu" aria-hidden="true">
+												<div class="menu-content js-styleVariationsMenu">
+													
+
+	
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?reset=1" class="menu-linkRow is-selected" rel="nofollow" data-xf-click="style-variation" data-variation="">
+
+		<i class="fa--xf far fa-adjust "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#adjust"></use></svg></i>
+
+		
+			System
+		
+	</a>
+
+
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?variation=default" class="menu-linkRow " rel="nofollow" data-xf-click="style-variation" data-variation="default">
+
+		<i class="fa--xf far fa-sun "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#sun"></use></svg></i>
+
+		
+			Light
+		
+	</a>
+
+
+		
+
+	<a href="https://forum.ragezone.com/misc/style-variation?variation=alternate" class="menu-linkRow " rel="nofollow" data-xf-click="style-variation" data-variation="alternate">
+
+		<i class="fa--xf far fa-moon "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#moon"></use></svg></i>
+
+		
+			Dark
+		
+	</a>
+
+	
+
+	
+		
+	
+
+												</div>
+											</div>
+										
+									
+								</li>
+							
+							
+						
+						</ul></div>
+				
+				<div class="p-footer-row-opposite">
+					<ul class="p-footer-linkList"><li><a href="https://forum.ragezone.com/misc/contact" data-xf-click="overlay">Contact us</a></li>
+							
+						
+
+						
+
+						
+							<li><a href="https://ragezone.com/privacy-policy/">Privacy policy</a></li>
+						
+
+						
+							<li><a href="https://forum.ragezone.com/help/">Help</a></li>
+						
+
+						
+							<li><a href="https://forum.ragezone.com">Home</a></li>
+						
+
+						<li><a href="https://forum.ragezone.com/community/-/index.rss" target="_blank" class="p-footer-rssLink" title="RSS"><span aria-hidden="true"><i class="fa--xf far fa-rss "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#rss"></use></svg></i><span class="u-srOnly">RSS</span></span></a></li>
+					</ul></div>
+			</div>
+
+			
+				<div class="p-footer-copyright">
+				
+					<a href="https://xenforo.com" class="u-concealed" dir="ltr" target="_blank" rel="sponsored noopener">Community platform by XenForo<sup>®</sup><span class="copyright">© 2010-2025 XenForo Ltd.</span></a>
+					
+				
+					<br>
+					Sponsored by <a href="https://www.hyperfilter.com/panel/link.php?id=4">HyperFilter</a> - Powered by <a href="https://litespeedtech.com/">LiteSpeed</a> - MySQL tuning by <a href="https://releem.com/">Releem</a>. <br><a href="https://trademarks.ipo.gov.uk/ipo-tmcase/page/Results/1/UK00003000837">RaGEZONE®</a> is a registered trademark.
+				</div>
+			
+			
+		</div>
+	</footer></div> 
+
+
+
+<div class="u-bottomFixer js-bottomFixTarget">
+	
+	
+</div>
+
+<div class="u-navButtons js-navButtons">
+	<a href="javascript:" class="button button--scroll"><span class="button-text"><i class="fa--xf far fa-arrow-left "><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><use href="https://forum.ragezone.com/data/local/icons/regular.svg?v=1776243575#arrow-left"></use></svg></i><span class="u-srOnly">Back</span></span></a>
+</div>
+
+
+
+
+	<form style="display:none" hidden="hidden">
+		<input type="text" name="_xfClientLoadTime" value="" id="_xfClientLoadTime" title="_xfClientLoadTime" tabindex="-1"></form>
+
+	
+	
+	
+
+
+
+
+
+	
+	
+		
+		
+			<script type="application/ld+json">
+				{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://forum.ragezone.com/threads/problems-with-npc-creating.680281/",
+    "mainEntity": {
+        "@type": "DiscussionForumPosting",
+        "@id": "https://forum.ragezone.com/threads/problems-with-npc-creating.680281/",
+        "headline": "Problems with NPC creating.",
+        "datePublished": "2010-07-26T18:10:20+00:00",
+        "url": "https://forum.ragezone.com/threads/problems-with-npc-creating.680281/",
+        "articleSection": "Tales of Pirates",
+        "author": {
+            "@type": "Person",
+            "@id": "https://forum.ragezone.com/members/sliplv.837622/",
+            "name": "SLIPLV",
+            "url": "https://forum.ragezone.com/members/sliplv.837622/"
+        },
+        "interactionStatistic": [
+            {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/ViewAction",
+                "userInteractionCount": 1472
+            },
+            {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 5
+            },
+            {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/LikeAction",
+                "userInteractionCount": 0
+            }
+        ],
+        "dateModified": "2010-07-26T18:17:38+00:00",
+        "image": "https://forum.ragezone.com/images/404_image.png",
+        "articleBody": "So i'm kinda makind my own ToP privare v1.35 server and encountered problems when i create NPC's.\n\nSo the problem appears when i try to add my NPC in my garnernpc.txt. I've made 4 NPC's in my NpcScript06.lua so far and only 2 of them work, for some reason all the other don't show any options or text i wrote them to do, see in screenshots.\n\n\n1st - This is called mans_npc_2_kal and exchanges 120 Crystal Ores for Kal, it works perfectly.\n\n\n\n2nd - This one is called mans_npc_3_zelts, this one is supposed to exchange 1 Kal for 6 Million banknotes, but as you can see all it does is showing some text that i haven't made him to write.\n\n\n\n3rd - mans_npc_skili This is my second working NPC, it sells all the skills and works perfectly.\n\n\n\n4th - mans_npc_1_ticket This one was supposed to sell tickets, but does the same thing as 2nd.\n\n\n\n\n\n\nSo i was wondering why doesn't they work how i want them to? Later I tried replacing unneeded NPC's in my garnernpc file but it was no good, here's my server NPC files i have edited, can somoene help out? \n\ngarnernpc.txt\nNpcScript06.lua"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "RaGEZONE - MMO Development Forums",
+        "alternateName": "RaGEZONE\u00ae",
+        "description": "RaGEZONE is a website dedicated to the development of massively multiplayer online role-playing games (MMORPGs).",
+        "url": "https://forum.ragezone.com",
+        "logo": "https://forum.ragezone.com/data/assets/logo/maskable_icon_x512.webp"
+    }
+}
+			</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ed76c0efe26599b',t:'MTc3NjM4Njg4NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"62ee815100b84bcdb0817c36ba5e49d4","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script></body></html>
