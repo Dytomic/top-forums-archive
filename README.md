@@ -110,7 +110,9 @@ These are the other preserved Tales of Pirates / PKO technical archives in the D
 | [pkodev-V3ct0r1024](https://github.com/Dytomic/pkodev-V3ct0r1024) | 42 open-source Tales of Pirates client mods, server plugins, and tools by community developer V3ct0r1024 (mod loader, 60fps, anti-bot, offline stall server, GM utilities). |
 | [pkodev-Perseus](https://github.com/Dytomic/pkodev-Perseus) | Server infrastructure and CMS projects by community developer Perseus: Rust GateServer rewrite, DDoS-filtering proxy, Go comms interface, Laravel portal, JS CMS. |
 
-All three repositories together (`top-forums-archive`, `pkodev-V3ct0r1024`, `pkodev-Perseus`) form the **Dytomic Tales of Pirates / PKO research archive** &mdash; the publicly preserved body of engine, community, and modification knowledge that informed the development of [Pirate Raids Online](https://github.com/Dytomic/pro-web).
+All three repositories together (`top-forums-archive`, `pkodev-V3ct0r1024`, `pkodev-Perseus`) form the **Dytomic Tales of Pirates / PKO research archive** &mdash; an independently maintained body of engine, community, and modification knowledge preserved as a public reference.
+
+> **Note:** [Pirate Raids Online](https://github.com/Dytomic/pro-web) is built on Dytomic's own in-house engine and is not derived from the Tales of Pirates or PKO engine. This archive exists as independent research, not as a technical lineage of the game.
 
 ---
 
